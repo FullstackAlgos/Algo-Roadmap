@@ -1,74 +1,102 @@
-const express = require("express");
 const path = require("path");
-const morgan = require("morgan");
-const volleyball = require("volleyball");
-const bodyParser = require("body-parser");
+const compression = require("compression");
+const express = require("express");
 const session = require("express-session");
-const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const passport = require("passport");
-
-const { db, User } = require("./db/database");
-const dbStore = new SequelizeStore({ db: db });
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const morgan = require("morgan");
+const bodyParser = require("body-parser");
+const db = require("./db");
+const sessionStore = new SequelizeStore({ db });
+const PORT = process.env.PORT || 3000;
 const app = express();
 
-if (process.env.NODE_ENV == "development") require("../localSecrets");
+module.exports = app;
 
-// app.use(morgan("dev"));
-app.use(volleyball);
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "../public")));
+passport.serializeUser((user, done) => done(null, user.id));
 
-dbStore.sync();
-
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET || "a wildly insecure secret",
-    store: dbStore,
-    resave: false,
-    saveUninitialized: false
-  })
-);
-
-app.use((req, res, next) => {
-  console.log("SESSION: ", req.session);
-  next();
-});
-
-app.use(passport.initialize());
-app.use(passport.session());
-
-passport.serializeUser((user, done) => {
+passport.deserializeUser(async (id, done) => {
   try {
-    done(null, user.id);
+    const user = await db.models.user.findByPk(id);
+    done(null, user);
   } catch (err) {
     done(err);
   }
 });
 
-passport.deserializeUser((id, done) => {
-  User.findByPk(id)
-    .then(user => done(null, user))
-    .catch(done);
-});
+// SET UP OUR APPLICATION SERVER
+const createApp = () => {
+  // LOGGING MIDDLEWARE
+  app.use(morgan("dev"));
 
-app.use("/api", require("./api"));
-app.use("/auth", require("./api/auth"));
+  // BODY PARSING
+  app.use(express.json());
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("*", (req, res, next) => {
-  res.sendFile(path.join(__dirname, "../public/index.html"));
-});
+  // COMPRESSION MIDDLEWARE
+  app.use(compression());
 
-app.use(function(err, req, res, next) {
-  console.error("Error Stack --", err.stack);
-  res.status(err.status || 500).send(err.message || "Internal server error.");
-});
+  // SESSION MIDDLEWARE WITH PASSPORT
+  app.use(
+    session({
+      secret: process.env.SESSION_SECRET || "my best friend is Cody",
+      store: sessionStore,
+      resave: false,
+      saveUninitialized: false
+    })
+  );
+  app.use(passport.initialize());
+  app.use(passport.session());
 
-const PORT = process.env.PORT || 3000;
+  // ROUTING
+  app.use("/auth", require("./auth"));
+  app.use("/api", require("./api"));
 
-db.sync().then(() => {
-  console.log("Database synced!");
-  app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
-});
+  // STATIC FILE-SERVING MIDDLEWARE
+  app.use(express.static(path.join(__dirname, "../public")));
 
-// { force: true }
+  // REMAINING REQUESTS WITH EXTENSION (.js, .css, etc.) SEND 404
+  app.use((req, res, next) => {
+    const extension = path.extname(req.path);
+    if (extension.length) {
+      const err = new Error("Not found");
+      err.status = 404;
+      next(err);
+    } else {
+      next();
+    }
+  });
+
+  // SEND INDEX.HTML FILE FROM PUBLIC
+  app.use("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  });
+
+  // ERROR HANDLING ENDWARE
+  app.use((err, req, res, next) => {
+    console.error("OH NO SERVER --", err.stack);
+    res.status(err.status || 500).send(err.message || "Server Error");
+  });
+};
+
+// FUNCTION TO LAUNCH SERVER
+const startListening = () => {
+  const server = app.listen(PORT, () =>
+    console.log(`Listening it up on port ${PORT}`)
+  );
+};
+
+// SYNCING DATABASE
+const syncDB = () => db.sync();
+
+// TRIGGER THE START APP / DATABASE FUNCTION
+const startApp = async () => {
+  await syncDB();
+  await createApp();
+  await startListening();
+};
+
+// ALLOWS RUNNING DIRECTLY FROM COMMAND LINE
+if (require.main === module) startApp();
+else createApp();
