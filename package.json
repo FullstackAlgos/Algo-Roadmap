@@ -1,0 +1,17 @@
+{
+  "name": "algo-roadmap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-watch": "webpack -w",
+    "start-server": "nodemon --watch server.js",
+    "start-dev": "npm run build-watch & npm run start-server",
+    "start": "node server",
+    "deploy": "script/deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
