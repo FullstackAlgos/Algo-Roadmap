@@ -1,18 +1,24 @@
+const isDev = process.env.NODE_ENV === "development";
 const { resolve } = require("path");
 
 module.exports = {
-  entry: ["babel-polyfill", "./client/index.js"],
-  mode: "development",
+  // entry: ["@babel-polyfill", "./client/index.js"],
+  entry: ["./client/index.js"],
+  mode: isDev ? "development" : "production",
   output: {
-    path: resolve(__dirname, "public"),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    path: resolve(__dirname, "public")
   },
   devtool: "source-maps",
+  context: __dirname,
+  watchOptions: {
+    ignored: /node_modules/
+  },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         loader: "babel-loader"
       },
       {
@@ -20,5 +26,8 @@ module.exports = {
         use: ["style-loader", "css-loader"]
       }
     ]
+  },
+  node: {
+    fs: "empty"
   }
 };
