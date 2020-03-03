@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getAllProblems } from "../store";
-import Question from "./Question";
+import SingleQuestion from "./SingleQuestion";
 
 class QuestionList extends Component {
   componentDidMount() {
@@ -14,7 +14,7 @@ class QuestionList extends Component {
     return (
       <div className="probListFullDiv">
         {questions.length
-          ? questions.map((q, i) => <Question key={i} q={q} />)
+          ? questions.map((q, i) => <SingleQuestion key={i} q={q} />)
           : null}
       </div>
     );

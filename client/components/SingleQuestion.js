@@ -1,6 +1,6 @@
 import React from "react";
 
-const Question = ({ q }) => {
+const SingleQuestion = ({ q }) => {
   const {
     name,
     description,
@@ -29,4 +29,4 @@ const Question = ({ q }) => {
   );
 };
 
-export default Question;
+export default SingleQuestion;
