@@ -11,22 +11,40 @@ const initialState = {
 };
 
 // ACTION TYPES
+const GET_PROBLEMS = "GET_PROBLEMS";
 const ADD_QUESTION = "ADD_QUESTION";
 
 // ACTION CREATORS
-export const addQuestion = questions => {
+export const getProblems = questions => {
   return {
-    type: ADD_QUESTION,
+    type: GET_PROBLEMS,
     questions
   };
 };
 
+export const addQuestion = question => {
+  return {
+    type: ADD_QUESTION,
+    question
+  };
+};
+
 // THUNKY THUNKS
+export const getAllProblems = () => {
+  return async dispatch => {
+    try {
+      const { data: allProblems } = await axios.get("/api/problems");
+      dispatch(getProblems(allProblems));
+    } catch (error) {
+      console.log("Redux Error -", error);
+    }
+  };
+};
+
 export const addQuestThunk = questObj => {
   return async dispatch => {
     try {
       const newQuest = await axios.post("/api/problems", questObj);
-      console.log("thunky -", questObj);
     } catch (error) {
       console.log("Redux Error -", error);
     }
@@ -36,6 +54,8 @@ export const addQuestThunk = questObj => {
 // REDUCERS
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case GET_PROBLEMS:
+      return { ...state, questions: action.questions };
     case ADD_QUESTION:
       return { ...state };
     default:

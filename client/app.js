@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import User from "./components/User";
 import Roadmap from "./components/Roadmap";
-import ProblemList from "./components/ProblemList";
+import QuestionList from "./components/QuestionList";
 import QuestionForm from "./components/QuestionForm";
 
 class App extends Component {
@@ -29,7 +29,7 @@ class App extends Component {
           <div className="rightContentDiv">
             <Roadmap />
 
-            <ProblemList />
+            <QuestionList />
           </div>
         </div>
 
