@@ -22,9 +22,14 @@ router.get("/:problemId", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
-    if (req.body.id) delete req.body.id;
     console.log("inside -", req.body);
-    const problem = await Problem.create(req.body);
+    const { name, description, difficulty, link } = req.body;
+    const problem = await Problem.create({
+      name,
+      description,
+      difficulty,
+      link
+    });
     res.json(problem);
   } catch (err) {
     next(err);
