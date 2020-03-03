@@ -85,3 +85,8 @@ h4 {
 .questSubmitBtn {
   height: 35px;
 }
+
+/* ----------------------- QUESTION ----------------------- */
+.questionFullDiv {
+  margin-bottom: 25px;
+}
