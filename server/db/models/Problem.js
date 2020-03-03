@@ -20,12 +20,10 @@ const Problem = db.define("problem", {
   },
   likes: {
     type: Sequelize.INTEGER,
-    allowNull: false,
     defaultValue: 0
   },
   dislikes: {
     type: Sequelize.INTEGER,
-    allowNull: false,
     defaultValue: 0
   },
   ratedDifficulty: {
