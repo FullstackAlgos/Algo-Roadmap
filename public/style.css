@@ -1,0 +1,87 @@
+/* ----------------------- GLOBAL ELEMENTS ----------------------- */
+h2 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
+}
+
+/* ----------------------- MAIN APP ----------------------- */
+.fullAppDiv {
+  position: relative;
+}
+
+.navBarDiv {
+  background-color: rgba(100, 100, 100, 0.8);
+  height: 30px;
+}
+
+.belowNavDiv {
+  display: flex;
+}
+
+.rightContentDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----------------------- USER ----------------------- */
+.userFullDiv {
+  background-color: lightgreen;
+  padding: 15px;
+  width: 40vw;
+}
+
+/* ----------------------- ROADMAP ----------------------- */
+.roadMapFullDiv {
+  background-color: aqua;
+  padding: 15px;
+  width: 60vw;
+  min-height: 150px;
+}
+
+/* ----------------------- PROBLEM LIST ----------------------- */
+.probListFullDiv {
+  background-color: lightcoral;
+  padding: 15px;
+  width: 60vw;
+  min-height: 150px;
+}
+
+/* ----------------------- QUESTION FORM ----------------------- */
+.questFormFullDiv {
+  background-color: rgba(240, 240, 240, 0.8);
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.questForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.questLabels {
+  font-weight: bold;
+}
+
+.inputBox {
+  width: 200px;
+  min-height: 30px;
+  margin-bottom: 15px;
+}
+
+.questSubmitBtn {
+  height: 35px;
+}
