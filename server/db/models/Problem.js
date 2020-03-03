@@ -2,14 +2,18 @@ const Sequelize = require("sequelize");
 const { db } = require("../db");
 
 const Problem = db.define("problem", {
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
   description: {
     type: Sequelize.TEXT
   },
   difficulty: {
     type: Sequelize.INTEGER,
     allowNull: false,
-    min: 0,
-    max: 10
+    min: 1,
+    max: 5
   },
   link: {
     type: Sequelize.STRING
@@ -26,8 +30,8 @@ const Problem = db.define("problem", {
   },
   ratedDifficulty: {
     type: Sequelize.FLOAT,
-    min: 0.0,
-    max: 10.0
+    min: 1.0,
+    max: 5.0
   }
 });
 
