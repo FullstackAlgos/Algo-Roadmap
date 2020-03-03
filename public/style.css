@@ -1,0 +1,45 @@
+/* ----------------------- GLOBAL ELEMENTS ----------------------- */
+h2 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
+}
+
+/* ----------------------- MAIN APP ----------------------- */
+.navBarDiv {
+  background-color: lightgray;
+  height: 30px;
+}
+
+.belowNavDiv {
+  display: flex;
+}
+
+.rightContentDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----------------------- USER ----------------------- */
+.userFullDiv {
+  background-color: lightgreen;
+  padding: 15px;
+}
+
+/* ----------------------- ROADMAP ----------------------- */
+.roadMapFullDiv {
+  background-color: aqua;
+  padding: 15px;
+}
+
+/* ----------------------- PROBLEM LIST ----------------------- */
+.probListFullDiv {
+  background-color: lightcoral;
+  padding: 15px;
+}
