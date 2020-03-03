@@ -30,7 +30,9 @@ class QuestionForm extends Component {
     return (
       <div className="questFormFullDiv">
         <form className="questForm" onSubmit={this.handleNewQuest}>
-          <label htmlFor="name">Question Name:</label>
+          <label htmlFor="name" className="questLabels">
+            Question Name:
+          </label>
           <input
             type="text"
             name="name"
@@ -39,7 +41,9 @@ class QuestionForm extends Component {
             className="inputBox"
           />
 
-          <label htmlFor="description">Description:</label>
+          <label htmlFor="description" className="questLabels">
+            Description:
+          </label>
           <input
             type="text"
             name="description"
@@ -48,7 +52,9 @@ class QuestionForm extends Component {
             className="inputBox"
           />
 
-          <label htmlFor="url">Link:</label>
+          <label htmlFor="url" className="questLabels">
+            Link:
+          </label>
           <input
             type="text"
             name="url"
@@ -57,7 +63,9 @@ class QuestionForm extends Component {
             className="inputBox"
           />
 
-          <label htmlFor="image">Image:</label>
+          <label htmlFor="image" className="questLabels">
+            Image:
+          </label>
           <input
             type="text"
             name="image"

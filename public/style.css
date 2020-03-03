@@ -55,7 +55,7 @@ h4 {
 
 /* ----------------------- QUESTION FORM ----------------------- */
 .questFormFullDiv {
-  background-color: rgba(240, 240, 240, 0.7);
+  background-color: rgba(240, 240, 240, 0.8);
   position: absolute;
   z-index: 2;
   top: 0;
@@ -72,8 +72,16 @@ h4 {
   flex-direction: column;
 }
 
+.questLabels {
+  font-weight: bold;
+}
+
 .inputBox {
   width: 200px;
   min-height: 30px;
   margin-bottom: 15px;
+}
+
+.questSubmitBtn {
+  height: 35px;
 }

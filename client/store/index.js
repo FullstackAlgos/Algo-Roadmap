@@ -22,7 +22,7 @@ export const addQuestion = questions => {
 
 // THUNKY THUNKS
 export const addQuestThunk = questObj => {
-  return async dispatch => {
+  return dispatch => {
     try {
       console.log("thunky -", questObj);
     } catch (error) {
