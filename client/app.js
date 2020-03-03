@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import User from "./components/User";
 import Roadmap from "./components/Roadmap";
 import ProblemList from "./components/ProblemList";
+import QuestionForm from "./components/QuestionForm";
 
 class App extends Component {
   render() {
@@ -20,6 +21,8 @@ class App extends Component {
             <ProblemList />
           </div>
         </div>
+
+        <QuestionForm />
       </div>
     );
   }
