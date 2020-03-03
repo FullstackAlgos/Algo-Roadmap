@@ -88,7 +88,10 @@ const startListening = () => {
 };
 
 // SYNCING DATABASE
-const syncDB = () => db.sync();
+const syncDB = () => {
+  console.log("inside seeding");
+  db.sync();
+};
 
 // TRIGGER THE START APP / DATABASE FUNCTION
 const startApp = async () => {
