@@ -8,7 +8,8 @@ class QuestionForm extends Component {
     this.state = {
       name: "",
       description: "",
-      url: "",
+      difficulty: "",
+      link: "",
       image: ""
     };
   }
@@ -52,13 +53,24 @@ class QuestionForm extends Component {
             className="inputBox"
           />
 
-          <label htmlFor="url" className="questLabels">
+          <label htmlFor="difficulty" className="questLabels">
+            Difficulty:
+          </label>
+          <input
+            type="text"
+            name="difficulty"
+            value={this.state.difficulty}
+            onChange={this.handleChange}
+            className="inputBox"
+          />
+
+          <label htmlFor="link" className="questLabels">
             Link:
           </label>
           <input
             type="text"
-            name="url"
-            value={this.state.url}
+            name="link"
+            value={this.state.link}
             onChange={this.handleChange}
             className="inputBox"
           />

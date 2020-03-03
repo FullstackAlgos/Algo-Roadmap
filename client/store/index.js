@@ -2,6 +2,7 @@ import { createStore, applyMiddleware } from "redux";
 import { createLogger } from "redux-logger";
 import thunkMiddleware from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
+import axios from "axios";
 
 // INITIAL STATE
 const initialState = {
@@ -22,8 +23,9 @@ export const addQuestion = questions => {
 
 // THUNKY THUNKS
 export const addQuestThunk = questObj => {
-  return dispatch => {
+  return async dispatch => {
     try {
+      const newQuest = await axios.post("/api/problems", questObj);
       console.log("thunky -", questObj);
     } catch (error) {
       console.log("Redux Error -", error);
