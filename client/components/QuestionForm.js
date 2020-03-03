@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { addQuestThunk } from "../store";
 
 class QuestionForm extends Component {
   constructor() {
@@ -19,13 +21,14 @@ class QuestionForm extends Component {
 
   handleNewQuest = evt => {
     evt.preventDefault();
-    console.log("hello");
+    const { formFlip, addQuest } = this.props;
+    addQuest(this.state);
+    formFlip();
   };
 
   render() {
     return (
       <div className="questFormFullDiv">
-        Form
         <form className="questForm" onSubmit={this.handleNewQuest}>
           <label htmlFor="name">Question Name:</label>
           <input
@@ -72,4 +75,14 @@ class QuestionForm extends Component {
   }
 }
 
-export default QuestionForm;
+const mapState = state => {
+  return {};
+};
+
+const mapDispatch = dispatch => {
+  return {
+    addQuest: questObj => dispatch(addQuestThunk(questObj))
+  };
+};
+
+export default connect(mapState, mapDispatch)(QuestionForm);

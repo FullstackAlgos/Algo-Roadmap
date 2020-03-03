@@ -33,7 +33,9 @@ class App extends Component {
           </div>
         </div>
 
-        {this.state.showForm ? <QuestionForm /> : null}
+        {this.state.showForm ? (
+          <QuestionForm formFlip={this.showFormFlip} />
+        ) : null}
       </div>
     );
   }

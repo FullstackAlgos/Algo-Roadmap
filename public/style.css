@@ -55,7 +55,7 @@ h4 {
 
 /* ----------------------- QUESTION FORM ----------------------- */
 .questFormFullDiv {
-  background-color: rgba(240, 240, 240, 0.5);
+  background-color: rgba(240, 240, 240, 0.7);
   position: absolute;
   z-index: 2;
   top: 0;
@@ -74,5 +74,6 @@ h4 {
 
 .inputBox {
   width: 200px;
-  margin-bottom: 10px;
+  min-height: 30px;
+  margin-bottom: 15px;
 }
