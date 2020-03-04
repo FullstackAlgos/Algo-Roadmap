@@ -89,7 +89,6 @@ const startListening = () => {
 
 // SYNCING DATABASE
 const syncDB = () => {
-  console.log("inside seeding");
   db.sync();
 };
 
