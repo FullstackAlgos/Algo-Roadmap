@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Problem } = require("../db/models");
+const { Problem, Tag, ProblemTag } = require("../db/models");
 module.exports = router;
 
 router.get("/", async (req, res, next) => {
@@ -22,14 +22,34 @@ router.get("/:problemId", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
-    console.log("inside -", req.body);
-    const { name, description, difficulty, link } = req.body;
+    const { name, description, difficulty, link, tags } = req.body;
     const problem = await Problem.create({
       name,
       description,
       difficulty,
       link
     });
+
+    // add tags to ProblemTag table
+    // still need to check if the tag already exists
+
+    tags.forEach(async tagName => {
+      let tag = await Tag.findOne({
+        where: {
+          name: tagName
+        }
+      });
+
+      if(!tag) {
+        tag = await Tag.create({
+          name: tagName
+        });
+      }
+
+      await ProblemTag.create({problemId: problem.id, tagId: tag.id});
+
+    });
+
     res.json(problem);
   } catch (err) {
     next(err);
