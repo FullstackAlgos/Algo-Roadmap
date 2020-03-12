@@ -44,7 +44,8 @@ export const getAllProblems = () => {
 export const addQuestThunk = questObj => {
   return async dispatch => {
     try {
-      const newQuest = await axios.post("/api/problems", questObj);
+      await axios.post("/api/problems", questObj);
+      dispatch(addQuestion(questObj));
     } catch (error) {
       console.log("Redux Error -", error);
     }
@@ -57,7 +58,7 @@ const reducer = (state = initialState, action) => {
     case GET_PROBLEMS:
       return { ...state, questions: action.questions };
     case ADD_QUESTION:
-      return { ...state };
+      return { ...state, questions: [...state.questions, action.question] };
     default:
       return state;
   }
