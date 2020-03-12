@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addQuestThunk } from "../store";
+import { addQuestThunk } from "../../store";
 
 class QuestionForm extends Component {
   constructor() {
