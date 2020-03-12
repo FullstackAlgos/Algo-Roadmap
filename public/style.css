@@ -34,28 +34,28 @@ h4 {
 .userFullDiv {
   background-color: lightgreen;
   padding: 15px;
-  width: 40vw;
+  width: 30vw;
 }
 
 /* ----------------------- ROADMAP ----------------------- */
 .roadMapFullDiv {
   background-color: aqua;
   padding: 15px;
-  width: 60vw;
+  width: 70vw;
   min-height: 150px;
 }
 
 /* ----------------------- PROBLEM LIST ----------------------- */
 .probListFullDiv {
-  background-color: lightcoral;
+  background-color: bisque;
   padding: 15px;
-  width: 60vw;
+  width: 70vw;
   min-height: 150px;
 }
 
 /* ----------------------- QUESTION FORM ----------------------- */
 .questFormFullDiv {
-  background-color: rgba(240, 240, 240, 0.8);
+  background-color: rgba(225, 225, 225, 0.9);
   position: absolute;
   z-index: 2;
   top: 0;
@@ -82,11 +82,52 @@ h4 {
   margin-bottom: 15px;
 }
 
-.questSubmitBtn {
+.questBtnDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.questBtn {
   height: 35px;
+  width: 95px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.questBtn:hover {
+  background-color: lightskyblue;
 }
 
 /* ----------------------- QUESTION ----------------------- */
 .questionFullDiv {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 25px;
+  background-color: lightgray;
+  border-radius: 3px;
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+.questionName {
+  margin-bottom: 5px;
+}
+
+.questionName:hover {
+  color: blue;
+}
+
+.questionDesc {
+  margin-bottom: 5px;
+}
+
+.questionRateDiv {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.questionRate {
+  margin: 0px;
+  min-width: 150px;
 }

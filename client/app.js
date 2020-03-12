@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import User from "./components/User";
-import Roadmap from "./components/Roadmap";
-import QuestionList from "./components/QuestionList";
-import QuestionForm from "./components/QuestionForm";
+import User from "./components/User/User";
+import Roadmap from "./components/Roadmap/Roadmap";
+import QuestionList from "./components/Question/QuestionList";
+import QuestionForm from "./components/User/QuestionForm";
 
 class App extends Component {
   constructor() {
