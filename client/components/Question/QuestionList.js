@@ -4,6 +4,13 @@ import { getAllProblems } from "../../store";
 import SingleQuestion from "./SingleQuestion";
 
 class QuestionList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      activeQ: "none"
+    };
+  }
+
   componentDidMount() {
     this.props.getAllProblems();
   }
