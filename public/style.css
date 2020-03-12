@@ -55,7 +55,7 @@ h4 {
 
 /* ----------------------- QUESTION FORM ----------------------- */
 .questFormFullDiv {
-  background-color: rgba(240, 240, 240, 0.8);
+  background-color: rgba(225, 225, 225, 0.9);
   position: absolute;
   z-index: 2;
   top: 0;
@@ -82,8 +82,21 @@ h4 {
   margin-bottom: 15px;
 }
 
-.questSubmitBtn {
+.questBtnDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.questBtn {
   height: 35px;
+  width: 95px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.questBtn:hover {
+  background-color: lightskyblue;
 }
 
 /* ----------------------- QUESTION ----------------------- */

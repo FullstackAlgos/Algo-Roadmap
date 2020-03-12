@@ -1,6 +1,11 @@
 const db = require("../server/db");
 const { Problem, User, Tag } = require("../server/db/models");
 
+const userBulk = [
+  { email: "steve@a.com", password: 123 },
+  { email: "peter@a.com", password: 123 }
+];
+
 const problemBulk = [
   {
     name: "Steps To Reduce A Number To 0",
@@ -43,6 +48,7 @@ const tagBulk = [
 async function seed() {
   await db.sync({ force: true });
 
+  await User.bulkCreate(userBulk);
   await Problem.bulkCreate(problemBulk);
   await Tag.bulkCreate(tagBulk);
 

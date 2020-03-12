@@ -86,18 +86,24 @@ class QuestionForm extends Component {
             className="inputBox"
           />
 
-          <button type="submit" className="questSubmitBtn">
-            Submit
-          </button>
+          <div className="questBtnDiv">
+            <button type="submit" className="questSubmitBtn questBtn">
+              Submit
+            </button>
+
+            <button
+              type="button"
+              className="questBtn"
+              onClick={this.props.formFlip}
+            >
+              Close
+            </button>
+          </div>
         </form>
       </div>
     );
   }
 }
-
-const mapState = state => {
-  return {};
-};
 
 const mapDispatch = dispatch => {
   return {
@@ -105,4 +111,4 @@ const mapDispatch = dispatch => {
   };
 };
 
-export default connect(mapState, mapDispatch)(QuestionForm);
+export default connect(null, mapDispatch)(QuestionForm);
