@@ -7,7 +7,7 @@ class QuestionList extends Component {
   constructor() {
     super();
     this.state = {
-      activeQ: "none"
+      activeQ: "--"
     };
   }
 
@@ -15,13 +15,28 @@ class QuestionList extends Component {
     this.props.getAllProblems();
   }
 
+  setActive = evt => {
+    const activeName = evt.target.innerText;
+    evt.persist();
+
+    if (activeName === this.state.activeQ) this.setState({ activeQ: "--" });
+    else this.setState({ activeQ: activeName });
+  };
+
   render() {
     const { questions } = this.props;
 
     return (
       <div className="probListFullDiv">
         {questions.length
-          ? questions.map((q, i) => <SingleQuestion key={i} q={q} />)
+          ? questions.map((q, i) => (
+              <SingleQuestion
+                key={i}
+                q={q}
+                show={q.name === this.state.activeQ}
+                setActive={this.setActive}
+              />
+            ))
           : null}
       </div>
     );

@@ -1,6 +1,7 @@
 import React from "react";
+import { difficultMap } from "../../utils/utilities";
 
-const SingleQuestion = ({ q }) => {
+const SingleQuestion = ({ q, show, setActive }) => {
   const {
     name,
     description,
@@ -13,37 +14,39 @@ const SingleQuestion = ({ q }) => {
 
   return (
     <div className="questionFullDiv">
-      <h2 className="questionName">{name}</h2>
+      <h2 className="questionName" onClick={setActive}>
+        {name}
+      </h2>
 
-      <div className="questionContent">
-        <h4 className="questionDesc">{description}</h4>
+      {show ? (
+        <div className="questionContent">
+          <h4 className="questionDesc">{description}</h4>
 
-        <div className="questionRateDiv">
-          <p className="questionRate">Difficult: {difficultMap[difficulty]}</p>
+          <div className="questionRateDiv">
+            <p className="questionRate">
+              Difficult: <strong>{difficultMap[difficulty]}</strong>
+            </p>
 
-          <p className="questionRate">Likes: {Number(likes)}</p>
+            <p className="questionRate">
+              Likes: <strong>{Number(likes)}</strong>
+            </p>
 
-          <p className="questionRate">Dislikes: {Number(dislikes)}</p>
+            <p className="questionRate">
+              Dislikes: <strong>{Number(dislikes)}</strong>
+            </p>
 
-          <p className="questionRate">
-            Rated Difficulty: {Number(ratedDifficulty)}
-          </p>
+            <p className="questionRate">
+              Rated Difficulty: <strong>{Number(ratedDifficulty)}</strong>
+            </p>
+          </div>
+
+          <a href={link} className="questionLink">
+            Link to Leetcode
+          </a>
         </div>
-
-        <a href={link} className="questionLink">
-          Link to Leetcode
-        </a>
-      </div>
+      ) : null}
     </div>
   );
-};
-
-const difficultMap = {
-  1: "Easy",
-  2: "Challenge Easy",
-  3: "Medium",
-  4: "Challenge Medium",
-  5: "Hard"
 };
 
 export default SingleQuestion;
