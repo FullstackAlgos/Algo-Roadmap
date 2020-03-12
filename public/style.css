@@ -110,12 +110,22 @@ h4 {
   padding-bottom: 20px;
 }
 
-.questionName {
+.questNameDiv {
+  display: flex;
+  align-items: center;
   margin-bottom: 5px;
+}
+
+.questionName {
+  margin-right: 5px;
 }
 
 .questionName:hover {
   color: blue;
+}
+
+.questNameArrow {
+  font-size: 15px;
 }
 
 .questionDesc {
