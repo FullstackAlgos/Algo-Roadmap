@@ -11,14 +11,18 @@ h4 {
   margin: 0;
 }
 
+.linkText {
+  text-decoration: none;
+  color: black;
+}
+
+.linkText:hover {
+  text-decoration: underline;
+}
+
 /* ----------------------- MAIN APP ----------------------- */
 .fullAppDiv {
   position: relative;
-}
-
-.navBarDiv {
-  background-color: rgba(100, 100, 100, 0.8);
-  height: 30px;
 }
 
 .belowNavDiv {
@@ -28,6 +32,26 @@ h4 {
 .rightContentDiv {
   display: flex;
   flex-direction: column;
+}
+
+/* ----------------------- NAV BAR ----------------------- */
+.navBarDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(100, 100, 100, 0.8);
+  height: 40px;
+  padding: 0 15px;
+  font-size: 20px;
+}
+
+.navBarLink {
+  margin-left: 15px;
+}
+
+.selectedNavLink {
+  color: blue;
+  font-weight: bold;
 }
 
 /* ----------------------- USER ----------------------- */
@@ -70,6 +94,11 @@ h4 {
 .questForm {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background-color: gray;
+  border-radius: 5px;
+  width: 300px;
 }
 
 .questLabels {
@@ -85,6 +114,7 @@ h4 {
 .questBtnDiv {
   display: flex;
   justify-content: space-between;
+  width: 80%;
 }
 
 .questBtn {

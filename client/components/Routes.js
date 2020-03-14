@@ -21,8 +21,16 @@ class Routes extends Component {
           path="/"
           render={props => <HomePage {...props} formFlip={formFlip} />}
         />
-        <Route exact path="/LogIn" component={Login} />
-        <Route exact path="/SignUp" component={Signup} />
+
+        <Route
+          path="/SignIn"
+          render={() => (
+            <div className="signInFullDiv">
+              <Login />
+              <Signup />
+            </div>
+          )}
+        />
       </Switch>
     );
   }
