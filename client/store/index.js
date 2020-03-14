@@ -6,15 +6,21 @@ import axios from "axios";
 
 // INITIAL STATE
 const initialState = {
-  user: [],
+  user: {},
   questions: []
 };
 
 // ACTION TYPES
+const GET_USER = "GET_USER";
+const REMOVE_USER = "REMOVE_USER";
 const GET_PROBLEMS = "GET_PROBLEMS";
 const ADD_QUESTION = "ADD_QUESTION";
 
 // ACTION CREATORS
+export const getUser = user => ({ type: GET_USER, user });
+
+export const removeUser = () => ({ type: REMOVE_USER });
+
 export const getProblems = questions => {
   return {
     type: GET_PROBLEMS,
@@ -30,6 +36,43 @@ export const addQuestion = question => {
 };
 
 // THUNKY THUNKS
+export const me = () => async dispatch => {
+  try {
+    const res = await axios.get("/api/users/me");
+    dispatch(getUser(res.data || {}));
+  } catch (error) {
+    console.error("Redux Error -", error);
+  }
+};
+
+export const auth = userObj => async dispatch => {
+  let res;
+  try {
+    // formName HELPS PINPOINT LOGIN VS. SIGNUP
+    const { formName } = userObj;
+    res = await axios.post(`/api/users/${formName}`, userObj);
+  } catch (authError) {
+    return dispatch(getUser({ error: authError }));
+  }
+
+  try {
+    dispatch(getUser(res.data));
+    history.push("/");
+  } catch (dispatchOrHistoryErr) {
+    console.error(dispatchOrHistoryErr);
+  }
+};
+
+export const logout = () => async dispatch => {
+  try {
+    await axios.post("/api/users/logout");
+    dispatch(removeUser());
+    history.push("/");
+  } catch (error) {
+    console.error("Redux Error -", error);
+  }
+};
+
 export const getAllProblems = () => {
   return async dispatch => {
     try {
@@ -55,6 +98,10 @@ export const addQuestThunk = questObj => {
 // REDUCERS
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case GET_USER:
+      return { ...state, user: action.user };
+    case REMOVE_USER:
+      return { ...state, user: {} };
     case GET_PROBLEMS:
       return { ...state, questions: action.questions };
     case ADD_QUESTION:

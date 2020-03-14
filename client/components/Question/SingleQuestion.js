@@ -14,9 +14,15 @@ const SingleQuestion = ({ q, show, setActive }) => {
 
   return (
     <div className="questionFullDiv">
-      <h2 className="questionName" onClick={setActive}>
-        {name}
-      </h2>
+      <div className="questNameDiv">
+        <h2 className={`questionName qName${show}`} onClick={setActive}>
+          {name}
+        </h2>
+
+        <span className="questNameArrow">
+          {String.fromCharCode(arrow[show])}
+        </span>
+      </div>
 
       {show ? (
         <div className="questionContent">
@@ -47,6 +53,11 @@ const SingleQuestion = ({ q, show, setActive }) => {
       ) : null}
     </div>
   );
+};
+
+const arrow = {
+  true: "8911",
+  false: "8910"
 };
 
 export default SingleQuestion;
