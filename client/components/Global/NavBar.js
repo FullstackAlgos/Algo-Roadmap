@@ -43,7 +43,7 @@ class NavBar extends Component {
                 activeClassName="selectedNavLink"
                 exact
               >
-                Log In / Sign Up
+                Sign In
               </NavLink>
             </>
           )}

@@ -2,8 +2,8 @@ const db = require("../server/db");
 const { Problem, User, Tag } = require("../server/db/models");
 
 const userBulk = [
-  { email: "steve@a.com", password: 123 },
-  { email: "peter@a.com", password: 123 }
+  { email: "steve@a.com", name: "steve", password: "123" },
+  { email: "peter@a.com", name: "peter", password: "123" }
 ];
 
 const problemBulk = [
