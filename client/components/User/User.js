@@ -1,10 +1,22 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { getUserQuestThunk } from "../../store";
+import AllQuestPie from "../Chart/AllQuestPie";
 
 class User extends Component {
+  componentDidMount() {
+    const { getUserQuestThunk, user } = this.props;
+    if (user) getUserQuestThunk(user.id);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { getUserQuestThunk, user } = this.props;
+    if (user && user.id !== prevProps.user.id) getUserQuestThunk(user.id);
+  }
+
   render() {
-    const { user, questions } = this.props;
-    console.log("render -", user, questions);
+    const { user, questions, userQuestions } = this.props;
+    console.log("render -", user, questions, userQuestions);
 
     return (
       <div className="userFullDiv">
@@ -27,8 +39,15 @@ class User extends Component {
 const mapState = state => {
   return {
     user: state.user,
-    questions: state.questions
+    questions: state.questions,
+    userQuestions: state.userQuestions
   };
 };
 
-export default connect(mapState)(User);
+const mapDispatch = dispatch => {
+  return {
+    getUserQuestThunk: userId => dispatch(getUserQuestThunk(userId))
+  };
+};
+
+export default connect(mapState, mapDispatch)(User);

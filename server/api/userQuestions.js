@@ -1,13 +1,17 @@
 const router = require("express").Router();
-const { UserQuestion } = require("../db/models");
+const { User, Question } = require("../db/models");
 module.exports = router;
 
-router.get("/:userId", async (req, res) => {
+router.get("/:userId", async (req, res, next) => {
   try {
-    const userQuestions = await UserQuestion.findAll({
-      where: { userId: req.params.userId }
-    });
-    res.json(userQuestions);
+    if (!isNaN(req.params.userId)) {
+      const userQuestions = await User.findOne({
+        where: { id: req.params.userId },
+        include: { model: Question }
+      });
+
+      res.json(userQuestions.dataValues.questions);
+    } else res.json([]);
   } catch (err) {
     next(err);
   }

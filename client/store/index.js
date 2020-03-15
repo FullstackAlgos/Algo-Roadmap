@@ -5,19 +5,21 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import axios from "axios";
 import history from "../utils/history";
 
-// INITIAL STATE
+// -------------------- INITIAL STATE --------------------
 const initialState = {
   user: {},
-  questions: []
+  questions: [],
+  userQuestions: []
 };
 
-// ACTION TYPES
+// -------------------- ACTION TYPES --------------------
 const GET_USER = "GET_USER";
 const REMOVE_USER = "REMOVE_USER";
 const GET_QUESTIONS = "GET_QUESTIONS";
 const ADD_QUESTION = "ADD_QUESTION";
+const GET_USER_QUESTIONS = "GET_USER_QUESTIONS";
 
-// ACTION CREATORS
+// -------------------- ACTION CREATORS --------------------
 export const getUser = user => ({ type: GET_USER, user });
 
 export const removeUser = () => ({ type: REMOVE_USER });
@@ -36,7 +38,14 @@ export const addQuestion = question => {
   };
 };
 
-// THUNKY THUNKS
+export const getUserQuests = userQuestions => {
+  return {
+    type: GET_USER_QUESTIONS,
+    userQuestions
+  };
+};
+
+// -------------------- THUNKY THUNKS --------------------
 export const me = () => async dispatch => {
   try {
     const res = await axios.get("/api/users/me");
@@ -49,7 +58,6 @@ export const me = () => async dispatch => {
 export const auth = userObj => async dispatch => {
   let res;
   try {
-    // formName HELPS PINPOINT LOGIN VS. SIGNUP
     const { formName } = userObj;
     res = await axios.post(`/api/users/${formName}`, userObj);
   } catch (authError) {
@@ -74,29 +82,36 @@ export const logout = () => async dispatch => {
   }
 };
 
-export const getAllQuestions = () => {
-  return async dispatch => {
-    try {
-      const { data: allQuestions } = await axios.get("/api/questions");
-      dispatch(getQuestions(allQuestions));
-    } catch (error) {
-      console.log("Redux Error -", error);
-    }
-  };
+export const getAllQuestions = () => async dispatch => {
+  try {
+    const { data: allQuestions } = await axios.get("/api/questions");
+    dispatch(getQuestions(allQuestions));
+  } catch (error) {
+    console.log("Redux Error -", error);
+  }
 };
 
-export const addQuestThunk = questObj => {
-  return async dispatch => {
-    try {
-      await axios.post("/api/questions", questObj);
-      dispatch(addQuestion(questObj));
-    } catch (error) {
-      console.log("Redux Error -", error);
-    }
-  };
+export const addQuestThunk = questObj => async dispatch => {
+  try {
+    await axios.post("/api/questions", questObj);
+    dispatch(addQuestion(questObj));
+  } catch (error) {
+    console.log("Redux Error -", error);
+  }
 };
 
-// REDUCERS
+export const getUserQuestThunk = userId => async dispatch => {
+  try {
+    const { data: userQuestions } = await axios.get(
+      `/api/userQuestions/${userId}`
+    );
+    dispatch(getUserQuests(userQuestions));
+  } catch (error) {
+    console.log("Redux Error -", error);
+  }
+};
+
+// -------------------- REDUCERS --------------------
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_USER:
@@ -107,6 +122,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, questions: action.questions };
     case ADD_QUESTION:
       return { ...state, questions: [...state.questions, action.question] };
+    case GET_USER_QUESTIONS:
+      return { ...state, userQuestions: action.userQuestions };
     default:
       return state;
   }
