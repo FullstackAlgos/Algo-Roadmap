@@ -1,5 +1,5 @@
 const Question = require("./Question");
-const Tag = require("./tag");
+const Tag = require("./Tag");
 const User = require("./user");
 const QuestionTag = require("./QuestionTag");
 const UserQuestion = require("./userQuestion");
