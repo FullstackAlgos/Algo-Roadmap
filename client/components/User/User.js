@@ -28,7 +28,7 @@ class User extends Component {
 
         <button
           type="button"
-          className="questionAddBtn"
+          className="questionAddBtn gBtn"
           onClick={this.props.formFlip}
         >
           Add Question
