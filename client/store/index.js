@@ -14,7 +14,7 @@ const initialState = {
 // ACTION TYPES
 const GET_USER = "GET_USER";
 const REMOVE_USER = "REMOVE_USER";
-const GET_PROBLEMS = "GET_PROBLEMS";
+const GET_QUESTIONS = "GET_QUESTIONS";
 const ADD_QUESTION = "ADD_QUESTION";
 
 // ACTION CREATORS
@@ -22,9 +22,9 @@ export const getUser = user => ({ type: GET_USER, user });
 
 export const removeUser = () => ({ type: REMOVE_USER });
 
-export const getProblems = questions => {
+export const getQuestions = questions => {
   return {
-    type: GET_PROBLEMS,
+    type: GET_QUESTIONS,
     questions
   };
 };
@@ -74,11 +74,11 @@ export const logout = () => async dispatch => {
   }
 };
 
-export const getAllProblems = () => {
+export const getAllQuestions = () => {
   return async dispatch => {
     try {
-      const { data: allProblems } = await axios.get("/api/problems");
-      dispatch(getProblems(allProblems));
+      const { data: allQuestions } = await axios.get("/api/questions");
+      dispatch(getQuestions(allQuestions));
     } catch (error) {
       console.log("Redux Error -", error);
     }
@@ -88,7 +88,7 @@ export const getAllProblems = () => {
 export const addQuestThunk = questObj => {
   return async dispatch => {
     try {
-      await axios.post("/api/problems", questObj);
+      await axios.post("/api/questions", questObj);
       dispatch(addQuestion(questObj));
     } catch (error) {
       console.log("Redux Error -", error);
@@ -103,7 +103,7 @@ const reducer = (state = initialState, action) => {
       return { ...state, user: action.user };
     case REMOVE_USER:
       return { ...state, user: {} };
-    case GET_PROBLEMS:
+    case GET_QUESTIONS:
       return { ...state, questions: action.questions };
     case ADD_QUESTION:
       return { ...state, questions: [...state.questions, action.question] };

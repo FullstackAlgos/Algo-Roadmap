@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 
 class User extends Component {
   render() {
-    const { user } = this.props;
+    const { user, questions } = this.props;
+    console.log("render -", user, questions);
 
     return (
       <div className="userFullDiv">
@@ -25,7 +26,8 @@ class User extends Component {
 
 const mapState = state => {
   return {
-    user: state.user
+    user: state.user,
+    questions: state.questions
   };
 };
 

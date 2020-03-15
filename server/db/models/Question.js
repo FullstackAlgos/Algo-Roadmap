@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
 
-const Problem = db.define("problem", {
+const Question = db.define("question", {
   name: {
     type: Sequelize.STRING,
     allowNull: false
@@ -33,8 +33,8 @@ const Problem = db.define("problem", {
   }
 });
 
-Problem.beforeCreate((problem, options) => {
-  problem.ratedDifficulty = problem.difficulty;
+Question.beforeCreate(question => {
+  question.ratedDifficulty = question.difficulty;
 });
 
-module.exports = Problem;
+module.exports = Question;
