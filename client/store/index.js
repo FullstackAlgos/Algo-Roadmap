@@ -3,6 +3,7 @@ import { createLogger } from "redux-logger";
 import thunkMiddleware from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import axios from "axios";
+import history from "../utils/history";
 
 // INITIAL STATE
 const initialState = {
@@ -67,7 +68,7 @@ export const logout = () => async dispatch => {
   try {
     await axios.post("/api/users/logout");
     dispatch(removeUser());
-    history.push("/");
+    history.push("/SignIn");
   } catch (error) {
     console.error("Redux Error -", error);
   }

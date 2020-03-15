@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import NavBar from "./Global/NavBar";
 import QuestionForm from "./User/QuestionForm";
-import HomePage from "./Global/HomePage";
 import Routes from "./Routes";
 
 class App extends Component {
@@ -22,7 +21,6 @@ class App extends Component {
       <div className="fullAppDiv">
         <NavBar />
 
-        {/* <HomePage formFlip={this.showFormFlip} /> */}
         <Routes formFlip={this.showFormFlip} />
 
         {this.state.showForm ? (
