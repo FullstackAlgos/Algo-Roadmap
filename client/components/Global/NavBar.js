@@ -13,7 +13,41 @@ class NavBar extends Component {
 
     return (
       <div className="navBarDiv">
-        <h4>App</h4>
+        <div className="navBarLeftDiv">
+          <h4 className="navBarText">Algo Roadmap</h4>
+        </div>
+
+        <div className="navBarRightDiv">
+          <NavLink
+            to="/"
+            className="linkText navBarLink"
+            activeClassName="selectedNavLink"
+            exact
+          >
+            Home Page
+          </NavLink>
+
+          {userId ? (
+            <a
+              href="#"
+              onClick={this.loggingOut}
+              className="linkText navBarLink"
+            >
+              Logout
+            </a>
+          ) : (
+            <>
+              <NavLink
+                to="/SignIn"
+                className="linkText navBarLink"
+                activeClassName="selectedNavLink"
+                exact
+              >
+                Sign In
+              </NavLink>
+            </>
+          )}
+        </div>
       </div>
     );
   }

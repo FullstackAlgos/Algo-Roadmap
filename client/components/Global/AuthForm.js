@@ -16,16 +16,16 @@ class AuthForm extends Component {
 
   handleSignIn = evt => {
     evt.preventDefault();
-    const userObj = {
-      formName: evt.target.name,
-      email: evt.target.email.value,
-      password: evt.target.password.value
-    };
+    const { name, email, password, userName } = evt.target,
+      userObj = {
+        formName: name,
+        email: email.value,
+        password: password.value
+      };
 
     // SIGN UP FUNCTION NEEDS TO ALSO INCLUDE NAME
-    if (evt.target.name === "signup") {
-      const name = evt.target.userName.value;
-      userObj.name = name;
+    if (name === "signup") {
+      userObj.name = userName.value;
       this.props.auth(userObj);
     } else this.props.auth(userObj);
   };

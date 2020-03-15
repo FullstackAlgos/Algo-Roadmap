@@ -50,7 +50,6 @@ const createApp = () => {
   app.use(passport.session());
 
   // ROUTING
-  // app.use("/auth", require("./auth"));
   app.use("/api", require("./api"));
 
   // STATIC FILE-SERVING MIDDLEWARE
