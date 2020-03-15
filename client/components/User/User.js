@@ -16,13 +16,17 @@ class User extends Component {
 
   render() {
     const { user, questions, userQuestions } = this.props;
-    console.log("render -", user, questions, userQuestions);
 
     return (
       <div className="userFullDiv">
         <h2 className="userHeader">Welcome, {user.name}!</h2>
 
         <h4 className="userProgress">Progress</h4>
+
+        <AllQuestPie
+          userLen={userQuestions.length}
+          questLen={questions.length}
+        />
 
         <button
           type="button"

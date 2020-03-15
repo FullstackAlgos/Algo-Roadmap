@@ -5,52 +5,44 @@ class AllQuestPie extends Component {
   constructor() {
     super();
     this.state = {
-      data: {
-        labels: [
-          `Hours Worked: ${(this.props.todaysScreenHours / 60).toFixed(2)}`,
-          "Today"
-        ],
-        datasets: [
-          {
-            backgroundColor: [
-              "rgba(0, 255, 0, 0.75)",
-              "rgba(255, 0, 255, 0.75)"
-            ],
-            data: [
-              (this.props.todaysScreenHours / 60).toFixed(2),
-              24 - (this.props.todaysScreenHours / 60).toFixed(2)
-            ]
-          }
-        ]
-      }
+      data: [0, 10]
     };
   }
 
   componentDidMount() {
+    const { questLen, userLen } = this.props,
+      adjQuestLen = questLen || 1;
+
     this.setState({
-      data: {
-        labels: [
-          `Hours Worked: ${(this.props.todaysScreenHours / 60).toFixed(2)}`,
-          "Today"
-        ],
-        datasets: [
-          {
-            backgroundColor: [
-              "rgba(0, 255, 0, 0.75)",
-              "rgba(255, 0, 255, 0.75)"
-            ],
-            data: [
-              (this.props.todaysScreenHours / 60).toFixed(2),
-              24 - (this.props.todaysScreenHours / 60).toFixed(2)
-            ]
-          }
-        ]
-      }
+      data: [userLen.toFixed(2), adjQuestLen - userLen.toFixed(2)]
     });
   }
 
+  componentDidUpdate(prevProps) {
+    const { questLen, userLen } = this.props;
+  }
+
   render() {
-    <Pie data={this.state.data} />;
+    return (
+      <Pie
+        options={{
+          // title: { display: true, text: "Question Progress" },
+          responsive: true
+        }}
+        data={{
+          labels: ["Solved", "Total"],
+          datasets: [
+            {
+              backgroundColor: [
+                "rgba(0, 255, 0, 0.75)",
+                "rgba(255, 0, 255, 0.75)"
+              ],
+              data: this.state.data
+            }
+          ]
+        }}
+      />
+    );
   }
 }
 
