@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getAllProblems } from "../../store";
+import { getAllQuestions } from "../../store";
 import SingleQuestion from "./SingleQuestion";
 
 class QuestionList extends Component {
@@ -12,7 +12,7 @@ class QuestionList extends Component {
   }
 
   componentDidMount() {
-    this.props.getAllProblems();
+    this.props.getAllQuestions();
   }
 
   setActive = evt => {
@@ -51,7 +51,7 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    getAllProblems: () => dispatch(getAllProblems())
+    getAllQuestions: () => dispatch(getAllQuestions())
   };
 };
 

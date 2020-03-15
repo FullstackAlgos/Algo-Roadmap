@@ -1,20 +1,20 @@
-const Problem = require("./problem");
+const Question = require("./Question");
 const Tag = require("./tag");
 const User = require("./user");
-const ProblemTag = require("./problemTag");
-const UserProblem = require("./userProblem");
+const QuestionTag = require("./QuestionTag");
+const UserQuestion = require("./userQuestion");
 
-Problem.belongsToMany(Tag, { through: ProblemTag });
-Tag.belongsToMany(Problem, { through: ProblemTag });
+Question.belongsToMany(Tag, { through: QuestionTag });
+Tag.belongsToMany(Question, { through: QuestionTag });
 
-// join table to see which problems the user has done and liked
-User.belongsToMany(Problem, { through: UserProblem });
-Problem.belongsToMany(User, { through: UserProblem });
+// join table to see which question the user has done and liked
+User.belongsToMany(Question, { through: UserQuestion });
+Question.belongsToMany(User, { through: UserQuestion });
 
 module.exports = {
-  Problem,
+  Question,
   Tag,
   User,
-  ProblemTag,
-  UserProblem
+  QuestionTag,
+  UserQuestion
 };

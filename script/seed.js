@@ -1,10 +1,10 @@
 const db = require("../server/db");
 const {
-  Problem,
+  Question,
   User,
   Tag,
-  ProblemTag,
-  UserProblem
+  QuestionTag,
+  UserQuestion
 } = require("../server/db/models");
 
 const userBulk = [
@@ -12,7 +12,7 @@ const userBulk = [
   { email: "peter@a.com", name: "Peter", password: "123" }
 ];
 
-const problemBulk = [
+const questionBulk = [
   {
     name: "Steps To Reduce A Number To 0",
     description:
@@ -67,26 +67,26 @@ const tagBulk = [
   }
 ];
 
-const probTagBulk = [
-  { problemId: 1, tagId: 5 },
-  { problemId: 2, tagId: 1 },
-  { problemId: 3, tagId: 6 }
+const questTagBulk = [
+  { questionId: 1, tagId: 5 },
+  { questionId: 2, tagId: 1 },
+  { questionId: 3, tagId: 6 }
 ];
 
-const userProbBulk = [
-  { userId: 1, problemId: 1 },
-  { userId: 1, problemId: 2 },
-  { userId: 2, problemId: 3 }
+const userQuestBulk = [
+  { userId: 1, questionId: 1 },
+  { userId: 1, questionId: 2 },
+  { userId: 2, questionId: 3 }
 ];
 
 async function seed() {
   await db.sync({ force: true });
 
   await User.bulkCreate(userBulk);
-  await Problem.bulkCreate(problemBulk);
+  await Question.bulkCreate(questionBulk);
   await Tag.bulkCreate(tagBulk);
-  await ProblemTag.bulkCreate(probTagBulk);
-  await UserProblem.bulkCreate(userProbBulk);
+  await QuestionTag.bulkCreate(questTagBulk);
+  await UserQuestion.bulkCreate(userQuestBulk);
 
   console.log(`seeded successfully`);
 }
