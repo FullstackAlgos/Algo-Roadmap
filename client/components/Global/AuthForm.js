@@ -76,7 +76,7 @@ class AuthForm extends Component {
           </div>
 
           <div className="authBtnDiv">
-            <button type="submit" className="authSignInBtn">
+            <button type="submit" className="authSignInBtn gBtn">
               {displayName}
             </button>
           </div>

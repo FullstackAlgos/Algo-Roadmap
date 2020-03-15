@@ -26,6 +26,9 @@ h4 {
 
 .gBtn:hover {
   background-color: lightskyblue;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
 }
 
 /* ----------------------- MAIN APP ----------------------- */
@@ -108,10 +111,7 @@ h4 {
   border-radius: 5px;
   width: 135px;
   height: 30px;
-}
-
-.authSignInBtn:hover {
-  background-color: lightseagreen;
+  color: black;
 }
 
 .authForm {
@@ -163,6 +163,9 @@ h4 {
   background-color: lightgreen;
   padding: 15px;
   width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .questionAddBtn {
@@ -171,6 +174,14 @@ h4 {
   font-weight: bold;
   border-radius: 5px;
   color: black;
+}
+
+.userSignInLink {
+  color: black;
+}
+
+.userSignInLink:hover {
+  color: blue;
 }
 
 /* ----------------------- ROADMAP ----------------------- */
@@ -235,10 +246,6 @@ h4 {
   font-size: 18px;
   font-weight: bold;
   border-radius: 5px;
-}
-
-.questBtn:hover {
-  background-color: lightskyblue;
 }
 
 /* ----------------------- QUESTION ----------------------- */

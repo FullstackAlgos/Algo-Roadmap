@@ -19,7 +19,7 @@ class User extends Component {
 
     return (
       <div className="userFullDiv">
-        {user ? (
+        {user.id ? (
           <>
             <h2 className="userHeader">Welcome, {user.name}!</h2>
 
@@ -37,9 +37,12 @@ class User extends Component {
             </button>
           </>
         ) : (
-          <>
-            <h2 className="userHeader">Go ahead and log in</h2>
-          </>
+          <h2 className="userHeader">
+            <a href="/SignIn" className="userSignInLink">
+              Log In
+            </a>{" "}
+            to track your progress!
+          </h2>
         )}
       </div>
     );

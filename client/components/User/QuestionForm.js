@@ -87,13 +87,13 @@ class QuestionForm extends Component {
           />
 
           <div className="questBtnDiv">
-            <button type="submit" className="questSubmitBtn questBtn">
+            <button type="submit" className="questBtn gBtn">
               Submit
             </button>
 
             <button
               type="button"
-              className="questBtn"
+              className="questBtn gBtn"
               onClick={this.props.formFlip}
             >
               Close
