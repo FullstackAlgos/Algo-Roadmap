@@ -21,8 +21,6 @@ class User extends Component {
       <div className="userFullDiv">
         <h2 className="userHeader">Welcome, {user.name}!</h2>
 
-        <h4 className="userProgress">Progress</h4>
-
         <AllQuestPie
           userLen={userQuestions.length}
           questLen={questions.length}

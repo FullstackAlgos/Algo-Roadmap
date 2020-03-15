@@ -287,3 +287,12 @@ h4 {
   margin: 0px;
   min-width: 150px;
 }
+
+/* ----------------------- CHARTS ----------------------- */
+.allQuestPieDiv {
+  background-color: lightgray;
+  width: 50%;
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 5px;
+}
