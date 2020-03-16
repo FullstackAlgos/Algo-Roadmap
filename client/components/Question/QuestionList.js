@@ -33,7 +33,6 @@ class QuestionList extends Component {
   render() {
     const { questions, userQuestions } = this.props,
       doneIds = this.doneQuests(userQuestions);
-    // console.log("render -", doneIds, questions, userQuestions);
 
     return (
       <div className="probListFullDiv">
