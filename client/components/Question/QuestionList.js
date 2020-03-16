@@ -23,8 +23,17 @@ class QuestionList extends Component {
     else this.setState({ activeQ: activeName });
   };
 
+  doneQuests = userQuestions => {
+    return userQuestions.reduce((a, b) => {
+      a[b.id] = true;
+      return a;
+    }, {});
+  };
+
   render() {
-    const { questions } = this.props;
+    const { questions, userQuestions } = this.props,
+      doneIds = this.doneQuests(userQuestions);
+    // console.log("render -", doneIds, questions, userQuestions);
 
     return (
       <div className="probListFullDiv">
@@ -33,6 +42,7 @@ class QuestionList extends Component {
               <SingleQuestion
                 key={i}
                 q={q}
+                done={doneIds[q.id]}
                 show={q.name === this.state.activeQ}
                 setActive={this.setActive}
               />
@@ -45,7 +55,8 @@ class QuestionList extends Component {
 
 const mapState = state => {
   return {
-    questions: state.questions
+    questions: state.questions,
+    userQuestions: state.userQuestions
   };
 };
 

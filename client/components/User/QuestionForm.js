@@ -9,8 +9,7 @@ class QuestionForm extends Component {
       name: "",
       description: "",
       difficulty: "",
-      link: "",
-      image: ""
+      link: ""
     };
   }
 
@@ -71,17 +70,6 @@ class QuestionForm extends Component {
             type="text"
             name="link"
             value={this.state.link}
-            onChange={this.handleChange}
-            className="inputBox"
-          />
-
-          <label htmlFor="image" className="questLabels">
-            Image:
-          </label>
-          <input
-            type="text"
-            name="image"
-            value={this.state.image}
             onChange={this.handleChange}
             className="inputBox"
           />

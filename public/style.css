@@ -38,6 +38,7 @@ h4 {
 
 .belowNavDiv {
   display: flex;
+  justify-content: space-between;
 }
 
 .rightContentDiv {
@@ -266,15 +267,16 @@ h4 {
 }
 
 .questionName {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .questionName:hover {
   color: blue;
 }
 
-.questNameArrow {
-  font-size: 15px;
+.questNameSymbol {
+  font-size: 20px;
+  color: green;
 }
 
 .questionDesc {
