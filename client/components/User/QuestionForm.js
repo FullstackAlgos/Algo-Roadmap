@@ -9,8 +9,7 @@ class QuestionForm extends Component {
       name: "",
       description: "",
       difficulty: "",
-      link: "",
-      image: ""
+      link: ""
     };
   }
 
@@ -75,25 +74,14 @@ class QuestionForm extends Component {
             className="inputBox"
           />
 
-          <label htmlFor="image" className="questLabels">
-            Image:
-          </label>
-          <input
-            type="text"
-            name="image"
-            value={this.state.image}
-            onChange={this.handleChange}
-            className="inputBox"
-          />
-
           <div className="questBtnDiv">
-            <button type="submit" className="questSubmitBtn questBtn">
+            <button type="submit" className="questBtn gBtn">
               Submit
             </button>
 
             <button
               type="button"
-              className="questBtn"
+              className="questBtn gBtn"
               onClick={this.props.formFlip}
             >
               Close

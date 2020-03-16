@@ -1,7 +1,7 @@
 import React from "react";
 import { difficultMap } from "../../utils/utilities";
 
-const SingleQuestion = ({ q, show, setActive }) => {
+const SingleQuestion = ({ q, show, setActive, done }) => {
   const {
     name,
     description,
@@ -19,9 +19,7 @@ const SingleQuestion = ({ q, show, setActive }) => {
           {name}
         </h2>
 
-        <span className="questNameArrow">
-          {String.fromCharCode(arrow[show])}
-        </span>
+        {done ? <span className="questNameSymbol">&#10004;</span> : null}
       </div>
 
       {show ? (
@@ -53,11 +51,6 @@ const SingleQuestion = ({ q, show, setActive }) => {
       ) : null}
     </div>
   );
-};
-
-const arrow = {
-  true: "8911",
-  false: "8910"
 };
 
 export default SingleQuestion;

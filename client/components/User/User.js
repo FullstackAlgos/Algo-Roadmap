@@ -19,20 +19,31 @@ class User extends Component {
 
     return (
       <div className="userFullDiv">
-        <h2 className="userHeader">Welcome, {user.name}!</h2>
+        {user.id ? (
+          <>
+            <h2 className="userHeader">Welcome, {user.name}!</h2>
 
-        <AllQuestPie
-          userLen={userQuestions.length}
-          questLen={questions.length}
-        />
+            <AllQuestPie
+              userLen={userQuestions.length}
+              questLen={questions.length}
+            />
 
-        <button
-          type="button"
-          className="questionAddBtn gBtn"
-          onClick={this.props.formFlip}
-        >
-          Add Question
-        </button>
+            <button
+              type="button"
+              className="questionAddBtn gBtn"
+              onClick={this.props.formFlip}
+            >
+              Add Question
+            </button>
+          </>
+        ) : (
+          <h2 className="userHeader">
+            <a href="/SignIn" className="userSignInLink">
+              Log In
+            </a>{" "}
+            to track your progress!
+          </h2>
+        )}
       </div>
     );
   }
