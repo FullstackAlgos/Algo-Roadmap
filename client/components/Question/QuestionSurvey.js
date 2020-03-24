@@ -28,11 +28,14 @@ class QuestionSurvey extends Component {
   };
 
   render() {
-    console.log("render -", this.props, this.state);
+    const { user } = this.props;
+    console.log("render -", user, this.state);
 
     return (
       <div className="questPopFullDiv">
         <div className="questSurveyFullDiv">
+          <h3 className="questSurveyHeader">{user.activeName}</h3>
+
           <p className="questSurveyText">
             Click "Finish" if you were able to complete the problem and can
             provide feedback. Otherwise, please click "Later".

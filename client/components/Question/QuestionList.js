@@ -82,7 +82,7 @@ const mapDispatch = dispatch => {
   return {
     getAllQuestions: () => dispatch(getAllQuestions()),
     getAllTags: () => dispatch(getAllTags()),
-    switchUserActive: questionId => dispatch(switchUserActive(questionId))
+    switchUserActive: (qId, qName) => dispatch(switchUserActive(qId, qName))
   };
 };
 
