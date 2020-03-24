@@ -23,13 +23,17 @@ class QuestionSurvey extends Component {
 
   postLike = evt => {
     evt.preventDefault();
+    const { user, switchUserActive } = this.props;
+    console.log("submit -", this.state, user.id, user.activeId);
+
+    this.setState({ survey: false, status: "" });
+    switchUserActive();
 
     // SEND TO BACKEND THE STATUS
   };
 
   render() {
-    const { user } = this.props;
-    console.log("render -", user, this.state);
+    const { user, switchUserActive } = this.props;
 
     return (
       <div className="questPopFullDiv">
@@ -54,7 +58,7 @@ class QuestionSurvey extends Component {
               <button
                 type="button"
                 className="questBtn gBtn"
-                onClick={this.props.switchUserActive}
+                onClick={switchUserActive}
               >
                 Later
               </button>
@@ -99,7 +103,7 @@ class QuestionSurvey extends Component {
                 <button
                   type="button"
                   className="questBtn gBtn"
-                  onClick={this.props.switchUserActive}
+                  onClick={switchUserActive}
                 >
                   Close
                 </button>

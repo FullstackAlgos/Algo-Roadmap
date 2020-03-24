@@ -137,7 +137,7 @@ export const switchUserActive = (qId, qName) => async dispatch => {
   }
 };
 
-export const addLike = status => async dispatch => {
+export const addLike = (userId, qId, status) => async dispatch => {
   try {
   } catch (error) {
     console.error("Redux Error -", error);
