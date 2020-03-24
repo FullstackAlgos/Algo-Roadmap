@@ -129,7 +129,8 @@ const mapState = state => {
 const mapDispatch = dispatch => {
   return {
     switchUserActive: () => dispatch(switchUserActive()),
-    addLike: (userId, qId, status) => dispatch(addLike(userId, qId, status))
+    addLike: (userId, qId, status, update) =>
+      dispatch(addLike(userId, qId, status, update))
   };
 };
 
