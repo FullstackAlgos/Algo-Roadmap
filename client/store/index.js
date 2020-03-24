@@ -155,6 +155,7 @@ export const switchUserActive = (qId, qName) => async dispatch => {
 export const newLike = (userId, qId, status, update) => async dispatch => {
   try {
     const likes = [...store.getState().likes];
+
     if (update) {
       await axios.put("/api/likes", { userId, qId, status });
       for (let i = 0; i < likes.length; i++) {
@@ -168,6 +169,26 @@ export const newLike = (userId, qId, status, update) => async dispatch => {
       await axios.post("/api/likes", { userId, qId, status });
       dispatch(addLike({ userId, questionId: qId, status }));
     }
+
+    const questions = [...store.getState().questions];
+
+    for (let i = 0; i < questions.length; i++) {
+      if (questions[i].id === qId) {
+        const qLikes = questions[i].likes;
+        let add = true;
+        for (let j = 0; j < qLikes.length; j++) {
+          if (userId === qLikes.userId) {
+            qLikes.status = status;
+            add = false;
+            break;
+          }
+        }
+        if (add) qLikes.push({ status, userId, questionId: qId });
+        break;
+      }
+    }
+
+    dispatch(getQuestions(questions));
   } catch (error) {
     console.error("Redux Error -", error);
   }

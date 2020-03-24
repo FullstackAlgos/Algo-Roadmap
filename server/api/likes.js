@@ -15,8 +15,7 @@ router.post("/", async (req, res, next) => {
   try {
     const { userId, qId: questionId, status } = req.body;
     await Like.create({ userId, questionId, status });
-
-    // SEND SOMETHING BACK
+    res.sendStatus(201);
   } catch (err) {
     next(err);
   }
@@ -31,6 +30,7 @@ router.put("/", async (req, res, next) => {
       },
       { where: { userId, questionId } }
     );
+    res.sendStatus(201);
   } catch (err) {
     next(err);
   }
