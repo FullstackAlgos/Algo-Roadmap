@@ -177,8 +177,8 @@ export const newLike = (userId, qId, status, update) => async dispatch => {
         const qLikes = questions[i].likes;
         let add = true;
         for (let j = 0; j < qLikes.length; j++) {
-          if (userId === qLikes.userId) {
-            qLikes.status = status;
+          if (userId === qLikes[j].userId) {
+            qLikes[j].status = status;
             add = false;
             break;
           }
