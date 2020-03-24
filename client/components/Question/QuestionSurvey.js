@@ -18,9 +18,8 @@ class QuestionSurvey extends Component {
 
   handleNewQuest = evt => {
     evt.preventDefault();
-    const { surveyFlip } = this.props;
+
     // SEND TO BACKEND THE STATUS
-    surveyFlip();
   };
 
   render() {
@@ -46,7 +45,7 @@ class QuestionSurvey extends Component {
             <button
               type="button"
               className="questBtn gBtn"
-              onClick={this.props.surveyFlip}
+              onClick={console.log("!! CLOSE !!")}
             >
               Close
             </button>
@@ -57,4 +56,8 @@ class QuestionSurvey extends Component {
   }
 }
 
-export default connect()(QuestionSurvey);
+const mapDispatch = dispatch => {
+  return {};
+};
+
+export default connect(null, mapDispatch)(QuestionSurvey);

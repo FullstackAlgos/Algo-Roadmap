@@ -1,7 +1,7 @@
 import React from "react";
 import { difficultMap } from "../../utils/utilities";
 
-const SingleQuestion = ({ q, show, setActive, done }) => {
+const SingleQuestion = ({ q, show, setActive, done, switchUserActive }) => {
   const {
     name,
     description,
@@ -51,7 +51,7 @@ const SingleQuestion = ({ q, show, setActive, done }) => {
             href={link}
             target="_blank"
             className="questionLink linkText"
-            onClick={console.log("CLOSE")}
+            onClick={switchUserActive}
           >
             Explore the Question
           </a>
