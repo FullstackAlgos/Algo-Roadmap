@@ -6,7 +6,7 @@ import AllQuestPie from "../Chart/AllQuestPie";
 class User extends Component {
   componentDidMount() {
     const { getUserQuestThunk, user } = this.props;
-    if (user) getUserQuestThunk(user.id);
+    if (user && user.id) getUserQuestThunk(user.id);
   }
 
   componentDidUpdate(prevProps) {

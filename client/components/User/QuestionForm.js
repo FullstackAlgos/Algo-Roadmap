@@ -28,7 +28,7 @@ class QuestionForm extends Component {
 
   render() {
     return (
-      <div className="questFormFullDiv">
+      <div className="questPopFullDiv">
         <form className="questForm" onSubmit={this.handleNewQuest}>
           <label htmlFor="name" className="questLabels">
             Question Name:

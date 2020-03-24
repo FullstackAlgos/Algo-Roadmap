@@ -18,14 +18,6 @@ const Question = db.define("question", {
   link: {
     type: Sequelize.STRING
   },
-  likes: {
-    type: Sequelize.INTEGER,
-    defaultValue: 0
-  },
-  dislikes: {
-    type: Sequelize.INTEGER,
-    defaultValue: 0
-  },
   ratedDifficulty: {
     type: Sequelize.FLOAT,
     min: 1.0,
