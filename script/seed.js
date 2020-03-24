@@ -48,22 +48,28 @@ const questionBulk = [
 
 const tagBulk = [
   {
-    name: "Array"
+    name: "Array",
+    ranking: 1
   },
   {
-    name: "HashMap"
+    name: "HashMap",
+    ranking: 3
   },
   {
-    name: "String"
+    name: "String",
+    ranking: 2
   },
   {
-    name: "Linked List"
+    name: "Linked List",
+    ranking: 4
   },
   {
-    name: "Bit Manipulation"
+    name: "Bit Manipulation",
+    ranking: 10
   },
   {
-    name: "Tree"
+    name: "Tree",
+    ranking: 5
   }
 ];
 
