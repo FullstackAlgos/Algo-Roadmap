@@ -253,7 +253,7 @@ h4 {
 .questionFullDiv {
   display: flex;
   flex-direction: column;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   border-radius: 3px;
   padding: 10px;
   padding-bottom: 20px;
@@ -264,7 +264,7 @@ h4 {
 }
 
 .qFullDivfalse {
-  background-color: lightgray;
+  background-color: gray;
 }
 
 .questNameDiv {
@@ -302,6 +302,14 @@ h4 {
 
 .questionLink {
   color: blue;
+}
+
+/* ----------------------- TAG ----------------------- */
+.tagFullDiv {
+  background-color: lightgrey;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
 }
 
 /* ----------------------- CHARTS ----------------------- */
