@@ -337,6 +337,22 @@ h4 {
   margin-bottom: 10px;
 }
 
+.questSurveyPair {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+
+.questSurveyLabels {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.surveyRadio {
+  height: 30px;
+  width: 30px;
+}
+
 /* ----------------------- CHARTS ----------------------- */
 .allQuestPieDiv {
   background-color: lightgray;

@@ -38,16 +38,16 @@ class QuestionSurvey extends Component {
             provide feedback. Otherwise, please click "Later".
           </p>
 
-          <div className="questBtnDiv">
-            <button
-              type="button"
-              className="questBtn gBtn"
-              onClick={this.showSurvey}
-            >
-              Finished
-            </button>
+          {!this.state.survey ? (
+            <div className="questBtnDiv">
+              <button
+                type="button"
+                className="questBtn gBtn"
+                onClick={this.showSurvey}
+              >
+                Finished
+              </button>
 
-            {!this.state.survey ? (
               <button
                 type="button"
                 className="questBtn gBtn"
@@ -55,33 +55,37 @@ class QuestionSurvey extends Component {
               >
                 Later
               </button>
-            ) : null}
-          </div>
+            </div>
+          ) : null}
 
           {this.state.survey ? (
             <form className="questForm" onSubmit={this.handleNewQuest}>
               <div className="questSurveyRadioDiv">
-                <label htmlFor="name" className="questLabels">
-                  Like
-                </label>
-                <input
-                  type="radio"
-                  name="status"
-                  value="like"
-                  onChange={this.handleChange}
-                  className="surveyRadio"
-                />
+                <div className="questSurveyPair">
+                  <label htmlFor="name" className="questSurveyLabels">
+                    Like
+                  </label>
+                  <input
+                    type="radio"
+                    name="status"
+                    value="like"
+                    onChange={this.handleChange}
+                    className="surveyRadio"
+                  />
+                </div>
 
-                <label htmlFor="name" className="questLabels">
-                  Dislike
-                </label>
-                <input
-                  type="radio"
-                  name="status"
-                  value="dislike"
-                  onChange={this.handleChange}
-                  className="surveyRadio"
-                />
+                <div className="questSurveyPair">
+                  <label htmlFor="name" className="questSurveyLabels">
+                    Dislike
+                  </label>
+                  <input
+                    type="radio"
+                    name="status"
+                    value="dislike"
+                    onChange={this.handleChange}
+                    className="surveyRadio"
+                  />
+                </div>
               </div>
 
               <div className="questBtnDiv">
