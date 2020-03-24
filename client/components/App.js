@@ -8,7 +8,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      showForm: false
+      showForm: false,
+      showSurvey: false
     };
   }
 
