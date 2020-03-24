@@ -25,6 +25,7 @@ class QuestionSurvey extends Component {
     evt.preventDefault();
     const { user, switchUserActive, addLike } = this.props;
 
+    console.log("hmm -", user.activeId, user.likes);
     addLike(user.id, user.activeId, this.state.status);
     this.setState({ survey: false, status: "" });
     switchUserActive();
