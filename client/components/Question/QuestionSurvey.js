@@ -5,7 +5,7 @@ class QuestionSurvey extends Component {
   constructor() {
     super();
     this.state = {
-      like: ""
+      status: ""
     };
   }
 
@@ -27,12 +27,12 @@ class QuestionSurvey extends Component {
       <div className="questPopFullDiv">
         <form className="questForm" onSubmit={this.handleNewQuest}>
           <label htmlFor="name" className="questLabels">
-            Question Name:
+            Like / Dislike:
           </label>
           <input
             type="text"
             name="name"
-            value={this.state.name}
+            value={this.state.status}
             onChange={this.handleChange}
             className="inputBox"
           />
