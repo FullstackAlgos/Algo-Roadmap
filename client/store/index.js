@@ -22,12 +22,14 @@ const ADD_QUESTION = "ADD_QUESTION";
 const GET_USER_QUESTIONS = "GET_USER_QUESTIONS";
 const GET_TAGS = "GET_TAGS";
 const GET_LIKES = "GET_LIKES";
+const ADD_LIKES = "ADD_LIKES";
 
 // -------------------- ACTION CREATORS --------------------
 export const getUser = user => ({ type: GET_USER, user });
 export const removeUser = () => ({ type: REMOVE_USER });
 export const getTags = tags => ({ type: GET_TAGS, tags });
 export const getLikes = likes => ({ type: GET_LIKES, likes });
+export const addLike = like => ({ type: ADD_LIKES, like });
 export const getQuestions = questions => {
   return {
     type: GET_QUESTIONS,
@@ -134,6 +136,7 @@ export const getUserLikes = userId => async dispatch => {
 export const switchUserActive = (qId, qName) => async dispatch => {
   try {
     const user = Object.assign({}, store.getState().user);
+
     if (user.id) {
       await axios.put("/api/users/active", {
         userId: user.id,
@@ -149,11 +152,22 @@ export const switchUserActive = (qId, qName) => async dispatch => {
   }
 };
 
-export const addLike = (userId, qId, status, update) => async dispatch => {
+export const newLike = (userId, qId, status, update) => async dispatch => {
   try {
-    console.log("add -", userId, qId, status, update);
-    if (update) await axios.put("/api/likes", { userId, qId, status });
-    else await axios.post("/api/likes", { userId, qId, status });
+    const likes = [...store.getState().likes];
+    if (update) {
+      await axios.put("/api/likes", { userId, qId, status });
+      for (let i = 0; i < likes.length; i++) {
+        if (likes[i].questionId === qId) {
+          likes[i].status = status;
+          break;
+        }
+      }
+      dispatch(getLikes(likes));
+    } else {
+      await axios.post("/api/likes", { userId, qId, status });
+      dispatch(addLike({ userId, questionId: qId, status }));
+    }
   } catch (error) {
     console.error("Redux Error -", error);
   }
@@ -176,6 +190,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, tags: action.tags };
     case GET_LIKES:
       return { ...state, likes: action.likes };
+    case ADD_LIKES:
+      return { ...state, likes: [...state.likes, action.like] };
     default:
       return state;
   }
