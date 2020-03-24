@@ -6,10 +6,14 @@ class QuestionSurvey extends Component {
   constructor() {
     super();
     this.state = {
-      showSurvey: false,
+      survey: false,
       status: ""
     };
   }
+
+  showSurvey = () => {
+    this.setState({ survey: true });
+  };
 
   handleChange = evt => {
     this.setState({
@@ -26,32 +30,74 @@ class QuestionSurvey extends Component {
   render() {
     return (
       <div className="questPopFullDiv">
-        <form className="questForm" onSubmit={this.handleNewQuest}>
-          <label htmlFor="name" className="questLabels">
-            Like / Dislike:
-          </label>
-          <input
-            type="text"
-            name="name"
-            value={this.state.status}
-            onChange={this.handleChange}
-            className="inputBox"
-          />
+        <div className="questSurveyFullDiv">
+          <p className="questSurveyText">
+            Click "Finish" if you were able to complete the problem and can
+            provide feedback. Otherwise, please click "Later".
+          </p>
 
           <div className="questBtnDiv">
-            <button type="submit" className="questBtn gBtn">
-              Submit
-            </button>
-
             <button
               type="button"
               className="questBtn gBtn"
-              onClick={this.props.switchUserActive}
+              onClick={this.showSurvey}
             >
-              Close
+              Finished
             </button>
+
+            {!this.state.survey ? (
+              <button
+                type="button"
+                className="questBtn gBtn"
+                onClick={this.props.switchUserActive}
+              >
+                Later
+              </button>
+            ) : null}
           </div>
-        </form>
+
+          {this.state.survey ? (
+            <form className="questForm" onSubmit={this.handleNewQuest}>
+              <div className="questSurveyRadioDiv">
+                <label htmlFor="name" className="questLabels">
+                  Like
+                </label>
+                <input
+                  type="radio"
+                  name="status"
+                  value="Like"
+                  onChange={this.handleChange}
+                  className="surveyRadio"
+                />
+
+                <label htmlFor="name" className="questLabels">
+                  Dislike
+                </label>
+                <input
+                  type="radio"
+                  name="status"
+                  value="Dislike"
+                  onChange={this.handleChange}
+                  className="surveyRadio"
+                />
+              </div>
+
+              <div className="questBtnDiv">
+                <button type="submit" className="questBtn gBtn">
+                  Submit
+                </button>
+
+                <button
+                  type="button"
+                  className="questBtn gBtn"
+                  onClick={this.props.switchUserActive}
+                >
+                  Close
+                </button>
+              </div>
+            </form>
+          ) : null}
+        </div>
       </div>
     );
   }
