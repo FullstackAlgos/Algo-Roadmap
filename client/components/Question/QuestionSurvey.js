@@ -5,6 +5,7 @@ class QuestionSurvey extends Component {
   constructor() {
     super();
     this.state = {
+      showSurvey: false,
       status: ""
     };
   }
@@ -17,9 +18,9 @@ class QuestionSurvey extends Component {
 
   handleNewQuest = evt => {
     evt.preventDefault();
-    const { formFlip, addQuest } = this.props;
-    addQuest(this.state);
-    formFlip();
+    const { surveyFlip } = this.props;
+    // SEND TO BACKEND THE STATUS
+    surveyFlip();
   };
 
   render() {
@@ -45,7 +46,7 @@ class QuestionSurvey extends Component {
             <button
               type="button"
               className="questBtn gBtn"
-              onClick={this.props.formFlip}
+              onClick={this.props.surveyFlip}
             >
               Close
             </button>

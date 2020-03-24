@@ -1,7 +1,7 @@
 import React from "react";
 import { difficultMap } from "../../utils/utilities";
 
-const SingleQuestion = ({ q, show, setActive, done, surveyFlip }) => {
+const SingleQuestion = ({ q, show, setActive, done }) => {
   const {
     name,
     description,
@@ -51,7 +51,7 @@ const SingleQuestion = ({ q, show, setActive, done, surveyFlip }) => {
             href={link}
             target="_blank"
             className="questionLink linkText"
-            onClick={surveyFlip}
+            onClick={console.log("CLOSE")}
           >
             Explore the Question
           </a>

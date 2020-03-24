@@ -12,16 +12,14 @@ class Routes extends Component {
   }
 
   render() {
-    const { formFlip, surveyFlip } = this.props;
+    const { formFlip } = this.props;
 
     return (
       <Switch>
         <Route
           exact
           path="/"
-          render={props => (
-            <HomePage {...props} formFlip={formFlip} surveyFlip={surveyFlip} />
-          )}
+          render={props => <HomePage {...props} formFlip={formFlip} />}
         />
 
         <Route

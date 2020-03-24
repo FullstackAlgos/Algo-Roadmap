@@ -38,7 +38,7 @@ class QuestionList extends Component {
   };
 
   render() {
-    const { questions, userQuestions, tags, surveyFlip } = this.props,
+    const { questions, userQuestions, tags } = this.props,
       doneIds = this.doneQuests(userQuestions);
 
     return (
@@ -58,7 +58,6 @@ class QuestionList extends Component {
                       done={doneIds[q.id]}
                       show={q.name === this.state.activeQ}
                       setActive={this.setActive}
-                      surveyFlip={surveyFlip}
                     />
                   ))}
                 </div>

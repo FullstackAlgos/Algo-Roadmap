@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import NavBar from "./Global/NavBar";
 import Routes from "./Routes";
@@ -9,8 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      showForm: false,
-      showSurvey: false
+      showForm: false
     };
   }
 
@@ -18,27 +18,27 @@ class App extends Component {
     this.setState({ showForm: !this.state.showForm });
   };
 
-  showSurveyFlip = () => {
-    this.setState({ showSurvey: !this.state.showSurvey });
-  };
-
   render() {
+    const { user } = this.props;
+
     return (
       <div className="fullAppDiv">
         <NavBar />
 
-        <Routes formFlip={this.showFormFlip} surveyFlip={this.showSurveyFlip} />
+        <Routes formFlip={this.showFormFlip} />
 
         {this.state.showForm ? (
           <QuestionForm formFlip={this.showFormFlip} />
         ) : null}
 
-        {this.state.showSurvey ? (
-          <QuestionSurvey surveyFlip={this.showSurveyFlip} />
-        ) : null}
+        {user && user.active ? <QuestionSurvey /> : null}
       </div>
     );
   }
 }
 
-export default App;
+const mapState = state => {
+  return { user: state.user };
+};
+
+export default connect(mapState)(App);
