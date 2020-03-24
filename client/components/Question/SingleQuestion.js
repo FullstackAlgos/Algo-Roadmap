@@ -35,11 +35,11 @@ const SingleQuestion = ({ q, show, setActive, done, switchUserActive }) => {
             </p>
 
             <p className="questionRate">
-              Likes: <strong>{Number(likes)}</strong>
+              Likes: <strong>{Number(10)}</strong>
             </p>
 
             <p className="questionRate">
-              Dislikes: <strong>{Number(dislikes)}</strong>
+              Dislikes: <strong>{Number(10)}</strong>
             </p>
 
             <p className="questionRate">

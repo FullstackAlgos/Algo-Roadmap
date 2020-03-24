@@ -83,7 +83,7 @@ export const logout = () => async dispatch => {
 
 export const switchUserActive = () => async dispatch => {
   try {
-    const user = store.getState().user;
+    const user = Object.assign({}, store.getState().user);
     if (user.id) {
       await axios.put("/api/users/active", {
         userId: user.id,

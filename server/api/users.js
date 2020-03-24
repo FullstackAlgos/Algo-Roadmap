@@ -47,12 +47,11 @@ router.post("/signup", async (req, res, next) => {
 router.put("/active", async (req, res, next) => {
   try {
     const { userId, status } = req.body;
-    // const user = User.findByPk(userId);
     await User.update(
-      { where: { id: userId } },
       {
-        status
-      }
+        active: status
+      },
+      { where: { id: userId } }
     );
     res.sendStatus(201);
   } catch (err) {

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { switchUserActive } from "../../store";
 
 class QuestionSurvey extends Component {
   constructor() {
@@ -45,7 +46,7 @@ class QuestionSurvey extends Component {
             <button
               type="button"
               className="questBtn gBtn"
-              onClick={console.log("!! CLOSE !!")}
+              onClick={this.props.switchUserActive}
             >
               Close
             </button>
@@ -57,7 +58,9 @@ class QuestionSurvey extends Component {
 }
 
 const mapDispatch = dispatch => {
-  return {};
+  return {
+    switchUserActive: () => dispatch(switchUserActive())
+  };
 };
 
 export default connect(null, mapDispatch)(QuestionSurvey);
