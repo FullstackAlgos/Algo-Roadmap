@@ -7,10 +7,20 @@ const SingleQuestion = ({ q, show, setActive, done, switchUserActive }) => {
     description,
     difficulty,
     link,
-    likes,
-    dislikes,
-    ratedDifficulty
+    ratedDifficulty,
+    tags,
+    likes
   } = q;
+
+  const numLikes = (likesArr, like) => {
+    return likesArr.reduce((a, v) => {
+      if (like) {
+        if (v.status === "like") a++;
+      } else if (v.status === "dislike") a++;
+
+      return a;
+    }, 0);
+  };
 
   return (
     <div className={`questionFullDiv qFullDiv${!!link}`}>
@@ -35,11 +45,11 @@ const SingleQuestion = ({ q, show, setActive, done, switchUserActive }) => {
             </p>
 
             <p className="questionRate">
-              Likes: <strong>{Number(10)}</strong>
+              Likes: <strong>{numLikes(likes, true)}</strong>
             </p>
 
             <p className="questionRate">
-              Dislikes: <strong>{Number(10)}</strong>
+              Dislikes: <strong>{numLikes(likes, false)}</strong>
             </p>
 
             <p className="questionRate">
