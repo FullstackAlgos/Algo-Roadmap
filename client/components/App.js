@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 
 import NavBar from "./Global/NavBar";
-import QuestionForm from "./User/QuestionForm";
 import Routes from "./Routes";
+import QuestionForm from "./User/QuestionForm";
+import QuestionSurvey from "./Question/QuestionSurvey";
 
 class App extends Component {
   constructor() {
@@ -17,6 +18,10 @@ class App extends Component {
     this.setState({ showForm: !this.state.showForm });
   };
 
+  showSurveyFlip = () => {
+    this.setState({ showSurvey: !this.state.showSurvey });
+  };
+
   render() {
     return (
       <div className="fullAppDiv">
@@ -26,6 +31,10 @@ class App extends Component {
 
         {this.state.showForm ? (
           <QuestionForm formFlip={this.showFormFlip} />
+        ) : null}
+
+        {this.state.showSurvey ? (
+          <QuestionSurvey surveyFlip={this.showSurveyFlip} />
         ) : null}
       </div>
     );
