@@ -2,8 +2,10 @@ const router = require("express").Router();
 const { Like } = require("../db/models");
 module.exports = router;
 
-router.get("/", async (req, res, next) => {
+router.get("/:userId", async (req, res, next) => {
   try {
+    const likes = await Like.findAll({ where: { userId: req.params.userId } });
+    res.json(likes);
   } catch (err) {
     next(err);
   }

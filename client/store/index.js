@@ -21,11 +21,13 @@ const GET_QUESTIONS = "GET_QUESTIONS";
 const ADD_QUESTION = "ADD_QUESTION";
 const GET_USER_QUESTIONS = "GET_USER_QUESTIONS";
 const GET_TAGS = "GET_TAGS";
+const GET_LIKES = "GET_LIKES";
 
 // -------------------- ACTION CREATORS --------------------
 export const getUser = user => ({ type: GET_USER, user });
 export const removeUser = () => ({ type: REMOVE_USER });
 export const getTags = tags => ({ type: GET_TAGS, tags });
+export const getLikes = likes => ({ type: GET_LIKES, likes });
 export const getQuestions = questions => {
   return {
     type: GET_QUESTIONS,
@@ -120,6 +122,15 @@ export const getAllTags = () => async dispatch => {
   }
 };
 
+export const getUserLikes = userId => async dispatch => {
+  try {
+    const { data: likes } = await axios.get(`/api/likes/${userId}`);
+    dispatch(getLikes(likes));
+  } catch (error) {
+    console.log("Redux Error -", error);
+  }
+};
+
 export const switchUserActive = (qId, qName) => async dispatch => {
   try {
     const user = Object.assign({}, store.getState().user);
@@ -162,6 +173,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, userQuestions: action.userQuestions };
     case GET_TAGS:
       return { ...state, tags: action.tags };
+    case GET_LIKES:
+      return { ...state, likes: action.likes };
     default:
       return state;
   }

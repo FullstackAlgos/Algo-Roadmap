@@ -23,10 +23,10 @@ class QuestionSurvey extends Component {
 
   postLike = evt => {
     evt.preventDefault();
-    const { user, switchUserActive, addLike } = this.props;
+    const { user, switchUserActive, addLike, likes } = this.props;
     let update = false;
 
-    for (const q of user.likes) {
+    for (const q of likes) {
       if (q.questionId === user.activeId) {
         update = true;
         break;
@@ -123,7 +123,7 @@ class QuestionSurvey extends Component {
 }
 
 const mapState = state => {
-  return { user: state.user };
+  return { user: state.user, likes: state.likes };
 };
 
 const mapDispatch = dispatch => {
