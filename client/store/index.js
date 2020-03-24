@@ -119,15 +119,17 @@ export const getAllTags = () => async dispatch => {
   }
 };
 
-export const switchUserActive = questionId => async dispatch => {
+export const switchUserActive = (qId, qName) => async dispatch => {
   try {
     const user = Object.assign({}, store.getState().user);
     if (user.id) {
       await axios.put("/api/users/active", {
         userId: user.id,
-        status: questionId || 0
+        activeId: qId || 0,
+        activeName: qName || ""
       });
-      user.active = questionId || 0;
+      user.activeId = qId || 0;
+      user.activeName = qName || "";
       dispatch(getUser(user));
     }
   } catch (error) {

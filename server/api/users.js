@@ -46,10 +46,10 @@ router.post("/signup", async (req, res, next) => {
 
 router.put("/active", async (req, res, next) => {
   try {
-    const { userId, status } = req.body;
+    const { userId, activeId } = req.body;
     await User.update(
       {
-        active: status
+        activeId
       },
       { where: { id: userId } }
     );

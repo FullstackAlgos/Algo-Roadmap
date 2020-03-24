@@ -61,7 +61,7 @@ const SingleQuestion = ({ q, show, setActive, done, switchUserActive }) => {
             href={link}
             target="_blank"
             className="questionLink linkText"
-            onClick={switchUserActive}
+            onClick={() => switchUserActive(q.id)}
           >
             Explore the Question
           </a>
