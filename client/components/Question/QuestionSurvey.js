@@ -28,6 +28,8 @@ class QuestionSurvey extends Component {
   };
 
   render() {
+    console.log("render -", this.state);
+
     return (
       <div className="questPopFullDiv">
         <div className="questSurveyFullDiv">
@@ -65,7 +67,7 @@ class QuestionSurvey extends Component {
                 <input
                   type="radio"
                   name="status"
-                  value="Like"
+                  value="like"
                   onChange={this.handleChange}
                   className="surveyRadio"
                 />
@@ -76,7 +78,7 @@ class QuestionSurvey extends Component {
                 <input
                   type="radio"
                   name="status"
-                  value="Dislike"
+                  value="dislike"
                   onChange={this.handleChange}
                   className="surveyRadio"
                 />

@@ -135,6 +135,13 @@ export const switchUserActive = () => async dispatch => {
   }
 };
 
+export const addLike = () => async dispatch => {
+  try {
+  } catch (error) {
+    console.error("Redux Error -", error);
+  }
+};
+
 // -------------------- REDUCERS --------------------
 const reducer = (state = initialState, action) => {
   switch (action.type) {
