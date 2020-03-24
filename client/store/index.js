@@ -9,7 +9,8 @@ import history from "../utils/history";
 const initialState = {
   user: {},
   questions: [],
-  userQuestions: []
+  userQuestions: [],
+  tags: []
 };
 
 // -------------------- ACTION TYPES --------------------
@@ -18,26 +19,24 @@ const REMOVE_USER = "REMOVE_USER";
 const GET_QUESTIONS = "GET_QUESTIONS";
 const ADD_QUESTION = "ADD_QUESTION";
 const GET_USER_QUESTIONS = "GET_USER_QUESTIONS";
+const GET_TAGS = "GET_TAGS";
 
 // -------------------- ACTION CREATORS --------------------
 export const getUser = user => ({ type: GET_USER, user });
-
 export const removeUser = () => ({ type: REMOVE_USER });
-
+export const getTags = tags => ({ type: GET_TAGS, tags });
 export const getQuestions = questions => {
   return {
     type: GET_QUESTIONS,
     questions
   };
 };
-
 export const addQuestion = question => {
   return {
     type: ADD_QUESTION,
     question
   };
 };
-
 export const getUserQuests = userQuestions => {
   return {
     type: GET_USER_QUESTIONS,
@@ -111,6 +110,15 @@ export const getUserQuestThunk = userId => async dispatch => {
   }
 };
 
+export const getAllTags = () => async dispatch => {
+  try {
+    const { data: tags } = await axios.get("/api/tags");
+    dispatch(getTags(tags));
+  } catch (error) {
+    console.log("Redux Error -", error);
+  }
+};
+
 // -------------------- REDUCERS --------------------
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -124,6 +132,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, questions: [...state.questions, action.question] };
     case GET_USER_QUESTIONS:
       return { ...state, userQuestions: action.userQuestions };
+    case GET_TAGS:
+      return { ...state, tags: action.tags };
     default:
       return state;
   }

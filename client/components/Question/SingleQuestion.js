@@ -15,9 +15,12 @@ const SingleQuestion = ({ q, show, setActive, done }) => {
   return (
     <div className="questionFullDiv">
       <div className="questNameDiv">
-        <h2 className={`questionName qName${show}`} onClick={setActive}>
+        <h3
+          className={`questionName qName${show} qNameHover${!!link}`}
+          onClick={link ? setActive : null}
+        >
           {name}
-        </h2>
+        </h3>
 
         {done ? <span className="questNameSymbol">&#10004;</span> : null}
       </div>
@@ -44,8 +47,8 @@ const SingleQuestion = ({ q, show, setActive, done }) => {
             </p>
           </div>
 
-          <a href={link} className="questionLink">
-            Link to Leetcode
+          <a href={link} className="questionLink linkText">
+            Explore the Question
           </a>
         </div>
       ) : null}

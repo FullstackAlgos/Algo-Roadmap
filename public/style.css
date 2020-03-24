@@ -270,7 +270,7 @@ h4 {
   margin-right: 10px;
 }
 
-.questionName:hover {
+.qNameHovertrue:hover {
   color: blue;
 }
 
@@ -291,6 +291,10 @@ h4 {
 .questionRate {
   margin: 0px;
   min-width: 150px;
+}
+
+.questionLink {
+  color: blue;
 }
 
 /* ----------------------- CHARTS ----------------------- */

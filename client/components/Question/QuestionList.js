@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getAllQuestions } from "../../store";
+import { getAllQuestions, getAllTags } from "../../store";
 import SingleQuestion from "./SingleQuestion";
 
 class QuestionList extends Component {
@@ -12,7 +12,9 @@ class QuestionList extends Component {
   }
 
   componentDidMount() {
-    this.props.getAllQuestions();
+    const { getAllQuestions, getAllTags } = this.props;
+    getAllQuestions();
+    getAllTags();
   }
 
   setActive = evt => {
@@ -30,22 +32,37 @@ class QuestionList extends Component {
     }, {});
   };
 
+  questionTag = (questions, tag) => {
+    const output = questions.filter(x => x.tags[0].id === tag.id);
+    return output.length ? output : [{ name: "Currently Not Available" }];
+  };
+
   render() {
-    const { questions, userQuestions } = this.props,
+    const { questions, userQuestions, tags } = this.props,
       doneIds = this.doneQuests(userQuestions);
 
     return (
       <div className="probListFullDiv">
-        {questions.length
-          ? questions.map((q, i) => (
-              <SingleQuestion
-                key={i}
-                q={q}
-                done={doneIds[q.id]}
-                show={q.name === this.state.activeQ}
-                setActive={this.setActive}
-              />
-            ))
+        {tags.length
+          ? tags.map((tag, idx) => {
+              const curateQuestions = this.questionTag(questions, tag);
+
+              return (
+                <div key={idx} className="tagFullDiv">
+                  <h2 className="tagHeader">{tag.name}</h2>
+
+                  {curateQuestions.map((q, i) => (
+                    <SingleQuestion
+                      key={i}
+                      q={q}
+                      done={doneIds[q.id]}
+                      show={q.name === this.state.activeQ}
+                      setActive={this.setActive}
+                    />
+                  ))}
+                </div>
+              );
+            })
           : null}
       </div>
     );
@@ -55,13 +72,15 @@ class QuestionList extends Component {
 const mapState = state => {
   return {
     questions: state.questions,
-    userQuestions: state.userQuestions
+    userQuestions: state.userQuestions,
+    tags: state.tags
   };
 };
 
 const mapDispatch = dispatch => {
   return {
-    getAllQuestions: () => dispatch(getAllQuestions())
+    getAllQuestions: () => dispatch(getAllQuestions()),
+    getAllTags: () => dispatch(getAllTags())
   };
 };
 
