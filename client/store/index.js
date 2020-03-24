@@ -119,15 +119,15 @@ export const getAllTags = () => async dispatch => {
   }
 };
 
-export const switchUserActive = () => async dispatch => {
+export const switchUserActive = questionId => async dispatch => {
   try {
     const user = Object.assign({}, store.getState().user);
     if (user.id) {
       await axios.put("/api/users/active", {
         userId: user.id,
-        status: !user.active
+        status: questionId || 0
       });
-      user.active = !user.active;
+      user.active = questionId || 0;
       dispatch(getUser(user));
     }
   } catch (error) {
@@ -135,7 +135,7 @@ export const switchUserActive = () => async dispatch => {
   }
 };
 
-export const addLike = () => async dispatch => {
+export const addLike = status => async dispatch => {
   try {
   } catch (error) {
     console.error("Redux Error -", error);

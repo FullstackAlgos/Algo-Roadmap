@@ -28,9 +28,9 @@ const User = db.define("user", {
     }
   },
   active: {
-    type: Sequelize.BOOLEAN,
+    type: Sequelize.INTEGER,
     allowNull: false,
-    defaultValue: false
+    defaultValue: 0
   },
   salt: {
     type: Sequelize.STRING,

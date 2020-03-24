@@ -21,14 +21,14 @@ class QuestionSurvey extends Component {
     });
   };
 
-  handleNewQuest = evt => {
+  postLike = evt => {
     evt.preventDefault();
 
     // SEND TO BACKEND THE STATUS
   };
 
   render() {
-    console.log("render -", this.state);
+    console.log("render -", this.props, this.state);
 
     return (
       <div className="questPopFullDiv">
@@ -45,7 +45,7 @@ class QuestionSurvey extends Component {
                 className="questBtn gBtn"
                 onClick={this.showSurvey}
               >
-                Finished
+                Finish
               </button>
 
               <button
@@ -59,7 +59,7 @@ class QuestionSurvey extends Component {
           ) : null}
 
           {this.state.survey ? (
-            <form className="questForm" onSubmit={this.handleNewQuest}>
+            <form className="questForm" onSubmit={this.postLike}>
               <div className="questSurveyRadioDiv">
                 <div className="questSurveyPair">
                   <label htmlFor="name" className="questSurveyLabels">
@@ -109,10 +109,14 @@ class QuestionSurvey extends Component {
   }
 }
 
+const mapState = state => {
+  return { user: state.user };
+};
+
 const mapDispatch = dispatch => {
   return {
     switchUserActive: () => dispatch(switchUserActive())
   };
 };
 
-export default connect(null, mapDispatch)(QuestionSurvey);
+export default connect(mapState, mapDispatch)(QuestionSurvey);
