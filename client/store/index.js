@@ -25,7 +25,6 @@ const GET_TAGS = "GET_TAGS";
 export const getUser = user => ({ type: GET_USER, user });
 export const removeUser = () => ({ type: REMOVE_USER });
 export const getTags = tags => ({ type: GET_TAGS, tags });
-export const switchUserActive = () => ({ type: GET_USER });
 export const getQuestions = questions => {
   return {
     type: GET_QUESTIONS,
@@ -82,8 +81,17 @@ export const logout = () => async dispatch => {
   }
 };
 
-export const switchUserActiveThunk = () => async dispatch => {
+export const switchUserActive = () => async dispatch => {
   try {
+    const user = store.getState().user;
+    if (user.id) {
+      await axios.put("/api/users/active", {
+        userId: user.id,
+        status: !user.active
+      });
+      user.active = !user.active;
+      dispatch(getUser(user));
+    }
   } catch (error) {
     console.error("Redux Error -", error);
   }
