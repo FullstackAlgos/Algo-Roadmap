@@ -10,7 +10,8 @@ const initialState = {
   user: {},
   questions: [],
   userQuestions: [],
-  tags: []
+  tags: [],
+  likes: []
 };
 
 // -------------------- ACTION TYPES --------------------

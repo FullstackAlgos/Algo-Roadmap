@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Like } = require("../db/models");
+const { User } = require("../db/models");
 module.exports = router;
 
 router.get("/me", (req, res) => {
@@ -11,8 +11,7 @@ router.post("/login", async (req, res, next) => {
     const { email, password } = req.body;
     // FINDING USER IN DB
     const user = await User.findOne({
-      where: { email: email },
-      include: { model: Like }
+      where: { email: email }
     });
 
     // CHECKING USER EXISTENCE AND CRITERIA
