@@ -253,11 +253,18 @@ h4 {
 .questionFullDiv {
   display: flex;
   flex-direction: column;
-  margin-bottom: 25px;
-  background-color: lightgray;
+  margin-bottom: 10px;
   border-radius: 3px;
   padding: 10px;
   padding-bottom: 20px;
+}
+
+.qFullDivtrue {
+  background-color: paleturquoise;
+}
+
+.qFullDivfalse {
+  background-color: gray;
 }
 
 .questNameDiv {
@@ -270,7 +277,7 @@ h4 {
   margin-right: 10px;
 }
 
-.questionName:hover {
+.qNameHovertrue:hover {
   color: blue;
 }
 
@@ -291,6 +298,22 @@ h4 {
 .questionRate {
   margin: 0px;
   min-width: 150px;
+}
+
+.questionLink {
+  color: blue;
+}
+
+/* ----------------------- TAG ----------------------- */
+.tagFullDiv {
+  background-color: lightgrey;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+.tagHeader {
+  margin-bottom: 5px;
 }
 
 /* ----------------------- CHARTS ----------------------- */
