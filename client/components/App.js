@@ -27,7 +27,7 @@ class App extends Component {
       <div className="fullAppDiv">
         <NavBar />
 
-        <Routes formFlip={this.showFormFlip} />
+        <Routes formFlip={this.showFormFlip} surveyFlip={this.showSurveyFlip} />
 
         {this.state.showForm ? (
           <QuestionForm formFlip={this.showFormFlip} />

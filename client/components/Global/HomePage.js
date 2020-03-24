@@ -4,7 +4,7 @@ import User from "../User/User";
 import Roadmap from "../Roadmap/Roadmap";
 import QuestionList from "../Question/QuestionList";
 
-const HomePage = ({ formFlip }) => {
+const HomePage = ({ formFlip, surveyFlip }) => {
   return (
     <div className="belowNavDiv">
       <User formFlip={formFlip} />
@@ -12,7 +12,7 @@ const HomePage = ({ formFlip }) => {
       <div className="rightContentDiv">
         <Roadmap />
 
-        <QuestionList />
+        <QuestionList surveyFlip={surveyFlip} />
       </div>
     </div>
   );
