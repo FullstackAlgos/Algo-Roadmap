@@ -13,7 +13,7 @@ const SingleQuestion = ({ q, show, setActive, done }) => {
   } = q;
 
   return (
-    <div className="questionFullDiv">
+    <div className={`questionFullDiv qFullDiv${!!link}`}>
       <div className="questNameDiv">
         <h3
           className={`questionName qName${show} qNameHover${!!link}`}
