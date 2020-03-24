@@ -4,8 +4,8 @@ module.exports = router;
 
 router.post("/", async (req, res, next) => {
   try {
-    const { status, userId, questionId } = req.body;
-    await Like.create({ status, userId, questionId });
+    const { userId, questionId, status } = req.body;
+    await Like.create({ userId, questionId, status });
 
     // SEND SOMETHING BACK
   } catch (err) {

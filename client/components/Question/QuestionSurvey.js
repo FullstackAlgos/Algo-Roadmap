@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { switchUserActive } from "../../store";
+import { switchUserActive, addLike } from "../../store";
 
 class QuestionSurvey extends Component {
   constructor() {
@@ -23,13 +23,11 @@ class QuestionSurvey extends Component {
 
   postLike = evt => {
     evt.preventDefault();
-    const { user, switchUserActive } = this.props;
-    console.log("submit -", this.state, user.id, user.activeId);
+    const { user, switchUserActive, addLike } = this.props;
 
+    addLike(user.id, user.activeId, this.state.status);
     this.setState({ survey: false, status: "" });
     switchUserActive();
-
-    // SEND TO BACKEND THE STATUS
   };
 
   render() {
@@ -122,7 +120,8 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    switchUserActive: () => dispatch(switchUserActive())
+    switchUserActive: () => dispatch(switchUserActive()),
+    addLike: (userId, qId, status) => dispatch(addLike(userId, qId, status))
   };
 };
 

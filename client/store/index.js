@@ -137,8 +137,9 @@ export const switchUserActive = (qId, qName) => async dispatch => {
   }
 };
 
-export const addLike = (userId, qId, status) => async dispatch => {
+export const addLike = (userId, questionId, status) => async dispatch => {
   try {
+    await axios.post("/api/likes", { userId, questionId, status });
   } catch (error) {
     console.error("Redux Error -", error);
   }
