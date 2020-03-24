@@ -1,16 +1,26 @@
 import React from "react";
 import { difficultMap } from "../../utils/utilities";
 
-const SingleQuestion = ({ q, show, setActive, done }) => {
+const SingleQuestion = ({ q, show, setActive, done, switchUserActive }) => {
   const {
     name,
     description,
     difficulty,
     link,
-    likes,
-    dislikes,
-    ratedDifficulty
+    ratedDifficulty,
+    tags,
+    likes
   } = q;
+
+  const numLikes = (likesArr, like) => {
+    return likesArr.reduce((a, v) => {
+      if (like) {
+        if (v.status === "like") a++;
+      } else if (v.status === "dislike") a++;
+
+      return a;
+    }, 0);
+  };
 
   return (
     <div className={`questionFullDiv qFullDiv${!!link}`}>
@@ -35,11 +45,11 @@ const SingleQuestion = ({ q, show, setActive, done }) => {
             </p>
 
             <p className="questionRate">
-              Likes: <strong>{Number(likes)}</strong>
+              Likes: <strong>{numLikes(likes, true)}</strong>
             </p>
 
             <p className="questionRate">
-              Dislikes: <strong>{Number(dislikes)}</strong>
+              Dislikes: <strong>{numLikes(likes, false)}</strong>
             </p>
 
             <p className="questionRate">
@@ -47,7 +57,12 @@ const SingleQuestion = ({ q, show, setActive, done }) => {
             </p>
           </div>
 
-          <a href={link} className="questionLink linkText">
+          <a
+            href={link}
+            target="_blank"
+            className="questionLink linkText"
+            onClick={switchUserActive}
+          >
             Explore the Question
           </a>
         </div>

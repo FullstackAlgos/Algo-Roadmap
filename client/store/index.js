@@ -119,6 +119,22 @@ export const getAllTags = () => async dispatch => {
   }
 };
 
+export const switchUserActive = () => async dispatch => {
+  try {
+    const user = Object.assign({}, store.getState().user);
+    if (user.id) {
+      await axios.put("/api/users/active", {
+        userId: user.id,
+        status: !user.active
+      });
+      user.active = !user.active;
+      dispatch(getUser(user));
+    }
+  } catch (error) {
+    console.error("Redux Error -", error);
+  }
+};
+
 // -------------------- REDUCERS --------------------
 const reducer = (state = initialState, action) => {
   switch (action.type) {

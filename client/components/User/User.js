@@ -6,7 +6,7 @@ import AllQuestPie from "../Chart/AllQuestPie";
 class User extends Component {
   componentDidMount() {
     const { getUserQuestThunk, user } = this.props;
-    if (user) getUserQuestThunk(user.id);
+    if (user && user.id) getUserQuestThunk(user.id);
   }
 
   componentDidUpdate(prevProps) {
@@ -15,7 +15,7 @@ class User extends Component {
   }
 
   render() {
-    const { user, questions, userQuestions } = this.props;
+    const { user, questions, userQuestions, formFlip } = this.props;
 
     return (
       <div className="userFullDiv">
@@ -31,7 +31,7 @@ class User extends Component {
             <button
               type="button"
               className="questionAddBtn gBtn"
-              onClick={this.props.formFlip}
+              onClick={formFlip}
             >
               Add Question
             </button>

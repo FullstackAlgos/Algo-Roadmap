@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import NavBar from "./Global/NavBar";
-import QuestionForm from "./User/QuestionForm";
 import Routes from "./Routes";
+import QuestionForm from "./User/QuestionForm";
+import QuestionSurvey from "./Question/QuestionSurvey";
 
 class App extends Component {
   constructor() {
@@ -17,6 +19,8 @@ class App extends Component {
   };
 
   render() {
+    const { user } = this.props;
+
     return (
       <div className="fullAppDiv">
         <NavBar />
@@ -26,9 +30,15 @@ class App extends Component {
         {this.state.showForm ? (
           <QuestionForm formFlip={this.showFormFlip} />
         ) : null}
+
+        {user && user.active ? <QuestionSurvey /> : null}
       </div>
     );
   }
 }
 
-export default App;
+const mapState = state => {
+  return { user: state.user };
+};
+
+export default connect(mapState)(App);

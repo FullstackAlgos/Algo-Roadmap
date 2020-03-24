@@ -27,6 +27,11 @@ const User = db.define("user", {
       return () => this.getDataValue("password");
     }
   },
+  active: {
+    type: Sequelize.BOOLEAN,
+    allowNull: false,
+    defaultValue: false
+  },
   salt: {
     type: Sequelize.STRING,
     get() {

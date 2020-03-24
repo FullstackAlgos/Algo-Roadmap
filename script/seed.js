@@ -4,7 +4,8 @@ const {
   User,
   Tag,
   QuestionTag,
-  UserQuestion
+  UserQuestion,
+  Like
 } = require("../server/db/models");
 
 const userBulk = [
@@ -20,8 +21,6 @@ const questionBulk = [
     difficulty: 1,
     link:
       "https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/",
-    likes: 0,
-    dislikes: 0,
     ratedDifficulty: 1.0
   },
   {
@@ -30,8 +29,6 @@ const questionBulk = [
       "Given an array with n elements, find the element that appears n/2 times or more. It's guaranteed that there will be an element that appears n/2 times or more.",
     difficulty: 1,
     link: "https://leetcode.com/problems/majority-element/",
-    likes: 0,
-    dislikes: 0,
     ratedDifficulty: 1.0
   },
   {
@@ -40,8 +37,6 @@ const questionBulk = [
       "Given two binary trees, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical and the nodes have the same value.",
     difficulty: 1,
     link: "https://leetcode.com/problems/same-tree/",
-    likes: 0,
-    dislikes: 0,
     ratedDifficulty: 1.0
   }
 ];
@@ -85,6 +80,12 @@ const userQuestBulk = [
   { userId: 2, questionId: 3 }
 ];
 
+const likeBulk = [
+  { status: "like", userId: 1, questionId: 1 },
+  { status: "dislike", userId: 1, questionId: 2 },
+  { status: "like", userId: 2, questionId: 3 }
+];
+
 async function seed() {
   await db.sync({ force: true });
 
@@ -93,6 +94,7 @@ async function seed() {
   await Tag.bulkCreate(tagBulk);
   await QuestionTag.bulkCreate(questTagBulk);
   await UserQuestion.bulkCreate(userQuestBulk);
+  await Like.bulkCreate(likeBulk);
 
   console.log(`seeded successfully`);
 }

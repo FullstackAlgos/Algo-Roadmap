@@ -44,6 +44,21 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
+router.put("/active", async (req, res, next) => {
+  try {
+    const { userId, status } = req.body;
+    await User.update(
+      {
+        active: status
+      },
+      { where: { id: userId } }
+    );
+    res.sendStatus(201);
+  } catch (err) {
+    next(err);
+  }
+});
+
 router.post("/logout", async (req, res) => {
   req.logout();
   req.session.destroy();

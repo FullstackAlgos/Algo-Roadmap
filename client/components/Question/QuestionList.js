@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getAllQuestions, getAllTags } from "../../store";
+import { getAllQuestions, getAllTags, switchUserActive } from "../../store";
 import SingleQuestion from "./SingleQuestion";
 
 class QuestionList extends Component {
@@ -38,7 +38,7 @@ class QuestionList extends Component {
   };
 
   render() {
-    const { questions, userQuestions, tags } = this.props,
+    const { questions, userQuestions, tags, switchUserActive } = this.props,
       doneIds = this.doneQuests(userQuestions);
 
     return (
@@ -58,6 +58,7 @@ class QuestionList extends Component {
                       done={doneIds[q.id]}
                       show={q.name === this.state.activeQ}
                       setActive={this.setActive}
+                      switchUserActive={switchUserActive}
                     />
                   ))}
                 </div>
@@ -80,7 +81,8 @@ const mapState = state => {
 const mapDispatch = dispatch => {
   return {
     getAllQuestions: () => dispatch(getAllQuestions()),
-    getAllTags: () => dispatch(getAllTags())
+    getAllTags: () => dispatch(getAllTags()),
+    switchUserActive: () => dispatch(switchUserActive())
   };
 };
 
