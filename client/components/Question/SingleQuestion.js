@@ -1,18 +1,16 @@
 import React from "react";
 import { difficultMap } from "../../utils/utilities";
 
-const SingleQuestion = ({ q, show, setActive, done, switchUserActive }) => {
-  const {
-    name,
-    description,
-    difficulty,
-    link,
-    ratedDifficulty,
-    tags,
-    likes
-  } = q;
+class SingleQuestion extends React.Component{
+  constructor() {
+    super()
+  }
 
-  const numLikes = (likesArr, like) => {
+  componentDidMount() {
+
+  }
+
+  numLikes = (likesArr, like) => {
     return likesArr.reduce((a, v) => {
       if (like) {
         if (v.status === "like") a++;
@@ -22,53 +20,143 @@ const SingleQuestion = ({ q, show, setActive, done, switchUserActive }) => {
     }, 0);
   };
 
-  return (
-    <div className={`questionFullDiv qFullDiv${!!link}`}>
-      <div className="questNameDiv">
-        <h3
-          className={`questionName qName${show} qNameHover${!!link}`}
-          onClick={link ? setActive : null}
-        >
-          {name}
-        </h3>
+  render () {
 
-        {done ? <span className="questNameSymbol">&#10004;</span> : null}
-      </div>
+    const {
+      name,
+      description,
+      difficulty,
+      link,
+      ratedDifficulty,
+      tags,
+      likes
+    } = this.props.q;
 
-      {show ? (
-        <div className="questionContent">
-          <h4 className="questionDesc">{description}</h4>
 
-          <div className="questionRateDiv">
-            <p className="questionRate">
-              Difficult: <strong>{difficultMap[difficulty]}</strong>
-            </p>
+    const show = this.props.show;
+    const setActive = this.props.setActive;
+    const done = this.props.done;
+    const switchUserActive = this.props.switchUserActive;
 
-            <p className="questionRate">
-              Likes: <strong>{numLikes(likes, true)}</strong>
-            </p>
-
-            <p className="questionRate">
-              Dislikes: <strong>{numLikes(likes, false)}</strong>
-            </p>
-
-            <p className="questionRate">
-              Rated Difficulty: <strong>{Number(ratedDifficulty)}</strong>
-            </p>
-          </div>
-
-          <a
-            href={link}
-            target="_blank"
-            className="questionLink linkText"
-            onClick={switchUserActive}
+    return (
+      <div className={`questionFullDiv qFullDiv${!!link}`}>
+        <div className="questNameDiv">
+          <h3
+            className={`questionName qName${show} qNameHover${!!link}`}
+            onClick={link ? setActive : null}
           >
-            Explore the Question
-          </a>
+            {name}
+          </h3>
+
+          {done ? <span className="questNameSymbol">&#10004;</span> : null}
         </div>
-      ) : null}
-    </div>
-  );
-};
+
+        {show ? (
+          <div className="questionContent">
+            <h4 className="questionDesc">{description}</h4>
+
+            <div className="questionRateDiv">
+              <p className="questionRate">
+                Difficult: <strong>{difficultMap[difficulty]}</strong>
+              </p>
+
+              <p className="questionRate">
+                Likes: <strong>{this.numLikes(likes, true)}</strong>
+              </p>
+
+              <p className="questionRate">
+                Dislikes: <strong>{this.numLikes(likes, false)}</strong>
+              </p>
+
+              <p className="questionRate">
+                Rated Difficulty: <strong>{Number(ratedDifficulty)}</strong>
+              </p>
+            </div>
+
+            <a
+              href={link}
+              target="_blank"
+              className="questionLink linkText"
+              onClick={switchUserActive}
+            >
+              Explore the Question
+            </a>
+          </div>
+        ) : null}
+      </div>
+    );
+  }
+
+}
+
+// const SingleQuestion = ({ q, show, setActive, done, switchUserActive }) => {
+//   const {
+//     name,
+//     description,
+//     difficulty,
+//     link,
+//     ratedDifficulty,
+//     tags,
+//     likes
+//   } = q;
+
+//   const numLikes = (likesArr, like) => {
+//     return likesArr.reduce((a, v) => {
+//       if (like) {
+//         if (v.status === "like") a++;
+//       } else if (v.status === "dislike") a++;
+
+//       return a;
+//     }, 0);
+//   };
+
+//   return (
+//     <div className={`questionFullDiv qFullDiv${!!link}`}>
+//       <div className="questNameDiv">
+//         <h3
+//           className={`questionName qName${show} qNameHover${!!link}`}
+//           onClick={link ? setActive : null}
+//         >
+//           {name}
+//         </h3>
+
+//         {done ? <span className="questNameSymbol">&#10004;</span> : null}
+//       </div>
+
+//       {show ? (
+//         <div className="questionContent">
+//           <h4 className="questionDesc">{description}</h4>
+
+//           <div className="questionRateDiv">
+//             <p className="questionRate">
+//               Difficult: <strong>{difficultMap[difficulty]}</strong>
+//             </p>
+
+//             <p className="questionRate">
+//               Likes: <strong>{numLikes(likes, true)}</strong>
+//             </p>
+
+//             <p className="questionRate">
+//               Dislikes: <strong>{numLikes(likes, false)}</strong>
+//             </p>
+
+//             <p className="questionRate">
+//               Rated Difficulty: <strong>{Number(ratedDifficulty)}</strong>
+//             </p>
+//           </div>
+
+//           <a
+//             href={link}
+//             target="_blank"
+//             className="questionLink linkText"
+//             onClick={switchUserActive}
+//           >
+//             Explore the Question
+//           </a>
+//         </div>
+//       ) : null}
+//     </div>
+//   );
+// };
 
 export default SingleQuestion;
