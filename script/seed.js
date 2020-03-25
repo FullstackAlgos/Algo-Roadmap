@@ -74,16 +74,16 @@ const questTagBulk = [
   { questionId: 3, tagId: 6 }
 ];
 
-const userQuestBulk = [
-  { userId: 1, questionId: 1 },
-  { userId: 1, questionId: 2 },
-  { userId: 2, questionId: 3 }
-];
-
 const likeBulk = [
   { status: "like", userId: 1, questionId: 1 },
   { status: "dislike", userId: 1, questionId: 2 },
   { status: "like", userId: 2, questionId: 3 }
+];
+
+const userQuestBulk = [
+  { userId: 1, questionId: 1 },
+  { userId: 1, questionId: 2 },
+  { userId: 2, questionId: 3 }
 ];
 
 async function seed() {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getAllQuestions, getAllTags, switchUserActive } from "../../store";
+import { getAllQuestions, getAllTags, getUserLikes } from "../../store";
 import SingleQuestion from "./SingleQuestion";
 
 class QuestionList extends Component {
@@ -12,9 +12,15 @@ class QuestionList extends Component {
   }
 
   componentDidMount() {
-    const { getAllQuestions, getAllTags } = this.props;
+    const { getAllQuestions, getAllTags, user, getUserLikes } = this.props;
     getAllQuestions();
     getAllTags();
+    if (user && user.id) getUserLikes(user.id);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { user, getUserLikes } = this.props;
+    if (user && user.id !== prevProps.user.id) getUserLikes(user.id);
   }
 
   setActive = evt => {
@@ -38,7 +44,7 @@ class QuestionList extends Component {
   };
 
   render() {
-    const { questions, userQuestions, tags, switchUserActive } = this.props,
+    const { questions, userQuestions, tags } = this.props,
       doneIds = this.doneQuests(userQuestions);
 
     return (
@@ -58,7 +64,6 @@ class QuestionList extends Component {
                       done={doneIds[q.id]}
                       show={q.name === this.state.activeQ}
                       setActive={this.setActive}
-                      switchUserActive={switchUserActive}
                     />
                   ))}
                 </div>
@@ -72,6 +77,7 @@ class QuestionList extends Component {
 
 const mapState = state => {
   return {
+    user: state.user,
     questions: state.questions,
     userQuestions: state.userQuestions,
     tags: state.tags
@@ -82,7 +88,7 @@ const mapDispatch = dispatch => {
   return {
     getAllQuestions: () => dispatch(getAllQuestions()),
     getAllTags: () => dispatch(getAllTags()),
-    switchUserActive: () => dispatch(switchUserActive())
+    getUserLikes: userId => dispatch(getUserLikes(userId))
   };
 };
 

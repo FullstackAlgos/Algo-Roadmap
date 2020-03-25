@@ -10,7 +10,9 @@ router.post("/login", async (req, res, next) => {
   try {
     const { email, password } = req.body;
     // FINDING USER IN DB
-    const user = await User.findOne({ where: { email: email } });
+    const user = await User.findOne({
+      where: { email: email }
+    });
 
     // CHECKING USER EXISTENCE AND CRITERIA
     if (!user) {
@@ -46,10 +48,11 @@ router.post("/signup", async (req, res, next) => {
 
 router.put("/active", async (req, res, next) => {
   try {
-    const { userId, status } = req.body;
+    const { userId, activeId, activeName } = req.body;
     await User.update(
       {
-        active: status
+        activeId,
+        activeName
       },
       { where: { id: userId } }
     );

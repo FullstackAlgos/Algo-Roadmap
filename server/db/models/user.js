@@ -27,10 +27,13 @@ const User = db.define("user", {
       return () => this.getDataValue("password");
     }
   },
-  active: {
-    type: Sequelize.BOOLEAN,
+  activeId: {
+    type: Sequelize.INTEGER,
     allowNull: false,
-    defaultValue: false
+    defaultValue: 0
+  },
+  activeName: {
+    type: Sequelize.STRING
   },
   salt: {
     type: Sequelize.STRING,

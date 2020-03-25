@@ -11,7 +11,7 @@ class User extends Component {
 
   componentDidUpdate(prevProps) {
     const { getUserQuestThunk, user } = this.props;
-    if (user && user.id !== prevProps.user.id) getUserQuestThunk(user.id);
+    if (user.id && user.id !== prevProps.user.id) getUserQuestThunk(user.id);
   }
 
   render() {

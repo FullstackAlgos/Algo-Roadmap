@@ -31,7 +31,7 @@ class App extends Component {
           <QuestionForm formFlip={this.showFormFlip} />
         ) : null}
 
-        {user && user.active ? <QuestionSurvey /> : null}
+        {user && user.activeId ? <QuestionSurvey /> : null}
       </div>
     );
   }
