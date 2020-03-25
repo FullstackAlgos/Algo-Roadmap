@@ -4,10 +4,6 @@ import { switchUserActive } from "../../store";
 import { difficultMap } from "../../utils/utilities";
 
 class SingleQuestion extends Component {
-  constructor() {
-    super();
-  }
-
   numLikes = (likesArr, like) => {
     return likesArr.reduce((a, v) => {
       if (like) {
@@ -18,9 +14,21 @@ class SingleQuestion extends Component {
     }, 0);
   };
 
+  likedQuest = (user, likes, status) => {
+    if (!user.id || !likes) return false;
+
+    for (const q of likes) {
+      if (q.userId === user.id && q.status === status) return true;
+    }
+
+    return false;
+  };
+
   render() {
-    const { show, setActive, done, switchUserActive, q } = this.props,
-      { name, description, difficulty, link, ratedDifficulty, tags, likes } = q;
+    const { show, setActive, done, switchUserActive, q, user } = this.props,
+      { name, description, difficulty, link, ratedDifficulty, likes } = q,
+      liked = this.likedQuest(user, likes, "like"),
+      disliked = this.likedQuest(user, likes, "dislike");
 
     return (
       <div className={`questionFullDiv qFullDiv${!!link}`}>
@@ -44,11 +52,11 @@ class SingleQuestion extends Component {
                 Difficult: <strong>{difficultMap[difficulty]}</strong>
               </p>
 
-              <p className="questionRate">
+              <p className={`questionRate qRate${liked}`}>
                 Likes: <strong>{this.numLikes(likes, true)}</strong>
               </p>
 
-              <p className="questionRate">
+              <p className={`questionRate qRate${disliked}`}>
                 Dislikes: <strong>{this.numLikes(likes, false)}</strong>
               </p>
 
@@ -72,10 +80,14 @@ class SingleQuestion extends Component {
   }
 }
 
+const mapState = state => {
+  return { user: state.user };
+};
+
 const mapDispatch = dispatch => {
   return {
     switchUserActive: (qId, qName) => dispatch(switchUserActive(qId, qName))
   };
 };
 
-export default connect(null, mapDispatch)(SingleQuestion);
+export default connect(mapState, mapDispatch)(SingleQuestion);
