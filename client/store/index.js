@@ -146,6 +146,7 @@ export const switchUserActive = (qId, qName) => async dispatch => {
       user.activeId = qId || 0;
       user.activeName = qName || "";
       dispatch(getUser(user));
+      window.scrollTo(0, 0);
     }
   } catch (error) {
     console.error("Redux Error -", error);
