@@ -8,8 +8,6 @@ class SingleQuestion extends Component {
     super();
   }
 
-  componentDidMount() {}
-
   numLikes = (likesArr, like) => {
     return likesArr.reduce((a, v) => {
       if (like) {
