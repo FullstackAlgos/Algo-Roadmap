@@ -1,18 +1,16 @@
-import React from "react";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { switchUserActive } from "../../store";
 import { difficultMap } from "../../utils/utilities";
 
-const SingleQuestion = ({ q, show, setActive, done, switchUserActive }) => {
-  const {
-    name,
-    description,
-    difficulty,
-    link,
-    ratedDifficulty,
-    tags,
-    likes
-  } = q;
+class SingleQuestion extends Component {
+  constructor() {
+    super();
+  }
 
-  const numLikes = (likesArr, like) => {
+  componentDidMount() {}
+
+  numLikes = (likesArr, like) => {
     return likesArr.reduce((a, v) => {
       if (like) {
         if (v.status === "like") a++;
@@ -22,53 +20,64 @@ const SingleQuestion = ({ q, show, setActive, done, switchUserActive }) => {
     }, 0);
   };
 
-  return (
-    <div className={`questionFullDiv qFullDiv${!!link}`}>
-      <div className="questNameDiv">
-        <h3
-          className={`questionName qName${show} qNameHover${!!link}`}
-          onClick={link ? setActive : null}
-        >
-          {name}
-        </h3>
+  render() {
+    const { show, setActive, done, switchUserActive, q } = this.props,
+      { name, description, difficulty, link, ratedDifficulty, tags, likes } = q;
 
-        {done ? <span className="questNameSymbol">&#10004;</span> : null}
-      </div>
-
-      {show ? (
-        <div className="questionContent">
-          <h4 className="questionDesc">{description}</h4>
-
-          <div className="questionRateDiv">
-            <p className="questionRate">
-              Difficult: <strong>{difficultMap[difficulty]}</strong>
-            </p>
-
-            <p className="questionRate">
-              Likes: <strong>{numLikes(likes, true)}</strong>
-            </p>
-
-            <p className="questionRate">
-              Dislikes: <strong>{numLikes(likes, false)}</strong>
-            </p>
-
-            <p className="questionRate">
-              Rated Difficulty: <strong>{Number(ratedDifficulty)}</strong>
-            </p>
-          </div>
-
-          <a
-            href={link}
-            target="_blank"
-            className="questionLink linkText"
-            onClick={() => switchUserActive(q.id, name)}
+    return (
+      <div className={`questionFullDiv qFullDiv${!!link}`}>
+        <div className="questNameDiv">
+          <h3
+            className={`questionName qName${show} qNameHover${!!link}`}
+            onClick={link ? setActive : null}
           >
-            Explore the Question
-          </a>
+            {name}
+          </h3>
+
+          {done ? <span className="questNameSymbol">&#10004;</span> : null}
         </div>
-      ) : null}
-    </div>
-  );
+
+        {show ? (
+          <div className="questionContent">
+            <h4 className="questionDesc">{description}</h4>
+
+            <div className="questionRateDiv">
+              <p className="questionRate">
+                Difficult: <strong>{difficultMap[difficulty]}</strong>
+              </p>
+
+              <p className="questionRate">
+                Likes: <strong>{this.numLikes(likes, true)}</strong>
+              </p>
+
+              <p className="questionRate">
+                Dislikes: <strong>{this.numLikes(likes, false)}</strong>
+              </p>
+
+              <p className="questionRate">
+                Rated Difficulty: <strong>{Number(ratedDifficulty)}</strong>
+              </p>
+            </div>
+
+            <a
+              href={link}
+              target="_blank"
+              className="questionLink linkText"
+              onClick={() => switchUserActive(q.id, name)}
+            >
+              Explore the Question
+            </a>
+          </div>
+        ) : null}
+      </div>
+    );
+  }
+}
+
+const mapDispatch = dispatch => {
+  return {
+    switchUserActive: (qId, qName) => dispatch(switchUserActive(qId, qName))
+  };
 };
 
-export default SingleQuestion;
+export default connect(null, mapDispatch)(SingleQuestion);
