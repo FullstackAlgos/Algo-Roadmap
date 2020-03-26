@@ -18,6 +18,10 @@ h4 {
   margin: 0;
 }
 
+p {
+  margin: 0;
+}
+
 .linkText {
   text-decoration: none;
   color: black;
@@ -385,6 +389,21 @@ h4 {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 15px;
+}
+
+.adminQuestRow1 {
+  display: flex;
+}
+
+.adminQuestForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  background-color: lightskyblue;
+}
+
+.adminQuestFormDiv {
+  display: flex;
 }
 
 /* ----------------------- CHARTS ----------------------- */
