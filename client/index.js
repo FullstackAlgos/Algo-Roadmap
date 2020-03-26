@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
+import "./utils/style.css";
 import App from "./components/App";
 import history from "./utils/history";
 import { Provider } from "react-redux";

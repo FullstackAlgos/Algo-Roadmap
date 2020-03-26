@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import { NavLink, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { getAllQuestions, getAllTags } from "../../store";
+
+import AdminRoutes from "./AdminRoutes";
 import AdminQuestion from "./AdminQuestion";
 
 class AdminPanel extends Component {
@@ -11,17 +14,24 @@ class AdminPanel extends Component {
   }
 
   render() {
-    const { questions } = this.props;
+    const { questions, match } = this.props;
+    console.log("match -", match);
 
     return (
       <div className="adminPanelFullDiv">
-        <div className="adminPanelSideBar"></div>
-
-        <div className="adminRoutesDiv">
-          {questions.length
-            ? questions.map((q, i) => <AdminQuestion key={i} q={q} />)
-            : null}
+        <div className="adminPanelSideBar">
+          <NavLink to="/Admin/Questions">Questions 1</NavLink>
+          {/* <NavLink to={`${match.url}/Questions`}>Questions</NavLink>
+          <Route path={`${mathc.url}/Questions`} component={AdminQuestion} /> */}
         </div>
+
+        {/* <div className="adminRoutesDiv"> */}
+        {/* <AdminRoutes /> */}
+
+        {/* {questions.length
+            ? questions.map((q, i) => <AdminQuestion key={i} q={q} />)
+            : null} */}
+        {/* </div> */}
       </div>
     );
   }

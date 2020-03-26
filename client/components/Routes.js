@@ -6,6 +6,7 @@ import { me } from "../store";
 import { Login, Signup } from "./Global/AuthForm";
 import HomePage from "./Global/HomePage";
 import AdminPanel from "./Admin/AdminPanel";
+import AdminQuestion from "./Admin/AdminQuestion";
 
 class Routes extends Component {
   componentDidMount() {
@@ -34,7 +35,20 @@ class Routes extends Component {
           )}
         />
 
-        <Route exact path="/Admin" component={AdminPanel} />
+        {/* <Route path="/Admin" component={AdminPanel} /> */}
+        <Route
+          path="/Admin"
+          render={({ match: { url } }) => (
+            <>
+              <Route path={`${url}/`} component={AdminPanel} />
+              <Route
+                exact
+                path={`${url}/Questions`}
+                component={AdminQuestion}
+              />
+            </>
+          )}
+        />
       </Switch>
     );
   }
