@@ -7,6 +7,7 @@ import { Login, Signup } from "./Global/AuthForm";
 import HomePage from "./Global/HomePage";
 import AdminSidebar from "./Admin/AdminSidebar";
 import AdminQuestPanel from "./Admin/AdminQuestPanel";
+import AdminTagPanel from "./Admin/AdminTagPanel";
 
 class Routes extends Component {
   componentDidMount() {
@@ -45,6 +46,7 @@ class Routes extends Component {
                 path={`${url}/Questions`}
                 component={AdminQuestPanel}
               />
+              <Route exact path={`${url}/Tags`} component={AdminTagPanel} />
             </>
           )}
         />
