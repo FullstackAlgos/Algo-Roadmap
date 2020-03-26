@@ -7,12 +7,17 @@ class AdminQuestion extends Component {
     this.state = {
       showEdit: false,
       name: "",
-      description: ""
+      description: "",
+      tag: ""
     };
   }
 
   showEdit = () => {
     this.setState({ showEdit: !this.state.showEdit });
+  };
+
+  deleteQuestion = () => {
+    console.log("DELETE!");
   };
 
   handleChange = evt => {
@@ -21,13 +26,29 @@ class AdminQuestion extends Component {
     });
   };
 
+  handleSubmit = evt => {
+    evt.preventDefault();
+    const { q } = this.props,
+      { name, description, tag } = this.state,
+      submitObj = {};
+
+    submitObj.name = name.length ? name : q.name;
+    submitObj.description = description.length ? description : q.description;
+    submitObj.tag = tag.length ? tag : q.tags[0].name;
+
+    console.log("submit -", submitObj);
+    this.setState({ showEdit: false, name: "", description: "", tag: "" });
+  };
+
   render() {
     const { q } = this.props;
 
     return (
       <div className="adminQuestionDiv">
         <div className="adminQuestRow1">
-          <h3 className="adminQuestName">{q.name}</h3>
+          <h3 className="adminQuestName">
+            {q.name}&nbsp;&nbsp;&nbsp;({q.tags[0].name})
+          </h3>
 
           <button
             type="button"
@@ -36,14 +57,22 @@ class AdminQuestion extends Component {
           >
             {this.state.showEdit ? "Stop Editting" : "Edit Question"}
           </button>
+
+          <button
+            type="button"
+            onClick={this.deleteQuestion}
+            className="adminQuestBtn gBtn"
+          >
+            Delete Question
+          </button>
         </div>
 
         <p className="adminQuestDesc">{q.description}</p>
 
         {this.state.showEdit ? (
-          <form className="adminQuestForm">
+          <form className="adminQuestForm" onSubmit={this.handleSubmit}>
             <div className="adminQuestFormDiv">
-              <label htmlFor="name" className="questLabels">
+              <label htmlFor="name" className="adminQuestLabel">
                 New Name:
               </label>
 
@@ -57,7 +86,7 @@ class AdminQuestion extends Component {
             </div>
 
             <div className="adminQuestFormDiv">
-              <label htmlFor="description" className="questLabels">
+              <label htmlFor="description" className="adminQuestLabel">
                 New Description:
               </label>
 
@@ -69,6 +98,24 @@ class AdminQuestion extends Component {
                 className="adminQuestTextArea"
               />
             </div>
+
+            <div className="adminQuestFormDiv">
+              <label htmlFor="tag" className="adminQuestLabel">
+                New Tag:
+              </label>
+
+              <textarea
+                type="text"
+                name="tag"
+                value={this.state.tag}
+                onChange={this.handleChange}
+                className="adminQuestTextArea"
+              />
+            </div>
+
+            <button type="submit" className="adminQuestFormBtn gBtn">
+              Post New Info
+            </button>
           </form>
         ) : null}
       </div>

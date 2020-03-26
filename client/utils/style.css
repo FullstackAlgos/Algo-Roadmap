@@ -409,7 +409,10 @@ p {
 .adminQuestForm {
   display: flex;
   flex-direction: column;
-  background-color: lightskyblue;
+  background-color: lightgreen;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
   margin-top: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -418,11 +421,28 @@ p {
 .adminQuestFormDiv {
   display: flex;
   margin-bottom: 5px;
+  align-items: center;
+}
+
+.adminQuestLabel {
+  font-size: 18px;
+  font-weight: bold;
+  width: 175px;
 }
 
 .adminQuestTextArea {
   border-radius: 3px;
+  font-size: 15px;
+  height: 20px;
+}
+
+.adminQuestFormBtn {
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  border-radius: 5px;
   height: 25px;
+  width: 150px;
 }
 
 /* ----------------------- CHARTS ----------------------- */
