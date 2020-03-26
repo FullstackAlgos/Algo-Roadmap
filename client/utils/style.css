@@ -369,10 +369,22 @@ h4 {
   min-height: 100vh;
 }
 
+.sideBarLink {
+  margin-bottom: 10px;
+}
+
 .adminContentDiv {
   background-color: beige;
   width: 100vw;
   padding: 15px;
+}
+
+/* ----------------------- ADMIN QUESTION ----------------------- */
+.adminQuestionDiv {
+  background-color: lightgray;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
 }
 
 /* ----------------------- CHARTS ----------------------- */

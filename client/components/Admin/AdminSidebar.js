@@ -15,7 +15,7 @@ class AdminSidebar extends Component {
       <div className="adminPanelSideBar">
         <NavLink
           to="/Admin/Questions"
-          className="linkText navBarLink"
+          className="linkText sideBarLink"
           activeClassName="selectedNavLink"
         >
           Questions
@@ -23,7 +23,7 @@ class AdminSidebar extends Component {
 
         <NavLink
           to="/Admin/Tags"
-          className="linkText navBarLink"
+          className="linkText sideBarLink"
           activeClassName="selectedNavLink"
         >
           Tags

@@ -6,7 +6,7 @@ import { me } from "../store";
 import { Login, Signup } from "./Global/AuthForm";
 import HomePage from "./Global/HomePage";
 import AdminSidebar from "./Admin/AdminSidebar";
-import AdminQuestion from "./Admin/AdminQuestion";
+import AdminQuestPanel from "./Admin/AdminQuestPanel";
 
 class Routes extends Component {
   componentDidMount() {
@@ -43,7 +43,7 @@ class Routes extends Component {
               <Route
                 exact
                 path={`${url}/Questions`}
-                component={AdminQuestion}
+                component={AdminQuestPanel}
               />
             </>
           )}

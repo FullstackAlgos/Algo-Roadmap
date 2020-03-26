@@ -31,7 +31,7 @@ class NavBar extends Component {
             <>
               {user.isAdmin ? (
                 <NavLink
-                  to="/Admin"
+                  to="/Admin/Questions"
                   className="linkText navBarLink"
                   activeClassName="selectedNavLink"
                 >
