@@ -9,7 +9,8 @@ const {
 } = require("../server/db/models");
 
 const userBulk = [
-  { email: "steve@a.com", name: "Steve", password: "123" },
+  { email: "james@a.com", name: "James", isAdmin: true, password: "123" },
+  { email: "jasen@a.com", name: "Jasen", isAdmin: true, password: "123" },
   { email: "peter@a.com", name: "Peter", password: "123" }
 ];
 
@@ -37,6 +38,14 @@ const questionBulk = [
       "Given two binary trees, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical and the nodes have the same value.",
     difficulty: 1,
     link: "https://leetcode.com/problems/same-tree/",
+    ratedDifficulty: 1.0
+  },
+  {
+    name: "Two Sum",
+    description:
+      "Given an array of integers and a target number, return the indices of two elements in the array that sum up to the target number. This problem is one of, if not the most, commonly asked.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/two-sum/",
     ratedDifficulty: 1.0
   }
 ];
@@ -71,19 +80,22 @@ const tagBulk = [
 const questTagBulk = [
   { questionId: 1, tagId: 5 },
   { questionId: 2, tagId: 1 },
-  { questionId: 3, tagId: 6 }
+  { questionId: 3, tagId: 6 },
+  { questionId: 4, tagId: 2 }
 ];
 
 const likeBulk = [
   { status: "like", userId: 1, questionId: 1 },
   { status: "dislike", userId: 1, questionId: 2 },
-  { status: "like", userId: 2, questionId: 3 }
+  { status: "like", userId: 2, questionId: 3 },
+  { status: "like", userId: 3, questionId: 4 }
 ];
 
 const userQuestBulk = [
   { userId: 1, questionId: 1 },
   { userId: 1, questionId: 2 },
-  { userId: 2, questionId: 3 }
+  { userId: 2, questionId: 3 },
+  { userId: 3, questionId: 4 }
 ];
 
 async function seed() {
