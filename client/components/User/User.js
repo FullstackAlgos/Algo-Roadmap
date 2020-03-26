@@ -33,7 +33,7 @@ class User extends Component {
               className="questionAddBtn gBtn"
               onClick={formFlip}
             >
-              Add Question
+              Suggest New Question
             </button>
           </>
         ) : (
