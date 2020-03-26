@@ -25,13 +25,15 @@ class App extends Component {
       <div className="fullAppDiv">
         <NavBar />
 
-        <Routes formFlip={this.showFormFlip} />
-
         {this.state.showForm ? (
           <QuestionForm formFlip={this.showFormFlip} />
         ) : null}
 
         {user && user.activeId ? <QuestionSurvey /> : null}
+
+        <div className="belowNavDiv">
+          <Routes formFlip={this.showFormFlip} />
+        </div>
       </div>
     );
   }

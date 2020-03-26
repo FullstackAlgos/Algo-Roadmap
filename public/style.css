@@ -360,6 +360,12 @@ h4 {
   width: 30px;
 }
 
+/* ----------------------- ADMIN PANEL ----------------------- */
+.adminPanelFullDiv {
+  background-color: beige;
+  width: 100%;
+}
+
 /* ----------------------- CHARTS ----------------------- */
 .allQuestPieDiv {
   background-color: lightgray;
