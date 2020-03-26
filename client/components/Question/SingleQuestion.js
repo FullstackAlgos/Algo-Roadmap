@@ -49,6 +49,10 @@ class SingleQuestion extends Component {
 
             <div className="questionRateDiv">
               <p className="questionRate">
+                Completed: <strong>{done ? "Yes" : "No"}</strong>
+              </p>
+
+              <p className="questionRate">
                 Difficult: <strong>{difficultMap[difficulty]}</strong>
               </p>
 

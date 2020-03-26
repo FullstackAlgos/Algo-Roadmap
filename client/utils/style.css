@@ -436,6 +436,12 @@ p {
   height: 20px;
 }
 
+.adminQuestSelect {
+  display: flex;
+  font-size: 15px;
+  height: 22px;
+}
+
 .adminQuestFormBtn {
   font-size: 15px;
   font-weight: bold;

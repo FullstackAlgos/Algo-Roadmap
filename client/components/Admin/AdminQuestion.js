@@ -17,7 +17,7 @@ class AdminQuestion extends Component {
   };
 
   deleteQuestion = () => {
-    console.log("DELETE!");
+    console.log("DELETE!"); // DUMMY FUNCTION
   };
 
   handleChange = evt => {
@@ -36,12 +36,12 @@ class AdminQuestion extends Component {
     submitObj.description = description.length ? description : q.description;
     submitObj.tag = tag.length ? tag : q.tags[0].name;
 
-    console.log("submit -", submitObj);
+    console.log("submit -", submitObj); // DUMMY FUNCTION
     this.setState({ showEdit: false, name: "", description: "", tag: "" });
   };
 
   render() {
-    const { q } = this.props;
+    const { q, tags } = this.props;
 
     return (
       <div className="adminQuestionDiv">
@@ -104,13 +104,16 @@ class AdminQuestion extends Component {
                 New Tag:
               </label>
 
-              <textarea
-                type="text"
+              <select
                 name="tag"
                 value={this.state.tag}
                 onChange={this.handleChange}
-                className="adminQuestTextArea"
-              />
+                className="adminQuestSelect"
+              >
+                {tags.length
+                  ? tags.map((t, i) => <option key={i}>{t.name}</option>)
+                  : null}
+              </select>
             </div>
 
             <button type="submit" className="adminQuestFormBtn gBtn">
@@ -123,4 +126,10 @@ class AdminQuestion extends Component {
   }
 }
 
-export default connect()(AdminQuestion);
+const mapState = state => {
+  return {
+    tags: state.tags
+  };
+};
+
+export default connect(mapState)(AdminQuestion);
