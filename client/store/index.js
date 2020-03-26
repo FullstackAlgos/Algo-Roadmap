@@ -197,7 +197,13 @@ export const newLike = (userId, qId, status, update) => async dispatch => {
 
 export const deleteQuestion = questionId => async dispatch => {
   try {
-    console.log("redux -", questionId);
+    await axios.delete(`/api/questions/${questionId}`);
+
+    const questions = [...store.getState().questions].filter(
+      q => q.id !== questionId
+    );
+
+    dispatch(getQuestions(questions));
   } catch (error) {
     console.error("Redux Error -", error);
   }
@@ -205,7 +211,8 @@ export const deleteQuestion = questionId => async dispatch => {
 
 export const updateQuestion = questionObj => async dispatch => {
   try {
-    await axios.put(`/api/questions/${questionObj.id}`, questionObj);
+    await axios.put("/api/questions", questionObj);
+
     const questions = [...store.getState().questions],
       tags = [...store.getState().tags];
 

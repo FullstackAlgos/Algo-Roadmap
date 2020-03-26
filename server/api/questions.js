@@ -55,7 +55,7 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.put("/:questionId", async (req, res, next) => {
+router.put("/", async (req, res, next) => {
   try {
     const { id, name, description, tagId } = req.body;
     await Question.update(
@@ -66,7 +66,7 @@ router.put("/:questionId", async (req, res, next) => {
       },
       { where: { id } }
     );
-    res.sendStatus(201);
+    res.sendStatus(205);
   } catch (err) {
     next(err);
   }
@@ -74,13 +74,13 @@ router.put("/:questionId", async (req, res, next) => {
 
 router.delete("/:questionId", async (req, res, next) => {
   try {
-    const question = await Question.findByPk(req.params.questionId);
+    // const question = await Question.findByPk(req.params.questionId);
 
-    if (!question) throw "Question id not found";
+    // if (!question) throw "Question id not found";
 
-    await question.destroy();
+    await Question.destroy({ where: { id: req.params.questionId } });
 
-    res.status(204).send();
+    res.sendStatus(204);
   } catch (err) {
     next(err);
   }
