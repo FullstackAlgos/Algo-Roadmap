@@ -205,10 +205,12 @@ export const updateQuestion = questionObj => async dispatch => {
       if (q.id === questionObj.id) {
         questions[i].name = questionObj.name;
         questions[i].description = questionObj.description;
-        questions[i].tagId = questionObj.tag;
-        questions[i].tag = tags.filter(t => t.id === questionObj.tag)[0];
+        questions[i].tagId = questionObj.tagId;
+        questions[i].tag = tags.filter(t => t.id === questionObj.tagId)[0];
       }
     });
+
+    console.log("quest -", questions);
 
     dispatch(getQuestions(questions));
   } catch (error) {

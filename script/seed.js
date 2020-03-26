@@ -3,7 +3,6 @@ const {
   Question,
   User,
   Tag,
-  // QuestionTag,
   UserQuestion,
   Like
 } = require("../server/db/models");
@@ -81,13 +80,6 @@ const tagBulk = [
   }
 ];
 
-// const questTagBulk = [
-//   { questionId: 1, tagId: 5 },
-//   { questionId: 2, tagId: 1 },
-//   { questionId: 3, tagId: 6 },
-//   { questionId: 4, tagId: 2 }
-// ];
-
 const likeBulk = [
   { status: "like", userId: 1, questionId: 1 },
   { status: "dislike", userId: 1, questionId: 2 },
@@ -108,7 +100,6 @@ async function seed() {
   await User.bulkCreate(userBulk);
   await Tag.bulkCreate(tagBulk);
   await Question.bulkCreate(questionBulk);
-  // await QuestionTag.bulkCreate(questTagBulk);
   await UserQuestion.bulkCreate(userQuestBulk);
   await Like.bulkCreate(likeBulk);
 

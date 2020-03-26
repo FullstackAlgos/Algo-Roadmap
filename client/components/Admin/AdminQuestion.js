@@ -29,17 +29,18 @@ class AdminQuestion extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    const { q, updateQuestion } = this.props,
+    const { q, updateQuestion, tags } = this.props,
       { name, description, tag } = this.state,
       submitObj = { id: q.id };
 
     if (name.length || description.length || tag.length) {
       submitObj.name = name.length ? name : q.name;
       submitObj.description = description.length ? description : q.description;
-      submitObj.tag = tag.length ? tag : q.tag.name;
+      submitObj.tagId = tag.length
+        ? tags.filter(t => t.name === tag)[0].id
+        : q.tag.id;
 
       updateQuestion(submitObj);
-      console.log("submit -", submitObj); // DUMMY FUNCTION
     }
 
     this.setState({ showEdit: false, name: "", description: "", tag: "" });

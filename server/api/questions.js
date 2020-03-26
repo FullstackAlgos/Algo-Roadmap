@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Question, Tag, QuestionTag, Like } = require("../db/models");
+const { Question, Tag, Like } = require("../db/models");
 module.exports = router;
 
 router.get("/", async (req, res, next) => {
@@ -47,8 +47,6 @@ router.post("/", async (req, res, next) => {
           name: tagName
         });
       }
-
-      await QuestionTag.create({ questionId: question.id, tagId: tag.id });
     });
 
     res.json(question);
@@ -60,7 +58,6 @@ router.post("/", async (req, res, next) => {
 router.put("/:questionId", async (req, res, next) => {
   try {
     const { id, name, description, tagId } = req.body;
-    console.log("inside -", req.body);
     await Question.update(
       {
         name,
@@ -70,13 +67,6 @@ router.put("/:questionId", async (req, res, next) => {
       { where: { id } }
     );
     res.sendStatus(201);
-    // const question = await Question.findByPk(req.params.questionId);
-
-    // if (!question) throw "Question id not found";
-
-    // if (req.body.id) delete req.body.id;
-    // await question.update(req.body);
-    // res.json(question);
   } catch (err) {
     next(err);
   }
