@@ -3,7 +3,7 @@ const Tag = require("./Tag");
 const User = require("./user");
 const QuestionTag = require("./QuestionTag");
 const UserQuestion = require("./userQuestion");
-const Like = require("./Like");
+const Like = require("./like");
 
 Question.belongsToMany(Tag, { through: QuestionTag });
 Tag.belongsToMany(Question, { through: QuestionTag });
