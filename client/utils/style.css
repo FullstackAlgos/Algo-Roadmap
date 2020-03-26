@@ -360,14 +360,19 @@ h4 {
 }
 
 /* ----------------------- ADMIN PANEL ----------------------- */
-.adminPanelFullDiv {
-  display: flex;
-}
-
 .adminPanelSideBar {
+  display: flex;
+  flex-direction: column;
   background-color: lightgray;
+  padding: 15px;
   width: 250px;
   min-height: 100vh;
+}
+
+.adminContentDiv {
+  background-color: beige;
+  width: 100vw;
+  padding: 15px;
 }
 
 /* ----------------------- CHARTS ----------------------- */

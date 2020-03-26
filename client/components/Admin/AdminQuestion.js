@@ -3,14 +3,15 @@ import { connect } from "react-redux";
 
 class AdminQuestion extends Component {
   render() {
-    const { questions, match } = this.props;
-    console.log("quest -", match);
+    const { questions } = this.props;
 
     return (
-      <div className="adminQuestFullDiv">
-        {questions.length
-          ? questions.map((q, i) => <h3 key={i}>{q.name}</h3>)
-          : null}
+      <div className="adminContentDiv">
+        <div className="adminQuestFullDiv">
+          {questions.length
+            ? questions.map((q, i) => <h3 key={i}>{q.name}</h3>)
+            : null}
+        </div>
       </div>
     );
   }

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { getAllQuestions, getAllTags } from "../../store";
 
-class AdminPanel extends Component {
+class AdminSidebar extends Component {
   componentDidMount() {
     const { getAllQuestions, getAllTags } = this.props;
     getAllQuestions();
@@ -13,7 +13,21 @@ class AdminPanel extends Component {
   render() {
     return (
       <div className="adminPanelSideBar">
-        <NavLink to="/Admin/Questions">Questions</NavLink>
+        <NavLink
+          to="/Admin/Questions"
+          className="linkText navBarLink"
+          activeClassName="selectedNavLink"
+        >
+          Questions
+        </NavLink>
+
+        <NavLink
+          to="/Admin/Tags"
+          className="linkText navBarLink"
+          activeClassName="selectedNavLink"
+        >
+          Tags
+        </NavLink>
       </div>
     );
   }
@@ -26,4 +40,4 @@ const mapDispatch = dispatch => {
   };
 };
 
-export default connect(null, mapDispatch)(AdminPanel);
+export default connect(null, mapDispatch)(AdminSidebar);

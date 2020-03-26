@@ -34,7 +34,6 @@ class NavBar extends Component {
                   to="/Admin"
                   className="linkText navBarLink"
                   activeClassName="selectedNavLink"
-                  exact
                 >
                   Admin Panel
                 </NavLink>
