@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Question } = require("../db/models");
+const { User, Question, UserQuestion } = require("../db/models");
 module.exports = router;
 
 router.get("/:userId", async (req, res, next) => {
@@ -19,6 +19,11 @@ router.get("/:userId", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
+    const { userId, questionId } = req.body;
+
+    await UserQuestion.create({ userId, questionId });
+
+    res.sendStatus(201);
   } catch (err) {
     next(err);
   }

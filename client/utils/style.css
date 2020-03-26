@@ -246,7 +246,8 @@ p {
 .questBtnDiv {
   display: flex;
   justify-content: space-evenly;
-  width: 80%;
+  width: 95%;
+  color: black;
 }
 
 .questBtn {
@@ -339,6 +340,10 @@ p {
   width: 300px;
   height: 330px;
   margin-top: 30px;
+}
+
+.questSurveyText {
+  margin: 15px 0;
 }
 
 .questSurveyRadioDiv {
