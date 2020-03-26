@@ -15,12 +15,12 @@ class QuestionList extends Component {
     const { getAllQuestions, getAllTags, user, getUserLikes } = this.props;
     getAllQuestions();
     getAllTags();
-    if (user && user.id) getUserLikes(user.id);
+    if (user.id) getUserLikes(user.id);
   }
 
   componentDidUpdate(prevProps) {
     const { user, getUserLikes } = this.props;
-    if (user && user.id !== prevProps.user.id) getUserLikes(user.id);
+    if (user.id && user.id !== prevProps.user.id) getUserLikes(user.id);
   }
 
   setActive = evt => {

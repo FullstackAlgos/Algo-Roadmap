@@ -9,7 +9,7 @@ class NavBar extends Component {
   };
 
   render() {
-    const userId = this.props.user.id;
+    const { user } = this.props;
 
     return (
       <div className="navBarDiv">
@@ -27,14 +27,26 @@ class NavBar extends Component {
             Home Page
           </NavLink>
 
-          {userId ? (
-            <a
-              href="#"
-              onClick={this.loggingOut}
-              className="linkText navBarLink"
-            >
-              Logout
-            </a>
+          {user.id ? (
+            <>
+              {user.isAdmin ? (
+                <NavLink
+                  to="/Admin/Questions"
+                  className="linkText navBarLink"
+                  activeClassName="selectedNavLink"
+                >
+                  Admin Panel
+                </NavLink>
+              ) : null}
+
+              <a
+                href="#"
+                onClick={this.loggingOut}
+                className="linkText navBarLink"
+              >
+                Logout
+              </a>
+            </>
           ) : (
             <>
               <NavLink

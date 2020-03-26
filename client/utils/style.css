@@ -1,6 +1,9 @@
 /* ----------------------- GLOBAL ELEMENTS ----------------------- */
 body {
   margin: 0;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h2 {
@@ -12,6 +15,10 @@ h3 {
 }
 
 h4 {
+  margin: 0;
+}
+
+p {
   margin: 0;
 }
 
@@ -38,7 +45,6 @@ h4 {
 
 .belowNavDiv {
   display: flex;
-  justify-content: space-between;
 }
 
 .rightContentDiv {
@@ -355,6 +361,94 @@ h4 {
 .surveyRadio {
   height: 30px;
   width: 30px;
+}
+
+/* ----------------------- ADMIN PANEL ----------------------- */
+.adminPanelSideBar {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+  padding: 15px;
+  width: 250px;
+  min-height: 100vh;
+}
+
+.sideBarLink {
+  margin-bottom: 10px;
+}
+
+.adminContentDiv {
+  background-color: beige;
+  width: 100vw;
+  padding: 15px;
+}
+
+/* ----------------------- ADMIN QUESTION ----------------------- */
+.adminQuestionDiv {
+  background-color: lightgray;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.adminQuestRow1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.adminQuestBtn {
+  margin-left: 15px;
+  border-radius: 5px;
+  height: 25px;
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.adminQuestForm {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgreen;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.adminQuestFormDiv {
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.adminQuestLabel {
+  font-size: 18px;
+  font-weight: bold;
+  width: 175px;
+}
+
+.adminQuestTextArea {
+  border-radius: 3px;
+  font-size: 15px;
+  height: 20px;
+}
+
+.adminQuestSelect {
+  display: flex;
+  font-size: 15px;
+  height: 22px;
+}
+
+.adminQuestFormBtn {
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  border-radius: 5px;
+  height: 25px;
+  width: 150px;
 }
 
 /* ----------------------- CHARTS ----------------------- */

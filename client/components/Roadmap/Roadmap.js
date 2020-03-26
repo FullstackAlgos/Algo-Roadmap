@@ -31,15 +31,15 @@ class Roadmap extends Component {
   componentDidMount() {}
 
   componentDidUpdate() {
-    // if(this.props.selectedQs.length && this.state.activeQ === "--") {
-    // 	this.setState({activeQ: this.state.selectedQs[0].name});
-    // }
-    if (this.state.activeQ === "--" && this.props.userQuestions.length) {
+    const { questions, userQuestions } = this.props;
+    if (
+      this.state.activeQ === "--" &&
+      questions.length &&
+      userQuestions.length
+    ) {
+      const input = this.formatQualifyingQs(questions, userQuestions);
       this.setState({
-        activeQ: this.formatQualifyingQs(
-          this.props.questions,
-          this.props.userQuestions
-        )[0].name
+        activeQ: input[0].name
       });
     }
   }

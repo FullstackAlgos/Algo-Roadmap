@@ -27,6 +27,10 @@ const User = db.define("user", {
       return () => this.getDataValue("password");
     }
   },
+  isAdmin: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  },
   activeId: {
     type: Sequelize.INTEGER,
     allowNull: false,

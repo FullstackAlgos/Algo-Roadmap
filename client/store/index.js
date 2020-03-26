@@ -195,6 +195,24 @@ export const newLike = (userId, qId, status, update) => async dispatch => {
   }
 };
 
+export const updateQuestion = questionObj => async dispatch => {
+  try {
+    await axios.put(`/api/questions/${questionObj.id}`, questionObj);
+    const questions = [...store.getState().questions];
+    questions.forEach((q, i) => {
+      if (q.id === questionObj.id) {
+        questions[i].name = questionObj.name;
+        questions[i].description = questionObj.description;
+        questions[i].tag = questionObj.tag;
+      }
+    });
+
+    dispatch(getQuestions(questions));
+  } catch (error) {
+    console.error("Redux Error -", error);
+  }
+};
+
 // -------------------- REDUCERS --------------------
 const reducer = (state = initialState, action) => {
   switch (action.type) {

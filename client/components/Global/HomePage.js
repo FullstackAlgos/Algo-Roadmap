@@ -6,7 +6,7 @@ import QuestionList from "../Question/QuestionList";
 
 const HomePage = ({ formFlip }) => {
   return (
-    <div className="belowNavDiv">
+    <>
       <User formFlip={formFlip} />
 
       <div className="rightContentDiv">
@@ -14,7 +14,7 @@ const HomePage = ({ formFlip }) => {
 
         <QuestionList />
       </div>
-    </div>
+    </>
   );
 };
 

@@ -7,6 +7,7 @@ const Like = require("./like");
 
 Question.belongsToMany(Tag, { through: QuestionTag });
 Tag.belongsToMany(Question, { through: QuestionTag });
+// Tag.hasMany(Question);
 
 User.belongsToMany(Question, { through: UserQuestion });
 Question.belongsToMany(User, { through: UserQuestion });
