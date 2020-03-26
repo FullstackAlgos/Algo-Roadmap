@@ -398,8 +398,9 @@ p {
 .adminQuestForm {
   display: flex;
   flex-direction: column;
-  margin-top: 5px;
   background-color: lightskyblue;
+  margin-top: 10px;
+  padding: 10px;
 }
 
 .adminQuestFormDiv {

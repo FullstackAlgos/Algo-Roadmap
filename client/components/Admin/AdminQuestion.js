@@ -12,7 +12,7 @@ class AdminQuestion extends Component {
   }
 
   showEdit = () => {
-    this.setState({ showEdit: true });
+    this.setState({ showEdit: !this.state.showEdit });
   };
 
   handleChange = evt => {
@@ -30,7 +30,7 @@ class AdminQuestion extends Component {
           <h3 className="adminQuestName">{q.name}</h3>
 
           <button type="button" onClick={this.showEdit}>
-            Edit
+            {this.state.showEdit ? "Finished Editting" : "Edit Question"}
           </button>
         </div>
 
