@@ -1,10 +1,25 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import AdminQuestion from "./AdminQuestion";
 
 class AdminPanel extends Component {
   render() {
-    return <div>Hello</div>;
+    return (
+      <div className="adminPanelFullDiv">
+        {questions.length
+          ? questions.map((q, i) => <AdminQuestion key={i} q={q} />)
+          : null}
+      </div>
+    );
   }
 }
 
-export default connect()(AdminPanel);
+const mapState = state => {
+  return {
+    user: state.user,
+    questions: state.questions,
+    tags: state.tags
+  };
+};
+
+export default connect(mapState)(AdminPanel);
