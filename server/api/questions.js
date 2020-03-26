@@ -74,10 +74,6 @@ router.put("/", async (req, res, next) => {
 
 router.delete("/:questionId", async (req, res, next) => {
   try {
-    // const question = await Question.findByPk(req.params.questionId);
-
-    // if (!question) throw "Question id not found";
-
     await Question.destroy({ where: { id: req.params.questionId } });
 
     res.sendStatus(204);
