@@ -203,14 +203,16 @@ export const updateQuestion = questionObj => async dispatch => {
 
     questions.forEach((q, i) => {
       if (q.id === questionObj.id) {
-        questions[i].name = questionObj.name;
-        questions[i].description = questionObj.description;
-        questions[i].tagId = questionObj.tagId;
-        questions[i].tag = tags.filter(t => t.id === questionObj.tagId)[0];
+        const newQuestObj = Object.assign({}, q);
+
+        newQuestObj.name = questionObj.name;
+        newQuestObj.description = questionObj.description;
+        newQuestObj.tagId = questionObj.tagId;
+        newQuestObj.tag = tags.filter(t => t.id === questionObj.tagId)[0];
+
+        questions[i] = newQuestObj;
       }
     });
-
-    console.log("quest -", questions);
 
     dispatch(getQuestions(questions));
   } catch (error) {
