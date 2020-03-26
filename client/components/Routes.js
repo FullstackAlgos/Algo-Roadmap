@@ -5,6 +5,7 @@ import { me } from "../store";
 
 import { Login, Signup } from "./Global/AuthForm";
 import HomePage from "./Global/HomePage";
+import AdminPanel from "./Admin/AdminPanel";
 
 class Routes extends Component {
   componentDidMount() {
@@ -23,6 +24,7 @@ class Routes extends Component {
         />
 
         <Route
+          exact
           path="/SignIn"
           render={() => (
             <div className="signInFullDiv">
@@ -31,6 +33,8 @@ class Routes extends Component {
             </div>
           )}
         />
+
+        <Route exact path="/Admin" component={AdminPanel} />
       </Switch>
     );
   }
