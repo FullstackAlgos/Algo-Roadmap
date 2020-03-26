@@ -198,12 +198,15 @@ export const newLike = (userId, qId, status, update) => async dispatch => {
 export const updateQuestion = questionObj => async dispatch => {
   try {
     await axios.put(`/api/questions/${questionObj.id}`, questionObj);
-    const questions = [...store.getState().questions];
+    const questions = [...store.getState().questions],
+      tags = [...store.getState().tags];
+
     questions.forEach((q, i) => {
       if (q.id === questionObj.id) {
         questions[i].name = questionObj.name;
         questions[i].description = questionObj.description;
-        questions[i].tag = questionObj.tag;
+        questions[i].tagId = questionObj.tag;
+        questions[i].tag = tags.filter(t => t.id === questionObj.tag)[0];
       }
     });
 

@@ -19,10 +19,10 @@ class Roadmap extends Component {
     const output = questions.filter(q => !doneQs.has(q.id));
 
     output.sort((a, b) => {
-      if (a.tags[0].ranking === b.tags[0].ranking) {
+      if (a.tag.ranking === b.tag.ranking) {
         return a.ratedDifficulty - b.ratedDifficulty;
       }
-      return a.tags[0].ranking - b.tags[0].ranking;
+      return a.tag.ranking - b.tag.ranking;
     });
 
     return output.slice(0, 3);

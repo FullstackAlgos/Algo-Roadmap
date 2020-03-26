@@ -111,7 +111,7 @@ class QuestionSurvey extends Component {
                   className="questBtn gBtn"
                   onClick={switchUserActive}
                 >
-                  Close
+                  Later
                 </button>
               </div>
             </form>

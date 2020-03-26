@@ -59,13 +59,24 @@ router.post("/", async (req, res, next) => {
 
 router.put("/:questionId", async (req, res, next) => {
   try {
-    const question = await Question.findByPk(req.params.questionId);
+    const { id, name, description, tagId } = req.body;
+    console.log("inside -", req.body);
+    await Question.update(
+      {
+        name,
+        description,
+        tagId
+      },
+      { where: { id } }
+    );
+    res.sendStatus(201);
+    // const question = await Question.findByPk(req.params.questionId);
 
-    if (!question) throw "Question id not found";
+    // if (!question) throw "Question id not found";
 
-    if (req.body.id) delete req.body.id;
-    await question.update(req.body);
-    res.json(question);
+    // if (req.body.id) delete req.body.id;
+    // await question.update(req.body);
+    // res.json(question);
   } catch (err) {
     next(err);
   }
