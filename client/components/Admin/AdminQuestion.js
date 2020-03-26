@@ -44,27 +44,29 @@ class AdminQuestion extends Component {
           <form className="adminQuestForm">
             <div className="adminQuestFormDiv">
               <label htmlFor="name" className="questLabels">
-                Question Name:
+                New Name:
               </label>
-              <input
+
+              <textarea
                 type="text"
                 name="name"
                 value={this.state.name}
                 onChange={this.handleChange}
-                className="inputBox"
+                className="adminQuestTextArea"
               />
             </div>
 
             <div className="adminQuestFormDiv">
               <label htmlFor="description" className="questLabels">
-                Description:
+                New Description:
               </label>
-              <input
+
+              <textarea
                 type="text"
                 name="description"
                 value={this.state.description}
                 onChange={this.handleChange}
-                className="inputBox"
+                className="adminQuestTextArea"
               />
             </div>
           </form>
