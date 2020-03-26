@@ -393,6 +393,17 @@ p {
 
 .adminQuestRow1 {
   display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.adminQuestBtn {
+  margin-left: 15px;
+  border-radius: 5px;
+  height: 25px;
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .adminQuestForm {

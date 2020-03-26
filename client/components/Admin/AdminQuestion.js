@@ -29,8 +29,12 @@ class AdminQuestion extends Component {
         <div className="adminQuestRow1">
           <h3 className="adminQuestName">{q.name}</h3>
 
-          <button type="button" onClick={this.showEdit}>
-            {this.state.showEdit ? "Finished Editting" : "Edit Question"}
+          <button
+            type="button"
+            onClick={this.showEdit}
+            className="adminQuestBtn gBtn"
+          >
+            {this.state.showEdit ? "Stop Editting" : "Edit Question"}
           </button>
         </div>
 
