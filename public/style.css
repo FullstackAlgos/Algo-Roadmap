@@ -362,8 +362,15 @@ h4 {
 
 /* ----------------------- ADMIN PANEL ----------------------- */
 .adminPanelFullDiv {
+  display: flex;
   background-color: beige;
   width: 100%;
+}
+
+.adminPanelSideBar {
+  background-color: lightgray;
+  width: 250px;
+  min-height: 100vh;
 }
 
 /* ----------------------- CHARTS ----------------------- */

@@ -15,9 +15,13 @@ class AdminPanel extends Component {
 
     return (
       <div className="adminPanelFullDiv">
-        {questions.length
-          ? questions.map((q, i) => <AdminQuestion key={i} q={q} />)
-          : null}
+        <div className="adminPanelSideBar"></div>
+
+        <div className="adminRoutesDiv">
+          {questions.length
+            ? questions.map((q, i) => <AdminQuestion key={i} q={q} />)
+            : null}
+        </div>
       </div>
     );
   }
