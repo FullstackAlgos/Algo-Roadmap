@@ -30,13 +30,16 @@ class AdminQuestion extends Component {
     evt.preventDefault();
     const { q } = this.props,
       { name, description, tag } = this.state,
-      submitObj = {};
+      submitObj = { id: q.id };
 
-    submitObj.name = name.length ? name : q.name;
-    submitObj.description = description.length ? description : q.description;
-    submitObj.tag = tag.length ? tag : q.tags[0].name;
+    if (name.length || description.length || tag.length) {
+      submitObj.name = name.length ? name : q.name;
+      submitObj.description = description.length ? description : q.description;
+      submitObj.tag = tag.length ? tag : q.tags[0].name;
 
-    console.log("submit -", submitObj); // DUMMY FUNCTION
+      console.log("submit -", submitObj); // DUMMY FUNCTION
+    }
+
     this.setState({ showEdit: false, name: "", description: "", tag: "" });
   };
 

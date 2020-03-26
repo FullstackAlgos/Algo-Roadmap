@@ -23,6 +23,7 @@ const questionBulk = [
     link:
       "https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/",
     ratedDifficulty: 1.0
+    // tagId: 5
   },
   {
     name: "Find The Majority Element",
@@ -31,6 +32,7 @@ const questionBulk = [
     difficulty: 1,
     link: "https://leetcode.com/problems/majority-element/",
     ratedDifficulty: 1.0
+    // tagId: 1
   },
   {
     name: "Same Tree",
@@ -39,6 +41,7 @@ const questionBulk = [
     difficulty: 1,
     link: "https://leetcode.com/problems/same-tree/",
     ratedDifficulty: 1.0
+    // tagId: 6
   },
   {
     name: "Two Sum",
@@ -47,6 +50,7 @@ const questionBulk = [
     difficulty: 1,
     link: "https://leetcode.com/problems/two-sum/",
     ratedDifficulty: 1.0
+    // tagId: 2
   }
 ];
 
