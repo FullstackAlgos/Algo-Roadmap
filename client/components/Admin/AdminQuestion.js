@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { updateQuestion } from "../../store";
+import { updateQuestion, deleteQuestion } from "../../store";
 
 class AdminQuestion extends Component {
   constructor() {
@@ -17,8 +17,9 @@ class AdminQuestion extends Component {
     this.setState({ showEdit: !this.state.showEdit });
   };
 
-  deleteQuestion = () => {
-    console.log("DELETE!"); // DUMMY FUNCTION
+  deleteQuest = () => {
+    const { q, deleteQuestion } = this.props;
+    deleteQuestion(q.id);
   };
 
   handleChange = evt => {
@@ -66,7 +67,7 @@ class AdminQuestion extends Component {
 
           <button
             type="button"
-            onClick={this.deleteQuestion}
+            onClick={this.deleteQuest}
             className="adminQuestBtn gBtn"
           >
             Delete Question
@@ -140,7 +141,8 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    updateQuestion: qObj => dispatch(updateQuestion(qObj))
+    updateQuestion: qObj => dispatch(updateQuestion(qObj)),
+    deleteQuestion: qId => dispatch(deleteQuestion(qId))
   };
 };
 
