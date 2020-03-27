@@ -316,7 +316,7 @@ p {
 
 .questionRate {
   margin: 0px;
-  min-width: 150px;
+  margin-right: 35px;
 }
 
 .qRatetrue {
@@ -456,6 +456,7 @@ p {
   display: flex;
   font-size: 15px;
   height: 22px;
+  min-width: 50px;
 }
 
 .adminQuestFormBtn {

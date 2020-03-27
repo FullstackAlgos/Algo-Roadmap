@@ -37,9 +37,10 @@ class AdminQuestion extends Component {
     if (name.length || description.length || tag.length) {
       submitObj.name = name.length ? name : q.name;
       submitObj.description = description.length ? description : q.description;
-      submitObj.tagId = tag.length
-        ? tags.filter(t => t.name === tag)[0].id
-        : q.tag.id;
+      submitObj.tagId =
+        tag.length && tag !== "--"
+          ? tags.filter(t => t.name === tag)[0].id
+          : q.tag.id;
 
       updateQuestion(submitObj);
     }
@@ -117,6 +118,7 @@ class AdminQuestion extends Component {
                 onChange={this.handleChange}
                 className="adminQuestSelect"
               >
+                <option>--</option>
                 {tags.length
                   ? tags.map((t, i) => <option key={i}>{t.name}</option>)
                   : null}
