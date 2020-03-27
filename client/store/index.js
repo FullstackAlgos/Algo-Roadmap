@@ -11,7 +11,8 @@ const initialState = {
   questions: [],
   userQuestions: [],
   tags: [],
-  likes: []
+  likes: [],
+  proposeQuestions: []
 };
 
 // -------------------- ACTION TYPES --------------------

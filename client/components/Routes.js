@@ -6,6 +6,7 @@ import { me } from "../store";
 import { Login, Signup } from "./Global/AuthForm";
 import HomePage from "./Global/HomePage";
 import AdminSidebar from "./Admin/AdminSidebar";
+import AdminPropPanel from "./Admin/AdminPropPanel";
 import AdminQuestPanel from "./Admin/AdminQuestPanel";
 import AdminTagPanel from "./Admin/AdminTagPanel";
 
@@ -41,6 +42,11 @@ class Routes extends Component {
           render={({ match: { url } }) => (
             <>
               <Route path={`${url}/`} component={AdminSidebar} />
+              <Route
+                exact
+                path={`${url}/ProposedQuestions`}
+                component={AdminPropPanel}
+              />
               <Route
                 exact
                 path={`${url}/Questions`}
