@@ -4,6 +4,7 @@ const db = require("../db");
 const Question = db.define("question", {
   name: {
     type: Sequelize.STRING,
+    unique: true,
     allowNull: false
   },
   description: {
@@ -16,7 +17,8 @@ const Question = db.define("question", {
     max: 5
   },
   link: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    unique: true
   },
   ratedDifficulty: {
     type: Sequelize.FLOAT,

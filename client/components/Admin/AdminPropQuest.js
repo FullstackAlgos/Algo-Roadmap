@@ -22,14 +22,13 @@ class AdminPropQuest extends Component {
   };
 
   render() {
-    const { q } = this.props;
-    console.log("propose -", q);
+    const { name, tag, difficulty, description, user } = this.props.q;
 
     return (
       <div className="adminPropQDiv">
         <div className="adminQuestRow1">
           <h3 className="adminPropQName">
-            {q.name}&nbsp;&nbsp;&nbsp;({q.tag.name})
+            {name}&nbsp;&nbsp;&nbsp;({tag.name})
           </h3>
 
           <button
@@ -57,7 +56,9 @@ class AdminPropQuest extends Component {
           </button>
         </div>
 
-        <p className="adminPropQDesc">{q.description}</p>
+        <p className="adminPropQText">Proposed By: {user.name}</p>
+        <p className="adminPropQText">Difficulty: {difficulty}</p>
+        <p className="adminPropQText">Description: {description}</p>
       </div>
     );
   }
