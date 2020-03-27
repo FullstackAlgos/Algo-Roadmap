@@ -99,7 +99,11 @@ export const adminChange = (userId, update) => async dispatch => {
 
     const users = [...store.getState().users];
     users.forEach((u, i) => {
-      if (u.id === userId) users[i].isAdmin = update;
+      if (u.id === userId) {
+        const userObj = { ...u };
+        userObj.isAdmin = update;
+        users[i] = userObj;
+      }
     });
     dispatch(getAllUsers(users));
   } catch (error) {

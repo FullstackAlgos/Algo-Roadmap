@@ -85,7 +85,6 @@ router.put("/admin", async (req, res, next) => {
 
 router.delete("/:userId", async (req, res, next) => {
   try {
-    console.log("inside -", req.params.userId);
     await User.destroy({ where: { id: req.params.userId } });
 
     res.sendStatus(204);
