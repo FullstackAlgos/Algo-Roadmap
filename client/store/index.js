@@ -113,7 +113,7 @@ export const getAllQuestions = () => async dispatch => {
 export const getAllPropQuests = () => async dispatch => {
   try {
     const { data: allPropQuests } = await axios.get("/api/proposeQuestions");
-    dispatch(getQuestions(allPropQuests));
+    dispatch(getPropQuests(allPropQuests));
   } catch (error) {
     console.log("Redux Error -", error);
   }

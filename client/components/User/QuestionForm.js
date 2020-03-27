@@ -23,11 +23,18 @@ class QuestionForm extends Component {
 
   handleNewQuest = evt => {
     evt.preventDefault();
-    const { formFlip, proposeQuest, tags } = this.props,
+    const { formFlip, proposeQuest, tags, user } = this.props,
       { name, description, difficulty, link, tag } = this.state,
       tagId = tags.filter(t => t.name === tag)[0].id;
 
-    proposeQuest({ name, description, difficulty, link, tagId });
+    proposeQuest({
+      userId: user.id,
+      name,
+      description,
+      difficulty,
+      link,
+      tagId
+    });
     formFlip();
   };
 
@@ -119,6 +126,7 @@ class QuestionForm extends Component {
 
 const mapState = state => {
   return {
+    user: state.user,
     tags: state.tags
   };
 };

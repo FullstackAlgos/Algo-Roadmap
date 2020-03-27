@@ -13,8 +13,9 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
-    const { name, description, difficulty, link, tagId } = req.body;
+    const { userId, name, description, difficulty, link, tagId } = req.body;
     await ProposeQuestion.create({
+      userId,
       name,
       description,
       difficulty,

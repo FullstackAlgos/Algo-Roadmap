@@ -17,7 +17,6 @@ class Roadmap extends Component {
     userQs.forEach(q => doneQs.add(q.id));
 
     const output = questions.filter(q => !doneQs.has(q.id));
-    console.log("output -", output);
 
     output.sort((a, b) => {
       if (a.tag.ranking === b.tag.ranking) {
