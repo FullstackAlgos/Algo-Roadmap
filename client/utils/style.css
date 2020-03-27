@@ -332,6 +332,26 @@ p {
   color: blue;
 }
 
+.difficulty1 {
+  color: #00a725;
+}
+
+.difficulty2 {
+  color: #a6de00;
+}
+
+.difficulty3 {
+  color: #dece00;
+}
+
+.difficulty4 {
+  color: #ff8300;
+}
+
+.difficulty5 {
+  color: #de0000;
+}
+
 /* ----------------------- TAG ----------------------- */
 .tagFullDiv {
   background-color: lightgrey;

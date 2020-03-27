@@ -28,6 +28,14 @@ class Roadmap extends Component {
     return output.slice(0, 3);
   };
 
+  getTopics = questions => {
+  	const topics = new Set();
+
+  	questions.forEach(q => topics.add(q.tag.name));
+
+  	return [...topics];
+  }
+
   componentDidMount() {}
 
   componentDidUpdate() {
@@ -58,9 +66,20 @@ class Roadmap extends Component {
       this.props.userQuestions
     );
 
+    const topics = this.getTopics(orderedQs);
+
     return (
       <div className="roadmapFullDiv">
-        <h3>Roadmap Time</h3>
+        <h3>Your next topics: <span> </span>
+        {topics.length === 0 ? <span>None. You're done with every topic!</span> : 
+        	topics.map((t,i) => (
+        		<span key={i}>
+        			{i === topics.length -1 ? t : `${t}, `}
+        		</span>
+        		)
+        	)
+    	}
+        </h3>
         {orderedQs
           ? orderedQs.map((q, i) => (
               <SingleQuestion

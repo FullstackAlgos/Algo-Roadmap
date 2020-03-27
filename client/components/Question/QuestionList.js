@@ -57,7 +57,9 @@ class QuestionList extends Component {
                 <div key={idx} className="tagFullDiv">
                   <h2 className="tagHeader">{tag.name}</h2>
 
-                  {curateQuestions.map((q, i) => (
+                  {curateQuestions
+                    .sort((a,b) => a.difficulty - b.difficulty)
+                    .map((q, i) => (
                     <SingleQuestion
                       key={i}
                       q={q}
