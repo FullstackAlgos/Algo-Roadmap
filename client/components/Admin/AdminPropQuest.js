@@ -53,8 +53,8 @@ class AdminPropQuest extends Component {
       { name, tag, difficulty, description, user } = q;
 
     return (
-      <div className="adminPropQDiv">
-        <div className="adminQuestRow1">
+      <div className="adminSingleDiv">
+        <div className="adminPropQRow">
           <h3 className="adminPropQName">
             {name}&nbsp;&nbsp;&nbsp;({tag.name})
           </h3>
@@ -84,9 +84,18 @@ class AdminPropQuest extends Component {
           </button>
         </div>
 
-        <p className="adminPropQText">Proposed By: {user.name}</p>
-        <p className="adminPropQText">Difficulty: {difficulty}</p>
-        <p className="adminPropQText">Description: {description}</p>
+        <p className="adminPropQText">
+          <u>Description</u>: {description}
+        </p>
+
+        <div className="adminPropQRow">
+          <p className="adminPropQText">
+            <u>Proposed By</u>: {user.name}
+          </p>
+          <p className="adminPropQText">
+            <u>Difficulty</u>: {difficulty}
+          </p>
+        </div>
 
         {this.state.showEdit ? (
           <form className="adminQuestForm">

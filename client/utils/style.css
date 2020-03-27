@@ -400,14 +400,14 @@ p {
   padding: 15px;
 }
 
-/* ----------------------- ADMIN QUESTION ----------------------- */
-.adminQuestionDiv {
+.adminSingleDiv {
   background-color: lightgray;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 15px;
 }
 
+/* ----------------------- ADMIN QUESTION ----------------------- */
 .adminQuestRow1 {
   display: flex;
   align-items: center;
@@ -471,25 +471,17 @@ p {
 }
 
 /* ----------------------- ADMIN PROPOSE QUESTION ----------------------- */
-.adminPropQDiv {
-  background-color: lightgray;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 15px;
+.adminPropQRow {
+  display: flex;
+  align-items: center;
 }
 
 .adminPropQText {
   margin-top: 10px;
+  margin-right: 25px;
 }
 
 /* ----------------------- ADMIN USER ----------------------- */
-.adminUserDiv {
-  background-color: lightgray;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 15px;
-}
-
 .adminUserRow {
   display: flex;
   align-items: center;
@@ -497,7 +489,7 @@ p {
 
 .adminUserText {
   margin-top: 10px;
-  margin-right: 20px;
+  margin-right: 25px;
 }
 
 /* ----------------------- CHARTS ----------------------- */

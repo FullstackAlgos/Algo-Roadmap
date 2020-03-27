@@ -6,7 +6,7 @@ class AdminTag extends Component {
     const { t } = this.props;
 
     return (
-      <div className="adminTagDiv">
+      <div className="adminSingleDiv">
         <h3 className="adminTagName">{t.name}</h3>
       </div>
     );
