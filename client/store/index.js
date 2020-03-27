@@ -181,6 +181,17 @@ export const getAllTags = () => async dispatch => {
 
 export const changeTag = (tagId, tagName) => async dispatch => {
   try {
+    await axios.put(`/api/tags/${tagId}`, tagName);
+
+    const tags = [...store.getState().tags];
+    tags.forEach((t, i) => {
+      if (t.id === tagId) {
+        const newTag = { ...t };
+        newTag.name = tagName;
+        tags[i] = newTag;
+      }
+    });
+    dispatch(getTags(tags));
   } catch (error) {
     console.log("Redux Error -", error);
   }
