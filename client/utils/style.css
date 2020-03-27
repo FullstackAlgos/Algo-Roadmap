@@ -526,7 +526,7 @@ p {
 
 .adminTagForm {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   background-color: lightgreen;
   border-style: solid;
   border-width: 1px;
@@ -534,6 +534,21 @@ p {
   margin: 15px 0;
   padding: 10px;
   border-radius: 5px;
+}
+
+.adminTagFormDiv {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.adminTagBtn {
+  border-radius: 5px;
+  width: 175px;
+  height: 25px;
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .adminTagQuest {

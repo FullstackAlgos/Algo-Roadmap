@@ -20,6 +20,12 @@ class AdminTag extends Component {
     });
   };
 
+  handleSubmit = evt => {
+    evt.preventDefault();
+    console.log("SUBMIT", this.state);
+    this.setState({ showEdit: false, name: "" });
+  };
+
   render() {
     const { t, q } = this.props;
 
@@ -40,18 +46,24 @@ class AdminTag extends Component {
         </div>
 
         {this.state.showEdit ? (
-          <form className="adminTagForm">
-            <label htmlFor="name" className="adminQuestLabel">
-              Edit Name:
-            </label>
+          <form className="adminTagForm" onSubmit={this.handleSubmit}>
+            <div className="adminTagFormDiv">
+              <label htmlFor="name" className="adminQuestLabel">
+                Edit Name:
+              </label>
 
-            <textarea
-              type="text"
-              name="name"
-              value={this.state.name}
-              onChange={this.handleChange}
-              className="adminQuestTextArea"
-            />
+              <textarea
+                type="text"
+                name="name"
+                value={this.state.name}
+                onChange={this.handleChange}
+                className="adminQuestTextArea"
+              />
+            </div>
+
+            <button type="submit" className="adminTagBtn gBtn">
+              Submit Tag Name
+            </button>
           </form>
         ) : null}
 

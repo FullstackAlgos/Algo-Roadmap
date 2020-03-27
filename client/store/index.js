@@ -179,6 +179,13 @@ export const getAllTags = () => async dispatch => {
   }
 };
 
+export const changeTag = (tagId, tagName) => async dispatch => {
+  try {
+  } catch (error) {
+    console.log("Redux Error -", error);
+  }
+};
+
 export const getUserLikes = userId => async dispatch => {
   try {
     const { data: likes } = await axios.get(`/api/likes/${userId}`);
