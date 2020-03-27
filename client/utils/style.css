@@ -464,6 +464,15 @@ p {
   border-radius: 5px;
   height: 25px;
   width: 150px;
+  margin-top: 10px;
+}
+
+/* ----------------------- ADMIN PROPOSE QUESTION ----------------------- */
+.adminPropQDiv {
+  background-color: lightgray;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
 }
 
 /* ----------------------- CHARTS ----------------------- */

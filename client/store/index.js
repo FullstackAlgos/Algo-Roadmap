@@ -275,22 +275,27 @@ export const updateQuestion = questionObj => async dispatch => {
 // -------------------- REDUCERS --------------------
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    // ------- USER -------
     case GET_USER:
       return { ...state, user: action.user };
     case REMOVE_USER:
       return { ...state, user: {} };
+    // ------- QUESTIONS -------
     case GET_QUESTIONS:
       return { ...state, questions: action.questions };
     case ADD_QUESTION:
       return { ...state, questions: [...state.questions, action.question] };
     case GET_USER_QUESTIONS:
       return { ...state, userQuestions: action.userQuestions };
+    // ------- TAGS -------
     case GET_TAGS:
       return { ...state, tags: action.tags };
+    // ------- LIKES -------
     case GET_LIKES:
       return { ...state, likes: action.likes };
     case ADD_LIKES:
       return { ...state, likes: [...state.likes, action.like] };
+    // ------- PROPOSE QUESTIONS -------
     case GET_PROP_QUESTS:
       return { ...state, proposeQuestions: action.propQuestions };
     case ADD_PROP_QUEST:
