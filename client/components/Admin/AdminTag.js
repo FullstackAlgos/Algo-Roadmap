@@ -35,9 +35,25 @@ class AdminTag extends Component {
             onClick={this.showEdit}
             className="adminQuestBtn gBtn"
           >
-            Edit Tag Name
+            {this.state.showEdit ? "Finish Editing" : "Edit Tag Name"}
           </button>
         </div>
+
+        {this.state.showEdit ? (
+          <form className="adminTagForm">
+            <label htmlFor="name" className="adminQuestLabel">
+              Edit Name:
+            </label>
+
+            <textarea
+              type="text"
+              name="name"
+              value={this.state.name}
+              onChange={this.handleChange}
+              className="adminQuestTextArea"
+            />
+          </form>
+        ) : null}
 
         {q.map((quest, i) => (
           <p key={i} className="adminTagQuest">
