@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import SingleQuestion from "../Question/SingleQuestion";
+import RoadmapArrow from "./RoadmapArrow";
+import RoadmapQuestion from "./RoadmapQuestion";
 import { switchUserActive } from "../../store";
 
 class Roadmap extends Component {
@@ -80,15 +82,13 @@ class Roadmap extends Component {
         	)
     	}
         </h3>
+        <br />
         {orderedQs
           ? orderedQs.map((q, i) => (
-              <SingleQuestion
-                key={i}
-                q={q}
-                show={q.name === this.state.activeQ}
-                setActive={this.setActive}
-                switchUserActive={switchUserActive}
-              />
+              <span>
+             	<RoadmapQuestion key={i} question={q} questionNum={i+1} />
+              	<RoadmapArrow key={i+orderedQs.length} currQ={q} nextQ={orderedQs[i+1]} />
+              </span>
             ))
           : null}
       </div>
