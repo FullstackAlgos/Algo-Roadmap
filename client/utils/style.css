@@ -229,12 +229,18 @@ p {
   background-color: gray;
   border-radius: 5px;
   width: 300px;
-  height: 330px;
+  height: 370px;
   margin-top: 30px;
 }
 
 .questLabels {
   font-weight: bold;
+}
+
+.questSelect {
+  font-size: 15px;
+  height: 22px;
+  margin-bottom: 15px;
 }
 
 .inputBox {

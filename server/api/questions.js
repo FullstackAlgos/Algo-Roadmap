@@ -24,32 +24,16 @@ router.get("/:questionId", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
-    const { name, description, difficulty, link, tags } = req.body;
-    const question = await Question.create({
+    const { name, description, difficulty, link, tagId } = req.body;
+    await Question.create({
       name,
       description,
       difficulty,
-      link
+      link,
+      tagId
     });
 
-    // add tags to QuestionTag table
-    // still need to check if the tag already exists
-
-    tags.forEach(async tagName => {
-      let tag = await Tag.findOne({
-        where: {
-          name: tagName
-        }
-      });
-
-      if (!tag) {
-        tag = await Tag.create({
-          name: tagName
-        });
-      }
-    });
-
-    res.json(question);
+    res.sendStatus(201);
   } catch (err) {
     next(err);
   }
