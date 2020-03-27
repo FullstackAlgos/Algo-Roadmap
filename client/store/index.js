@@ -193,6 +193,16 @@ export const changeTag = newTag => async dispatch => {
   }
 };
 
+export const addTag = newTag => async dispatch => {
+  try {
+    const { data: addTag } = await axios.post("/api/tags", newTag);
+    const tags = [...store.getState().tags].concat(addTag);
+    dispatch(getTags(tags));
+  } catch (error) {
+    console.log("Redux Error -", error);
+  }
+};
+
 export const getUserLikes = userId => async dispatch => {
   try {
     const { data: likes } = await axios.get(`/api/likes/${userId}`);

@@ -13,8 +13,8 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
-    if (req.body.id) delete req.body.id;
-    const newTag = await Tag.create(req.body);
+    const { name, ranking } = req.body;
+    const newTag = await Tag.create({ name, ranking });
     res.json(newTag);
   } catch (err) {
     next(err);

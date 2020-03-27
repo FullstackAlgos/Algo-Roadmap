@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { addTag } from "../../store";
 import AdminTag from "./AdminTag";
 
 class AdminTagPanel extends Component {
@@ -24,12 +25,14 @@ class AdminTagPanel extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    const { t, changeTag } = this.props,
-      { name } = this.state;
+    const { tags, addTag } = this.props,
+      { name, ranking } = this.state;
 
-    if (name.length) changeTag(t.id, name);
-
-    this.setState({ showAdd: false, name: "" });
+    if (tags.some(t => t.name === name)) alert("Tag Already Exists");
+    else if (name.length) {
+      addTag({ name, ranking });
+      this.setState({ showAdd: false, name: "", ranking: "1" });
+    }
   };
 
   matchedQuests = tagId => {
@@ -111,4 +114,10 @@ const mapState = state => {
   };
 };
 
-export default connect(mapState)(AdminTagPanel);
+const mapDispatch = dispatch => {
+  return {
+    addTag: newTag => dispatch(addTag(newTag))
+  };
+};
+
+export default connect(mapState, mapDispatch)(AdminTagPanel);
