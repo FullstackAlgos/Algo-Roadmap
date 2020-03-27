@@ -26,19 +26,17 @@ class AdminPropQuest extends Component {
   };
 
   addQuest = () => {
-    console.log("ADD"); // FIX
     const { q, deletePropQuest, convertPropQuest, tags } = this.props,
       { name, description, difficulty, tag } = this.state,
+      selectTag = tags.filter(t => t.name === tag)[0],
       questObj = {};
 
     questObj.name = name.length ? name : q.name;
     questObj.description = description.length ? description : q.description;
     questObj.difficulty =
       difficulty.length && difficultMap !== "--" ? difficulty : q.difficulty;
-    questObj.tagId =
-      tag.length && tag !== "--"
-        ? tags.filter(t => t.name === tag)[0].id
-        : q.tag.id;
+    questObj.tagId = tag.length && tag !== "--" ? selectTag.id : q.tagId;
+    questObj.tag = tag.length && tag !== "--" ? selectTag : q.tag;
     questObj.link = q.link;
 
     convertPropQuest(questObj);

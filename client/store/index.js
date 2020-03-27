@@ -274,6 +274,9 @@ export const updateQuestion = questionObj => async dispatch => {
 
 export const convertPropQuest = questObj => async dispatch => {
   try {
+    await axios.post("/api/questions", questObj);
+
+    dispatch(addQuestion(questObj));
   } catch (error) {
     console.error("Redux Error -", error);
   }
@@ -286,6 +289,7 @@ export const deletePropQuest = questId => async dispatch => {
     const propQuestions = [...store.getState().proposeQuestions].filter(
       q => q.id !== questId
     );
+
     dispatch(getAllPropQuests(propQuestions));
   } catch (error) {
     console.error("Redux Error -", error);
