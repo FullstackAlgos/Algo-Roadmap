@@ -25,6 +25,7 @@ const GET_TAGS = "GET_TAGS";
 const GET_LIKES = "GET_LIKES";
 const ADD_LIKES = "ADD_LIKES";
 const GET_PROP_QUESTS = "GET_PROP_QUESTS";
+const ADD_PROP_QUEST = "ADD_PROP_QUEST";
 
 // -------------------- ACTION CREATORS --------------------
 export const getUser = user => ({ type: GET_USER, user });
@@ -54,6 +55,12 @@ export const getPropQuests = propQuestions => {
   return {
     type: GET_PROP_QUESTS,
     propQuestions
+  };
+};
+export const addPropQuest = propQuest => {
+  return {
+    type: ADD_PROP_QUEST,
+    propQuest
   };
 };
 
@@ -115,7 +122,7 @@ export const getAllPropQuests = () => async dispatch => {
 export const proposeQuest = questObj => async dispatch => {
   try {
     await axios.post("/api/proposeQuestions", questObj);
-    dispatch(addQuestion(questObj));
+    dispatch(addPropQuest(questObj));
   } catch (error) {
     console.log("Redux Error -", error);
   }
@@ -286,6 +293,11 @@ const reducer = (state = initialState, action) => {
       return { ...state, likes: [...state.likes, action.like] };
     case GET_PROP_QUESTS:
       return { ...state, proposeQuestions: action.propQuestions };
+    case ADD_PROP_QUEST:
+      return {
+        ...state,
+        proposeQuestions: [...state.proposeQuestions, action.propQuest]
+      };
     default:
       return state;
   }

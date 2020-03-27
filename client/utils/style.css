@@ -229,8 +229,9 @@ p {
   background-color: gray;
   border-radius: 5px;
   width: 300px;
-  height: 370px;
+  height: 400px;
   margin-top: 30px;
+  overflow: scroll;
 }
 
 .questLabels {
@@ -238,6 +239,7 @@ p {
 }
 
 .questSelect {
+  min-width: 50px;
   font-size: 15px;
   height: 22px;
   margin-bottom: 15px;
@@ -254,6 +256,7 @@ p {
   justify-content: space-evenly;
   width: 95%;
   color: black;
+  margin-top: 15px;
 }
 
 .questBtn {

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { proposeQuest } from "../../store";
+import { difficultMap } from "../../utils/utilities";
 
 class QuestionForm extends Component {
   constructor() {
@@ -8,9 +9,9 @@ class QuestionForm extends Component {
     this.state = {
       name: "",
       description: "",
-      difficulty: "",
+      difficulty: "1",
       link: "",
-      tag: ""
+      tag: "Array"
     };
   }
 
@@ -61,13 +62,16 @@ class QuestionForm extends Component {
           <label htmlFor="difficulty" className="questLabels">
             Difficulty:
           </label>
-          <input
-            type="text"
+          <select
             name="difficulty"
             value={this.state.difficulty}
             onChange={this.handleChange}
-            className="inputBox"
-          />
+            className="questSelect"
+          >
+            {Object.keys(difficultMap).map(x => (
+              <option key={x}>{x}</option>
+            ))}
+          </select>
 
           <label htmlFor="link" className="questLabels">
             Link:
