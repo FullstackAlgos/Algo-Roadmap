@@ -1,24 +1,50 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { convertPropQuest, deletePropQuest } from "../../store";
 
 class AdminPropQuest extends Component {
   constructor() {
     super();
     this.state = {
-      showEdit: false
+      showEdit: false,
+      name: "",
+      description: "",
+      difficulty: "",
+      tag: ""
     };
   }
-
-  addQuest = () => {
-    console.log("ADD"); // FIX
-  };
 
   showEdit = () => {
     this.setState({ showEdit: !this.state.showEdit });
   };
 
+  handleChange = evt => {
+    this.setState({
+      [evt.target.name]: evt.target.value
+    });
+  };
+
+  addQuest = () => {
+    console.log("ADD"); // FIX
+    const { q, deletePropQuest, convertPropQuest, tags } = this.props,
+      { name, description, difficulty, tag } = this.state,
+      questObj = {};
+
+    questObj.name = name.length ? name : q.name;
+    questObj.description = description.length ? description : q.description;
+    questObj.difficulty = difficulty.length ? difficulty : q.difficulty;
+    questObj.tagId = tag.length
+      ? tags.filter(t => t.name === tag)[0].id
+      : q.tag.id;
+    questObj.link = q.link;
+
+    convertPropQuest(questObj);
+    deletePropQuest(q.id);
+  };
+
   deleteQuest = () => {
-    console.log("DELETE"); // FIX
+    const { q, deletePropQuest } = this.props;
+    deletePropQuest(q.id);
   };
 
   render() {
@@ -64,8 +90,17 @@ class AdminPropQuest extends Component {
   }
 }
 
-const mapDispatch = dispatch => {
-  return {};
+const mapState = state => {
+  return {
+    tags: state.tags
+  };
 };
 
-export default connect(null, mapDispatch)(AdminPropQuest);
+const mapDispatch = dispatch => {
+  return {
+    convertPropQuest: questObj => dispatch(convertPropQuest(questObj)),
+    deletePropQuest: qId => dispatch(deletePropQuest(qId))
+  };
+};
+
+export default connect(mapState, mapDispatch)(AdminPropQuest);

@@ -272,6 +272,26 @@ export const updateQuestion = questionObj => async dispatch => {
   }
 };
 
+export const convertPropQuest = questObj => async dispatch => {
+  try {
+  } catch (error) {
+    console.error("Redux Error -", error);
+  }
+};
+
+export const deletePropQuest = questId => async dispatch => {
+  try {
+    await axios.delete(`/api/proposeQuestions/${questId}`);
+
+    const propQuestions = [...store.getState().proposeQuestions].filter(
+      q => q.id !== questId
+    );
+    dispatch(getAllPropQuests(propQuestions));
+  } catch (error) {
+    console.error("Redux Error -", error);
+  }
+};
+
 // -------------------- REDUCERS --------------------
 const reducer = (state = initialState, action) => {
   switch (action.type) {
