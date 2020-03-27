@@ -478,6 +478,22 @@ p {
   margin-bottom: 15px;
 }
 
+.adminPropQText {
+  margin-top: 10px;
+}
+
+/* ----------------------- ADMIN USER ----------------------- */
+.adminUserDiv {
+  background-color: lightgray;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.adminUserText {
+  margin-top: 10px;
+}
+
 /* ----------------------- CHARTS ----------------------- */
 .allQuestPieDiv {
   background-color: lightgray;
