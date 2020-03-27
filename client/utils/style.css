@@ -492,6 +492,20 @@ p {
   margin-right: 25px;
 }
 
+/* ----------------------- ADMIN TAG ----------------------- */
+.adminTagRow {
+  display: flex;
+  align-items: center;
+}
+
+.adminTagName {
+  margin-bottom: 10px;
+}
+
+.adminTagQuest {
+  margin-bottom: 5px;
+}
+
 /* ----------------------- CHARTS ----------------------- */
 .allQuestPieDiv {
   background-color: lightgray;

@@ -3,20 +3,24 @@ import { connect } from "react-redux";
 
 class AdminTag extends Component {
   render() {
-    const { t } = this.props;
+    const { t, q } = this.props;
 
     return (
       <div className="adminSingleDiv">
-        <h3 className="adminTagName">{t.name}</h3>
+        <div className="adminTagRow">
+          <h3 className="adminTagName">
+            {t.name}&nbsp;&nbsp;&nbsp;({q.length})
+          </h3>
+        </div>
+
+        {q.map((quest, i) => (
+          <p key={i} className="adminTagQuest">
+            {i + 1}.&nbsp;&nbsp;{quest.name}
+          </p>
+        ))}
       </div>
     );
   }
 }
 
-const mapState = state => {
-  return {
-    questions: state.questions
-  };
-};
-
-export default connect(mapState)(AdminTag);
+export default connect()(AdminTag);
