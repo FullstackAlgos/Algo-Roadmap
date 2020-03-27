@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { adminChange, deleteUser } from "../../store";
 
 class AdminUser extends Component {
   changeAdmin = update => {
-    console.log("ADMIN");
+    const { u, adminChange } = this.props;
+    adminChange(u.id, update);
   };
 
   removeUser = () => {
-    console.log("REMOVE");
+    const { u, deleteUser } = this.props;
+    deleteUser(u.id);
   };
 
   render() {
@@ -57,4 +60,11 @@ class AdminUser extends Component {
   }
 }
 
-export default connect()(AdminUser);
+const mapDispatch = dispatch => {
+  return {
+    adminChange: (userId, update) => dispatch(adminChange(userId, update)),
+    deleteUser: userId => dispatch(deleteUser(userId))
+  };
+};
+
+export default connect(null, mapDispatch)(AdminUser);
