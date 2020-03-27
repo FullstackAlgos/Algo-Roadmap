@@ -39,7 +39,7 @@ class User extends Component {
         ) : (
           <h2 className="userHeader">
             <a href="/SignIn" className="userSignInLink">
-              Log In
+              Sign In
             </a>{" "}
             to track your progress!
           </h2>
