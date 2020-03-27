@@ -11,7 +11,8 @@ const initialState = {
   questions: [],
   userQuestions: [],
   tags: [],
-  likes: []
+  likes: [],
+  proposeQuestions: []
 };
 
 // -------------------- ACTION TYPES --------------------
@@ -23,6 +24,8 @@ const GET_USER_QUESTIONS = "GET_USER_QUESTIONS";
 const GET_TAGS = "GET_TAGS";
 const GET_LIKES = "GET_LIKES";
 const ADD_LIKES = "ADD_LIKES";
+const GET_PROP_QUESTS = "GET_PROP_QUESTS";
+const ADD_PROP_QUEST = "ADD_PROP_QUEST";
 
 // -------------------- ACTION CREATORS --------------------
 export const getUser = user => ({ type: GET_USER, user });
@@ -46,6 +49,18 @@ export const getUserQuests = userQuestions => {
   return {
     type: GET_USER_QUESTIONS,
     userQuestions
+  };
+};
+export const getPropQuests = propQuestions => {
+  return {
+    type: GET_PROP_QUESTS,
+    propQuestions
+  };
+};
+export const addPropQuest = propQuest => {
+  return {
+    type: ADD_PROP_QUEST,
+    propQuest
   };
 };
 
@@ -95,10 +110,19 @@ export const getAllQuestions = () => async dispatch => {
   }
 };
 
-export const addQuestThunk = questObj => async dispatch => {
+export const getAllPropQuests = () => async dispatch => {
   try {
-    await axios.post("/api/questions", questObj);
-    dispatch(addQuestion(questObj));
+    const { data: allPropQuests } = await axios.get("/api/proposeQuestions");
+    dispatch(getPropQuests(allPropQuests));
+  } catch (error) {
+    console.log("Redux Error -", error);
+  }
+};
+
+export const proposeQuest = questObj => async dispatch => {
+  try {
+    await axios.post("/api/proposeQuestions", questObj);
+    dispatch(addPropQuest(questObj));
   } catch (error) {
     console.log("Redux Error -", error);
   }
@@ -248,25 +272,57 @@ export const updateQuestion = questionObj => async dispatch => {
   }
 };
 
+export const convertPropQuest = questObj => async dispatch => {
+  try {
+  } catch (error) {
+    console.error("Redux Error -", error);
+  }
+};
+
+export const deletePropQuest = questId => async dispatch => {
+  try {
+    await axios.delete(`/api/proposeQuestions/${questId}`);
+
+    const propQuestions = [...store.getState().proposeQuestions].filter(
+      q => q.id !== questId
+    );
+    dispatch(getAllPropQuests(propQuestions));
+  } catch (error) {
+    console.error("Redux Error -", error);
+  }
+};
+
 // -------------------- REDUCERS --------------------
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    // ------- USER -------
     case GET_USER:
       return { ...state, user: action.user };
     case REMOVE_USER:
       return { ...state, user: {} };
+    // ------- QUESTIONS -------
     case GET_QUESTIONS:
       return { ...state, questions: action.questions };
     case ADD_QUESTION:
       return { ...state, questions: [...state.questions, action.question] };
     case GET_USER_QUESTIONS:
       return { ...state, userQuestions: action.userQuestions };
+    // ------- TAGS -------
     case GET_TAGS:
       return { ...state, tags: action.tags };
+    // ------- LIKES -------
     case GET_LIKES:
       return { ...state, likes: action.likes };
     case ADD_LIKES:
       return { ...state, likes: [...state.likes, action.like] };
+    // ------- PROPOSE QUESTIONS -------
+    case GET_PROP_QUESTS:
+      return { ...state, proposeQuestions: action.propQuestions };
+    case ADD_PROP_QUEST:
+      return {
+        ...state,
+        proposeQuestions: [...state.proposeQuestions, action.propQuest]
+      };
     default:
       return state;
   }

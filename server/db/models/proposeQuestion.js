@@ -1,10 +1,9 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
 
-const Question = db.define("question", {
+const ProposeQuestion = db.define("proposeQuestion", {
   name: {
     type: Sequelize.STRING,
-    unique: true,
     allowNull: false
   },
   description: {
@@ -17,8 +16,7 @@ const Question = db.define("question", {
     max: 5
   },
   link: {
-    type: Sequelize.STRING,
-    unique: true
+    type: Sequelize.STRING
   },
   ratedDifficulty: {
     type: Sequelize.FLOAT,
@@ -27,8 +25,8 @@ const Question = db.define("question", {
   }
 });
 
-Question.beforeCreate(question => {
+ProposeQuestion.beforeCreate(question => {
   question.ratedDifficulty = question.difficulty;
 });
 
-module.exports = Question;
+module.exports = ProposeQuestion;

@@ -48,16 +48,14 @@ class NavBar extends Component {
               </a>
             </>
           ) : (
-            <>
-              <NavLink
-                to="/SignIn"
-                className="linkText navBarLink"
-                activeClassName="selectedNavLink"
-                exact
-              >
-                Sign In
-              </NavLink>
-            </>
+            <NavLink
+              to="/SignIn"
+              className="linkText navBarLink"
+              activeClassName="selectedNavLink"
+              exact
+            >
+              Sign In
+            </NavLink>
           )}
         </div>
       </div>

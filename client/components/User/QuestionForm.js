@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addQuestThunk } from "../../store";
+import { proposeQuest } from "../../store";
+import { difficultMap } from "../../utils/utilities";
 
 class QuestionForm extends Component {
   constructor() {
@@ -8,8 +9,9 @@ class QuestionForm extends Component {
     this.state = {
       name: "",
       description: "",
-      difficulty: "",
-      link: ""
+      difficulty: "1",
+      link: "",
+      tag: "Array"
     };
   }
 
@@ -21,12 +23,24 @@ class QuestionForm extends Component {
 
   handleNewQuest = evt => {
     evt.preventDefault();
-    const { formFlip, addQuest } = this.props;
-    addQuest(this.state);
+    const { formFlip, proposeQuest, tags, user } = this.props,
+      { name, description, difficulty, link, tag } = this.state,
+      tagId = tags.filter(t => t.name === tag)[0].id;
+
+    proposeQuest({
+      userId: user.id,
+      name,
+      description,
+      difficulty,
+      link,
+      tagId
+    });
     formFlip();
   };
 
   render() {
+    const { tags } = this.props;
+
     return (
       <div className="questPopFullDiv">
         <form className="questForm" onSubmit={this.handleNewQuest}>
@@ -55,13 +69,16 @@ class QuestionForm extends Component {
           <label htmlFor="difficulty" className="questLabels">
             Difficulty:
           </label>
-          <input
-            type="text"
+          <select
             name="difficulty"
             value={this.state.difficulty}
             onChange={this.handleChange}
-            className="inputBox"
-          />
+            className="questSelect"
+          >
+            {Object.keys(difficultMap).map(x => (
+              <option key={x}>{x}</option>
+            ))}
+          </select>
 
           <label htmlFor="link" className="questLabels">
             Link:
@@ -73,6 +90,20 @@ class QuestionForm extends Component {
             onChange={this.handleChange}
             className="inputBox"
           />
+
+          <label htmlFor="tag" className="questLabels">
+            New Tag:
+          </label>
+          <select
+            name="tag"
+            value={this.state.tag}
+            onChange={this.handleChange}
+            className="questSelect"
+          >
+            {tags.length
+              ? tags.map((t, i) => <option key={i}>{t.name}</option>)
+              : null}
+          </select>
 
           <div className="questBtnDiv">
             <button type="submit" className="questBtn gBtn">
@@ -93,10 +124,17 @@ class QuestionForm extends Component {
   }
 }
 
-const mapDispatch = dispatch => {
+const mapState = state => {
   return {
-    addQuest: questObj => dispatch(addQuestThunk(questObj))
+    user: state.user,
+    tags: state.tags
   };
 };
 
-export default connect(null, mapDispatch)(QuestionForm);
+const mapDispatch = dispatch => {
+  return {
+    proposeQuest: questObj => dispatch(proposeQuest(questObj))
+  };
+};
+
+export default connect(mapState, mapDispatch)(QuestionForm);
