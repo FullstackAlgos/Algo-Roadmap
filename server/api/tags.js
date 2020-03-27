@@ -13,24 +13,26 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
-    if (req.body.id) delete req.body.id;
-    const newTag = await Tag.create(req.body);
+    const { name, ranking } = req.body;
+    const newTag = await Tag.create({ name, ranking });
     res.json(newTag);
   } catch (err) {
     next(err);
   }
 });
 
-router.get("/:tagName", async (req, res, next) => {
+router.put("/", async (req, res, next) => {
   try {
-    const tag = await Tag.findOne({
-      where: {
-        name: req.params.tagName
-      }
-    });
+    const { id, name, ranking } = req.body;
+    await Tag.update(
+      {
+        name,
+        ranking
+      },
+      { where: { id } }
+    );
 
-    // should we add error handling here for creating duplicate tag?
-    res.json(tag);
+    res.sendStatus(201);
   } catch (err) {
     next(err);
   }

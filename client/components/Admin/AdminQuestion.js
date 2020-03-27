@@ -52,7 +52,7 @@ class AdminQuestion extends Component {
     const { q, tags } = this.props;
 
     return (
-      <div className="adminQuestionDiv">
+      <div className="adminSingleDiv">
         <div className="adminQuestRow1">
           <h3 className="adminQuestName">
             {q.name}&nbsp;&nbsp;&nbsp;({q.tag.name})

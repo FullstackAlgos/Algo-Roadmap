@@ -10,11 +10,8 @@ const Tag = db.define("tag", {
     }
   },
   ranking: {
-  	type: Sequelize.INTEGER,
-  	allowNull: false,
-  	unique: {
-  		args: true
-  	}
+    type: Sequelize.INTEGER,
+    allowNull: false
   }
 });
 

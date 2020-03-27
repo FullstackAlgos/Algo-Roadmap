@@ -57,11 +57,16 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(100, 100, 100, 0.8);
+  background-color: rgba(75, 75, 75, 1);
   height: 50px;
   padding: 0 15px;
   font-size: 20px;
   font-weight: bold;
+}
+
+.navBarText {
+  color: rgba(0, 152, 195, 1);
+  font-size: 25px;
 }
 
 .navBarLink {
@@ -411,7 +416,7 @@ p {
 
 .sideBarLink {
   font-size: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
 }
 
 .adminContentDiv {
@@ -420,14 +425,14 @@ p {
   padding: 15px;
 }
 
-/* ----------------------- ADMIN QUESTION ----------------------- */
-.adminQuestionDiv {
+.adminSingleDiv {
   background-color: lightgray;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 15px;
 }
 
+/* ----------------------- ADMIN QUESTION ----------------------- */
 .adminQuestRow1 {
   display: flex;
   align-items: center;
@@ -491,25 +496,17 @@ p {
 }
 
 /* ----------------------- ADMIN PROPOSE QUESTION ----------------------- */
-.adminPropQDiv {
-  background-color: lightgray;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 15px;
+.adminPropQRow {
+  display: flex;
+  align-items: center;
 }
 
 .adminPropQText {
   margin-top: 10px;
+  margin-right: 25px;
 }
 
 /* ----------------------- ADMIN USER ----------------------- */
-.adminUserDiv {
-  background-color: lightgray;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 15px;
-}
-
 .adminUserRow {
   display: flex;
   align-items: center;
@@ -517,7 +514,52 @@ p {
 
 .adminUserText {
   margin-top: 10px;
-  margin-right: 20px;
+  margin-right: 25px;
+}
+
+/* ----------------------- ADMIN TAG ----------------------- */
+.adminTagAddDiv {
+  background-color: lightpink;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.adminTagRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.adminTagForm {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgreen;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.adminTagFormDiv {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.adminTagBtn {
+  border-radius: 5px;
+  width: 135px;
+  height: 25px;
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.adminTagQuest {
+  margin-bottom: 5px;
 }
 
 /* ----------------------- CHARTS ----------------------- */

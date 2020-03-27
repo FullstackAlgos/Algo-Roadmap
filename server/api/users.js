@@ -58,6 +58,7 @@ router.post("/signup", async (req, res, next) => {
 router.put("/active", async (req, res, next) => {
   try {
     const { userId, activeId, activeName } = req.body;
+
     await User.update(
       {
         activeId,
@@ -65,6 +66,7 @@ router.put("/active", async (req, res, next) => {
       },
       { where: { id: userId } }
     );
+
     res.sendStatus(201);
   } catch (err) {
     next(err);

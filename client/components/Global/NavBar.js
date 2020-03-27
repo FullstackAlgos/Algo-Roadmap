@@ -14,7 +14,9 @@ class NavBar extends Component {
     return (
       <div className="navBarDiv">
         <div className="navBarLeftDiv">
-          <h4 className="navBarText">Algo Roadmap</h4>
+          <h4 className="navBarText">
+            {user.name ? `${user.name}'s ` : null}Algo Roadmap
+          </h4>
         </div>
 
         <div className="navBarRightDiv">

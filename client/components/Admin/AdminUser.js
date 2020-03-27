@@ -17,7 +17,7 @@ class AdminUser extends Component {
     const { u } = this.props;
 
     return (
-      <div className="adminUserDiv">
+      <div className="adminSingleDiv">
         <div className="adminUserRow">
           <h3 className="adminQuestName">{u.name}</h3>
 
@@ -49,10 +49,12 @@ class AdminUser extends Component {
         </div>
 
         <div className="adminUserRow">
-          <p className="adminUserText">Admin: {u.isAdmin ? "Yes" : "No"}</p>
+          <p className="adminUserText">
+            <u>Admin</u>: {u.isAdmin ? "Yes" : "No"}
+          </p>
 
           <p className="adminUserText">
-            Completed Questions: {u.questions.length}
+            <u>Completed Questions</u>: {u.questions.length}
           </p>
         </div>
       </div>
