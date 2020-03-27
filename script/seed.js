@@ -4,7 +4,8 @@ const {
   User,
   Tag,
   UserQuestion,
-  Like
+  Like,
+  ProposeQuestion
 } = require("../server/db/models");
 
 const userBulk = [
@@ -94,6 +95,17 @@ const userQuestBulk = [
   { userId: 3, questionId: 4 }
 ];
 
+const propQuestBulk = [
+  {
+    name: "Spiral Matrix",
+    description: "Create array of number outputs spiraling the given array",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/spiral-matrix/",
+    tagId: 1,
+    userId: 1
+  }
+];
+
 async function seed() {
   await db.sync({ force: true });
 
@@ -102,6 +114,7 @@ async function seed() {
   await Question.bulkCreate(questionBulk);
   await UserQuestion.bulkCreate(userQuestBulk);
   await Like.bulkCreate(likeBulk);
+  await ProposeQuestion.bulkCreate(propQuestBulk);
 
   console.log(`seeded successfully`);
 }
