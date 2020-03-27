@@ -95,9 +95,9 @@ export const getAllQuestions = () => async dispatch => {
   }
 };
 
-export const addQuestThunk = questObj => async dispatch => {
+export const proposeQuest = questObj => async dispatch => {
   try {
-    await axios.post("/api/questions", questObj);
+    await axios.post("/api/proposeQuestions", questObj);
     dispatch(addQuestion(questObj));
   } catch (error) {
     console.log("Redux Error -", error);

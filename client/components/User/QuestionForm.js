@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addQuestThunk } from "../../store";
+import { proposeQuest } from "../../store";
 
 class QuestionForm extends Component {
   constructor() {
@@ -22,11 +22,11 @@ class QuestionForm extends Component {
 
   handleNewQuest = evt => {
     evt.preventDefault();
-    const { formFlip, addQuest, tags } = this.props,
+    const { formFlip, proposeQuest, tags } = this.props,
       { name, description, difficulty, link, tag } = this.state,
       tagId = tags.filter(t => t.name === tag)[0].id;
 
-    addQuest({ name, description, difficulty, link, tagId });
+    proposeQuest({ name, description, difficulty, link, tagId });
     formFlip();
   };
 
@@ -121,7 +121,7 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    addQuest: questObj => dispatch(addQuestThunk(questObj))
+    proposeQuest: questObj => dispatch(proposeQuest(questObj))
   };
 };
 
