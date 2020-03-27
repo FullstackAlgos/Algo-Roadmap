@@ -21,15 +21,15 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.put("/:tagId", async (req, res, next) => {
+router.put("/", async (req, res, next) => {
   try {
-    const { name, ranking } = req.body;
+    const { id, name, ranking } = req.body;
     await Tag.update(
       {
         name,
         ranking
       },
-      { where: { id: req.params.tagId } }
+      { where: { id } }
     );
 
     res.sendStatus(201);

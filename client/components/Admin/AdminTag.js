@@ -30,13 +30,14 @@ class AdminTag extends Component {
     if (name.length || ranking !== "--") {
       const newTag = {};
 
+      newTag.id = t.id;
       newTag.name = name.length ? name : t.name;
-      newTag.ranking = ranking !== "--" ? ranking : t.ranking;
+      newTag.ranking = ranking !== "--" ? Number(ranking) : t.ranking;
 
-      changeTag(t.id, newTag);
+      changeTag(newTag);
     }
 
-    this.setState({ showEdit: false, name: "", ranking: "" });
+    this.setState({ showEdit: false, name: "", ranking: "--" });
   };
 
   render() {
@@ -112,7 +113,7 @@ class AdminTag extends Component {
 
 const mapDispatch = dispatch => {
   return {
-    changeTag: (tagId, tagName) => dispatch(changeTag(tagId, tagName))
+    changeTag: tagName => dispatch(changeTag(tagName))
   };
 };
 
