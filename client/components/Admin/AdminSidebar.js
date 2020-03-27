@@ -18,7 +18,7 @@ class AdminSidebar extends Component {
           className="linkText sideBarLink"
           activeClassName="selectedNavLink"
         >
-          Questions
+          Current Questions
         </NavLink>
 
         <NavLink

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { updateQuestion, deleteQuestion } from "../../store";
 
 class AdminQuestion extends Component {
   constructor() {
@@ -16,8 +17,9 @@ class AdminQuestion extends Component {
     this.setState({ showEdit: !this.state.showEdit });
   };
 
-  deleteQuestion = () => {
-    console.log("DELETE!"); // DUMMY FUNCTION
+  deleteQuest = () => {
+    const { q, deleteQuestion } = this.props;
+    deleteQuestion(q.id);
   };
 
   handleChange = evt => {
@@ -28,16 +30,18 @@ class AdminQuestion extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    const { q } = this.props,
+    const { q, updateQuestion, tags } = this.props,
       { name, description, tag } = this.state,
       submitObj = { id: q.id };
 
     if (name.length || description.length || tag.length) {
       submitObj.name = name.length ? name : q.name;
       submitObj.description = description.length ? description : q.description;
-      submitObj.tag = tag.length ? tag : q.tags[0].name;
+      submitObj.tagId = tag.length
+        ? tags.filter(t => t.name === tag)[0].id
+        : q.tag.id;
 
-      console.log("submit -", submitObj); // DUMMY FUNCTION
+      updateQuestion(submitObj);
     }
 
     this.setState({ showEdit: false, name: "", description: "", tag: "" });
@@ -50,7 +54,7 @@ class AdminQuestion extends Component {
       <div className="adminQuestionDiv">
         <div className="adminQuestRow1">
           <h3 className="adminQuestName">
-            {q.name}&nbsp;&nbsp;&nbsp;({q.tags[0].name})
+            {q.name}&nbsp;&nbsp;&nbsp;({q.tag.name})
           </h3>
 
           <button
@@ -63,7 +67,7 @@ class AdminQuestion extends Component {
 
           <button
             type="button"
-            onClick={this.deleteQuestion}
+            onClick={this.deleteQuest}
             className="adminQuestBtn gBtn"
           >
             Delete Question
@@ -135,4 +139,11 @@ const mapState = state => {
   };
 };
 
-export default connect(mapState)(AdminQuestion);
+const mapDispatch = dispatch => {
+  return {
+    updateQuestion: qObj => dispatch(updateQuestion(qObj)),
+    deleteQuestion: qId => dispatch(deleteQuestion(qId))
+  };
+};
+
+export default connect(mapState, mapDispatch)(AdminQuestion);

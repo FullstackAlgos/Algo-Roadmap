@@ -39,7 +39,7 @@ class QuestionList extends Component {
   };
 
   questionTag = (questions, tag) => {
-    const output = questions.filter(x => x.tags[0].id === tag.id);
+    const output = questions.filter(x => x.tag.id === tag.id);
     return output.length ? output : [{ name: "Currently Not Available" }];
   };
 

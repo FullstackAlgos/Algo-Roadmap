@@ -135,7 +135,7 @@ export const getUserLikes = userId => async dispatch => {
 
 export const switchUserActive = (qId, qName) => async dispatch => {
   try {
-    const user = Object.assign({}, store.getState().user);
+    const user = { ...store.getState().user };
 
     if (user.id) {
       await axios.put("/api/users/active", {
@@ -155,6 +155,7 @@ export const switchUserActive = (qId, qName) => async dispatch => {
 
 export const newLike = (userId, qId, status, update) => async dispatch => {
   try {
+    // UPDATING LIKES
     const likes = [...store.getState().likes];
 
     if (update) {
@@ -171,6 +172,7 @@ export const newLike = (userId, qId, status, update) => async dispatch => {
       dispatch(addLike({ userId, questionId: qId, status }));
     }
 
+    // UPDATING QUESTIONS
     const questions = [...store.getState().questions];
 
     for (let i = 0; i < questions.length; i++) {
@@ -190,6 +192,31 @@ export const newLike = (userId, qId, status, update) => async dispatch => {
     }
 
     dispatch(getQuestions(questions));
+
+    // UPDATING USER QUESTIONS
+    const userQuestions = [...store.getState().userQuestions],
+      updateUserQ = !userQuestions.filter(q => q.id === qId).length;
+
+    if (updateUserQ) {
+      await axios.post("/api/userQuestions", { userId, questionId: qId });
+
+      userQuestions.push({ ...questions.filter(q => q.id === qId)[0] });
+      dispatch(getUserQuests(userQuestions));
+    }
+  } catch (error) {
+    console.error("Redux Error -", error);
+  }
+};
+
+export const deleteQuestion = questionId => async dispatch => {
+  try {
+    await axios.delete(`/api/questions/${questionId}`);
+
+    const questions = [...store.getState().questions].filter(
+      q => q.id !== questionId
+    );
+
+    dispatch(getQuestions(questions));
   } catch (error) {
     console.error("Redux Error -", error);
   }
@@ -197,13 +224,21 @@ export const newLike = (userId, qId, status, update) => async dispatch => {
 
 export const updateQuestion = questionObj => async dispatch => {
   try {
-    await axios.put(`/api/questions/${questionObj.id}`, questionObj);
-    const questions = [...store.getState().questions];
+    await axios.put("/api/questions", questionObj);
+
+    const questions = [...store.getState().questions],
+      tags = [...store.getState().tags];
+
     questions.forEach((q, i) => {
       if (q.id === questionObj.id) {
-        questions[i].name = questionObj.name;
-        questions[i].description = questionObj.description;
-        questions[i].tag = questionObj.tag;
+        const newQuestObj = { ...q };
+
+        newQuestObj.name = questionObj.name;
+        newQuestObj.description = questionObj.description;
+        newQuestObj.tagId = questionObj.tagId;
+        newQuestObj.tag = tags.filter(t => t.id === questionObj.tagId)[0];
+
+        questions[i] = newQuestObj;
       }
     });
 

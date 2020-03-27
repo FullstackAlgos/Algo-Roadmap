@@ -47,7 +47,7 @@ class QuestionSurvey extends Component {
           <h3 className="questSurveyHeader">{user.activeName}</h3>
 
           <p className="questSurveyText">
-            Click "Finish" if you were able to complete the problem and can
+            Click "Next" if you were able to complete the problem and can
             provide feedback. Otherwise, please click "Later".
           </p>
 
@@ -58,7 +58,7 @@ class QuestionSurvey extends Component {
                 className="questBtn gBtn"
                 onClick={this.showSurvey}
               >
-                Finish
+                Next
               </button>
 
               <button
@@ -111,7 +111,7 @@ class QuestionSurvey extends Component {
                   className="questBtn gBtn"
                   onClick={switchUserActive}
                 >
-                  Close
+                  Later
                 </button>
               </div>
             </form>

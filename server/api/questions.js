@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Question, Tag, QuestionTag, Like } = require("../db/models");
+const { Question, Tag, Like } = require("../db/models");
 module.exports = router;
 
 router.get("/", async (req, res, next) => {
@@ -47,8 +47,6 @@ router.post("/", async (req, res, next) => {
           name: tagName
         });
       }
-
-      await QuestionTag.create({ questionId: question.id, tagId: tag.id });
     });
 
     res.json(question);
@@ -57,15 +55,18 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.put("/:questionId", async (req, res, next) => {
+router.put("/", async (req, res, next) => {
   try {
-    const question = await Question.findByPk(req.params.questionId);
-
-    if (!question) throw "Question id not found";
-
-    if (req.body.id) delete req.body.id;
-    await question.update(req.body);
-    res.json(question);
+    const { id, name, description, tagId } = req.body;
+    await Question.update(
+      {
+        name,
+        description,
+        tagId
+      },
+      { where: { id } }
+    );
+    res.sendStatus(205);
   } catch (err) {
     next(err);
   }
@@ -73,13 +74,9 @@ router.put("/:questionId", async (req, res, next) => {
 
 router.delete("/:questionId", async (req, res, next) => {
   try {
-    const question = await Question.findByPk(req.params.questionId);
+    await Question.destroy({ where: { id: req.params.questionId } });
 
-    if (!question) throw "Question id not found";
-
-    await question.destroy();
-
-    res.status(204).send();
+    res.sendStatus(204);
   } catch (err) {
     next(err);
   }
