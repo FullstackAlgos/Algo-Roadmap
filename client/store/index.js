@@ -98,7 +98,20 @@ export const adminChange = (userId, update) => async dispatch => {
     await axios.put("/api/users/admin", { userId, update });
 
     const users = [...store.getState().users];
-    users.forEach((u, i) => {});
+    users.forEach((u, i) => {
+      if (u.id === userId) users[i].isAdmin = update;
+    });
+    dispatch(getAllUsers(users));
+  } catch (error) {
+    console.error("Redux Error -", error);
+  }
+};
+
+export const deleteUser = userId => async dispatch => {
+  try {
+    await axios.delete(`/api/users/${userId}`);
+
+    const users = [...store.getState().users].filter(u => u.id !== userId);
     dispatch(getAllUsers(users));
   } catch (error) {
     console.error("Redux Error -", error);

@@ -2,12 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class AdminUser extends Component {
-  makeAdmin = () => {
+  changeAdmin = update => {
     console.log("ADMIN");
-  };
-
-  removeAdmin = () => {
-    console.log("REMOVE ADMIN");
   };
 
   removeUser = () => {
@@ -25,7 +21,7 @@ class AdminUser extends Component {
           {u.isAdmin ? (
             <button
               type="button"
-              onClick={this.removeAdmin}
+              onClick={() => this.changeAdmin(false)}
               className="adminQuestBtn gBtn"
             >
               Remove Admin
@@ -33,7 +29,7 @@ class AdminUser extends Component {
           ) : (
             <button
               type="button"
-              onClick={this.makeAdmin}
+              onClick={() => this.changeAdmin(true)}
               className="adminQuestBtn gBtn"
             >
               Grant Admin

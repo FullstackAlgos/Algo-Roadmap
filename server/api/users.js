@@ -73,6 +73,21 @@ router.put("/active", async (req, res, next) => {
 
 router.put("/admin", async (req, res, next) => {
   try {
+    const { userId, update } = req.body;
+
+    await User.update({ isAdmin: update }, { where: { id: userId } });
+
+    res.sendStatus(201);
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.delete("/:userId", async (req, res, next) => {
+  try {
+    await User.destroy({ where: { id: req.params.userId } });
+
+    res.sendStatus(204);
   } catch (err) {
     next(err);
   }
