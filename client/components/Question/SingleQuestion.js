@@ -34,7 +34,7 @@ class SingleQuestion extends Component {
       <div className={`questionFullDiv qFullDiv${!!link}`}>
         <div className="questNameDiv">
           <h3
-            className={`questionName qName${show} qNameHover${!!link}`}
+            className={`questionName qName${show} qNameHover${!!link} difficulty${difficulty}`}
             onClick={link ? setActive : null}
           >
             {name}
@@ -53,7 +53,9 @@ class SingleQuestion extends Component {
               </p>
 
               <p className="questionRate">
-                Difficult: <strong>{difficultMap[difficulty]}</strong>
+                Difficulty: <strong className = {`difficulty${difficulty}`}>
+                  {difficultMap[difficulty]}
+                </strong>
               </p>
 
               <p className={`questionRate qRate${liked}`}>
