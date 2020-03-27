@@ -490,8 +490,14 @@ p {
   margin-bottom: 15px;
 }
 
+.adminUserRow {
+  display: flex;
+  align-items: center;
+}
+
 .adminUserText {
   margin-top: 10px;
+  margin-right: 20px;
 }
 
 /* ----------------------- CHARTS ----------------------- */

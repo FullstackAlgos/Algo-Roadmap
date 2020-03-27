@@ -71,6 +71,13 @@ router.put("/active", async (req, res, next) => {
   }
 });
 
+router.put("/admin", async (req, res, next) => {
+  try {
+  } catch (err) {
+    next(err);
+  }
+});
+
 router.post("/logout", async (req, res) => {
   req.logout();
   req.session.destroy();

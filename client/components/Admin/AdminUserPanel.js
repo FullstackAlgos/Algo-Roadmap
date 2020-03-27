@@ -4,13 +4,15 @@ import AdminUser from "./AdminUser";
 
 class AdminUserPanel extends Component {
   render() {
-    const { users } = this.props;
+    const { users, user } = this.props;
 
     return (
       <div className="adminContentDiv">
         <div className="adminPropPanelDiv">
           {users.length
-            ? users.map((u, i) => <AdminUser key={i} u={u} />)
+            ? users.map((u, i) => {
+                if (u.id !== user.id) return <AdminUser key={i} u={u} />;
+              })
             : null}
         </div>
       </div>
@@ -20,6 +22,7 @@ class AdminUserPanel extends Component {
 
 const mapState = state => {
   return {
+    user: state.user,
     users: state.users
   };
 };

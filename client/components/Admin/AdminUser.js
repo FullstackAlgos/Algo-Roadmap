@@ -19,7 +19,7 @@ class AdminUser extends Component {
 
     return (
       <div className="adminUserDiv">
-        <div className="adminQuestRow1">
+        <div className="adminUserRow">
           <h3 className="adminQuestName">{u.name}</h3>
 
           {u.isAdmin ? (
@@ -49,9 +49,13 @@ class AdminUser extends Component {
           </button>
         </div>
 
-        <p className="adminUserText">
-          Completed Questions: {u.questions.length}
-        </p>
+        <div className="adminUserRow">
+          <p className="adminUserText">Admin: {u.isAdmin ? "Yes" : "No"}</p>
+
+          <p className="adminUserText">
+            Completed Questions: {u.questions.length}
+          </p>
+        </div>
       </div>
     );
   }

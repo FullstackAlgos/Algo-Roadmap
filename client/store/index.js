@@ -93,6 +93,18 @@ export const auth = userObj => async dispatch => {
   }
 };
 
+export const adminChange = (userId, update) => async dispatch => {
+  try {
+    await axios.put("/api/users/admin", { userId, update });
+
+    const users = [...store.getState().users];
+    users.forEach((u, i) => {});
+    dispatch(getAllUsers(users));
+  } catch (error) {
+    console.error("Redux Error -", error);
+  }
+};
+
 export const logout = () => async dispatch => {
   try {
     await axios.post("/api/users/logout");
