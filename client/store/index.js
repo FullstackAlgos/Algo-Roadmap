@@ -8,6 +8,7 @@ import history from "../utils/history";
 // -------------------- INITIAL STATE --------------------
 const initialState = {
   user: {},
+  users: [],
   questions: [],
   userQuestions: [],
   tags: [],
@@ -17,6 +18,7 @@ const initialState = {
 
 // -------------------- ACTION TYPES --------------------
 const GET_USER = "GET_USER";
+const GET_ALL_USERS = "GET_ALL_USERS";
 const REMOVE_USER = "REMOVE_USER";
 const GET_QUESTIONS = "GET_QUESTIONS";
 const ADD_QUESTION = "ADD_QUESTION";
@@ -29,46 +31,46 @@ const ADD_PROP_QUEST = "ADD_PROP_QUEST";
 
 // -------------------- ACTION CREATORS --------------------
 export const getUser = user => ({ type: GET_USER, user });
+export const getAllUsers = users => ({ type: GET_ALL_USERS, users });
 export const removeUser = () => ({ type: REMOVE_USER });
 export const getTags = tags => ({ type: GET_TAGS, tags });
 export const getLikes = likes => ({ type: GET_LIKES, likes });
 export const addLike = like => ({ type: ADD_LIKES, like });
-export const getQuestions = questions => {
-  return {
-    type: GET_QUESTIONS,
-    questions
-  };
-};
-export const addQuestion = question => {
-  return {
-    type: ADD_QUESTION,
-    question
-  };
-};
-export const getUserQuests = userQuestions => {
-  return {
-    type: GET_USER_QUESTIONS,
-    userQuestions
-  };
-};
-export const getPropQuests = propQuestions => {
-  return {
-    type: GET_PROP_QUESTS,
-    propQuestions
-  };
-};
-export const addPropQuest = propQuest => {
-  return {
-    type: ADD_PROP_QUEST,
-    propQuest
-  };
-};
+export const getQuestions = questions => ({
+  type: GET_QUESTIONS,
+  questions
+});
+export const addQuestion = question => ({
+  type: ADD_QUESTION,
+  question
+});
+export const getUserQuests = userQuestions => ({
+  type: GET_USER_QUESTIONS,
+  userQuestions
+});
+export const getPropQuests = propQuestions => ({
+  type: GET_PROP_QUESTS,
+  propQuestions
+});
+export const addPropQuest = propQuest => ({
+  type: ADD_PROP_QUEST,
+  propQuest
+});
 
 // -------------------- THUNKY THUNKS --------------------
 export const me = () => async dispatch => {
   try {
     const res = await axios.get("/api/users/me");
     dispatch(getUser(res.data || {}));
+  } catch (error) {
+    console.error("Redux Error -", error);
+  }
+};
+
+export const allUsers = () => async dispatch => {
+  try {
+    const { data: users } = await axios.get("/api/users/all");
+    dispatch(getAllUsers(users || []));
   } catch (error) {
     console.error("Redux Error -", error);
   }
@@ -88,6 +90,35 @@ export const auth = userObj => async dispatch => {
     history.push("/");
   } catch (dispatchOrHistoryErr) {
     console.error(dispatchOrHistoryErr);
+  }
+};
+
+export const adminChange = (userId, update) => async dispatch => {
+  try {
+    await axios.put("/api/users/admin", { userId, update });
+
+    const users = [...store.getState().users];
+    users.forEach((u, i) => {
+      if (u.id === userId) {
+        const userObj = { ...u };
+        userObj.isAdmin = update;
+        users[i] = userObj;
+      }
+    });
+    dispatch(getAllUsers(users));
+  } catch (error) {
+    console.error("Redux Error -", error);
+  }
+};
+
+export const deleteUser = userId => async dispatch => {
+  try {
+    await axios.delete(`/api/users/${userId}`);
+
+    const users = [...store.getState().users].filter(u => u.id !== userId);
+    dispatch(getAllUsers(users));
+  } catch (error) {
+    console.error("Redux Error -", error);
   }
 };
 
@@ -302,6 +333,8 @@ const reducer = (state = initialState, action) => {
     // ------- USER -------
     case GET_USER:
       return { ...state, user: action.user };
+    case GET_ALL_USERS:
+      return { ...state, users: action.users };
     case REMOVE_USER:
       return { ...state, user: {} };
     // ------- QUESTIONS -------
@@ -332,7 +365,7 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-// STORE CREATION
+// -------------------- STORE CREATION --------------------
 const middleware = composeWithDevTools(
   // applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))
   applyMiddleware(thunkMiddleware)

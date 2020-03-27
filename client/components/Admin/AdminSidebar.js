@@ -1,25 +1,36 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import { getAllQuestions, getAllTags, getAllPropQuests } from "../../store";
+import {
+  getAllQuestions,
+  getAllTags,
+  getAllPropQuests,
+  allUsers
+} from "../../store";
 
 class AdminSidebar extends Component {
   componentDidMount() {
-    const { getAllQuestions, getAllTags, getAllPropQuests } = this.props;
+    const {
+      getAllQuestions,
+      getAllTags,
+      getAllPropQuests,
+      allUsers
+    } = this.props;
+    allUsers();
     getAllQuestions();
-    getAllTags();
     getAllPropQuests();
+    getAllTags();
   }
 
   render() {
     return (
       <div className="adminPanelSideBar">
         <NavLink
-          to="/Admin/ProposedQuestions"
+          to="/Admin/Users"
           className="linkText sideBarLink"
           activeClassName="selectedNavLink"
         >
-          Proposed Questions
+          Registered Users
         </NavLink>
 
         <NavLink
@@ -28,6 +39,14 @@ class AdminSidebar extends Component {
           activeClassName="selectedNavLink"
         >
           Current Questions
+        </NavLink>
+
+        <NavLink
+          to="/Admin/ProposedQuestions"
+          className="linkText sideBarLink"
+          activeClassName="selectedNavLink"
+        >
+          Proposed Questions
         </NavLink>
 
         <NavLink
@@ -44,9 +63,10 @@ class AdminSidebar extends Component {
 
 const mapDispatch = dispatch => {
   return {
+    allUsers: () => dispatch(allUsers()),
     getAllQuestions: () => dispatch(getAllQuestions()),
-    getAllTags: () => dispatch(getAllTags()),
-    getAllPropQuests: () => dispatch(getAllPropQuests())
+    getAllPropQuests: () => dispatch(getAllPropQuests()),
+    getAllTags: () => dispatch(getAllTags())
   };
 };
 

@@ -390,7 +390,8 @@ p {
 }
 
 .sideBarLink {
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 15px;
 }
 
 .adminContentDiv {
@@ -475,6 +476,28 @@ p {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 15px;
+}
+
+.adminPropQText {
+  margin-top: 10px;
+}
+
+/* ----------------------- ADMIN USER ----------------------- */
+.adminUserDiv {
+  background-color: lightgray;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.adminUserRow {
+  display: flex;
+  align-items: center;
+}
+
+.adminUserText {
+  margin-top: 10px;
+  margin-right: 20px;
 }
 
 /* ----------------------- CHARTS ----------------------- */
