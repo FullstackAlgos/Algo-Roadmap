@@ -9,6 +9,7 @@ import AdminSidebar from "./Admin/AdminSidebar";
 import AdminPropPanel from "./Admin/AdminPropPanel";
 import AdminQuestPanel from "./Admin/AdminQuestPanel";
 import AdminTagPanel from "./Admin/AdminTagPanel";
+import AdminUserPanel from "./Admin/AdminUserPanel";
 
 class Routes extends Component {
   componentDidMount() {
@@ -42,6 +43,7 @@ class Routes extends Component {
           render={({ match: { url } }) => (
             <>
               <Route path={`${url}/`} component={AdminSidebar} />
+              <Route exact path={`${url}/Users`} component={AdminUserPanel} />
               <Route
                 exact
                 path={`${url}/ProposedQuestions`}
