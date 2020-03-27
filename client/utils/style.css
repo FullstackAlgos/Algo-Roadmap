@@ -396,7 +396,7 @@ p {
 
 .sideBarLink {
   font-size: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
 }
 
 .adminContentDiv {
@@ -501,9 +501,6 @@ p {
 .adminTagRow {
   display: flex;
   align-items: center;
-}
-
-.adminTagName {
   margin-bottom: 10px;
 }
 

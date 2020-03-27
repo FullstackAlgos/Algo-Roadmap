@@ -2,6 +2,24 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class AdminTag extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showEdit: false,
+      name: ""
+    };
+  }
+
+  showEdit = () => {
+    this.setState({ showEdit: !this.state.showEdit });
+  };
+
+  handleChange = evt => {
+    this.setState({
+      [evt.target.name]: evt.target.value
+    });
+  };
+
   render() {
     const { t, q } = this.props;
 
@@ -11,6 +29,14 @@ class AdminTag extends Component {
           <h3 className="adminTagName">
             {t.name}&nbsp;&nbsp;&nbsp;({q.length})
           </h3>
+
+          <button
+            type="button"
+            onClick={this.showEdit}
+            className="adminQuestBtn gBtn"
+          >
+            Edit Tag Name
+          </button>
         </div>
 
         {q.map((quest, i) => (
