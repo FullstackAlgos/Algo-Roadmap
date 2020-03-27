@@ -23,9 +23,11 @@ router.post("/", async (req, res, next) => {
 
 router.put("/:tagId", async (req, res, next) => {
   try {
+    const { name, ranking } = req.body;
     await Tag.update(
       {
-        name: req.body.tagName
+        name,
+        ranking
       },
       { where: { id: req.params.tagId } }
     );

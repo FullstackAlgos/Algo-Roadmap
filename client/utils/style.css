@@ -518,6 +518,13 @@ p {
 }
 
 /* ----------------------- ADMIN TAG ----------------------- */
+.adminTagAddDiv {
+  background-color: lightpink;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
 .adminTagRow {
   display: flex;
   align-items: center;

@@ -179,9 +179,9 @@ export const getAllTags = () => async dispatch => {
   }
 };
 
-export const changeTag = (tagId, tagName) => async dispatch => {
+export const changeTag = (tagId, newTag) => async dispatch => {
   try {
-    await axios.put(`/api/tags/${tagId}`, { tagName });
+    await axios.put(`/api/tags/${tagId}`, newTag);
 
     const tags = [...store.getState().tags];
     tags.forEach((t, i) => {

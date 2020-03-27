@@ -7,7 +7,8 @@ class AdminTag extends Component {
     super();
     this.state = {
       showEdit: false,
-      name: ""
+      name: "",
+      ranking: "--"
     };
   }
 
@@ -24,11 +25,18 @@ class AdminTag extends Component {
   handleSubmit = evt => {
     evt.preventDefault();
     const { t, changeTag } = this.props,
-      { name } = this.state;
+      { name, ranking } = this.state;
 
-    if (name.length) changeTag(t.id, name);
+    if (name.length || ranking !== "--") {
+      const newTag = {};
 
-    this.setState({ showEdit: false, name: "" });
+      newTag.name = name.length ? name : t.name;
+      newTag.ranking = ranking !== "--" ? ranking : t.ranking;
+
+      changeTag(t.id, newTag);
+    }
+
+    this.setState({ showEdit: false, name: "", ranking: "" });
   };
 
   render() {
@@ -38,7 +46,7 @@ class AdminTag extends Component {
       <div className="adminSingleDiv">
         <div className="adminTagRow">
           <h3 className="adminTagName">
-            {t.name}&nbsp;&nbsp;&nbsp;({q.length})
+            {t.name}&nbsp;&nbsp;&nbsp;(Ranking: {t.ranking})
           </h3>
 
           <button
@@ -46,7 +54,7 @@ class AdminTag extends Component {
             onClick={this.showEdit}
             className="adminQuestBtn gBtn"
           >
-            {this.state.showEdit ? "Finish Editing" : "Edit Tag Name"}
+            {this.state.showEdit ? "Finish Editing" : "Edit Tag"}
           </button>
         </div>
 
@@ -64,6 +72,26 @@ class AdminTag extends Component {
                 onChange={this.handleChange}
                 className="adminQuestTextArea"
               />
+            </div>
+
+            <div className="adminTagFormDiv">
+              <label htmlFor="ranking" className="adminQuestLabel">
+                Ranking:
+              </label>
+
+              <select
+                name="ranking"
+                value={this.state.ranking}
+                onChange={this.handleChange}
+                className="adminQuestSelect"
+              >
+                <option>--</option>
+                {Array(10)
+                  .fill()
+                  .map((x, i) => (
+                    <option key={i}>{i + 1}</option>
+                  ))}
+              </select>
             </div>
 
             <button type="submit" className="adminTagBtn gBtn">
