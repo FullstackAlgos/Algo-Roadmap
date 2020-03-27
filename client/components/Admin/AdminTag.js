@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { changeTag } from "../../store";
 
 class AdminTag extends Component {
   constructor() {
@@ -22,7 +23,11 @@ class AdminTag extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    console.log("SUBMIT", this.state);
+    const { t, changeTag } = this.props,
+      { name } = this.state;
+
+    if (name.length) changeTag(t.id, name);
+
     this.setState({ showEdit: false, name: "" });
   };
 
@@ -77,4 +82,10 @@ class AdminTag extends Component {
   }
 }
 
-export default connect()(AdminTag);
+const mapDispatch = dispatch => {
+  return {
+    changeTag: (tagId, tagName) => dispatch(changeTag(tagId, tagName))
+  };
+};
+
+export default connect(null, mapDispatch)(AdminTag);
