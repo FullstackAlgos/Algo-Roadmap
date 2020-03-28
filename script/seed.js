@@ -360,5 +360,13 @@ const questionBulk2 = [
     difficulty: 1,
     link: "https://leetcode.com/problems/min-cost-climbing-stairs/",
     tagId: 11
+  },
+  {
+    name: "Climbing Stairs",
+    description:
+      "You are climbing a stair case. It takes n steps to reach to the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top? Note: Given n will be a positive integer.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/climbing-stairs/",
+    tagId: 11
   }
 ];
