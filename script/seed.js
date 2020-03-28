@@ -368,5 +368,29 @@ const questionBulk2 = [
     difficulty: 1,
     link: "https://leetcode.com/problems/climbing-stairs/",
     tagId: 11
+  },
+  {
+    name: "Unique Paths",
+    description:
+      "A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below). The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below). How many possible unique paths are there?",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/unique-paths/",
+    tagId: 11
+  },
+  {
+    name: "Minimum Path Sum",
+    description:
+      "Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path. Note: You can only move either down or right at any point in time.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/minimum-path-sum/",
+    tagId: 11
+  },
+  {
+    name: "Cost Change",
+    description:
+      "You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/coin-change/",
+    tagId: 11
   }
 ];
