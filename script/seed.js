@@ -392,5 +392,21 @@ const questionBulk2 = [
     difficulty: 3,
     link: "https://leetcode.com/problems/coin-change/",
     tagId: 11
+  },
+  {
+    name: "Unique Paths II",
+    description:
+      "A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below). The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below). Now consider if some obstacles are added to the grids. How many unique paths would there be?",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/unique-paths-ii/",
+    tagId: 11
+  },
+  {
+    name: "Max Length of Repeated Subarray",
+    description:
+      "Given two integer arrays A and B, return the maximum length of an subarray that appears in both arrays.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
+    tagId: 11
   }
 ];
