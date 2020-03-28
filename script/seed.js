@@ -338,12 +338,19 @@ const questionBulk2 = [
   },
   // --------------- DYNAMIC PROGRAMMING ---------------
   {
-    name: "Minimum Flips to Make a OR b Equal to c",
+    name: "Best Time to Buy and Sell Stock",
     description:
-      "Given 3 positives numbers a, b and c. Return the minimum flips required in some bits of a and b to make ( a OR b == c ). (bitwise OR operation). Flip operation consists of change any single bit 1 to 0 or change the bit 0 to 1 in their binary representation.",
-    difficulty: 3,
-    link:
-      "https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/",
-    tagId: 5
+      "Say you have an array for which the ith element is the price of a given stock on day i. If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit. Note that you cannot sell a stock before you buy one.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+    tagId: 11
+  },
+  {
+    name: "House Robber",
+    description:
+      "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night. Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/house-robber/",
+    tagId: 11
   }
 ];
