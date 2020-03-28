@@ -317,5 +317,23 @@ const questionBulk2 = [
     link:
       "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/",
     tagId: 12
+  },
+  // --------------- BIT MANIPULATION ---------------
+  {
+    name: "Hamming Distance",
+    description:
+      "The Hamming distance between two integers is the number of positions at which the corresponding bits are different. Given two integers x and y, calculate the Hamming distance.",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/hamming-distance/",
+    tagId: 5
+  },
+  {
+    name: "Minimum Flips to Make a OR b Equal to c",
+    description:
+      "Given 3 positives numbers a, b and c. Return the minimum flips required in some bits of a and b to make ( a OR b == c ). (bitwise OR operation). Flip operation consists of change any single bit 1 to 0 or change the bit 0 to 1 in their binary representation.",
+    difficulty: 3,
+    link:
+      "https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/",
+    tagId: 5
   }
 ];
