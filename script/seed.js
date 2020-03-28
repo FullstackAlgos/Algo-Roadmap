@@ -408,5 +408,13 @@ const questionBulk2 = [
     difficulty: 4,
     link: "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
     tagId: 11
+  },
+  {
+    name: "Maximal Square",
+    description:
+      "Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/maximal-square/",
+    tagId: 11
   }
 ];
