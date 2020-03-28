@@ -440,5 +440,21 @@ const questionBulk2 = [
     difficulty: 5,
     link: "https://leetcode.com/problems/maximal-rectangle/",
     tagId: 11
+  },
+  {
+    name: "Regular Expression Matching",
+    description:
+      "Given a limited regular expression and a string, return whether or not the pattern matches the string.",
+    difficulty: 5,
+    link: "https://leetcode.com/problems/regular-expression-matching/",
+    tagId: 11
+  },
+  {
+    name: "Word Break II",
+    description:
+      "Given a dictionary of words and a string, return all the ways that the string can be partitioned so that it contains words in the dictionary.",
+    difficulty: 5,
+    link: "https://leetcode.com/problems/word-break-ii/",
+    tagId: 11
   }
 ];
