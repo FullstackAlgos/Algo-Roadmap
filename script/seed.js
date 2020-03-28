@@ -425,14 +425,7 @@ const questionBulk2 = [
     link: "https://leetcode.com/problems/edit-distance/",
     tagId: 11
   },
-  {
-    name: "Longest Valid Parentheses",
-    description:
-      "Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.",
-    difficulty: 5,
-    link: "https://leetcode.com/problems/longest-valid-parentheses/",
-    tagId: 11
-  },
+
   {
     name: "Maximal Rectangle",
     description:
@@ -530,6 +523,14 @@ const questionBulk2 = [
       "Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.",
     difficulty: 4,
     link: "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+    tagId: 8
+  },
+  {
+    name: "Longest Valid Parentheses",
+    description:
+      "Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.",
+    difficulty: 5,
+    link: "https://leetcode.com/problems/longest-valid-parentheses/",
     tagId: 8
   }
 ];
