@@ -155,39 +155,47 @@ const questionBulk = [
   },
   {
     name: "Count Negative Numbers In Sorted Matrix",
-    description:"Given a matrix of integers with each row and column sorted in descending order, return the number of negative numbers in the matrix.",
-    link: "https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/",
+    description:
+      "Given a matrix of integers with each row and column sorted in descending order, return the number of negative numbers in the matrix.",
+    link:
+      "https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/",
     difficulty: 2,
     ratedDifficulty: 2.0,
     tagId: 1
   },
   {
     name: "Count Numbers Smaller Than Current Number",
-    description: "Given an array of numbers, return an array in which each element denotes the number of elements in the input array that are strictly smaller than the current element.",
+    description:
+      "Given an array of numbers, return an array in which each element denotes the number of elements in the input array that are strictly smaller than the current element.",
     difficulty: 2,
     ratedDifficulty: 2.0,
-    link: "https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/",
+    link:
+      "https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/",
     tagId: 1
   },
   {
     name: "Search In Rotated Sorted Array",
     difficulty: 3,
     ratedDifficulty: 3.0,
-    description: "Given an array that’s been sorted in ascending order then rotated some amount and a target number, return the index of the target number in the array or -1 if the target is not present",
+    description:
+      "Given an array that’s been sorted in ascending order then rotated some amount and a target number, return the index of the target number in the array or -1 if the target is not present",
     link: "https://leetcode.com/problems/search-in-rotated-sorted-array/",
     tagId: 1
   },
   {
     name: "First and Last Position of Element In Sorted Array",
-    description: "Given a sorted array and a target, find the target’s first and last index in the array. If it’s not found return [-1,-1]",
-    link: "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
+    description:
+      "Given a sorted array and a target, find the target’s first and last index in the array. If it’s not found return [-1,-1]",
+    link:
+      "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
     difficulty: 3,
     ratedDifficulty: 3.0,
     tagId: 1
   },
   {
     name: "Spiral Matrix",
-    description: "Given a 2D matrix, return an array that contains the elements of the matrix in a clockwise-outside-to-inside spiral order",
+    description:
+      "Given a 2D matrix, return an array that contains the elements of the matrix in a clockwise-outside-to-inside spiral order",
     link: "https://leetcode.com/problems/spiral-matrix/",
     difficulty: 3,
     ratedDifficulty: 3.0,
@@ -195,7 +203,8 @@ const questionBulk = [
   },
   {
     name: "Maximum Subarray",
-    description: "Given an array of integers, return the subarray with the maximum sum.",
+    description:
+      "Given an array of integers, return the subarray with the maximum sum.",
     link: "https://leetcode.com/problems/maximum-subarray/",
     difficulty: 3,
     ratedDifficulty: 3.0,
@@ -203,7 +212,8 @@ const questionBulk = [
   },
   {
     name: "Product Of Array Except Self",
-    description: "Given an array of numbers, return an array of the product of all numbers in the array except the current element itself without using division.",
+    description:
+      "Given an array of numbers, return an array of the product of all numbers in the array except the current element itself without using division.",
     link: "https://leetcode.com/problems/product-of-array-except-self/",
     difficulty: 3,
     ratedDifficulty: 3.0,
@@ -211,7 +221,8 @@ const questionBulk = [
   },
   {
     name: "Interval List Intersections",
-    description: "Given two arrays of intervals sorted by starting point, return an array of the intersections between the two intervals.",
+    description:
+      "Given two arrays of intervals sorted by starting point, return an array of the intersections between the two intervals.",
     link: "https://leetcode.com/problems/interval-list-intersections/",
     difficulty: 3,
     ratedDifficulty: 3.0,
@@ -219,7 +230,8 @@ const questionBulk = [
   },
   {
     name: "Find the Duplicate Number",
-    description: "Given an array of numbers with elements of values 1 to n+1 (where n is the length of the array), return the duplicate element",
+    description:
+      "Given an array of numbers with elements of values 1 to n+1 (where n is the length of the array), return the duplicate element",
     link: "https://leetcode.com/problems/find-the-duplicate-number/",
     difficulty: 4,
     ratedDifficulty: 4.0,
@@ -227,7 +239,8 @@ const questionBulk = [
   },
   {
     name: "Search a 2D Matrix",
-    description: "Given a 2D matrix with sorted rows and sorted columns and a target number, return whether or not the matrix contains the target number.",
+    description:
+      "Given a 2D matrix with sorted rows and sorted columns and a target number, return whether or not the matrix contains the target number.",
     link: "https://leetcode.com/problems/search-a-2d-matrix-ii/",
     difficulty: 4,
     ratedDifficulty: 4.0,
@@ -235,125 +248,13 @@ const questionBulk = [
   },
   {
     name: "First Missing Positive",
-    description: "Given an unsorted array of integers, find the first missing positive number in the array. 0 is NOT counted as a positive number.",
+    description:
+      "Given an unsorted array of integers, find the first missing positive number in the array. 0 is NOT counted as a positive number.",
     link: "https://leetcode.com/problems/first-missing-positive",
     difficulty: 5,
     ratedDifficulty: 5.0,
     tagId: 1
-  }
-];
-
-const tagBulk = [
-  {
-    name: "Array",
-    ranking: 1
   },
-  {
-    name: "HashMap",
-    ranking: 3
-  },
-  {
-    name: "String",
-    ranking: 2
-  },
-  {
-    name: "Linked List",
-    ranking: 4
-  },
-  {
-    name: "Bit Manipulation",
-    ranking: 13
-  },
-  {
-    name: "Tree",
-    ranking: 5
-  },
-  {
-    name: "Depth-First Search",
-    ranking: 6
-  },
-  {
-    name: "Stack/Queue",
-    ranking: 7
-  },
-  {
-    name: "Breadth-First Search",
-    ranking: 8
-  },
-  {
-    name: "Recursion/Backtracking",
-    ranking: 9
-  },
-  {
-    name: "Dynamic Programming",
-    ranking: 10
-  },
-  {
-    name: "Heap/Priority Queue",
-    ranking: 11
-  },
-  {
-    name: "Graph",
-    ranking: 12
-  }
-];
-
-const likeBulk = [
-  { status: "like", userId: 1, questionId: 1 },
-  { status: "dislike", userId: 1, questionId: 2 },
-  { status: "like", userId: 2, questionId: 3 },
-  { status: "like", userId: 3, questionId: 4 }
-];
-
-const userQuestBulk = [
-  { userId: 1, questionId: 1 },
-  { userId: 1, questionId: 2 },
-  { userId: 2, questionId: 3 },
-  { userId: 3, questionId: 4 }
-];
-
-const propQuestBulk = [
-  {
-    name: "Spiral Matrix",
-    description: "Create array of number outputs spiraling the given array",
-    difficulty: 2,
-    link: "https://leetcode.com/problems/spiral-matrix/",
-    tagId: 1,
-    userId: 1
-  }
-];
-
-async function seed() {
-  await db.sync({ force: true });
-
-  await User.bulkCreate(userBulk);
-  await Tag.bulkCreate(tagBulk);
-  await Question.bulkCreate(questionBulk);
-  await UserQuestion.bulkCreate(userQuestBulk);
-  await Like.bulkCreate(likeBulk);
-  await ProposeQuestion.bulkCreate(propQuestBulk);
-
-  console.log(`seeded successfully`);
-}
-
-async function runSeed() {
-  console.log("seeding...");
-
-  try {
-    await seed();
-  } catch (err) {
-    console.error(err);
-    process.exitCode = 1;
-  } finally {
-    console.log("closing db connection");
-    await db.close();
-    console.log("db connection closed");
-  }
-}
-
-if (module === require.main) runSeed();
-
-const questionBulk2 = [
   // --------------- GRAPHS ---------------
   {
     name: "Redundant Connection",
@@ -622,3 +523,113 @@ const questionBulk2 = [
     tagId: 8
   }
 ];
+
+const tagBulk = [
+  {
+    name: "Array",
+    ranking: 1
+  },
+  {
+    name: "HashMap",
+    ranking: 3
+  },
+  {
+    name: "String",
+    ranking: 2
+  },
+  {
+    name: "Linked List",
+    ranking: 4
+  },
+  {
+    name: "Bit Manipulation",
+    ranking: 13
+  },
+  {
+    name: "Tree",
+    ranking: 5
+  },
+  {
+    name: "Depth-First Search",
+    ranking: 6
+  },
+  {
+    name: "Stack/Queue",
+    ranking: 7
+  },
+  {
+    name: "Breadth-First Search",
+    ranking: 8
+  },
+  {
+    name: "Recursion/Backtracking",
+    ranking: 9
+  },
+  {
+    name: "Dynamic Programming",
+    ranking: 10
+  },
+  {
+    name: "Heap/Priority Queue",
+    ranking: 11
+  },
+  {
+    name: "Graph",
+    ranking: 12
+  }
+];
+
+const likeBulk = [
+  { status: "like", userId: 1, questionId: 1 },
+  { status: "dislike", userId: 1, questionId: 2 },
+  { status: "like", userId: 2, questionId: 3 },
+  { status: "like", userId: 3, questionId: 4 }
+];
+
+const userQuestBulk = [
+  { userId: 1, questionId: 1 },
+  { userId: 1, questionId: 2 },
+  { userId: 2, questionId: 3 },
+  { userId: 3, questionId: 4 }
+];
+
+const propQuestBulk = [
+  {
+    name: "Spiral Matrix",
+    description: "Create array of number outputs spiraling the given array",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/spiral-matrix/",
+    tagId: 1,
+    userId: 1
+  }
+];
+
+async function seed() {
+  await db.sync({ force: true });
+
+  await User.bulkCreate(userBulk);
+  await Tag.bulkCreate(tagBulk);
+  await Question.bulkCreate(questionBulk);
+  await UserQuestion.bulkCreate(userQuestBulk);
+  await Like.bulkCreate(likeBulk);
+  await ProposeQuestion.bulkCreate(propQuestBulk);
+
+  console.log(`seeded successfully`);
+}
+
+async function runSeed() {
+  console.log("seeding...");
+
+  try {
+    await seed();
+  } catch (err) {
+    console.error(err);
+    process.exitCode = 1;
+  } finally {
+    console.log("closing db connection");
+    await db.close();
+    console.log("db connection closed");
+  }
+}
+
+if (module === require.main) runSeed();
