@@ -416,5 +416,29 @@ const questionBulk2 = [
     difficulty: 4,
     link: "https://leetcode.com/problems/maximal-square/",
     tagId: 11
+  },
+  {
+    name: "Edit Distance",
+    description:
+      "Given two words word1 and word2, find the minimum number of operations required to convert word1 to word2. You have the following 3 operations permitted on a word: Insert a character, Delete a character, Replace a character.",
+    difficulty: 5,
+    link: "https://leetcode.com/problems/edit-distance/",
+    tagId: 11
+  },
+  {
+    name: "Longest Valid Parentheses",
+    description:
+      "Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.",
+    difficulty: 5,
+    link: "https://leetcode.com/problems/longest-valid-parentheses/",
+    tagId: 11
+  },
+  {
+    name: "Maximal Rectangle",
+    description:
+      "Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.",
+    difficulty: 5,
+    link: "https://leetcode.com/problems/maximal-rectangle/",
+    tagId: 11
   }
 ];
