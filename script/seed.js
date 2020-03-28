@@ -456,5 +456,31 @@ const questionBulk2 = [
     difficulty: 5,
     link: "https://leetcode.com/problems/word-break-ii/",
     tagId: 11
+  },
+  // --------------- STACKS ---------------
+  {
+    name: "Valid Parentheses",
+    description:
+      "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/valid-parentheses/",
+    tagId: 8
+  },
+  {
+    name: "Remove Outermost Parentheses",
+    description:
+      "Return S after removing the outermost parentheses of every primitive string in the primitive decomposition of S.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/remove-outermost-parentheses/",
+    tagId: 8
+  },
+  {
+    name: "Remove All Adjacent Duplicates In String",
+    description:
+      "Given a string S of lowercase letters, a duplicate removal consists of choosing two adjacent and equal letters, and removing them. We repeatedly make duplicate removals on S until we no longer can. Return the final string after all such duplicate removals have been made.  It is guaranteed the answer is unique.",
+    difficulty: 1,
+    link:
+      "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/",
+    tagId: 8
   }
 ];
