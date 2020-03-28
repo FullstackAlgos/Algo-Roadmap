@@ -54,7 +54,8 @@ const questionBulk = [
   },
   {
     name: "Single Number",
-    description: "Given an array in which all elements appear twice except one (of them), return the one which appears only once.",
+    description:
+      "Given an array in which all elements appear twice except one (of them), return the one which appears only once.",
     difficulty: 1,
     link: "https://leetcode.com/problems/single-number/",
     ratedDifficulty: 1.0,
@@ -62,15 +63,18 @@ const questionBulk = [
   },
   {
     name: "Find All Numbers Disappeared In Array",
-    description: "Given an array that has some elements from 1 to n (where n is the length of the array), find the elements from 1 to n that it is missing. Ex. Given [1,2,2,4], return 3",
+    description:
+      "Given an array that has some elements from 1 to n (where n is the length of the array), find the elements from 1 to n that it is missing. Ex. Given [1,2,2,4], return 3",
     difficulty: 1,
-    link: "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/",
+    link:
+      "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/",
     ratedDifficulty: 1.0,
-    tagId:1
+    tagId: 1
   },
   {
     name: "Peak Index In Mountain Array",
-    description: "Given a mountain array (i.e. an array that only increases on one side and only decreases on the other), find the peak index (index of the top of the mountain). See the problem for detailed info.",
+    description:
+      "Given a mountain array (i.e. an array that only increases on one side and only decreases on the other), find the peak index (index of the top of the mountain). See the problem for detailed info.",
     difficulty: 1,
     link: "https://leetcode.com/problems/peak-index-in-a-mountain-array/",
     ratedDifficulty: 1.0,
@@ -78,7 +82,8 @@ const questionBulk = [
   },
   {
     name: "Monotonic Array",
-    description: "Given an array, return whether or not its elements are increasing or decreasing. Note that [1,2,2,4] still counts as increasing.",
+    description:
+      "Given an array, return whether or not its elements are increasing or decreasing. Note that [1,2,2,4] still counts as increasing.",
     difficulty: 1,
     link: "https://leetcode.com/problems/monotonic-array/",
     ratedDifficulty: 1.0,
@@ -86,7 +91,8 @@ const questionBulk = [
   },
   {
     name: "Max Consecutive 1s",
-    description: "Given an array of 1s and 0s, return the max length of consecutive 1s",
+    description:
+      "Given an array of 1s and 0s, return the max length of consecutive 1s",
     difficulty: 1,
     link: "https://leetcode.com/problems/max-consecutive-ones/",
     ratedDifficulty: 1.0,
@@ -94,7 +100,8 @@ const questionBulk = [
   },
   {
     name: "Minimum Absolute Difference",
-    description: "Given an array of distinct integers, find and return all pairs of elements that have the minimum absolute difference.",
+    description:
+      "Given an array of distinct integers, find and return all pairs of elements that have the minimum absolute difference.",
     difficulty: 2,
     link: "https://leetcode.com/problems/minimum-absolute-difference/",
     ratedDifficulty: 2.0,
@@ -102,7 +109,8 @@ const questionBulk = [
   },
   {
     name: "Toeplitz Matrix",
-    description: "Traverse a 2D matrix diagonally. A look at the problem should make it clear.",
+    description:
+      "Traverse a 2D matrix diagonally. A look at the problem should make it clear.",
     difficulty: 2,
     link: "https://leetcode.com/problems/toeplitz-matrix/",
     ratedDifficulty: 2.0,
@@ -110,7 +118,8 @@ const questionBulk = [
   },
   {
     name: "Island Perimeter",
-    description: "Find the ‘perimeter’ of ‘islands’ in a matrix. The problem description has a picture and a good explanation!",
+    description:
+      "Find the ‘perimeter’ of ‘islands’ in a matrix. The problem description has a picture and a good explanation!",
     difficulty: 2,
     link: "https://leetcode.com/problems/island-perimeter/",
     ratedDifficulty: 2.0,
@@ -118,15 +127,18 @@ const questionBulk = [
   },
   {
     name: "Partition Array Into Three Equal Sum Parts",
-    description: "Given an array, return whether or not its possible to partition it into three non-empty, equal-sum parts.",
+    description:
+      "Given an array, return whether or not its possible to partition it into three non-empty, equal-sum parts.",
     difficulty: 2,
-    link: "https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum/",
+    link:
+      "https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum/",
     ratedDifficulty: 2.0,
     tagId: 1
   },
   {
     name: "Find Pivot Index",
-    description: "Given an array of integers, find an index at which all the sum of elements to the right of the index equals the sum of elements to the left of the index",
+    description:
+      "Given an array of integers, find an index at which all the sum of elements to the right of the index equals the sum of elements to the left of the index",
     difficulty: 2,
     link: "https://leetcode.com/problems/find-pivot-index/",
     ratedDifficulty: 2.0,
@@ -134,7 +146,8 @@ const questionBulk = [
   },
   {
     name: "Plus One",
-    description: "Given an array of integers representing a number, return an array with the digits of that number plus 1.",
+    description:
+      "Given an array of integers representing a number, return an array with the digits of that number plus 1.",
     difficulty: 2,
     link: "https://leetcode.com/problems/plus-one/",
     ratedDifficulty: 2.0,
@@ -251,3 +264,58 @@ async function runSeed() {
 }
 
 if (module === require.main) runSeed();
+
+const questionBulk2 = [
+  // --------------- GRAPHS ---------------
+  {
+    name: "Redundant Connection",
+    description:
+      "Given an undirected graph (represented as an integer array of edges) with at least one redundant connection, return the last redundant connection.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/redundant-connection/",
+    tagId: 13
+  },
+  {
+    name: "Connected Network",
+    description:
+      "Given an undirected graph (represented as an array of edges) return the fewest number of connections you need to make to connect all of the edges in the graph.",
+    difficulty: 3,
+    link:
+      "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
+    tagId: 13
+  },
+  {
+    name: "Accounts Merge",
+    description:
+      "Given a list of lists of strings representing accounts, merge the accounts with the same email and return the new list of accounts.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/accounts-merge/",
+    tagId: 13
+  },
+  {
+    name: "Smallest String with Swaps",
+    description:
+      "Given a string and a 2D array of indices representing a connected pair of characters, find the lexicographically smallest string that can be made by swapping characters in the pairs. The pairs can be swapped any number of times.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/smallest-string-with-swaps/",
+    tagId: 13
+  },
+  // --------------- HEAPS ---------------
+  {
+    name: "Rank Teams by Votes",
+    description:
+      "Given an array of strings votes which is the votes of all voters in the ranking systems. Sort all teams according to the ranking system described above. Return a string of all teams sorted by the ranking system.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/rank-teams-by-votes/",
+    tagId: 12
+  },
+  {
+    name: "Maximum Number of Events That Can Be Attended",
+    description:
+      "Given an array of events where events[i] = [startDayi, endDayi]. Every event i starts at startDayi and ends at endDayi. You can attend an event i at any day d where startTimei <= d <= endTimei. Notice that you can only attend one event at any time d. Return the maximum number of events you can attend.",
+    difficulty: 4,
+    link:
+      "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/",
+    tagId: 12
+  }
+];
