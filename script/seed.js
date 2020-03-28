@@ -51,6 +51,94 @@ const questionBulk = [
     link: "https://leetcode.com/problems/two-sum/",
     ratedDifficulty: 1.0,
     tagId: 2
+  },
+  {
+    name: "Single Number",
+    description: "Given an array in which all elements appear twice except one (of them), return the one which appears only once.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/single-number/",
+    ratedDifficulty: 1.0,
+    tagId: 1
+  },
+  {
+    name: "Find All Numbers Disappeared In Array",
+    description: "Given an array that has some elements from 1 to n (where n is the length of the array), find the elements from 1 to n that it is missing. Ex. Given [1,2,2,4], return 3",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/",
+    ratedDifficulty: 1.0,
+    tagId:1
+  },
+  {
+    name: "Peak Index In Mountain Array",
+    description: "Given a mountain array (i.e. an array that only increases on one side and only decreases on the other), find the peak index (index of the top of the mountain). See the problem for detailed info.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/peak-index-in-a-mountain-array/",
+    ratedDifficulty: 1.0,
+    tagId: 1
+  },
+  {
+    name: "Monotonic Array",
+    description: "Given an array, return whether or not its elements are increasing or decreasing. Note that [1,2,2,4] still counts as increasing.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/monotonic-array/",
+    ratedDifficulty: 1.0,
+    tagId: 1
+  },
+  {
+    name: "Max Consecutive 1s",
+    description: "Given an array of 1s and 0s, return the max length of consecutive 1s",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/max-consecutive-ones/",
+    ratedDifficulty: 1.0,
+    tagId: 1
+  },
+  {
+    name: "Minimum Absolute Difference",
+    description: "Given an array of distinct integers, find and return all pairs of elements that have the minimum absolute difference.",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/minimum-absolute-difference/",
+    ratedDifficulty: 2.0,
+    tagId: 1
+  },
+  {
+    name: "Toeplitz Matrix",
+    description: "Traverse a 2D matrix diagonally. A look at the problem should make it clear.",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/toeplitz-matrix/",
+    ratedDifficulty: 2.0,
+    tagId: 1
+  },
+  {
+    name: "Island Perimeter",
+    description: "Find the ‘perimeter’ of ‘islands’ in a matrix. The problem description has a picture and a good explanation!",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/island-perimeter/",
+    ratedDifficulty: 2.0,
+    tagId: 1
+  },
+  {
+    name: "Partition Array Into Three Equal Sum Parts",
+    description: "Given an array, return whether or not its possible to partition it into three non-empty, equal-sum parts.",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum/",
+    ratedDifficulty: 2.0,
+    tagId: 1
+  },
+  {
+    name: "Find Pivot Index",
+    description: "Given an array of integers, find an index at which all the sum of elements to the right of the index equals the sum of elements to the left of the index",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/find-pivot-index/",
+    ratedDifficulty: 2.0,
+    tagId: 1
+  },
+  {
+    name: "Plus One",
+    description: "Given an array of integers representing a number, return an array with the digits of that number plus 1.",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/plus-one/",
+    ratedDifficulty: 2.0,
+    tagId: 1
   }
 ];
 
@@ -73,11 +161,39 @@ const tagBulk = [
   },
   {
     name: "Bit Manipulation",
-    ranking: 10
+    ranking: 13
   },
   {
     name: "Tree",
     ranking: 5
+  },
+  {
+    name: "Depth-First Search",
+    ranking: 6
+  },
+  {
+    name: "Stack/Queue",
+    ranking: 7
+  },
+  {
+    name: "Breadth-First Search",
+    ranking: 8
+  },
+  {
+    name: "Recursion/Backtracking",
+    ranking: 9
+  },
+  {
+    name: "Dynamic Programming",
+    ranking: 10
+  },
+  {
+    name: "Heap/Priority Queue",
+    ranking: 11
+  },
+  {
+    name: "Graph",
+    ranking: 12
   }
 ];
 
