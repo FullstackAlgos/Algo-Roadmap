@@ -199,13 +199,35 @@ p {
 }
 
 /* ----------------------- ROADMAP ----------------------- */
-.roadMapFullDiv {
-  background-color: aqua;
+.roadmapFullDiv {
+  background-color: indianred;
   padding: 15px;
-  width: 70vw;
   min-height: 150px;
 }
+.roadmapArrow {
+  width: 5%;
+  height: 100%;
+}
+.roadmapQuestion {
+  width: 20%;
+  height: 100%;
+  border-bottom-left-radius: 5% 50%;
+  border-bottom-right-radius: 5% 50%;
+  border-top-left-radius: 5% 50%;
+  border-top-right-radius: 5% 50%;
+  border-style: solid;
+  margin: 2px;
+  padding: 5px;
+  background: whitesmoke;
+  display: inline-block;
+}
+.roadmapQuestion1 {
 
+}
+.roadmapQuestion2 {
+}
+.roadmapQuestion3 {
+}
 /* ----------------------- QUESTION LIST ----------------------- */
 .probListFullDiv {
   background-color: bisque;
