@@ -482,5 +482,54 @@ const questionBulk2 = [
     link:
       "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/",
     tagId: 8
+  },
+  {
+    name: "Reverse Polish Notation",
+    description:
+      "Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid operators are +, -, *, /. Each operand may be an integer or another expression. Note: Division between two integers should truncate toward zero. The given RPN expression is always valid. That means the expression would always evaluate to a result and there won't be any divide by zero operation.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
+    tagId: 8
+  },
+  {
+    name: "Asteroid Collision",
+    description:
+      "We are given an array asteroids of integers representing asteroids in a row. For each asteroid, the absolute value represents its size, and the sign represents its direction (positive meaning right, negative meaning left). Each asteroid moves at the same speed. Find out the state of the asteroids after all collisions. If two asteroids meet, the smaller one will explode. If both are the same size, both will explode. Two asteroids moving in the same direction will never meet.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/asteroid-collision/",
+    tagId: 8
+  },
+  {
+    name: "Remove All Adjacent Duplicates in String II",
+    description:
+      "Given a string s and an integer k, remove all the substrings that have k adjacent, equal characters and return the resulting string.",
+    difficulty: 3,
+    link:
+      "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/",
+    tagId: 8
+  },
+  {
+    name: "Trapping Rain Water",
+    description:
+      "Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.",
+    difficulty: 5,
+    link: "https://leetcode.com/problems/trapping-rain-water/",
+    tagId: 8
+  },
+  {
+    name: "Daily Temperatures",
+    description:
+      "Given a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead. For example, given the list of temperatures T = [73, 74, 75, 71, 69, 72, 76, 73], your output should be [1, 1, 4, 2, 1, 1, 0, 0]. Note: The length of temperatures will be in the range [1, 30000]. Each temperature will be an integer in the range [30, 100].",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/daily-temperatures/",
+    tagId: 8
+  },
+  {
+    name: "Largest Rectangle in Histogram",
+    description:
+      "Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+    tagId: 8
   }
 ];
