@@ -307,24 +307,7 @@ const questionBulk = [
     difficulty: 3,
     tagId: 1
   },
-  // --------------- BIT MANIPULATION ---------------
-  {
-    name: "Hamming Distance",
-    description:
-      "The Hamming distance between two integers is the number of positions at which the corresponding bits are different. Given two integers x and y, calculate the Hamming distance.",
-    difficulty: 2,
-    link: "https://leetcode.com/problems/hamming-distance/",
-    tagId: 5
-  },
-  {
-    name: "Minimum Flips to Make a OR b Equal to c",
-    description:
-      "Given 3 positives numbers a, b and c. Return the minimum flips required in some bits of a and b to make ( a OR b == c ). (bitwise OR operation). Flip operation consists of change any single bit 1 to 0 or change the bit 0 to 1 in their binary representation.",
-    difficulty: 3,
-    link:
-      "https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/",
-    tagId: 5
-  },
+
   // --------------- STACKS ---------------
   {
     name: "Valid Parentheses",
@@ -332,7 +315,7 @@ const questionBulk = [
       "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.",
     difficulty: 1,
     link: "https://leetcode.com/problems/valid-parentheses/",
-    tagId: 8
+    tagId: 7
   },
   {
     name: "Remove Outermost Parentheses",
@@ -340,7 +323,7 @@ const questionBulk = [
       "Return S after removing the outermost parentheses of every primitive string in the primitive decomposition of S.",
     difficulty: 1,
     link: "https://leetcode.com/problems/remove-outermost-parentheses/",
-    tagId: 8
+    tagId: 7
   },
   {
     name: "Remove All Adjacent Duplicates In String",
@@ -349,7 +332,7 @@ const questionBulk = [
     difficulty: 1,
     link:
       "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/",
-    tagId: 8
+    tagId: 7
   },
   {
     name: "Reverse Polish Notation",
@@ -357,7 +340,7 @@ const questionBulk = [
       "Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid operators are +, -, *, /. Each operand may be an integer or another expression. Note: Division between two integers should truncate toward zero. The given RPN expression is always valid. That means the expression would always evaluate to a result and there won't be any divide by zero operation.",
     difficulty: 3,
     link: "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
-    tagId: 8
+    tagId: 7
   },
   {
     name: "Asteroid Collision",
@@ -365,7 +348,7 @@ const questionBulk = [
       "We are given an array asteroids of integers representing asteroids in a row. For each asteroid, the absolute value represents its size, and the sign represents its direction (positive meaning right, negative meaning left). Each asteroid moves at the same speed. Find out the state of the asteroids after all collisions. If two asteroids meet, the smaller one will explode. If both are the same size, both will explode. Two asteroids moving in the same direction will never meet.",
     difficulty: 3,
     link: "https://leetcode.com/problems/asteroid-collision/",
-    tagId: 8
+    tagId: 7
   },
   {
     name: "Remove All Adjacent Duplicates in String II",
@@ -374,7 +357,7 @@ const questionBulk = [
     difficulty: 3,
     link:
       "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/",
-    tagId: 8
+    tagId: 7
   },
   {
     name: "Trapping Rain Water",
@@ -382,7 +365,7 @@ const questionBulk = [
       "Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.",
     difficulty: 5,
     link: "https://leetcode.com/problems/trapping-rain-water/",
-    tagId: 8
+    tagId: 7
   },
   {
     name: "Daily Temperatures",
@@ -390,7 +373,7 @@ const questionBulk = [
       "Given a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead. For example, given the list of temperatures T = [73, 74, 75, 71, 69, 72, 76, 73], your output should be [1, 1, 4, 2, 1, 1, 0, 0]. Note: The length of temperatures will be in the range [1, 30000]. Each temperature will be an integer in the range [30, 100].",
     difficulty: 3,
     link: "https://leetcode.com/problems/daily-temperatures/",
-    tagId: 8
+    tagId: 7
   },
   {
     name: "Largest Rectangle in Histogram",
@@ -398,7 +381,7 @@ const questionBulk = [
       "Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.",
     difficulty: 4,
     link: "https://leetcode.com/problems/largest-rectangle-in-histogram/",
-    tagId: 8
+    tagId: 7
   },
   {
     name: "Longest Valid Parentheses",
@@ -406,7 +389,7 @@ const questionBulk = [
       "Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.",
     difficulty: 5,
     link: "https://leetcode.com/problems/longest-valid-parentheses/",
-    tagId: 8
+    tagId: 7
   },
   // --------------- RECURSION / BACKTRACKING ---------------
   {
@@ -415,7 +398,7 @@ const questionBulk = [
       "Given a string S, we can transform every letter individually to be lowercase or uppercase to create another string.  Return a list of all possible strings we could create.",
     difficulty: 1,
     link: "https://leetcode.com/problems/letter-case-permutation/",
-    tagId: 10
+    tagId: 9
   },
   {
     name: "Subsets",
@@ -423,7 +406,7 @@ const questionBulk = [
       "Given a set of distinct integers, nums, return all possible subsets (the power set). Note: The solution set must not contain duplicate subsets.",
     difficulty: 3,
     link: "https://leetcode.com/problems/subsets/",
-    tagId: 10
+    tagId: 9
   },
   {
     name: "Combination Sum",
@@ -431,7 +414,7 @@ const questionBulk = [
       "Given a set of candidate numbers (candidates) (without duplicates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target. The same repeated number may be chosen from candidates unlimited number of times. Note: All numbers (including target) will be positive integers. The solution set must not contain duplicate combinations.",
     difficulty: 3,
     link: "https://leetcode.com/problems/combination-sum/",
-    tagId: 10
+    tagId: 9
   },
   {
     name: "Combinations",
@@ -439,7 +422,7 @@ const questionBulk = [
       "Given two integers n and k, return all possible combinations of k numbers out of 1 ... n.",
     difficulty: 3,
     link: "https://leetcode.com/problems/combinations/",
-    tagId: 10
+    tagId: 9
   },
   {
     name: "Permutations",
@@ -447,7 +430,7 @@ const questionBulk = [
       "Given a collection of distinct integers, return all possible permutations.",
     difficulty: 3,
     link: "https://leetcode.com/problems/permutations/",
-    tagId: 10
+    tagId: 9
   },
   // --------------- DYNAMIC PROGRAMMING ---------------
   {
@@ -456,7 +439,7 @@ const questionBulk = [
       "Say you have an array for which the ith element is the price of a given stock on day i. If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit. Note that you cannot sell a stock before you buy one.",
     difficulty: 1,
     link: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
-    tagId: 11
+    tagId: 10
   },
   {
     name: "House Robber",
@@ -464,7 +447,7 @@ const questionBulk = [
       "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night. Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.",
     difficulty: 1,
     link: "https://leetcode.com/problems/house-robber/",
-    tagId: 11
+    tagId: 10
   },
   {
     name: "Min Cost Climbing Stairs",
@@ -472,7 +455,7 @@ const questionBulk = [
       "On a staircase, the i-th step has some non-negative cost cost[i] assigned (0 indexed). Once you pay the cost, you can either climb one or two steps. You need to find minimum cost to reach the top of the floor, and you can either start from the step with index 0, or the step with index 1.",
     difficulty: 1,
     link: "https://leetcode.com/problems/min-cost-climbing-stairs/",
-    tagId: 11
+    tagId: 10
   },
   {
     name: "Climbing Stairs",
@@ -480,7 +463,7 @@ const questionBulk = [
       "You are climbing a stair case. It takes n steps to reach to the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top? Note: Given n will be a positive integer.",
     difficulty: 1,
     link: "https://leetcode.com/problems/climbing-stairs/",
-    tagId: 11
+    tagId: 10
   },
   {
     name: "Unique Paths",
@@ -488,7 +471,7 @@ const questionBulk = [
       "A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below). The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below). How many possible unique paths are there?",
     difficulty: 3,
     link: "https://leetcode.com/problems/unique-paths/",
-    tagId: 11
+    tagId: 10
   },
   {
     name: "Minimum Path Sum",
@@ -496,7 +479,7 @@ const questionBulk = [
       "Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path. Note: You can only move either down or right at any point in time.",
     difficulty: 3,
     link: "https://leetcode.com/problems/minimum-path-sum/",
-    tagId: 11
+    tagId: 10
   },
   {
     name: "Cost Change",
@@ -504,7 +487,7 @@ const questionBulk = [
       "You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.",
     difficulty: 3,
     link: "https://leetcode.com/problems/coin-change/",
-    tagId: 11
+    tagId: 10
   },
   {
     name: "Unique Paths II",
@@ -512,7 +495,7 @@ const questionBulk = [
       "A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below). The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below). Now consider if some obstacles are added to the grids. How many unique paths would there be?",
     difficulty: 4,
     link: "https://leetcode.com/problems/unique-paths-ii/",
-    tagId: 11
+    tagId: 10
   },
   {
     name: "Max Length of Repeated Subarray",
@@ -520,7 +503,7 @@ const questionBulk = [
       "Given two integer arrays A and B, return the maximum length of an subarray that appears in both arrays.",
     difficulty: 4,
     link: "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
-    tagId: 11
+    tagId: 10
   },
   {
     name: "Maximal Square",
@@ -528,7 +511,7 @@ const questionBulk = [
       "Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.",
     difficulty: 4,
     link: "https://leetcode.com/problems/maximal-square/",
-    tagId: 11
+    tagId: 10
   },
   {
     name: "Edit Distance",
@@ -536,7 +519,7 @@ const questionBulk = [
       "Given two words word1 and word2, find the minimum number of operations required to convert word1 to word2. You have the following 3 operations permitted on a word: Insert a character, Delete a character, Replace a character.",
     difficulty: 5,
     link: "https://leetcode.com/problems/edit-distance/",
-    tagId: 11
+    tagId: 10
   },
 
   {
@@ -545,7 +528,7 @@ const questionBulk = [
       "Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.",
     difficulty: 5,
     link: "https://leetcode.com/problems/maximal-rectangle/",
-    tagId: 11
+    tagId: 10
   },
   {
     name: "Regular Expression Matching",
@@ -553,7 +536,7 @@ const questionBulk = [
       "Given a limited regular expression and a string, return whether or not the pattern matches the string.",
     difficulty: 5,
     link: "https://leetcode.com/problems/regular-expression-matching/",
-    tagId: 11
+    tagId: 10
   },
   {
     name: "Word Break II",
@@ -561,7 +544,7 @@ const questionBulk = [
       "Given a dictionary of words and a string, return all the ways that the string can be partitioned so that it contains words in the dictionary.",
     difficulty: 5,
     link: "https://leetcode.com/problems/word-break-ii/",
-    tagId: 11
+    tagId: 10
   },
   // --------------- HEAPS ---------------
   {
@@ -570,7 +553,7 @@ const questionBulk = [
       "Given an array of strings votes which is the votes of all voters in the ranking systems. Sort all teams according to the ranking system described above. Return a string of all teams sorted by the ranking system.",
     difficulty: 3,
     link: "https://leetcode.com/problems/rank-teams-by-votes/",
-    tagId: 12
+    tagId: 11
   },
   {
     name: "Maximum Number of Events That Can Be Attended",
@@ -579,7 +562,7 @@ const questionBulk = [
     difficulty: 4,
     link:
       "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/",
-    tagId: 12
+    tagId: 11
   },
   // --------------- GRAPHS ---------------
   {
@@ -588,7 +571,7 @@ const questionBulk = [
       "Given an undirected graph (represented as an integer array of edges) with at least one redundant connection, return the last redundant connection.",
     difficulty: 3,
     link: "https://leetcode.com/problems/redundant-connection/",
-    tagId: 13
+    tagId: 12
   },
   {
     name: "Connected Network",
@@ -597,7 +580,7 @@ const questionBulk = [
     difficulty: 3,
     link:
       "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
-    tagId: 13
+    tagId: 12
   },
   {
     name: "Accounts Merge",
@@ -605,7 +588,7 @@ const questionBulk = [
       "Given a list of lists of strings representing accounts, merge the accounts with the same email and return the new list of accounts.",
     difficulty: 4,
     link: "https://leetcode.com/problems/accounts-merge/",
-    tagId: 13
+    tagId: 12
   },
   {
     name: "Smallest String with Swaps",
@@ -613,6 +596,24 @@ const questionBulk = [
       "Given a string and a 2D array of indices representing a connected pair of characters, find the lexicographically smallest string that can be made by swapping characters in the pairs. The pairs can be swapped any number of times.",
     difficulty: 4,
     link: "https://leetcode.com/problems/smallest-string-with-swaps/",
+    tagId: 12
+  },
+  // --------------- BIT MANIPULATION ---------------
+  {
+    name: "Hamming Distance",
+    description:
+      "The Hamming distance between two integers is the number of positions at which the corresponding bits are different. Given two integers x and y, calculate the Hamming distance.",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/hamming-distance/",
+    tagId: 13
+  },
+  {
+    name: "Minimum Flips to Make a OR b Equal to c",
+    description:
+      "Given 3 positives numbers a, b and c. Return the minimum flips required in some bits of a and b to make ( a OR b == c ). (bitwise OR operation). Flip operation consists of change any single bit 1 to 0 or change the bit 0 to 1 in their binary representation.",
+    difficulty: 3,
+    link:
+      "https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/",
     tagId: 13
   }
 ];
