@@ -21,7 +21,6 @@ const questionBulk = [
       "Given an array with n elements, find the element that appears n/2 times or more. It's guaranteed that there will be an element that appears n/2 times or more.",
     difficulty: 1,
     link: "https://leetcode.com/problems/majority-element/",
-
     tagId: 1
   },
   {
@@ -30,7 +29,6 @@ const questionBulk = [
       "Given two binary trees, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical and the nodes have the same value.",
     difficulty: 1,
     link: "https://leetcode.com/problems/same-tree/",
-
     tagId: 6
   },
   {
@@ -39,7 +37,6 @@ const questionBulk = [
       "Given an array of integers and a target number, return the indices of two elements in the array that sum up to the target number. This problem is one of, if not the most, commonly asked.",
     difficulty: 1,
     link: "https://leetcode.com/problems/two-sum/",
-
     tagId: 2
   },
   {
@@ -48,7 +45,6 @@ const questionBulk = [
       "Given an array in which all elements appear twice except one (of them), return the one which appears only once.",
     difficulty: 1,
     link: "https://leetcode.com/problems/single-number/",
-
     tagId: 1
   },
   {
@@ -58,7 +54,6 @@ const questionBulk = [
     difficulty: 1,
     link:
       "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/",
-
     tagId: 1
   },
   {
@@ -67,7 +62,6 @@ const questionBulk = [
       "Given a mountain array (i.e. an array that only increases on one side and only decreases on the other), find the peak index (index of the top of the mountain). See the problem for detailed info.",
     difficulty: 1,
     link: "https://leetcode.com/problems/peak-index-in-a-mountain-array/",
-
     tagId: 1
   },
   {
@@ -76,7 +70,6 @@ const questionBulk = [
       "Given an array, return whether or not its elements are increasing or decreasing. Note that [1,2,2,4] still counts as increasing.",
     difficulty: 1,
     link: "https://leetcode.com/problems/monotonic-array/",
-
     tagId: 1
   },
   {
@@ -85,7 +78,6 @@ const questionBulk = [
       "Given an array of 1s and 0s, return the max length of consecutive 1s",
     difficulty: 1,
     link: "https://leetcode.com/problems/max-consecutive-ones/",
-
     tagId: 1
   },
   {
@@ -94,7 +86,6 @@ const questionBulk = [
       "Given an array of distinct integers, find and return all pairs of elements that have the minimum absolute difference.",
     difficulty: 2,
     link: "https://leetcode.com/problems/minimum-absolute-difference/",
-
     tagId: 1
   },
   {
@@ -103,7 +94,6 @@ const questionBulk = [
       "Traverse a 2D matrix diagonally. A look at the problem should make it clear.",
     difficulty: 2,
     link: "https://leetcode.com/problems/toeplitz-matrix/",
-
     tagId: 1
   },
   {
@@ -112,7 +102,6 @@ const questionBulk = [
       "Find the ‘perimeter’ of ‘islands’ in a matrix. The problem description has a picture and a good explanation!",
     difficulty: 2,
     link: "https://leetcode.com/problems/island-perimeter/",
-
     tagId: 1
   },
   {
@@ -122,7 +111,6 @@ const questionBulk = [
     difficulty: 2,
     link:
       "https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum/",
-
     tagId: 1
   },
   {
@@ -131,7 +119,6 @@ const questionBulk = [
       "Given an array of integers, find an index at which all the sum of elements to the right of the index equals the sum of elements to the left of the index",
     difficulty: 2,
     link: "https://leetcode.com/problems/find-pivot-index/",
-
     tagId: 1
   },
   {
@@ -140,7 +127,6 @@ const questionBulk = [
       "Given an array of integers representing a number, return an array with the digits of that number plus 1.",
     difficulty: 2,
     link: "https://leetcode.com/problems/plus-one/",
-
     tagId: 1
   },
   {
@@ -150,7 +136,6 @@ const questionBulk = [
     difficulty: 2,
     link:
       "https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/",
-
     tagId: 1
   },
   {
