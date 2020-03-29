@@ -385,7 +385,7 @@ const questionBulk = [
     link: "https://leetcode.com/problems/longest-valid-parentheses/",
     tagId: 7
   },
-  // --------------- RECURSION / BACKTRACKING ---------------
+  // ------------------ RECURSION / BACKTRACKING (9) ------------------
   {
     name: "Letter Case Permutation",
     description:
@@ -426,7 +426,7 @@ const questionBulk = [
     link: "https://leetcode.com/problems/permutations/",
     tagId: 9
   },
-  // --------------- DYNAMIC PROGRAMMING ---------------
+  // -------------------- DYNAMIC PROGRAMMING (10) --------------------
   {
     name: "Best Time to Buy and Sell Stock",
     description:
