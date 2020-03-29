@@ -331,6 +331,15 @@ const questionBulk = [
     link: "https://leetcode.com/problems/longest-valid-parentheses/",
     tagId: 8
   },
+  // --------------- RECURSION / BACKTRACKING ---------------
+  {
+    name: "Letter Case Permutation",
+    description:
+      "Given a string S, we can transform every letter individually to be lowercase or uppercase to create another string.  Return a list of all possible strings we could create.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/letter-case-permutation/",
+    tagId: 10
+  },
   // --------------- DYNAMIC PROGRAMMING ---------------
   {
     name: "Best Time to Buy and Sell Stock",
