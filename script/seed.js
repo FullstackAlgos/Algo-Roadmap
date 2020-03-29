@@ -294,13 +294,21 @@ const questionBulk = [
     tagId: 3
   },
   // -------------------------- TREE (5) --------------------------
-  // ---------------------- DEPTH FIRST SEARCH (6) ----------------------
   {
     name: "Same Tree",
     description:
       "Given two binary trees, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical and the nodes have the same value.",
     difficulty: 1,
     link: "https://leetcode.com/problems/same-tree/",
+    tagId: 5
+  },
+  // ---------------------- DEPTH FIRST SEARCH (6) ----------------------
+  {
+    name: "Flood Fill",
+    description:
+      "Given a 2D matrix, a starting row, a starting column, and a new ‘color’ integer, change all of the 4-directionally adjacent (north, east, south, west) cells to the new color, and all of the adjacent ones to those to the new color, etc.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/flood-fill/",
     tagId: 6
   },
   // ---------------------- STACKS (7) ----------------------
