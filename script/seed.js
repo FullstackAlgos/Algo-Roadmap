@@ -245,6 +245,24 @@ const questionBulk = [
     difficulty: 5,
     tagId: 1
   },
+  // --------------- BIT MANIPULATION ---------------
+  {
+    name: "Hamming Distance",
+    description:
+      "The Hamming distance between two integers is the number of positions at which the corresponding bits are different. Given two integers x and y, calculate the Hamming distance.",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/hamming-distance/",
+    tagId: 5
+  },
+  {
+    name: "Minimum Flips to Make a OR b Equal to c",
+    description:
+      "Given 3 positives numbers a, b and c. Return the minimum flips required in some bits of a and b to make ( a OR b == c ). (bitwise OR operation). Flip operation consists of change any single bit 1 to 0 or change the bit 0 to 1 in their binary representation.",
+    difficulty: 3,
+    link:
+      "https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/",
+    tagId: 5
+  },
   // --------------- HEAPS ---------------
   {
     name: "Rank Teams by Votes",
@@ -297,24 +315,7 @@ const questionBulk = [
     link: "https://leetcode.com/problems/smallest-string-with-swaps/",
     tagId: 13
   },
-  // --------------- BIT MANIPULATION ---------------
-  {
-    name: "Hamming Distance",
-    description:
-      "The Hamming distance between two integers is the number of positions at which the corresponding bits are different. Given two integers x and y, calculate the Hamming distance.",
-    difficulty: 2,
-    link: "https://leetcode.com/problems/hamming-distance/",
-    tagId: 5
-  },
-  {
-    name: "Minimum Flips to Make a OR b Equal to c",
-    description:
-      "Given 3 positives numbers a, b and c. Return the minimum flips required in some bits of a and b to make ( a OR b == c ). (bitwise OR operation). Flip operation consists of change any single bit 1 to 0 or change the bit 0 to 1 in their binary representation.",
-    difficulty: 3,
-    link:
-      "https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/",
-    tagId: 5
-  },
+
   // --------------- DYNAMIC PROGRAMMING ---------------
   {
     name: "Best Time to Buy and Sell Stock",
