@@ -20,7 +20,8 @@ const questionBulk = [
     description:
       "Given a number n, divide n by 2 if its even and subtract one from n if its odd. Return the number of those operations needed to reduce n to 0.",
     difficulty: 1,
-    link: "https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/",
+    link:
+      "https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/",
     tagId: 5
   },
   {
@@ -41,7 +42,8 @@ const questionBulk = [
   },
   {
     name: "Two Sum",
-    description: "Given an array of integers and a target number, return the indices of two elements in the array that sum up to the target number. This problem is one of, if not the most, commonly asked.",
+    description:
+      "Given an array of integers and a target number, return the indices of two elements in the array that sum up to the target number. This problem is one of, if not the most, commonly asked.",
     difficulty: 1,
     link: "https://leetcode.com/problems/two-sum/",
     tagId: 2
@@ -59,8 +61,9 @@ const questionBulk = [
     description:
       "Given an array that has some elements from 1 to n (where n is the length of the array), find the elements from 1 to n that it is missing. Ex. Given [1,2,2,4], return 3",
     difficulty: 1,
-    link: "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/",
-    tagId:1
+    link:
+      "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/",
+    tagId: 1
   },
   {
     name: "Peak Index In Mountain Array",
@@ -115,7 +118,8 @@ const questionBulk = [
     description:
       "Given an array, return whether or not its possible to partition it into three non-empty, equal-sum parts.",
     difficulty: 2,
-    link: "https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum/",
+    link:
+      "https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum/",
     tagId: 1
   },
   {
@@ -148,7 +152,8 @@ const questionBulk = [
     description:
       "Given an array of numbers, return an array in which each element denotes the number of elements in the input array that are strictly smaller than the current element.",
     difficulty: 2,
-    link: "https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/",
+    link:
+      "https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/",
     tagId: 1
   },
   {
@@ -226,28 +231,32 @@ const questionBulk = [
   },
   {
     name: "Subarray Sum Equals K",
-    description: "Given an array of integers and a target sum K, return the number of subarrays that equal K",
+    description:
+      "Given an array of integers and a target sum K, return the number of subarrays that equal K",
     link: "https://leetcode.com/problems/subarray-sum-equals-k/",
     difficulty: 3,
     tagId: 1
   },
   {
     name: "Binary Subarrays With Sum",
-    description: "Given a 2D matrix of 0s and 1s and a target number S, return the number of subarrays in the matrix that sum up to S.",
+    description:
+      "Given a 2D matrix of 0s and 1s and a target number S, return the number of subarrays in the matrix that sum up to S.",
     link: "https://leetcode.com/problems/binary-subarrays-with-sum/",
     difficulty: 3,
     tagId: 1
   },
   {
     name: "Subarray Sums Divisible By K",
-    description: "Given an array of integers and target factor, return the number of subarrays divisible by the target factor",
+    description:
+      "Given an array of integers and target factor, return the number of subarrays divisible by the target factor",
     link: "https://leetcode.com/problems/subarray-sums-divisible-by-k",
     difficulty: 4,
     tagId: 1
   },
   {
     name: "Product of Last K Numbers",
-    description: "Write a data structure that supports adding elements to the end and return the product of the last K numbers.",
+    description:
+      "Write a data structure that supports adding elements to the end and return the product of the last K numbers.",
     link: "https://leetcode.com/problems/product-of-the-last-k-numbers/",
     difficulty: 4,
     tagId: 1
@@ -261,21 +270,24 @@ const questionBulk = [
   },
   {
     name: "Sort Array By Parity",
-    description: "Given an array of integers, move all the even elements to the start of the array and all the odd elements to the end of the array",
+    description:
+      "Given an array of integers, move all the even elements to the start of the array and all the odd elements to the end of the array",
     link: "https://leetcode.com/problems/sort-array-by-parity/",
     difficulty: 2,
     tagId: 1
   },
   {
     name: "Flipping An Image",
-    description: "Given a 2D matrix with elements of 1 or 0, flip it horizontally, then turn all 1s to 0s and vice versa",
+    description:
+      "Given a 2D matrix with elements of 1 or 0, flip it horizontally, then turn all 1s to 0s and vice versa",
     link: "https://leetcode.com/problems/flipping-an-image/",
     difficulty: 2,
     tagId: 1
   },
   {
     name: "Pascal's Triangle",
-    description: "Given an integer n, generate the first n rows of a Pascal’s triangle",
+    description:
+      "Given an integer n, generate the first n rows of a Pascal’s triangle",
     link: "https://leetcode.com/problems/pascals-triangle/",
     difficulty: 2,
     tagId: 1
@@ -289,7 +301,8 @@ const questionBulk = [
   },
   {
     name: "Spiral Matrix II",
-    description: "Given an integer, return a matrix containing elements from 1 to n^2 in a clockwise spiral.",
+    description:
+      "Given an integer, return a matrix containing elements from 1 to n^2 in a clockwise spiral.",
     link: "https://leetcode.com/problems/spiral-matrix-ii/",
     difficulty: 3,
     tagId: 1
@@ -610,21 +623,18 @@ const tagBulk = [
     ranking: 1
   },
   {
-    name: "HashMap",
-    ranking: 3
-  },
-  {
     name: "String",
     ranking: 2
+  },
+  {
+    name: "HashMap",
+    ranking: 3
   },
   {
     name: "Linked List",
     ranking: 4
   },
-  {
-    name: "Bit Manipulation",
-    ranking: 13
-  },
+
   {
     name: "Tree",
     ranking: 5
@@ -656,6 +666,10 @@ const tagBulk = [
   {
     name: "Graph",
     ranking: 12
+  },
+  {
+    name: "Bit Manipulation",
+    ranking: 13
   }
 ];
 
