@@ -22,7 +22,7 @@ class Roadmap extends Component {
 
     output.sort((a, b) => {
       if (a.tag.ranking === b.tag.ranking) {
-        return a.ratedDifficulty - b.ratedDifficulty;
+        return a.difficulty - b.difficulty;
       }
       return a.tag.ranking - b.tag.ranking;
     });
