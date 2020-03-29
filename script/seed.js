@@ -356,6 +356,14 @@ const questionBulk = [
     link: "https://leetcode.com/problems/combination-sum/",
     tagId: 10
   },
+  {
+    name: "Combinations",
+    description:
+      "Given two integers n and k, return all possible combinations of k numbers out of 1 ... n.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/combinations/",
+    tagId: 10
+  },
   // --------------- DYNAMIC PROGRAMMING ---------------
   {
     name: "Best Time to Buy and Sell Stock",
