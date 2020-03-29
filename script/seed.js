@@ -340,6 +340,22 @@ const questionBulk = [
     link: "https://leetcode.com/problems/letter-case-permutation/",
     tagId: 10
   },
+  {
+    name: "Subsets",
+    description:
+      "Given a set of distinct integers, nums, return all possible subsets (the power set). Note: The solution set must not contain duplicate subsets.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/subsets/",
+    tagId: 10
+  },
+  {
+    name: "Combination Sum",
+    description:
+      "Given a set of candidate numbers (candidates) (without duplicates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target. The same repeated number may be chosen from candidates unlimited number of times. Note: All numbers (including target) will be positive integers. The solution set must not contain duplicate combinations.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/combination-sum/",
+    tagId: 10
+  },
   // --------------- DYNAMIC PROGRAMMING ---------------
   {
     name: "Best Time to Buy and Sell Stock",
