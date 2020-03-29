@@ -283,6 +283,7 @@ const questionBulk = [
     difficulty: 3,
     tagId: 1
   },
+  // -------------------------- STRING (2) --------------------------
   // -------------------------- HASH MAP (3) --------------------------
   {
     name: "Two Sum",
@@ -292,7 +293,7 @@ const questionBulk = [
     link: "https://leetcode.com/problems/two-sum/",
     tagId: 3
   },
-  // ---------------------- TREE (5) ----------------------
+  // -------------------------- TREE (5) --------------------------
   // ---------------------- DEPTH FIRST SEARCH (6) ----------------------
   {
     name: "Same Tree",
@@ -302,7 +303,7 @@ const questionBulk = [
     link: "https://leetcode.com/problems/same-tree/",
     tagId: 6
   },
-  // --------------- STACKS ---------------
+  // ---------------------- STACKS (7) ----------------------
   {
     name: "Valid Parentheses",
     description:
@@ -384,6 +385,15 @@ const questionBulk = [
     difficulty: 5,
     link: "https://leetcode.com/problems/longest-valid-parentheses/",
     tagId: 7
+  },
+  // -------------------- BREADTH FIRST SEARCH (8) --------------------
+  {
+    name: "Pacific Atlantic Water Flow",
+    description:
+      "Given an integer matrix representing the height of land, return the indices of the matrix that can flow to both the bottom-left and top-right sides of the matrix when water can only flow from a higher height to a lower or equal height.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/pacific-atlantic-water-flow/",
+    tagId: 8
   },
   // ------------------ RECURSION / BACKTRACKING (9) ------------------
   {
