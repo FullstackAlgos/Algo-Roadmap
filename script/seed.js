@@ -22,7 +22,7 @@ const questionBulk = [
     difficulty: 1,
     link:
       "https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/",
-    ratedDifficulty: 1.0,
+
     tagId: 5
   },
   {
@@ -31,7 +31,7 @@ const questionBulk = [
       "Given an array with n elements, find the element that appears n/2 times or more. It's guaranteed that there will be an element that appears n/2 times or more.",
     difficulty: 1,
     link: "https://leetcode.com/problems/majority-element/",
-    ratedDifficulty: 1.0,
+
     tagId: 1
   },
   {
@@ -40,7 +40,7 @@ const questionBulk = [
       "Given two binary trees, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical and the nodes have the same value.",
     difficulty: 1,
     link: "https://leetcode.com/problems/same-tree/",
-    ratedDifficulty: 1.0,
+
     tagId: 6
   },
   {
@@ -49,7 +49,7 @@ const questionBulk = [
       "Given an array of integers and a target number, return the indices of two elements in the array that sum up to the target number. This problem is one of, if not the most, commonly asked.",
     difficulty: 1,
     link: "https://leetcode.com/problems/two-sum/",
-    ratedDifficulty: 1.0,
+
     tagId: 2
   },
   {
@@ -58,7 +58,7 @@ const questionBulk = [
       "Given an array in which all elements appear twice except one (of them), return the one which appears only once.",
     difficulty: 1,
     link: "https://leetcode.com/problems/single-number/",
-    ratedDifficulty: 1.0,
+
     tagId: 1
   },
   {
@@ -68,7 +68,7 @@ const questionBulk = [
     difficulty: 1,
     link:
       "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/",
-    ratedDifficulty: 1.0,
+
     tagId: 1
   },
   {
@@ -77,7 +77,7 @@ const questionBulk = [
       "Given a mountain array (i.e. an array that only increases on one side and only decreases on the other), find the peak index (index of the top of the mountain). See the problem for detailed info.",
     difficulty: 1,
     link: "https://leetcode.com/problems/peak-index-in-a-mountain-array/",
-    ratedDifficulty: 1.0,
+
     tagId: 1
   },
   {
@@ -86,7 +86,7 @@ const questionBulk = [
       "Given an array, return whether or not its elements are increasing or decreasing. Note that [1,2,2,4] still counts as increasing.",
     difficulty: 1,
     link: "https://leetcode.com/problems/monotonic-array/",
-    ratedDifficulty: 1.0,
+
     tagId: 1
   },
   {
@@ -95,7 +95,7 @@ const questionBulk = [
       "Given an array of 1s and 0s, return the max length of consecutive 1s",
     difficulty: 1,
     link: "https://leetcode.com/problems/max-consecutive-ones/",
-    ratedDifficulty: 1.0,
+
     tagId: 1
   },
   {
@@ -104,7 +104,7 @@ const questionBulk = [
       "Given an array of distinct integers, find and return all pairs of elements that have the minimum absolute difference.",
     difficulty: 2,
     link: "https://leetcode.com/problems/minimum-absolute-difference/",
-    ratedDifficulty: 2.0,
+
     tagId: 1
   },
   {
@@ -113,7 +113,7 @@ const questionBulk = [
       "Traverse a 2D matrix diagonally. A look at the problem should make it clear.",
     difficulty: 2,
     link: "https://leetcode.com/problems/toeplitz-matrix/",
-    ratedDifficulty: 2.0,
+
     tagId: 1
   },
   {
@@ -122,7 +122,7 @@ const questionBulk = [
       "Find the ‘perimeter’ of ‘islands’ in a matrix. The problem description has a picture and a good explanation!",
     difficulty: 2,
     link: "https://leetcode.com/problems/island-perimeter/",
-    ratedDifficulty: 2.0,
+
     tagId: 1
   },
   {
@@ -132,7 +132,7 @@ const questionBulk = [
     difficulty: 2,
     link:
       "https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum/",
-    ratedDifficulty: 2.0,
+
     tagId: 1
   },
   {
@@ -141,7 +141,7 @@ const questionBulk = [
       "Given an array of integers, find an index at which all the sum of elements to the right of the index equals the sum of elements to the left of the index",
     difficulty: 2,
     link: "https://leetcode.com/problems/find-pivot-index/",
-    ratedDifficulty: 2.0,
+
     tagId: 1
   },
   {
@@ -150,17 +150,17 @@ const questionBulk = [
       "Given an array of integers representing a number, return an array with the digits of that number plus 1.",
     difficulty: 2,
     link: "https://leetcode.com/problems/plus-one/",
-    ratedDifficulty: 2.0,
+
     tagId: 1
   },
   {
     name: "Count Negative Numbers In Sorted Matrix",
     description:
       "Given a matrix of integers with each row and column sorted in descending order, return the number of negative numbers in the matrix.",
+    difficulty: 2,
     link:
       "https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/",
-    difficulty: 2,
-    ratedDifficulty: 2.0,
+
     tagId: 1
   },
   {
@@ -168,17 +168,15 @@ const questionBulk = [
     description:
       "Given an array of numbers, return an array in which each element denotes the number of elements in the input array that are strictly smaller than the current element.",
     difficulty: 2,
-    ratedDifficulty: 2.0,
     link:
       "https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/",
     tagId: 1
   },
   {
     name: "Search In Rotated Sorted Array",
-    difficulty: 3,
-    ratedDifficulty: 3.0,
     description:
       "Given an array that’s been sorted in ascending order then rotated some amount and a target number, return the index of the target number in the array or -1 if the target is not present",
+    difficulty: 3,
     link: "https://leetcode.com/problems/search-in-rotated-sorted-array/",
     tagId: 1
   },
@@ -189,7 +187,6 @@ const questionBulk = [
     link:
       "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
     difficulty: 3,
-    ratedDifficulty: 3.0,
     tagId: 1
   },
   {
@@ -198,7 +195,6 @@ const questionBulk = [
       "Given a 2D matrix, return an array that contains the elements of the matrix in a clockwise-outside-to-inside spiral order",
     link: "https://leetcode.com/problems/spiral-matrix/",
     difficulty: 3,
-    ratedDifficulty: 3.0,
     tagId: 1
   },
   {
@@ -207,7 +203,6 @@ const questionBulk = [
       "Given an array of integers, return the subarray with the maximum sum.",
     link: "https://leetcode.com/problems/maximum-subarray/",
     difficulty: 3,
-    ratedDifficulty: 3.0,
     tagId: 1
   },
   {
@@ -216,7 +211,6 @@ const questionBulk = [
       "Given an array of numbers, return an array of the product of all numbers in the array except the current element itself without using division.",
     link: "https://leetcode.com/problems/product-of-array-except-self/",
     difficulty: 3,
-    ratedDifficulty: 3.0,
     tagId: 1
   },
   {
@@ -225,7 +219,6 @@ const questionBulk = [
       "Given two arrays of intervals sorted by starting point, return an array of the intersections between the two intervals.",
     link: "https://leetcode.com/problems/interval-list-intersections/",
     difficulty: 3,
-    ratedDifficulty: 3.0,
     tagId: 1
   },
   {
@@ -234,7 +227,6 @@ const questionBulk = [
       "Given an array of numbers with elements of values 1 to n+1 (where n is the length of the array), return the duplicate element",
     link: "https://leetcode.com/problems/find-the-duplicate-number/",
     difficulty: 4,
-    ratedDifficulty: 4.0,
     tagId: 1
   },
   {
@@ -243,7 +235,6 @@ const questionBulk = [
       "Given a 2D matrix with sorted rows and sorted columns and a target number, return whether or not the matrix contains the target number.",
     link: "https://leetcode.com/problems/search-a-2d-matrix-ii/",
     difficulty: 4,
-    ratedDifficulty: 4.0,
     tagId: 1
   },
   {
@@ -252,8 +243,25 @@ const questionBulk = [
       "Given an unsorted array of integers, find the first missing positive number in the array. 0 is NOT counted as a positive number.",
     link: "https://leetcode.com/problems/first-missing-positive",
     difficulty: 5,
-    ratedDifficulty: 5.0,
     tagId: 1
+  },
+  // --------------- HEAPS ---------------
+  {
+    name: "Rank Teams by Votes",
+    description:
+      "Given an array of strings votes which is the votes of all voters in the ranking systems. Sort all teams according to the ranking system described above. Return a string of all teams sorted by the ranking system.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/rank-teams-by-votes/",
+    tagId: 12
+  },
+  {
+    name: "Maximum Number of Events That Can Be Attended",
+    description:
+      "Given an array of events where events[i] = [startDayi, endDayi]. Every event i starts at startDayi and ends at endDayi. You can attend an event i at any day d where startTimei <= d <= endTimei. Notice that you can only attend one event at any time d. Return the maximum number of events you can attend.",
+    difficulty: 4,
+    link:
+      "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/",
+    tagId: 12
   },
   // --------------- GRAPHS ---------------
   {
@@ -288,24 +296,6 @@ const questionBulk = [
     difficulty: 4,
     link: "https://leetcode.com/problems/smallest-string-with-swaps/",
     tagId: 13
-  },
-  // --------------- HEAPS ---------------
-  {
-    name: "Rank Teams by Votes",
-    description:
-      "Given an array of strings votes which is the votes of all voters in the ranking systems. Sort all teams according to the ranking system described above. Return a string of all teams sorted by the ranking system.",
-    difficulty: 3,
-    link: "https://leetcode.com/problems/rank-teams-by-votes/",
-    tagId: 12
-  },
-  {
-    name: "Maximum Number of Events That Can Be Attended",
-    description:
-      "Given an array of events where events[i] = [startDayi, endDayi]. Every event i starts at startDayi and ends at endDayi. You can attend an event i at any day d where startTimei <= d <= endTimei. Notice that you can only attend one event at any time d. Return the maximum number of events you can attend.",
-    difficulty: 4,
-    link:
-      "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/",
-    tagId: 12
   },
   // --------------- BIT MANIPULATION ---------------
   {
