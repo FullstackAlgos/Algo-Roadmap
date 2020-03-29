@@ -16,16 +16,6 @@ const userBulk = [
 
 const questionBulk = [
   {
-    name: "Steps To Reduce A Number To 0",
-    description:
-      "Given a number n, divide n by 2 if its even and subtract one from n if its odd. Return the number of those operations needed to reduce n to 0.",
-    difficulty: 1,
-    link:
-      "https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/",
-
-    tagId: 5
-  },
-  {
     name: "Find The Majority Element",
     description:
       "Given an array with n elements, find the element that appears n/2 times or more. It's guaranteed that there will be an element that appears n/2 times or more.",
@@ -247,6 +237,16 @@ const questionBulk = [
   },
   // --------------- BIT MANIPULATION ---------------
   {
+    name: "Steps To Reduce A Number To 0",
+    description:
+      "Given a number n, divide n by 2 if its even and subtract one from n if its odd. Return the number of those operations needed to reduce n to 0.",
+    difficulty: 1,
+    link:
+      "https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/",
+
+    tagId: 5
+  },
+  {
     name: "Hamming Distance",
     description:
       "The Hamming distance between two integers is the number of positions at which the corresponding bits are different. Given two integers x and y, calculate the Hamming distance.",
@@ -263,59 +263,89 @@ const questionBulk = [
       "https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/",
     tagId: 5
   },
-  // --------------- HEAPS ---------------
+  // --------------- STACKS ---------------
   {
-    name: "Rank Teams by Votes",
+    name: "Valid Parentheses",
     description:
-      "Given an array of strings votes which is the votes of all voters in the ranking systems. Sort all teams according to the ranking system described above. Return a string of all teams sorted by the ranking system.",
-    difficulty: 3,
-    link: "https://leetcode.com/problems/rank-teams-by-votes/",
-    tagId: 12
+      "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/valid-parentheses/",
+    tagId: 8
   },
   {
-    name: "Maximum Number of Events That Can Be Attended",
+    name: "Remove Outermost Parentheses",
     description:
-      "Given an array of events where events[i] = [startDayi, endDayi]. Every event i starts at startDayi and ends at endDayi. You can attend an event i at any day d where startTimei <= d <= endTimei. Notice that you can only attend one event at any time d. Return the maximum number of events you can attend.",
-    difficulty: 4,
+      "Return S after removing the outermost parentheses of every primitive string in the primitive decomposition of S.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/remove-outermost-parentheses/",
+    tagId: 8
+  },
+  {
+    name: "Remove All Adjacent Duplicates In String",
+    description:
+      "Given a string S of lowercase letters, a duplicate removal consists of choosing two adjacent and equal letters, and removing them. We repeatedly make duplicate removals on S until we no longer can. Return the final string after all such duplicate removals have been made.  It is guaranteed the answer is unique.",
+    difficulty: 1,
     link:
-      "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/",
-    tagId: 12
+      "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/",
+    tagId: 8
   },
-  // --------------- GRAPHS ---------------
   {
-    name: "Redundant Connection",
+    name: "Reverse Polish Notation",
     description:
-      "Given an undirected graph (represented as an integer array of edges) with at least one redundant connection, return the last redundant connection.",
+      "Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid operators are +, -, *, /. Each operand may be an integer or another expression. Note: Division between two integers should truncate toward zero. The given RPN expression is always valid. That means the expression would always evaluate to a result and there won't be any divide by zero operation.",
     difficulty: 3,
-    link: "https://leetcode.com/problems/redundant-connection/",
-    tagId: 13
+    link: "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
+    tagId: 8
   },
   {
-    name: "Connected Network",
+    name: "Asteroid Collision",
     description:
-      "Given an undirected graph (represented as an array of edges) return the fewest number of connections you need to make to connect all of the edges in the graph.",
+      "We are given an array asteroids of integers representing asteroids in a row. For each asteroid, the absolute value represents its size, and the sign represents its direction (positive meaning right, negative meaning left). Each asteroid moves at the same speed. Find out the state of the asteroids after all collisions. If two asteroids meet, the smaller one will explode. If both are the same size, both will explode. Two asteroids moving in the same direction will never meet.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/asteroid-collision/",
+    tagId: 8
+  },
+  {
+    name: "Remove All Adjacent Duplicates in String II",
+    description:
+      "Given a string s and an integer k, remove all the substrings that have k adjacent, equal characters and return the resulting string.",
     difficulty: 3,
     link:
-      "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
-    tagId: 13
+      "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/",
+    tagId: 8
   },
   {
-    name: "Accounts Merge",
+    name: "Trapping Rain Water",
     description:
-      "Given a list of lists of strings representing accounts, merge the accounts with the same email and return the new list of accounts.",
-    difficulty: 4,
-    link: "https://leetcode.com/problems/accounts-merge/",
-    tagId: 13
+      "Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.",
+    difficulty: 5,
+    link: "https://leetcode.com/problems/trapping-rain-water/",
+    tagId: 8
   },
   {
-    name: "Smallest String with Swaps",
+    name: "Daily Temperatures",
     description:
-      "Given a string and a 2D array of indices representing a connected pair of characters, find the lexicographically smallest string that can be made by swapping characters in the pairs. The pairs can be swapped any number of times.",
-    difficulty: 4,
-    link: "https://leetcode.com/problems/smallest-string-with-swaps/",
-    tagId: 13
+      "Given a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead. For example, given the list of temperatures T = [73, 74, 75, 71, 69, 72, 76, 73], your output should be [1, 1, 4, 2, 1, 1, 0, 0]. Note: The length of temperatures will be in the range [1, 30000]. Each temperature will be an integer in the range [30, 100].",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/daily-temperatures/",
+    tagId: 8
   },
-
+  {
+    name: "Largest Rectangle in Histogram",
+    description:
+      "Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+    tagId: 8
+  },
+  {
+    name: "Longest Valid Parentheses",
+    description:
+      "Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.",
+    difficulty: 5,
+    link: "https://leetcode.com/problems/longest-valid-parentheses/",
+    tagId: 8
+  },
   // --------------- DYNAMIC PROGRAMMING ---------------
   {
     name: "Best Time to Buy and Sell Stock",
@@ -430,88 +460,57 @@ const questionBulk = [
     link: "https://leetcode.com/problems/word-break-ii/",
     tagId: 11
   },
-  // --------------- STACKS ---------------
+  // --------------- HEAPS ---------------
   {
-    name: "Valid Parentheses",
+    name: "Rank Teams by Votes",
     description:
-      "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.",
-    difficulty: 1,
-    link: "https://leetcode.com/problems/valid-parentheses/",
-    tagId: 8
-  },
-  {
-    name: "Remove Outermost Parentheses",
-    description:
-      "Return S after removing the outermost parentheses of every primitive string in the primitive decomposition of S.",
-    difficulty: 1,
-    link: "https://leetcode.com/problems/remove-outermost-parentheses/",
-    tagId: 8
-  },
-  {
-    name: "Remove All Adjacent Duplicates In String",
-    description:
-      "Given a string S of lowercase letters, a duplicate removal consists of choosing two adjacent and equal letters, and removing them. We repeatedly make duplicate removals on S until we no longer can. Return the final string after all such duplicate removals have been made.  It is guaranteed the answer is unique.",
-    difficulty: 1,
-    link:
-      "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/",
-    tagId: 8
-  },
-  {
-    name: "Reverse Polish Notation",
-    description:
-      "Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid operators are +, -, *, /. Each operand may be an integer or another expression. Note: Division between two integers should truncate toward zero. The given RPN expression is always valid. That means the expression would always evaluate to a result and there won't be any divide by zero operation.",
+      "Given an array of strings votes which is the votes of all voters in the ranking systems. Sort all teams according to the ranking system described above. Return a string of all teams sorted by the ranking system.",
     difficulty: 3,
-    link: "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
-    tagId: 8
+    link: "https://leetcode.com/problems/rank-teams-by-votes/",
+    tagId: 12
   },
   {
-    name: "Asteroid Collision",
+    name: "Maximum Number of Events That Can Be Attended",
     description:
-      "We are given an array asteroids of integers representing asteroids in a row. For each asteroid, the absolute value represents its size, and the sign represents its direction (positive meaning right, negative meaning left). Each asteroid moves at the same speed. Find out the state of the asteroids after all collisions. If two asteroids meet, the smaller one will explode. If both are the same size, both will explode. Two asteroids moving in the same direction will never meet.",
-    difficulty: 3,
-    link: "https://leetcode.com/problems/asteroid-collision/",
-    tagId: 8
-  },
-  {
-    name: "Remove All Adjacent Duplicates in String II",
-    description:
-      "Given a string s and an integer k, remove all the substrings that have k adjacent, equal characters and return the resulting string.",
-    difficulty: 3,
-    link:
-      "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/",
-    tagId: 8
-  },
-  {
-    name: "Trapping Rain Water",
-    description:
-      "Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.",
-    difficulty: 5,
-    link: "https://leetcode.com/problems/trapping-rain-water/",
-    tagId: 8
-  },
-  {
-    name: "Daily Temperatures",
-    description:
-      "Given a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead. For example, given the list of temperatures T = [73, 74, 75, 71, 69, 72, 76, 73], your output should be [1, 1, 4, 2, 1, 1, 0, 0]. Note: The length of temperatures will be in the range [1, 30000]. Each temperature will be an integer in the range [30, 100].",
-    difficulty: 3,
-    link: "https://leetcode.com/problems/daily-temperatures/",
-    tagId: 8
-  },
-  {
-    name: "Largest Rectangle in Histogram",
-    description:
-      "Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.",
+      "Given an array of events where events[i] = [startDayi, endDayi]. Every event i starts at startDayi and ends at endDayi. You can attend an event i at any day d where startTimei <= d <= endTimei. Notice that you can only attend one event at any time d. Return the maximum number of events you can attend.",
     difficulty: 4,
-    link: "https://leetcode.com/problems/largest-rectangle-in-histogram/",
-    tagId: 8
+    link:
+      "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/",
+    tagId: 12
+  },
+  // --------------- GRAPHS ---------------
+  {
+    name: "Redundant Connection",
+    description:
+      "Given an undirected graph (represented as an integer array of edges) with at least one redundant connection, return the last redundant connection.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/redundant-connection/",
+    tagId: 13
   },
   {
-    name: "Longest Valid Parentheses",
+    name: "Connected Network",
     description:
-      "Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.",
-    difficulty: 5,
-    link: "https://leetcode.com/problems/longest-valid-parentheses/",
-    tagId: 8
+      "Given an undirected graph (represented as an array of edges) return the fewest number of connections you need to make to connect all of the edges in the graph.",
+    difficulty: 3,
+    link:
+      "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
+    tagId: 13
+  },
+  {
+    name: "Accounts Merge",
+    description:
+      "Given a list of lists of strings representing accounts, merge the accounts with the same email and return the new list of accounts.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/accounts-merge/",
+    tagId: 13
+  },
+  {
+    name: "Smallest String with Swaps",
+    description:
+      "Given a string and a 2D array of indices representing a connected pair of characters, find the lexicographically smallest string that can be made by swapping characters in the pairs. The pairs can be swapped any number of times.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/smallest-string-with-swaps/",
+    tagId: 13
   }
 ];
 
