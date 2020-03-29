@@ -15,15 +15,7 @@ const userBulk = [
 ];
 
 const questionBulk = [
-  {
-    name: "Steps To Reduce A Number To 0",
-    description:
-      "Given a number n, divide n by 2 if its even and subtract one from n if its odd. Return the number of those operations needed to reduce n to 0.",
-    difficulty: 1,
-    link:
-      "https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/",
-    tagId: 5
-  },
+  // ------------------------- ARRAY (1) ---------------------------
   {
     name: "Find The Majority Element",
     description:
@@ -31,22 +23,6 @@ const questionBulk = [
     difficulty: 1,
     link: "https://leetcode.com/problems/majority-element/",
     tagId: 1
-  },
-  {
-    name: "Same Tree",
-    description:
-      "Given two binary trees, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical and the nodes have the same value.",
-    difficulty: 1,
-    link: "https://leetcode.com/problems/same-tree/",
-    tagId: 6
-  },
-  {
-    name: "Two Sum",
-    description:
-      "Given an array of integers and a target number, return the indices of two elements in the array that sum up to the target number. This problem is one of, if not the most, commonly asked.",
-    difficulty: 1,
-    link: "https://leetcode.com/problems/two-sum/",
-    tagId: 2
   },
   {
     name: "Single Number",
@@ -307,7 +283,25 @@ const questionBulk = [
     difficulty: 3,
     tagId: 1
   },
-
+  // -------------------------- HASH MAP (3) --------------------------
+  {
+    name: "Two Sum",
+    description:
+      "Given an array of integers and a target number, return the indices of two elements in the array that sum up to the target number. This problem is one of, if not the most, commonly asked.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/two-sum/",
+    tagId: 3
+  },
+  // ---------------------- TREE (5) ----------------------
+  // ---------------------- DEPTH FIRST SEARCH (6) ----------------------
+  {
+    name: "Same Tree",
+    description:
+      "Given two binary trees, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical and the nodes have the same value.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/same-tree/",
+    tagId: 6
+  },
   // --------------- STACKS ---------------
   {
     name: "Valid Parentheses",
@@ -546,7 +540,7 @@ const questionBulk = [
     link: "https://leetcode.com/problems/word-break-ii/",
     tagId: 10
   },
-  // --------------- HEAPS ---------------
+  // ---------------------- HEAPS (11) ----------------------
   {
     name: "Rank Teams by Votes",
     description:
@@ -564,7 +558,7 @@ const questionBulk = [
       "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/",
     tagId: 11
   },
-  // --------------- GRAPHS ---------------
+  // ---------------------- GRAPHS (12) ----------------------
   {
     name: "Redundant Connection",
     description:
@@ -598,7 +592,16 @@ const questionBulk = [
     link: "https://leetcode.com/problems/smallest-string-with-swaps/",
     tagId: 12
   },
-  // --------------- BIT MANIPULATION ---------------
+  // ---------------------- BIT MANIPULATION (13) ----------------------
+  {
+    name: "Steps To Reduce A Number To 0",
+    description:
+      "Given a number n, divide n by 2 if its even and subtract one from n if its odd. Return the number of those operations needed to reduce n to 0.",
+    difficulty: 1,
+    link:
+      "https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/",
+    tagId: 13
+  },
   {
     name: "Hamming Distance",
     description:
