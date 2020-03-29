@@ -364,6 +364,14 @@ const questionBulk = [
     link: "https://leetcode.com/problems/combinations/",
     tagId: 10
   },
+  {
+    name: "Permutations",
+    description:
+      "Given a collection of distinct integers, return all possible permutations.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/permutations/",
+    tagId: 10
+  },
   // --------------- DYNAMIC PROGRAMMING ---------------
   {
     name: "Best Time to Buy and Sell Stock",
