@@ -468,6 +468,14 @@ const questionBulk = [
     link: "https://leetcode.com/problems/permutations/",
     tagId: 9
   },
+  {
+    name: "Subsets II",
+    description:
+      "Given a collection of integers that might contain duplicates, nums, return all possible subsets (the power set). Note: The solution set must not contain duplicate subsets.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/subsets-ii/",
+    tagId: 9
+  },
   // -------------------- DYNAMIC PROGRAMMING (10) --------------------
   {
     name: "Best Time to Buy and Sell Stock",
