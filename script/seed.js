@@ -582,7 +582,7 @@ const questionBulk = [
     link: "https://leetcode.com/problems/word-break-ii/",
     tagId: 10
   },
-  // ---------------------- HEAPS (11) ----------------------
+  // -------------------------- HEAPS (11) --------------------------
   {
     name: "Rank Teams by Votes",
     description:
@@ -600,7 +600,7 @@ const questionBulk = [
       "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/",
     tagId: 11
   },
-  // ---------------------- GRAPHS (12) ----------------------
+  // --------------------------- GRAPHS (12) ---------------------------
   {
     name: "Redundant Connection",
     description:
