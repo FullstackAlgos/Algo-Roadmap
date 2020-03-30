@@ -517,6 +517,14 @@ const questionBulk = [
     link: "https://leetcode.com/problems/palindrome-partitioning/",
     tagId: 9
   },
+  {
+    name: "N-Queens",
+    description:
+      "The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other. Given an integer n, return all distinct solutions to the n-queens puzzle.",
+    difficulty: 5,
+    link: "https://leetcode.com/problems/n-queens/",
+    tagId: 9
+  },
   // -------------------- DYNAMIC PROGRAMMING (10) --------------------
   {
     name: "Best Time to Buy and Sell Stock",
