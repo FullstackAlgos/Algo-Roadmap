@@ -501,6 +501,14 @@ const questionBulk = [
       "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
     tagId: 9
   },
+  {
+    name: "Combination Sum II",
+    description:
+      "Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target. Each number in candidates may only be used once in the combination. Note: All numbers (including target) will be positive integers and the solution set must not contain duplicate combinations.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/combination-sum-ii/",
+    tagId: 9
+  },
   // -------------------- DYNAMIC PROGRAMMING (10) --------------------
   {
     name: "Best Time to Buy and Sell Stock",
