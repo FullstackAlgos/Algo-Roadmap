@@ -310,6 +310,13 @@ const questionBulk = [
     link: "https://leetcode.com/problems/merge-two-sorted-lists/",
     tagId: 4
   },
+  {
+    name: "Middle of Linked List",
+    description: "Given a non-empty linked list, return its middle element.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/middle-of-the-linked-list/",
+    tagId: 4
+  },
   // -------------------------- TREE (5) --------------------------
   {
     name: "Same Tree",
