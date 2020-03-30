@@ -294,6 +294,22 @@ const questionBulk = [
     tagId: 3
   },
   // -------------------------- LINKED LIST (4) --------------------------
+  {
+    name: "Reverse Linked List",
+    description:
+      "Given a linked list (via reference to its head node), return it in reversed order.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/reverse-linked-list/",
+    tagId: 4
+  },
+  {
+    name: "Merge Two Sorted Lists",
+    description:
+      "Given two sorted linked lists, merge them into one sorted list.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/merge-two-sorted-lists/",
+    tagId: 4
+  },
   // -------------------------- TREE (5) --------------------------
   {
     name: "Same Tree",
