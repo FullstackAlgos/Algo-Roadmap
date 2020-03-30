@@ -484,6 +484,14 @@ const questionBulk = [
     link: "https://leetcode.com/problems/permutations-ii/",
     tagId: 9
   },
+  {
+    name: "Generate Parentheses",
+    description:
+      "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/generate-parentheses/",
+    tagId: 9
+  },
   // -------------------- DYNAMIC PROGRAMMING (10) --------------------
   {
     name: "Best Time to Buy and Sell Stock",
