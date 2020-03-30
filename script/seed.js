@@ -736,7 +736,8 @@ const userQuestBulk = [
 const propQuestBulk = [
   {
     name: "Spiral Matrix",
-    description: "Create array of number outputs spiraling the given array",
+    description:
+      "Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.",
     difficulty: 2,
     link: "https://leetcode.com/problems/spiral-matrix/",
     tagId: 1,
