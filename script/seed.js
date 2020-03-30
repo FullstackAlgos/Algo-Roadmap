@@ -492,6 +492,15 @@ const questionBulk = [
     link: "https://leetcode.com/problems/generate-parentheses/",
     tagId: 9
   },
+  {
+    name: "Letter Combinations of a Phone Number",
+    description:
+      "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.",
+    difficulty: 4,
+    link:
+      "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+    tagId: 9
+  },
   // -------------------- DYNAMIC PROGRAMMING (10) --------------------
   {
     name: "Best Time to Buy and Sell Stock",
