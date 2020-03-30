@@ -283,7 +283,7 @@ const questionBulk = [
     difficulty: 3,
     tagId: 1
   },
-  // -------------------------- STRING (2) --------------------------
+  // --------------------------- STRING (2) ---------------------------
   // -------------------------- HASH MAP (3) --------------------------
   {
     name: "Two Sum",
@@ -317,7 +317,7 @@ const questionBulk = [
     link: "https://leetcode.com/problems/middle-of-the-linked-list/",
     tagId: 4
   },
-  // -------------------------- TREE (5) --------------------------
+  // ---------------------------- TREE (5) ----------------------------
   {
     name: "Same Tree",
     description:
@@ -335,7 +335,7 @@ const questionBulk = [
     link: "https://leetcode.com/problems/flood-fill/",
     tagId: 6
   },
-  // ---------------------- STACKS (7) ----------------------
+  // ------------------------- STACKS (7) -------------------------
   {
     name: "Valid Parentheses",
     description:
