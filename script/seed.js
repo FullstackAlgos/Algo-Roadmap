@@ -15,15 +15,7 @@ const userBulk = [
 ];
 
 const questionBulk = [
-  {
-    name: "Steps To Reduce A Number To 0",
-    description:
-      "Given a number n, divide n by 2 if its even and subtract one from n if its odd. Return the number of those operations needed to reduce n to 0.",
-    difficulty: 1,
-    link:
-      "https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/",
-    tagId: 5
-  },
+  // ------------------------- ARRAY (1) ---------------------------
   {
     name: "Find The Majority Element",
     description:
@@ -31,22 +23,6 @@ const questionBulk = [
     difficulty: 1,
     link: "https://leetcode.com/problems/majority-element/",
     tagId: 1
-  },
-  {
-    name: "Same Tree",
-    description:
-      "Given two binary trees, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical and the nodes have the same value.",
-    difficulty: 1,
-    link: "https://leetcode.com/problems/same-tree/",
-    tagId: 6
-  },
-  {
-    name: "Two Sum",
-    description:
-      "Given an array of integers and a target number, return the indices of two elements in the array that sum up to the target number. This problem is one of, if not the most, commonly asked.",
-    difficulty: 1,
-    link: "https://leetcode.com/problems/two-sum/",
-    tagId: 2
   },
   {
     name: "Single Number",
@@ -307,8 +283,59 @@ const questionBulk = [
     difficulty: 3,
     tagId: 1
   },
-
-  // --------------- STACKS ---------------
+  // --------------------------- STRING (2) ---------------------------
+  // -------------------------- HASH MAP (3) --------------------------
+  {
+    name: "Two Sum",
+    description:
+      "Given an array of integers and a target number, return the indices of two elements in the array that sum up to the target number. This problem is one of, if not the most, commonly asked.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/two-sum/",
+    tagId: 3
+  },
+  // -------------------------- LINKED LIST (4) --------------------------
+  {
+    name: "Reverse Linked List",
+    description:
+      "Given a linked list (via reference to its head node), return it in reversed order.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/reverse-linked-list/",
+    tagId: 4
+  },
+  {
+    name: "Merge Two Sorted Lists",
+    description:
+      "Given two sorted linked lists, merge them into one sorted list.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/merge-two-sorted-lists/",
+    tagId: 4
+  },
+  {
+    name: "Middle of Linked List",
+    description: "Given a non-empty linked list, return its middle element.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/middle-of-the-linked-list/",
+    tagId: 4
+  },
+  // ---------------------------- TREE (5) ----------------------------
+  {
+    name: "Same Tree",
+    description:
+      "Given two binary trees, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical and the nodes have the same value.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/same-tree/",
+    tagId: 5
+  },
+  // ---------------------- DEPTH FIRST SEARCH (6) ----------------------
+  {
+    name: "Flood Fill",
+    description:
+      "Given a 2D matrix, a starting row, a starting column, and a new ‘color’ integer, change all of the 4-directionally adjacent (north, east, south, west) cells to the new color, and all of the adjacent ones to those to the new color, etc.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/flood-fill/",
+    tagId: 6
+  },
+  // ------------------------- STACKS (7) -------------------------
   {
     name: "Valid Parentheses",
     description:
@@ -391,7 +418,16 @@ const questionBulk = [
     link: "https://leetcode.com/problems/longest-valid-parentheses/",
     tagId: 7
   },
-  // --------------- RECURSION / BACKTRACKING ---------------
+  // -------------------- BREADTH FIRST SEARCH (8) --------------------
+  {
+    name: "Pacific Atlantic Water Flow",
+    description:
+      "Given an integer matrix representing the height of land, return the indices of the matrix that can flow to both the bottom-left and top-right sides of the matrix when water can only flow from a higher height to a lower or equal height.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/pacific-atlantic-water-flow/",
+    tagId: 8
+  },
+  // ------------------ RECURSION / BACKTRACKING (9) ------------------
   {
     name: "Letter Case Permutation",
     description:
@@ -432,7 +468,64 @@ const questionBulk = [
     link: "https://leetcode.com/problems/permutations/",
     tagId: 9
   },
-  // --------------- DYNAMIC PROGRAMMING ---------------
+  {
+    name: "Subsets II",
+    description:
+      "Given a collection of integers that might contain duplicates, nums, return all possible subsets (the power set). Note: The solution set must not contain duplicate subsets.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/subsets-ii/",
+    tagId: 9
+  },
+  {
+    name: "Permutations II",
+    description:
+      "Given a collection of numbers that might contain duplicates, return all possible unique permutations.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/permutations-ii/",
+    tagId: 9
+  },
+  {
+    name: "Generate Parentheses",
+    description:
+      "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/generate-parentheses/",
+    tagId: 9
+  },
+  {
+    name: "Letter Combinations of a Phone Number",
+    description:
+      "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.",
+    difficulty: 4,
+    link:
+      "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+    tagId: 9
+  },
+  {
+    name: "Combination Sum II",
+    description:
+      "Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target. Each number in candidates may only be used once in the combination. Note: All numbers (including target) will be positive integers and the solution set must not contain duplicate combinations.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/combination-sum-ii/",
+    tagId: 9
+  },
+  {
+    name: "Palindrome Partitioning",
+    description:
+      "Given a string s, partition s such that every substring of the partition is a palindrome. Return all possible palindrome partitioning of s.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/palindrome-partitioning/",
+    tagId: 9
+  },
+  {
+    name: "N-Queens",
+    description:
+      "The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other. Given an integer n, return all distinct solutions to the n-queens puzzle.",
+    difficulty: 5,
+    link: "https://leetcode.com/problems/n-queens/",
+    tagId: 9
+  },
+  // -------------------- DYNAMIC PROGRAMMING (10) --------------------
   {
     name: "Best Time to Buy and Sell Stock",
     description:
@@ -546,7 +639,7 @@ const questionBulk = [
     link: "https://leetcode.com/problems/word-break-ii/",
     tagId: 10
   },
-  // --------------- HEAPS ---------------
+  // -------------------------- HEAPS (11) --------------------------
   {
     name: "Rank Teams by Votes",
     description:
@@ -564,7 +657,7 @@ const questionBulk = [
       "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/",
     tagId: 11
   },
-  // --------------- GRAPHS ---------------
+  // --------------------------- GRAPHS (12) ---------------------------
   {
     name: "Redundant Connection",
     description:
@@ -598,7 +691,16 @@ const questionBulk = [
     link: "https://leetcode.com/problems/smallest-string-with-swaps/",
     tagId: 12
   },
-  // --------------- BIT MANIPULATION ---------------
+  // ---------------------- BIT MANIPULATION (13) ----------------------
+  {
+    name: "Steps To Reduce A Number To 0",
+    description:
+      "Given a number n, divide n by 2 if its even and subtract one from n if its odd. Return the number of those operations needed to reduce n to 0.",
+    difficulty: 1,
+    link:
+      "https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/",
+    tagId: 13
+  },
   {
     name: "Hamming Distance",
     description:
@@ -691,7 +793,8 @@ const userQuestBulk = [
 const propQuestBulk = [
   {
     name: "Spiral Matrix",
-    description: "Create array of number outputs spiraling the given array",
+    description:
+      "Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.",
     difficulty: 2,
     link: "https://leetcode.com/problems/spiral-matrix/",
     tagId: 1,
