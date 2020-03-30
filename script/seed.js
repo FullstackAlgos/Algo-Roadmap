@@ -476,6 +476,14 @@ const questionBulk = [
     link: "https://leetcode.com/problems/subsets-ii/",
     tagId: 9
   },
+  {
+    name: "Permutations II",
+    description:
+      "Given a collection of numbers that might contain duplicates, return all possible unique permutations.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/permutations-ii/",
+    tagId: 9
+  },
   // -------------------- DYNAMIC PROGRAMMING (10) --------------------
   {
     name: "Best Time to Buy and Sell Stock",
