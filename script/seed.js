@@ -398,6 +398,22 @@ const questionBulk = [
     link: "https://leetcode.com/problems/leaf-similar-trees/",
     tagId: 5
   },
+  {
+    name: "Increasing Order Search Tree",
+    description:
+      "Given a binary search tree, rearrange the tree in in-order so that the leftmost node in the tree is now the root of the tree, and every node has no left child and only 1 right child.",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/increasing-order-search-tree/",
+    tagId: 5
+  },
+  {
+    name: "Convert BST to Greater Tree",
+    description:
+      "Given a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus sum of all keys greater than the original key in BST.",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/convert-bst-to-greater-tree/",
+    tagId: 5
+  },
   // ---------------------- DEPTH FIRST SEARCH (6) ----------------------
   {
     name: "Flood Fill",
