@@ -366,6 +366,14 @@ const questionBulk = [
     link: "https://leetcode.com/problems/search-in-a-binary-search-tree/",
     tagId: 5
   },
+  {
+    name: "Univalued Binary Tree",
+    description:
+      "A binary tree is univalued if every node in the tree has the same value. Return true if and only if the given tree is univalued.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/univalued-binary-tree/",
+    tagId: 5
+  },
   // ---------------------- DEPTH FIRST SEARCH (6) ----------------------
   {
     name: "Flood Fill",
