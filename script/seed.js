@@ -382,6 +382,14 @@ const questionBulk = [
     link: "https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/",
     tagId: 5
   },
+  {
+    name: "Symmetric Tree",
+    description:
+      "Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/symmetric-tree/",
+    tagId: 5
+  },
   // ---------------------- DEPTH FIRST SEARCH (6) ----------------------
   {
     name: "Flood Fill",
