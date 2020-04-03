@@ -430,6 +430,14 @@ const questionBulk = [
     link: "https://leetcode.com/problems/deepest-leaves-sum/",
     tagId: 5
   },
+  {
+    name: "Path Sum III",
+    description:
+      "You are given a binary tree in which each node contains an integer value. Find the number of paths that sum to a given value. The path does not need to start or end at the root or a leaf, but it must go downwards (traveling only from parent nodes to child nodes).",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/path-sum-iii/",
+    tagId: 5
+  },
   // ---------------------- DEPTH FIRST SEARCH (6) ----------------------
   {
     name: "Flood Fill",
