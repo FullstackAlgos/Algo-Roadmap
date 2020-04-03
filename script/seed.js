@@ -463,6 +463,14 @@ const questionBulk = [
       "https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/",
     tagId: 5
   },
+  {
+    name: "Binary Tree Maximum Path Sum",
+    description:
+      "Given a non-empty binary tree, find the maximum path sum. For this problem, a path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to go through the root.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+    tagId: 5
+  },
   // ---------------------- DEPTH FIRST SEARCH (6) ----------------------
   {
     name: "Flood Fill",
