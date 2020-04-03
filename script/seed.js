@@ -422,6 +422,14 @@ const questionBulk = [
     link: "https://leetcode.com/problems/trim-a-binary-search-tree/",
     tagId: 5
   },
+  {
+    name: "Deepest Leaves Sum",
+    description:
+      "Given a binary tree, return the sum of values of its deepest leaves.",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/deepest-leaves-sum/",
+    tagId: 5
+  },
   // ---------------------- DEPTH FIRST SEARCH (6) ----------------------
   {
     name: "Flood Fill",
