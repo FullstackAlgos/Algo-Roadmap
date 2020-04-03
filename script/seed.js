@@ -286,21 +286,24 @@ const questionBulk = [
   // --------------------------- STRING (2) ---------------------------
   {
     name: "Student Attendance Record",
-    description: "Given a string of 'A's, 'P's, and 'L's representing a student's attendance record, return whether the doesn't contain more than one A, or two continuous Ls",
+    description:
+      "Given a string of 'A's, 'P's, and 'L's representing a student's attendance record, return whether the doesn't contain more than one A, or two continuous Ls",
     link: "https://leetcode.com/problems/student-attendance-record-i/",
     difficulty: 1,
     tagId: 2
   },
   {
     name: "Reverse String",
-    description: "Given a character array representing a string, reverse the array in place",
+    description:
+      "Given a character array representing a string, reverse the array in place",
     link: "https://leetcode.com/problems/reverse-string/",
     difficulty: 1,
     tagId: 2
   },
   {
     name: "Reverse Words In A String III",
-    description: "Given a sentence (words separated by single spaces), reverse the characters in each word while preserving the order of the words",
+    description:
+      "Given a sentence (words separated by single spaces), reverse the characters in each word while preserving the order of the words",
     link: "https://leetcode.com/problems/reverse-words-in-a-string-iii/",
     difficulty: 1,
     tagId: 2
@@ -314,28 +317,33 @@ const questionBulk = [
   },
   {
     name: "Shortest Distance To A Character",
-    description: "Given a string and a target character, return an integer array where each element represents the shortest distance to the target character from the current index.",
+    description:
+      "Given a string and a target character, return an integer array where each element represents the shortest distance to the target character from the current index.",
     link: "https://leetcode.com/problems/shortest-distance-to-a-character/",
     difficulty: 2,
     tagId: 2
   },
   {
     name: "Number of Substrings Containing All 3 Characters",
-    description: "Given a string containing the characters ‘a’, ‘b’, and ‘c’, count the number of substrings containing all 3 characters.",
-    link: "https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/",
+    description:
+      "Given a string containing the characters ‘a’, ‘b’, and ‘c’, count the number of substrings containing all 3 characters.",
+    link:
+      "https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/",
     difficulty: 3,
     tagId: 2
   },
   {
     name: "Print Words Vertically",
-    description: "Given a string with words (all in capital letters) separated by single spaces, return a list with the words printed vertically.",
+    description:
+      "Given a string with words (all in capital letters) separated by single spaces, return a list with the words printed vertically.",
     link: "https://leetcode.com/problems/print-words-vertically/",
     difficulty: 3,
     tagId: 2
   },
   {
     name: "Longest Absolute File Path",
-    description: "Given a “file structure” in the form of a string, return the longest path length (in terms of # of characters) in the structure. ",
+    description:
+      "Given a “file structure” in the form of a string, return the longest path length (in terms of # of characters) in the structure. ",
     link: "https://leetcode.com/problems/longest-absolute-file-path/",
     difficulty: 4,
     tagId: 2
@@ -351,70 +359,80 @@ const questionBulk = [
   },
   {
     name: "Jewels and Stones",
-    description: "Given two strings of ‘jewels’ and ‘stones’, return the number of stones which are jewels.",
+    description:
+      "Given two strings of ‘jewels’ and ‘stones’, return the number of stones which are jewels.",
     difficulty: 1,
     link: "https://leetcode.com/problems/jewels-and-stones/",
     tagId: 3
   },
   {
     name: "Word Patten",
-    description: "Given two strings, one a string of words the other a pattern, determine whether or not the pattern of words matches the pattern of characters in the string.",
+    description:
+      "Given two strings, one a string of words the other a pattern, determine whether or not the pattern of words matches the pattern of characters in the string.",
     link: "https://leetcode.com/problems/word-pattern/",
     difficulty: 1,
     tagId: 3
   },
   {
     name: "Maximum Number of 'Balloon's",
-    description: "Given a string of letters, return how many times you could use those letters to form the word 'balloon'.",
+    description:
+      "Given a string of letters, return how many times you could use those letters to form the word 'balloon'.",
     link: "https://leetcode.com/problems/maximum-number-of-balloons/",
     difficulty: 1,
     tagId: 3
   },
   {
     name: "Longest Palindrome",
-    description: "Given a string of letters, return the length of the longest palindrome that could be constructed with those letters",
+    description:
+      "Given a string of letters, return the length of the longest palindrome that could be constructed with those letters",
     link: "https://leetcode.com/problems/longest-palindrome/",
     difficulty: 1,
     tagId: 3
   },
   {
     name: "Check if N and It's Double Exist",
-    description: "Given an array of integers, check if there is an element in the array that is double another element (i.e. 10 is double 5) ",
+    description:
+      "Given an array of integers, check if there is an element in the array that is double another element (i.e. 10 is double 5) ",
     link: "https://leetcode.com/problems/check-if-n-and-its-double-exist/",
     difficulty: 1,
     tagId: 3
   },
   {
     name: "Isomorphic Strings",
-    description: "Given two strings, determine if two strings are isomorphic (characters in string A can be replaced to get string B)",
+    description:
+      "Given two strings, determine if two strings are isomorphic (characters in string A can be replaced to get string B)",
     link: "https://leetcode.com/problems/isomorphic-strings/",
     difficulty: 2,
     tagId: 3
   },
   {
     name: "Longest Harmonious Subsequence",
-    description: "Given an array of integers, find the length of the longest harmonious subsequence. A harmonious subsequence is an sequence in which its min and max element differ by exactly 1.",
+    description:
+      "Given an array of integers, find the length of the longest harmonious subsequence. A harmonious subsequence is an sequence in which its min and max element differ by exactly 1.",
     link: "https://leetcode.com/problems/longest-harmonious-subsequence/",
     difficulty: 2,
     tagId: 3
   },
   {
     name: "Most Common Word",
-    description: "Given a paragraph string (containing punctuation, spaces, and capital and lowercase letters), and a list of banned words, count the most frequent, non-banned word.",
+    description:
+      "Given a paragraph string (containing punctuation, spaces, and capital and lowercase letters), and a list of banned words, count the most frequent, non-banned word.",
     link: "https://leetcode.com/problems/most-common-word/",
     difficulty: 2,
     tagId: 3
   },
   {
     name: "Valid Sudoku",
-    description: "Given a 2D matrix representing a sudoku board, return whether or not it is a valid sudoku board",
+    description:
+      "Given a 2D matrix representing a sudoku board, return whether or not it is a valid sudoku board",
     link: "https://leetcode.com/problems/valid-sudoku/",
     difficulty: 3,
     tagId: 3
   },
   {
     name: "Brick Wall",
-    description: "Given a 2D matrix of “bricks”, return the fewest bricks you could intersect with a vertical line from top to bottom. The problem itself has a diagram that will make it clearer.",
+    description:
+      "Given a 2D matrix of “bricks”, return the fewest bricks you could intersect with a vertical line from top to bottom. The problem itself has a diagram that will make it clearer.",
     link: "https://leetcode.com/problems/brick-wall/",
     difficulty: 3,
     tagId: 3
@@ -423,7 +441,7 @@ const questionBulk = [
     name: "Prison Cells After N Days",
     description: "Find the state of 8 prison cells after N days",
     link: "https://leetcode.com/problems/prison-cells-after-n-days/",
-    difficulty: 4, 
+    difficulty: 4,
     tagId: 3
   },
   // -------------------------- LINKED LIST (4) --------------------------
@@ -611,6 +629,30 @@ const questionBulk = [
       "Given a 2D matrix, a starting row, a starting column, and a new ‘color’ integer, change all of the 4-directionally adjacent (north, east, south, west) cells to the new color, and all of the adjacent ones to those to the new color, etc.",
     difficulty: 1,
     link: "https://leetcode.com/problems/flood-fill/",
+    tagId: 6
+  },
+  {
+    name: "Number of Islands",
+    description:
+      "Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/number-of-islands/",
+    tagId: 6
+  },
+  {
+    name: "Max Area of Island",
+    description:
+      "Given a non-empty 2D array grid of 0's and 1's, an island is a group of 1's (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water. Find the maximum area of an island in the given 2D array. (If there is no island, the maximum area is 0.)",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/max-area-of-island/",
+    tagId: 6
+  },
+  {
+    name: "Friend Circles",
+    description:
+      "There are N students in a class. Some of them are friends, while some are not. Their friendship is transitive in nature. For example, if A is a direct friend of B, and B is a direct friend of C, then A is an indirect friend of C. And we defined a friend circle is a group of students who are direct or indirect friends. Given a N*N matrix M representing the friend relationship between students in the class. If M[i][j] = 1, then the ith and jth students are direct friends with each other, otherwise not. And you have to output the total number of friend circles among all the students.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/friend-circles/",
     tagId: 6
   },
   // ------------------------- STACKS (7) -------------------------
