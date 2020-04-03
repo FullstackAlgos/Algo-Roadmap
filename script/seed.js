@@ -326,6 +326,22 @@ const questionBulk = [
     link: "https://leetcode.com/problems/same-tree/",
     tagId: 5
   },
+  {
+    name: "Merge Two Binary Trees",
+    description:
+      "Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not. You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of new tree.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/merge-two-binary-trees/",
+    tagId: 5
+  },
+  {
+    name: "Max Depth of Binary Tree",
+    description:
+      "Given a binary tree, find its maximum depth. The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+    tagId: 5
+  },
   // ---------------------- DEPTH FIRST SEARCH (6) ----------------------
   {
     name: "Flood Fill",
