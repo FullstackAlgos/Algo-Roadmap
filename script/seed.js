@@ -342,6 +342,22 @@ const questionBulk = [
     link: "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
     tagId: 5
   },
+  {
+    name: "N-ary Tree Preorder Traversal",
+    description:
+      "Given an n-ary tree, return the preorder traversal of its nodes' values. Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value (See examples).",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/n-ary-tree-preorder-traversal/",
+    tagId: 5
+  },
+  {
+    name: "N-ary Tree Postorder Traversal",
+    description:
+      "Given an n-ary tree, return the postorder traversal of its nodes' values. Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value (See examples).",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/n-ary-tree-postorder-traversal/",
+    tagId: 5
+  },
   // ---------------------- DEPTH FIRST SEARCH (6) ----------------------
   {
     name: "Flood Fill",
