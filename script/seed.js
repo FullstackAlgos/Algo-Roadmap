@@ -639,6 +639,22 @@ const questionBulk = [
     link: "https://leetcode.com/problems/number-of-islands/",
     tagId: 6
   },
+  {
+    name: "Max Area of Island",
+    description:
+      "Given a non-empty 2D array grid of 0's and 1's, an island is a group of 1's (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water. Find the maximum area of an island in the given 2D array. (If there is no island, the maximum area is 0.)",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/max-area-of-island/",
+    tagId: 6
+  },
+  {
+    name: "Friend Circles",
+    description:
+      "There are N students in a class. Some of them are friends, while some are not. Their friendship is transitive in nature. For example, if A is a direct friend of B, and B is a direct friend of C, then A is an indirect friend of C. And we defined a friend circle is a group of students who are direct or indirect friends. Given a N*N matrix M representing the friend relationship between students in the class. If M[i][j] = 1, then the ith and jth students are direct friends with each other, otherwise not. And you have to output the total number of friend circles among all the students.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/friend-circles/",
+    tagId: 6
+  },
   // ------------------------- STACKS (7) -------------------------
   {
     name: "Valid Parentheses",
