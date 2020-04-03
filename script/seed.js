@@ -326,6 +326,151 @@ const questionBulk = [
     link: "https://leetcode.com/problems/same-tree/",
     tagId: 5
   },
+  {
+    name: "Merge Two Binary Trees",
+    description:
+      "Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not. You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of new tree.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/merge-two-binary-trees/",
+    tagId: 5
+  },
+  {
+    name: "Max Depth of Binary Tree",
+    description:
+      "Given a binary tree, find its maximum depth. The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+    tagId: 5
+  },
+  {
+    name: "N-ary Tree Preorder Traversal",
+    description:
+      "Given an n-ary tree, return the preorder traversal of its nodes' values. Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/n-ary-tree-preorder-traversal/",
+    tagId: 5
+  },
+  {
+    name: "N-ary Tree Postorder Traversal",
+    description:
+      "Given an n-ary tree, return the postorder traversal of its nodes' values. Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/n-ary-tree-postorder-traversal/",
+    tagId: 5
+  },
+  {
+    name: "Search in Binary Search Tree",
+    description:
+      "Given the root node of a binary search tree (BST) and a value. You need to find the node in the BST that the node's value equals the given value. Return the subtree rooted with that node. If such node doesn't exist, you should return NULL.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/search-in-a-binary-search-tree/",
+    tagId: 5
+  },
+  {
+    name: "Univalued Binary Tree",
+    description:
+      "A binary tree is univalued if every node in the tree has the same value. Return true if and only if the given tree is univalued.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/univalued-binary-tree/",
+    tagId: 5
+  },
+  {
+    name: "Sum of Root To Leaf Binary Numbers",
+    description:
+      "Given a binary tree, each node has value 0 or 1.  Each root-to-leaf path represents a binary number starting with the most significant bit. For all leaves in the tree, consider the numbers represented by the path from the root to that leaf. Return the sum of these numbers.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/",
+    tagId: 5
+  },
+  {
+    name: "Symmetric Tree",
+    description:
+      "Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/symmetric-tree/",
+    tagId: 5
+  },
+  {
+    name: "Leaf-Similar Trees",
+    description:
+      "Consider all the leaves of a binary tree.  From left to right order, the values of those leaves form a leaf value sequence. Two binary trees are considered leaf-similar if their leaf value sequence is the same. Return true if and only if the two given trees with head nodes root1 and root2 are leaf-similar.",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/leaf-similar-trees/",
+    tagId: 5
+  },
+  {
+    name: "Increasing Order Search Tree",
+    description:
+      "Given a binary search tree, rearrange the tree in in-order so that the leftmost node in the tree is now the root of the tree, and every node has no left child and only 1 right child.",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/increasing-order-search-tree/",
+    tagId: 5
+  },
+  {
+    name: "Convert BST to Greater Tree",
+    description:
+      "Given a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus sum of all keys greater than the original key in BST.",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/convert-bst-to-greater-tree/",
+    tagId: 5
+  },
+  {
+    name: "Trim a Binary Search Tree",
+    description:
+      "Given a binary search tree and the lowest and highest boundaries as L and R, trim the tree so that all its elements lies in [L, R] (R >= L). You might need to change the root of the tree, so the result should return the new root of the trimmed binary search tree.",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/trim-a-binary-search-tree/",
+    tagId: 5
+  },
+  {
+    name: "Deepest Leaves Sum",
+    description:
+      "Given a binary tree, return the sum of values of its deepest leaves.",
+    difficulty: 2,
+    link: "https://leetcode.com/problems/deepest-leaves-sum/",
+    tagId: 5
+  },
+  {
+    name: "Path Sum III",
+    description:
+      "You are given a binary tree in which each node contains an integer value. Find the number of paths that sum to a given value. The path does not need to start or end at the root or a leaf, but it must go downwards (traveling only from parent nodes to child nodes).",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/path-sum-iii/",
+    tagId: 5
+  },
+  {
+    name: "Validate Binary Search Tree",
+    description:
+      "Given a binary tree, determine if it is a valid binary search tree (BST).",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/validate-binary-search-tree/",
+    tagId: 5
+  },
+  {
+    name: "Delete Leaves With a Given Value",
+    description:
+      "Given a binary tree root and an integer target, delete all the leaf nodes with value target.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/delete-leaves-with-a-given-value/",
+    tagId: 5
+  },
+  {
+    name: "Sum of Nodes with Even-Valued Grandparent",
+    description:
+      "Given a binary tree, return the sum of values of nodes with even-valued grandparent.  (A grandparent of a node is the parent of its parent, if it exists.) If there are no nodes with an even-valued grandparent, return 0.",
+    difficulty: 3,
+    link:
+      "https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/",
+    tagId: 5
+  },
+  {
+    name: "Binary Tree Maximum Path Sum",
+    description:
+      "Given a non-empty binary tree, find the maximum path sum. For this problem, a path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to go through the root.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+    tagId: 5
+  },
   // ---------------------- DEPTH FIRST SEARCH (6) ----------------------
   {
     name: "Flood Fill",
