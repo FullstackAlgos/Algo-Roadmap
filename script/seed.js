@@ -345,7 +345,7 @@ const questionBulk = [
   {
     name: "N-ary Tree Preorder Traversal",
     description:
-      "Given an n-ary tree, return the preorder traversal of its nodes' values. Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value (See examples).",
+      "Given an n-ary tree, return the preorder traversal of its nodes' values. Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value.",
     difficulty: 1,
     link: "https://leetcode.com/problems/n-ary-tree-preorder-traversal/",
     tagId: 5
@@ -353,9 +353,17 @@ const questionBulk = [
   {
     name: "N-ary Tree Postorder Traversal",
     description:
-      "Given an n-ary tree, return the postorder traversal of its nodes' values. Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value (See examples).",
+      "Given an n-ary tree, return the postorder traversal of its nodes' values. Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value.",
     difficulty: 1,
     link: "https://leetcode.com/problems/n-ary-tree-postorder-traversal/",
+    tagId: 5
+  },
+  {
+    name: "Search in Binary Search Tree",
+    description:
+      "Given the root node of a binary search tree (BST) and a value. You need to find the node in the BST that the node's value equals the given value. Return the subtree rooted with that node. If such node doesn't exist, you should return NULL.",
+    difficulty: 1,
+    link: "https://leetcode.com/problems/search-in-a-binary-search-tree/",
     tagId: 5
   },
   // ---------------------- DEPTH FIRST SEARCH (6) ----------------------
