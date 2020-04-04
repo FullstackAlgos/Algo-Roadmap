@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import SingleQuestion from "../Question/SingleQuestion";
 import RoadmapArrow from "./RoadmapArrow";
@@ -10,15 +10,15 @@ class Roadmap extends Component {
     super();
     this.state = {
       activeQ: "--",
-      selectedQs: []
+      selectedQs: [],
     };
   }
 
   formatQualifyingQs = (questions, userQs) => {
     const doneQs = new Set();
-    userQs.forEach(q => doneQs.add(q.id));
+    userQs.forEach((q) => doneQs.add(q.id));
 
-    const output = questions.filter(q => !doneQs.has(q.id));
+    const output = questions.filter((q) => !doneQs.has(q.id));
 
     output.sort((a, b) => {
       if (a.tag.ranking === b.tag.ranking) {
@@ -30,13 +30,13 @@ class Roadmap extends Component {
     return output.slice(0, 3);
   };
 
-  getTopics = questions => {
-  	const topics = new Set();
+  getTopics = (questions) => {
+    const topics = new Set();
 
-  	questions.forEach(q => topics.add(q.tag.name));
+    questions.forEach((q) => topics.add(q.tag.name));
 
-  	return [...topics];
-  }
+    return [...topics];
+  };
 
   componentDidMount() {}
 
@@ -49,12 +49,12 @@ class Roadmap extends Component {
     ) {
       const input = this.formatQualifyingQs(questions, userQuestions);
       this.setState({
-        activeQ: input[0].name
+        activeQ: input[0].name,
       });
     }
   }
 
-  setActive = evt => {
+  setActive = (evt) => {
     const activeName = evt.target.innerText;
     evt.persist();
 
@@ -72,23 +72,30 @@ class Roadmap extends Component {
 
     return (
       <div className="roadmapFullDiv">
-        <h3>Your next topics: <span> </span>
-        {topics.length === 0 ? <span>None. You're done with every topic!</span> : 
-        	topics.map((t,i) => (
-        		<span key={i}>
-        			{i === topics.length -1 ? t : `${t}, `}
-        		</span>
-        		)
-        	)
-    	}
+        <h3>
+          Your next topics:
+          {topics.length === 0 ? (
+            <span>None. You're done with every topic!</span>
+          ) : (
+            topics.map((t, i) => (
+              <span key={i}>{i === topics.length - 1 ? t : `${t}, `}</span>
+            ))
+          )}
         </h3>
+
         <br />
+
         {orderedQs
           ? orderedQs.map((q, i) => (
-              <span>
-             	<RoadmapQuestion key={i} question={q} questionNum={i+1} />
-              	<RoadmapArrow key={i+orderedQs.length} currQ={q} nextQ={orderedQs[i+1]} />
-              </span>
+              <Fragment key={i}>
+                <RoadmapQuestion key={i} question={q} questionNum={i + 1} />
+
+                <RoadmapArrow
+                  key={i + orderedQs.length}
+                  currQ={q}
+                  nextQ={orderedQs[i + 1]}
+                />
+              </Fragment>
             ))
           : null}
       </div>
@@ -96,16 +103,16 @@ class Roadmap extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     questions: state.questions,
-    userQuestions: state.userQuestions
+    userQuestions: state.userQuestions,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    switchUserActive: () => dispatch(switchUserActive())
+    switchUserActive: () => dispatch(switchUserActive()),
   };
 };
 

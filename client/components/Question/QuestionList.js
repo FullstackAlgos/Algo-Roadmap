@@ -39,10 +39,13 @@ class QuestionList extends Component {
   };
 
   questionTag = (questions, tag, completed) => {
-    console.log("hm -", questions);
-    const output = questions.filter((x) => x.tag.id === tag.id);
-    if (completed) return output.length;
-    return output.length ? output : [{ name: "Currently Not Available" }];
+    if (completed) {
+      const output = questions.filter((x) => x.tagId === tag.id);
+      return output.length;
+    } else {
+      const output = questions.filter((x) => x.tag.id === tag.id);
+      return output.length ? output : [{ name: "Currently Not Available" }];
+    }
   };
 
   render() {
@@ -58,9 +61,8 @@ class QuestionList extends Component {
 
               return (
                 <div key={idx} className="tagFullDiv">
-                  <h2 className="tagHeader">
-                    {tag.name} ({userTagQuestions.length}/
-                    {curateQuestions.length})
+                  <h2 className="tagHeader" key={idx}>
+                    {tag.name} ({userTagQuestions} / {curateQuestions.length})
                   </h2>
 
                   {curateQuestions
