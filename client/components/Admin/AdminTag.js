@@ -8,7 +8,7 @@ class AdminTag extends Component {
     this.state = {
       showEdit: false,
       name: "",
-      ranking: "--"
+      ranking: "--",
     };
   }
 
@@ -16,13 +16,13 @@ class AdminTag extends Component {
     this.setState({ showEdit: !this.state.showEdit });
   };
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     this.setState({
-      [evt.target.name]: evt.target.value
+      [evt.target.name]: evt.target.value,
     });
   };
 
-  handleSubmit = evt => {
+  handleSubmit = (evt) => {
     evt.preventDefault();
     const { t, changeTag } = this.props,
       { name, ranking } = this.state;
@@ -41,7 +41,7 @@ class AdminTag extends Component {
   };
 
   render() {
-    const { t, q } = this.props;
+    const { t, q, len } = this.props;
 
     return (
       <div className="adminSingleDiv">
@@ -87,7 +87,7 @@ class AdminTag extends Component {
                 className="adminQuestSelect"
               >
                 <option>--</option>
-                {Array(10)
+                {Array(len)
                   .fill()
                   .map((x, i) => (
                     <option key={i}>{i + 1}</option>
@@ -111,9 +111,9 @@ class AdminTag extends Component {
   }
 }
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
-    changeTag: tagName => dispatch(changeTag(tagName))
+    changeTag: (tagName) => dispatch(changeTag(tagName)),
   };
 };
 

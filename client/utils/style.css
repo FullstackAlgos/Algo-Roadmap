@@ -45,23 +45,36 @@ p {
 
 .belowNavDiv {
   display: flex;
+  padding-top: 50px;
 }
 
 .rightContentDiv {
   display: flex;
   flex-direction: column;
+  padding-left: 25vw;
+  width: 100vw;
 }
 
 /* ----------------------- NAV BAR ----------------------- */
 .navBarDiv {
+  background-color: rgba(75, 75, 75, 1);
+  position: fixed;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(75, 75, 75, 1);
+  width: 100vw;
   height: 50px;
-  padding: 0 15px;
   font-size: 20px;
   font-weight: bold;
+}
+
+.navBarLeftDiv {
+  margin-left: 20px;
+}
+
+.navBarRightDiv {
+  margin-right: 20px;
 }
 
 .navBarText {
@@ -175,11 +188,16 @@ p {
 /* ----------------------- USER ----------------------- */
 .userFullDiv {
   background-color: lightgreen;
-  padding: 15px;
-  width: 30vw;
+  position: fixed;
+  height: 100vh;
+  width: 25vw;
+}
+
+.userInsideDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 15px;
 }
 
 .questionAddBtn {
@@ -200,40 +218,61 @@ p {
 
 /* ----------------------- ROADMAP ----------------------- */
 .roadmapFullDiv {
+  position: fixed;
   background-color: indianred;
+  display: flex;
+  flex-direction: column;
   padding: 15px;
-  min-height: 150px;
+  height: 150px;
+  width: 100vw;
 }
-.roadmapArrow {
-  width: 5%;
-  height: 100%;
+
+.roadMapHeader {
+  margin-bottom: 10px;
 }
+
+.roadMapFlowDiv {
+  display: flex;
+  align-items: center;
+}
+
+.roadMapIndDiv {
+  display: flex;
+  align-items: center;
+}
+
 .roadmapQuestion {
-  width: 20%;
-  height: 100%;
+  width: 250px;
+  height: 100px;
   border-bottom-left-radius: 5% 50%;
   border-bottom-right-radius: 5% 50%;
   border-top-left-radius: 5% 50%;
   border-top-right-radius: 5% 50%;
   border-style: solid;
-  margin: 2px;
-  padding: 5px;
+  padding: 10px;
   background: whitesmoke;
-  display: inline-block;
 }
-.roadmapQuestion1 {
 
+.roadmapQuestLink {
+  font-size: 18px;
+  font-weight: bold;
 }
-.roadmapQuestion2 {
+
+.roadMapQuestTag {
+  margin-bottom: 5px;
 }
-.roadmapQuestion3 {
+
+.roadmapArrow {
+  width: 75px;
+  height: 50px;
+  margin: 0 10px;
 }
+
 /* ----------------------- QUESTION LIST ----------------------- */
 .probListFullDiv {
   background-color: bisque;
   padding: 15px;
-  width: 70vw;
-  min-height: 150px;
+  padding-top: 195px;
 }
 
 /* ----------------------- QUESTION FORM ----------------------- */
@@ -359,11 +398,11 @@ p {
 }
 
 .difficulty2 {
-  color: #a6de00;
+  color: #789422;
 }
 
 .difficulty3 {
-  color: #dece00;
+  color: #948c22;
 }
 
 .difficulty4 {
@@ -384,6 +423,10 @@ p {
 
 .tagHeader {
   margin-bottom: 5px;
+}
+
+.tagHeader:hover {
+  color: blue;
 }
 
 /* ----------------------- QUESTION SURVEY ----------------------- */
@@ -428,11 +471,12 @@ p {
 
 /* ----------------------- ADMIN PANEL ----------------------- */
 .adminPanelSideBar {
+  position: fixed;
   display: flex;
   flex-direction: column;
   background-color: lightgray;
   padding: 15px;
-  width: 250px;
+  width: 220px;
   min-height: 100vh;
 }
 
@@ -443,8 +487,10 @@ p {
 
 .adminContentDiv {
   background-color: beige;
+  min-height: 100vh;
   width: 100vw;
   padding: 15px;
+  padding-left: 265px;
 }
 
 .adminSingleDiv {

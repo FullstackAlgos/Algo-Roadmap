@@ -19,47 +19,49 @@ class User extends Component {
 
     return (
       <div className="userFullDiv">
-        {user.id ? (
-          <>
-            <h2 className="userHeader">Welcome, {user.name}!</h2>
+        <div className="userInsideDiv">
+          {user.id ? (
+            <>
+              <h2 className="userHeader">Welcome, {user.name}!</h2>
 
-            <AllQuestPie
-              userLen={userQuestions.length}
-              questLen={questions.length}
-            />
+              <AllQuestPie
+                userLen={userQuestions.length}
+                questLen={questions.length}
+              />
 
-            <button
-              type="button"
-              className="questionAddBtn gBtn"
-              onClick={formFlip}
-            >
-              Suggest New Question
-            </button>
-          </>
-        ) : (
-          <h2 className="userHeader">
-            <a href="/SignIn" className="userSignInLink">
-              Sign In
-            </a>{" "}
-            to track your progress!
-          </h2>
-        )}
+              <button
+                type="button"
+                className="questionAddBtn gBtn"
+                onClick={formFlip}
+              >
+                Suggest New Question
+              </button>
+            </>
+          ) : (
+            <h2 className="userHeader">
+              <a href="/SignIn" className="userSignInLink">
+                Sign In
+              </a>{" "}
+              to track your progress!
+            </h2>
+          )}
+        </div>
       </div>
     );
   }
 }
 
-const mapState = state => {
+const mapState = (state) => {
   return {
     user: state.user,
     questions: state.questions,
-    userQuestions: state.userQuestions
+    userQuestions: state.userQuestions,
   };
 };
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
-    getUserQuestThunk: userId => dispatch(getUserQuestThunk(userId))
+    getUserQuestThunk: (userId) => dispatch(getUserQuestThunk(userId)),
   };
 };
 

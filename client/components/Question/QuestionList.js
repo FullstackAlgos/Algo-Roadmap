@@ -7,7 +7,8 @@ class QuestionList extends Component {
   constructor() {
     super();
     this.state = {
-      activeQ: "--"
+      activeT: "--",
+      activeQ: "--",
     };
   }
 
@@ -23,7 +24,14 @@ class QuestionList extends Component {
     if (user.id && user.id !== prevProps.user.id) getUserLikes(user.id);
   }
 
-  setActive = evt => {
+  setTagActive = (evt) => {
+    const activeName = evt.target.innerText.split(/[.()]+/)[1].trim();
+
+    if (activeName === this.state.activeT) this.setState({ activeT: "--" });
+    else this.setState({ activeT: activeName });
+  };
+
+  setQuestActive = (evt) => {
     const activeName = evt.target.innerText;
     evt.persist();
 
@@ -31,16 +39,21 @@ class QuestionList extends Component {
     else this.setState({ activeQ: activeName });
   };
 
-  doneQuests = userQuestions => {
+  doneQuests = (userQuestions) => {
     return userQuestions.reduce((a, b) => {
       a[b.id] = true;
       return a;
     }, {});
   };
 
-  questionTag = (questions, tag) => {
-    const output = questions.filter(x => x.tag.id === tag.id);
-    return output.length ? output : [{ name: "Currently Not Available" }];
+  questionTag = (questions, tag, completed) => {
+    if (completed) {
+      const output = questions.filter((x) => x.tagId === tag.id);
+      return output.length;
+    } else {
+      const output = questions.filter((x) => x.tag.id === tag.id);
+      return output.length ? output : [{ name: "Currently Not Available" }];
+    }
   };
 
   render() {
@@ -51,23 +64,33 @@ class QuestionList extends Component {
       <div className="probListFullDiv">
         {tags.length
           ? tags.map((tag, idx) => {
-              const curateQuestions = this.questionTag(questions, tag);
+              const curateQuestions = this.questionTag(questions, tag, false),
+                userTagQuestions = this.questionTag(userQuestions, tag, true);
 
               return (
                 <div key={idx} className="tagFullDiv">
-                  <h2 className="tagHeader">{tag.name}</h2>
+                  <h2
+                    className="tagHeader"
+                    key={idx}
+                    onClick={this.setTagActive}
+                  >
+                    {idx + 1}. {tag.name}&nbsp;&nbsp;&nbsp;&nbsp;(
+                    {userTagQuestions} / {curateQuestions.length})
+                  </h2>
 
-                  {curateQuestions
-                    .sort((a,b) => a.difficulty - b.difficulty)
-                    .map((q, i) => (
-                    <SingleQuestion
-                      key={i}
-                      q={q}
-                      done={doneIds[q.id]}
-                      show={q.name === this.state.activeQ}
-                      setActive={this.setActive}
-                    />
-                  ))}
+                  {tag.name === this.state.activeT
+                    ? curateQuestions
+                        .sort((a, b) => a.difficulty - b.difficulty)
+                        .map((q, i) => (
+                          <SingleQuestion
+                            key={i}
+                            q={q}
+                            done={doneIds[q.id]}
+                            show={q.name === this.state.activeQ}
+                            setActive={this.setQuestActive}
+                          />
+                        ))
+                    : null}
                 </div>
               );
             })
@@ -77,20 +100,20 @@ class QuestionList extends Component {
   }
 }
 
-const mapState = state => {
+const mapState = (state) => {
   return {
     user: state.user,
     questions: state.questions,
     userQuestions: state.userQuestions,
-    tags: state.tags
+    tags: state.tags,
   };
 };
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
     getAllQuestions: () => dispatch(getAllQuestions()),
     getAllTags: () => dispatch(getAllTags()),
-    getUserLikes: userId => dispatch(getUserLikes(userId))
+    getUserLikes: (userId) => dispatch(getUserLikes(userId)),
   };
 };
 

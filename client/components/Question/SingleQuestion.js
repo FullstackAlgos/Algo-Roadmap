@@ -26,7 +26,7 @@ class SingleQuestion extends Component {
 
   render() {
     const { show, setActive, done, switchUserActive, q, user } = this.props,
-      { name, description, difficulty, link, ratedDifficulty, likes } = q,
+      { id, name, description, difficulty, link, likes } = q,
       liked = this.likedQuest(user, likes, "like"),
       disliked = this.likedQuest(user, likes, "dislike");
 
@@ -53,7 +53,8 @@ class SingleQuestion extends Component {
               </p>
 
               <p className="questionRate">
-                Difficulty: <strong className = {`difficulty${difficulty}`}>
+                Difficulty:{" "}
+                <strong className={`difficulty${difficulty}`}>
                   {difficultMap[difficulty]}
                 </strong>
               </p>
@@ -65,17 +66,13 @@ class SingleQuestion extends Component {
               <p className={`questionRate qRate${disliked}`}>
                 Dislikes: <strong>{this.numLikes(likes, false)}</strong>
               </p>
-
-              <p className="questionRate">
-                Rated Difficulty: <strong>{Number(ratedDifficulty)}</strong>
-              </p>
             </div>
 
             <a
               href={link}
               target="_blank"
               className="questionLink linkText"
-              onClick={() => switchUserActive(q.id, name)}
+              onClick={() => switchUserActive(id, name)}
             >
               Explore the Question
             </a>
@@ -86,13 +83,13 @@ class SingleQuestion extends Component {
   }
 }
 
-const mapState = state => {
+const mapState = (state) => {
   return { user: state.user };
 };
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
-    switchUserActive: (qId, qName) => dispatch(switchUserActive(qId, qName))
+    switchUserActive: (qId, qName) => dispatch(switchUserActive(qId, qName)),
   };
 };
 

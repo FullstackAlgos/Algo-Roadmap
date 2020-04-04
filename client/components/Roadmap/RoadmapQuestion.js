@@ -1,22 +1,30 @@
 import React from "react";
+import { connect } from "react-redux";
+import { switchUserActive } from "../../store";
 
-const RoadmapQuestion = (props) => {
-	const { question, questionNum } = props;
+const RoadmapQuestion = ({ question, questionNum, switchUserActive }) => {
+  const { id, name, tag, link, difficulty } = question;
 
+  return (
+    <span className={`roadmapQuestion roadmapQuestion${questionNum}`}>
+      <h3 className="roadMapQuestTag">{tag.name}</h3>
 
-	return (<span className={`roadmapQuestion roadmapQuestion${questionNum}`}>
-				<h3>{question.tag.name}</h3>
-				<a
-					href={question.link}
-					target="_blank"
-					className="questionLink linkText"
-				>
-					<h3 className={`difficulty${question.difficulty}`}>
-						{question.name}
-					</h3>
-				</a>
-			</span>
-	);
-}
+      <a
+        href={link}
+        target="_blank"
+        className={`roadmapQuestLink linkText difficulty${difficulty}`}
+        onClick={() => switchUserActive(id, name)}
+      >
+        {name}
+      </a>
+    </span>
+  );
+};
 
-export default RoadmapQuestion;
+const mapDispatch = (dispatch) => {
+  return {
+    switchUserActive: (qId, qName) => dispatch(switchUserActive(qId, qName)),
+  };
+};
+
+export default connect(null, mapDispatch)(RoadmapQuestion);
