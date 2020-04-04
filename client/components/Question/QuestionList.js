@@ -25,7 +25,7 @@ class QuestionList extends Component {
   }
 
   setTagActive = (evt) => {
-    const activeName = evt.target.innerText.split("(")[0];
+    const activeName = evt.target.innerText.split(" (")[0].split(". ")[1];
 
     if (activeName === this.state.activeT) this.setState({ activeT: "--" });
     else this.setState({ activeT: activeName });
@@ -74,7 +74,8 @@ class QuestionList extends Component {
                     key={idx}
                     onClick={this.setTagActive}
                   >
-                    {tag.name} ({userTagQuestions} / {curateQuestions.length})
+                    {idx + 1}. {tag.name} ({userTagQuestions} /{" "}
+                    {curateQuestions.length})
                   </h2>
 
                   {tag.name === this.state.activeT

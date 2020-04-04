@@ -72,7 +72,7 @@ class Roadmap extends Component {
 
     return (
       <div className="roadmapFullDiv">
-        <h3>
+        <h3 className="roadMapHeader">
           Your next topics:
           {topics.length === 0 ? (
             <span>None. You're done with every topic!</span>
@@ -83,21 +83,21 @@ class Roadmap extends Component {
           )}
         </h3>
 
-        <br />
+        <div className="roadMapFlowDiv">
+          {orderedQs
+            ? orderedQs.map((q, i) => (
+                <div key={i} className="roadMapIndDiv">
+                  <RoadmapQuestion key={i} question={q} questionNum={i + 1} />
 
-        {orderedQs
-          ? orderedQs.map((q, i) => (
-              <Fragment key={i}>
-                <RoadmapQuestion key={i} question={q} questionNum={i + 1} />
-
-                <RoadmapArrow
-                  key={i + orderedQs.length}
-                  currQ={q}
-                  nextQ={orderedQs[i + 1]}
-                />
-              </Fragment>
-            ))
-          : null}
+                  <RoadmapArrow
+                    key={i + orderedQs.length}
+                    currQ={q}
+                    nextQ={orderedQs[i + 1]}
+                  />
+                </div>
+              ))
+            : null}
+        </div>
       </div>
     );
   }

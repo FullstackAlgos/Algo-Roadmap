@@ -52,6 +52,7 @@ p {
   display: flex;
   flex-direction: column;
   padding-left: 25vw;
+  width: 100vw;
 }
 
 /* ----------------------- NAV BAR ----------------------- */
@@ -218,26 +219,40 @@ p {
 /* ----------------------- ROADMAP ----------------------- */
 .roadmapFullDiv {
   background-color: indianred;
+  display: flex;
+  flex-direction: column;
   padding: 15px;
-  min-height: 150px;
+  height: 150px;
 }
-.roadmapArrow {
-  width: 5%;
-  height: 100%;
+
+.roadMapHeader {
+  margin-bottom: 15px;
 }
+
+.roadMapFlowDiv {
+  display: flex;
+  align-items: center;
+}
+
+.roadMapIndDiv {
+  display: flex;
+  align-items: center;
+}
+
 .roadmapQuestion {
-  width: 20%;
-  height: 100%;
+  width: 325px;
+  height: 75px;
   border-bottom-left-radius: 5% 50%;
   border-bottom-right-radius: 5% 50%;
   border-top-left-radius: 5% 50%;
   border-top-right-radius: 5% 50%;
   border-style: solid;
   margin: 2px;
-  padding: 5px;
+  padding: 10px;
   background: whitesmoke;
   display: inline-block;
 }
+
 .roadmapQuestion1 {
 }
 
@@ -245,6 +260,12 @@ p {
 }
 
 .roadmapQuestion3 {
+}
+
+.roadmapArrow {
+  width: 75px;
+  height: 50px;
+  margin: 0 10px;
 }
 
 /* ----------------------- QUESTION LIST ----------------------- */
