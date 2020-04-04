@@ -223,15 +223,17 @@ p {
 }
 .roadmapQuestion1 {
 }
+
 .roadmapQuestion2 {
 }
+
 .roadmapQuestion3 {
 }
+
 /* ----------------------- QUESTION LIST ----------------------- */
 .probListFullDiv {
   background-color: bisque;
   padding: 15px;
-  width: 70vw;
   min-height: 150px;
 }
 
