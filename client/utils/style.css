@@ -404,6 +404,10 @@ p {
   margin-bottom: 5px;
 }
 
+.tagHeader:hover {
+  color: blue;
+}
+
 /* ----------------------- QUESTION SURVEY ----------------------- */
 .questSurveyFullDiv {
   display: flex;

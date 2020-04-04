@@ -7,6 +7,7 @@ class QuestionList extends Component {
   constructor() {
     super();
     this.state = {
+      activeT: "--",
       activeQ: "--",
     };
   }
@@ -23,7 +24,14 @@ class QuestionList extends Component {
     if (user.id && user.id !== prevProps.user.id) getUserLikes(user.id);
   }
 
-  setActive = (evt) => {
+  setTagActive = (evt) => {
+    const activeName = evt.target.innerText.split(" ")[0];
+
+    if (activeName === this.state.activeT) this.setState({ activeT: "--" });
+    else this.setState({ activeT: activeName });
+  };
+
+  setQuestActive = (evt) => {
     const activeName = evt.target.innerText;
     evt.persist();
 
@@ -61,21 +69,27 @@ class QuestionList extends Component {
 
               return (
                 <div key={idx} className="tagFullDiv">
-                  <h2 className="tagHeader" key={idx}>
+                  <h2
+                    className="tagHeader"
+                    key={idx}
+                    onClick={this.setTagActive}
+                  >
                     {tag.name} ({userTagQuestions} / {curateQuestions.length})
                   </h2>
 
-                  {curateQuestions
-                    .sort((a, b) => a.difficulty - b.difficulty)
-                    .map((q, i) => (
-                      <SingleQuestion
-                        key={i}
-                        q={q}
-                        done={doneIds[q.id]}
-                        show={q.name === this.state.activeQ}
-                        setActive={this.setActive}
-                      />
-                    ))}
+                  {tag.name === this.state.activeT
+                    ? curateQuestions
+                        .sort((a, b) => a.difficulty - b.difficulty)
+                        .map((q, i) => (
+                          <SingleQuestion
+                            key={i}
+                            q={q}
+                            done={doneIds[q.id]}
+                            show={q.name === this.state.activeQ}
+                            setActive={this.setQuestActive}
+                          />
+                        ))
+                    : null}
                 </div>
               );
             })
