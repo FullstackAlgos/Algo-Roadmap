@@ -39,9 +39,9 @@ p {
 }
 
 /* ----------------------- MAIN APP ----------------------- */
-/* .fullAppDiv {
+.fullAppDiv {
   position: relative;
-} */
+}
 
 .belowNavDiv {
   display: flex;
@@ -51,6 +51,7 @@ p {
 .rightContentDiv {
   display: flex;
   flex-direction: column;
+  padding-left: 25vw;
 }
 
 /* ----------------------- NAV BAR ----------------------- */
@@ -186,11 +187,16 @@ p {
 /* ----------------------- USER ----------------------- */
 .userFullDiv {
   background-color: lightgreen;
-  padding: 15px;
-  width: 30vw;
+  position: fixed;
+  height: 100vh;
+  width: 25vw;
+}
+
+.userInsideDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 15px;
 }
 
 .questionAddBtn {
