@@ -476,6 +476,14 @@ const questionBulk = [
     link: "https://leetcode.com/problems/copy-list-with-random-pointer/",
     tagId: 4,
   },
+  {
+    name: "Merge k Sorted Lists",
+    description:
+      "Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.",
+    difficulty: 5,
+    link: "https://leetcode.com/problems/merge-k-sorted-lists/",
+    tagId: 4,
+  },
   // ---------------------------- TREE (5) ----------------------------
   {
     name: "Same Tree",
