@@ -471,11 +471,12 @@ p {
 
 /* ----------------------- ADMIN PANEL ----------------------- */
 .adminPanelSideBar {
+  position: fixed;
   display: flex;
   flex-direction: column;
   background-color: lightgray;
   padding: 15px;
-  width: 250px;
+  width: 220px;
   min-height: 100vh;
 }
 
@@ -486,8 +487,10 @@ p {
 
 .adminContentDiv {
   background-color: beige;
+  min-height: 100vh;
   width: 100vw;
   padding: 15px;
+  padding-left: 265px;
 }
 
 .adminSingleDiv {

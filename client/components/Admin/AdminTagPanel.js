@@ -9,7 +9,7 @@ class AdminTagPanel extends Component {
     this.state = {
       showAdd: false,
       name: "",
-      ranking: "1"
+      ranking: "1",
     };
   }
 
@@ -17,26 +17,26 @@ class AdminTagPanel extends Component {
     this.setState({ showAdd: !this.state.showAdd });
   };
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     this.setState({
-      [evt.target.name]: evt.target.value
+      [evt.target.name]: evt.target.value,
     });
   };
 
-  handleSubmit = evt => {
+  handleSubmit = (evt) => {
     evt.preventDefault();
     const { tags, addTag } = this.props,
       { name, ranking } = this.state;
 
-    if (tags.some(t => t.name === name)) alert("Tag Already Exists");
+    if (tags.some((t) => t.name === name)) alert("Tag Already Exists");
     else if (name.length) {
       addTag({ name, ranking });
       this.setState({ showAdd: false, name: "", ranking: "1" });
     }
   };
 
-  matchedQuests = tagId => {
-    return this.props.questions.filter(q => q.tagId === tagId);
+  matchedQuests = (tagId) => {
+    return this.props.questions.filter((q) => q.tagId === tagId);
   };
 
   render() {
@@ -80,7 +80,7 @@ class AdminTagPanel extends Component {
                   onChange={this.handleChange}
                   className="adminQuestSelect"
                 >
-                  {Array(10)
+                  {Array(tags.length + 1)
                     .fill()
                     .map((x, i) => (
                       <option key={i}>{i + 1}</option>
@@ -98,7 +98,12 @@ class AdminTagPanel extends Component {
         <div className="adminTagPanelDiv">
           {tags.length
             ? tags.map((t, i) => (
-                <AdminTag key={i} t={t} q={this.matchedQuests(t.id)} />
+                <AdminTag
+                  key={i}
+                  t={t}
+                  q={this.matchedQuests(t.id)}
+                  len={tags.length}
+                />
               ))
             : null}
         </div>
@@ -107,16 +112,16 @@ class AdminTagPanel extends Component {
   }
 }
 
-const mapState = state => {
+const mapState = (state) => {
   return {
     questions: state.questions,
-    tags: state.tags
+    tags: state.tags,
   };
 };
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
-    addTag: newTag => dispatch(addTag(newTag))
+    addTag: (newTag) => dispatch(addTag(newTag)),
   };
 };
 
