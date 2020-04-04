@@ -73,7 +73,7 @@ class Roadmap extends Component {
     return (
       <div className="roadmapFullDiv">
         <h3 className="roadMapHeader">
-          Your next topics:
+          Your next topic:&nbsp;
           {topics.length === 0 ? (
             <span>None. You're done with every topic!</span>
           ) : (

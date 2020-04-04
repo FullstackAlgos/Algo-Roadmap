@@ -26,7 +26,7 @@ class SingleQuestion extends Component {
 
   render() {
     const { show, setActive, done, switchUserActive, q, user } = this.props,
-      { name, description, difficulty, link, likes } = q,
+      { id, name, description, difficulty, link, likes } = q,
       liked = this.likedQuest(user, likes, "like"),
       disliked = this.likedQuest(user, likes, "dislike");
 
@@ -72,7 +72,7 @@ class SingleQuestion extends Component {
               href={link}
               target="_blank"
               className="questionLink linkText"
-              onClick={() => switchUserActive(q.id, name)}
+              onClick={() => switchUserActive(id, name)}
             >
               Explore the Question
             </a>
