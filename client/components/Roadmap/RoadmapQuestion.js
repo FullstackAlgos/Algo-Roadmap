@@ -3,16 +3,18 @@ import { connect } from "react-redux";
 import { switchUserActive } from "../../store";
 
 const RoadmapQuestion = ({ question, questionNum }) => {
+  const { id, name, tag, link, difficulty } = question;
+
   return (
     <span className={`roadmapQuestion roadmapQuestion${questionNum}`}>
-      <h3 className="roadMapQuestTag">{question.tag.name}</h3>
+      <h3 className="roadMapQuestTag">{tag.name}</h3>
 
-      <a href={question.link} target="_blank" className="questionLink linkText">
+      <a href={link} target="_blank" className="questionLink linkText">
         <h3
-          className={`difficulty${question.difficulty}`}
-          onClick={() => switchUserActive(q.id, name)}
+          className={`difficulty${difficulty}`}
+          onClick={() => switchUserActive(id, name)}
         >
-          {question.name}
+          {name}
         </h3>
       </a>
     </span>
