@@ -1083,7 +1083,7 @@ const tagBulk = [
     ranking: 6,
   },
   {
-    name: "Stack/Queue",
+    name: "Stack / Queue",
     ranking: 7,
   },
   {
@@ -1091,7 +1091,7 @@ const tagBulk = [
     ranking: 8,
   },
   {
-    name: "Recursion/Backtracking",
+    name: "Recursion / Backtracking",
     ranking: 9,
   },
   {
@@ -1099,7 +1099,7 @@ const tagBulk = [
     ranking: 10,
   },
   {
-    name: "Heap/Priority Queue",
+    name: "Heap / Priority Queue",
     ranking: 11,
   },
   {

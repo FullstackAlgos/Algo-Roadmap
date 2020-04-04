@@ -25,7 +25,7 @@ class QuestionList extends Component {
   }
 
   setTagActive = (evt) => {
-    const activeName = evt.target.innerText.split(" ")[0];
+    const activeName = evt.target.innerText.split("(")[0];
 
     if (activeName === this.state.activeT) this.setState({ activeT: "--" });
     else this.setState({ activeT: activeName });
