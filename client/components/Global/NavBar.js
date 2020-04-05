@@ -4,12 +4,8 @@ import { NavLink } from "react-router-dom";
 import { logout } from "../../store";
 
 class NavBar extends Component {
-  loggingOut = () => {
-    this.props.logout();
-  };
-
   render() {
-    const { user } = this.props;
+    const { user, logout } = this.props;
 
     return (
       <div className="navBarDiv">
@@ -41,11 +37,7 @@ class NavBar extends Component {
                 </NavLink>
               ) : null}
 
-              <a
-                href="#"
-                onClick={this.loggingOut}
-                className="linkText navBarLink"
-              >
+              <a href="#" onClick={logout} className="linkText navBarLink">
                 Logout
               </a>
             </>
@@ -65,15 +57,15 @@ class NavBar extends Component {
   }
 }
 
-const mapState = state => {
+const mapState = (state) => {
   return {
-    user: state.user
+    user: state.user,
   };
 };
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
   };
 };
 
