@@ -242,7 +242,7 @@ p {
   display: flex;
   flex-direction: column;
   padding: 15px;
-  height: 150px;
+  height: 160px;
   width: 100vw;
   border-bottom: 3px solid black;
 }
@@ -300,7 +300,7 @@ p {
 .probListFullDiv {
   /* background-color: bisque; */
   padding: 15px;
-  padding-top: 195px;
+  padding-top: 210px;
 }
 
 /* ----------------------- QUESTION FORM ----------------------- */
