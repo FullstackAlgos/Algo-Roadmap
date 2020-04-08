@@ -23,7 +23,6 @@ class TagBar extends Component {
       const userQuests = userQ.filter((x) => x.tagId === v.id).length,
         allQuests = allQ.filter((x) => x.tagId === v.id).length,
         percent = Math.round((userQuests / allQuests) * 100);
-      // percent = Math.floor((userQuests / allQuests) * 100) / 100;
 
       a.push(percent);
       return a;
