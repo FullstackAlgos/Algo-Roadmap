@@ -60,6 +60,11 @@ class TagBar extends Component {
               fontSize: 15,
               fontColor: "black",
             },
+            layout: {
+              padding: {
+                left: 25,
+              },
+            },
             legend: { display: false },
             responsive: true,
             maintainAspectRatio: false,
