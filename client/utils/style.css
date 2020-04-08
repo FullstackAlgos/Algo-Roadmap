@@ -67,9 +67,9 @@ p {
 
 /* ----------------------- NAV BAR ----------------------- */
 .navBarDiv {
-  background-color: rgba(75, 75, 75, 1);
+  background-color: rgba(135, 135, 135, 1);
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -77,6 +77,7 @@ p {
   height: 50px;
   font-size: 20px;
   font-weight: bold;
+  border-bottom: 2px solid black;
 }
 
 .navBarLeftDiv {
@@ -88,7 +89,7 @@ p {
 }
 
 .navBarText {
-  color: rgba(0, 152, 195, 1);
+  color: rgb(14, 112, 151);
   font-size: 25px;
 }
 
@@ -302,7 +303,7 @@ p {
 .questPopFullDiv {
   background-color: rgba(225, 225, 225, 0.9);
   position: absolute;
-  z-index: 2;
+  z-index: 5;
   top: 0;
   left: 0;
   width: 100%;
@@ -320,8 +321,9 @@ p {
   border-radius: 5px;
   width: 300px;
   height: 400px;
-  margin-top: 30px;
+  margin-top: 50px;
   overflow: auto;
+  border: 2px solid black;
 }
 
 .questLabels {
@@ -447,7 +449,7 @@ p {
 }
 
 .tagHeader {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .tagHeader:hover {
