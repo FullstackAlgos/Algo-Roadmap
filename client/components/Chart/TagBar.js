@@ -16,20 +16,39 @@ class TagBar extends Component {
     }, []);
   };
 
-  componentDidMount() {
-    const { userQ, allQ, tags } = this.props,
-      barData = tags.reduce((a, v) => {
-        const userQuests = userQ.filter((x) => x.tagId === v.id).length,
-          allQuests = allQ.filter((x) => x.tagId === v.id).length,
-          percent = Math.floor((userQuests / allQuests) * 100) / 100;
+  calcBarData = () => {
+    const { userQ, allQ, tags } = this.props;
 
-        a.push(percent);
-        return a;
-      }, []);
-    console.log(barData);
+    return tags.reduce((a, v) => {
+      const userQuests = userQ.filter((x) => x.tagId === v.id).length,
+        allQuests = allQ.filter((x) => x.tagId === v.id).length,
+        percent = Math.floor((userQuests / allQuests) * 100) / 100;
+
+      a.push(percent);
+      return a;
+    }, []);
+
+    // return [
+    //   [5, 6],
+    //   [-3, -6],
+    // ];
+  };
+
+  componentDidMount() {
+    this.setState({ data: this.calcBarData() });
   }
 
-  componentDidUpdate() {}
+  componentDidUpdate(prevProps) {
+    const { userQ, allQ, tags } = this.props;
+
+    if (
+      userQ.length !== prevProps.userQ.length ||
+      allQ.length !== prevProps.allQ.length ||
+      tags.length !== prevProps.tags.length
+    ) {
+      this.setState({ data: this.calcBarData() });
+    }
+  }
 
   render() {
     return (
@@ -45,6 +64,9 @@ class TagBar extends Component {
             legend: { display: false },
             responsive: true,
             maintainAspectRatio: false,
+            scales: {
+              xAxes: [{ ticks: { max: 1 } }],
+            },
           }}
           id="tagBarId"
           data={{
