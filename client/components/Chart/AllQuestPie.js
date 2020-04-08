@@ -38,7 +38,7 @@ class AllQuestPie extends Component {
           options={{
             title: {
               display: true,
-              text: `Question Progress: ${percent}%`,
+              text: `Total Question Progress: ${percent}%`,
               fontSize: 15,
               fontColor: "black",
             },

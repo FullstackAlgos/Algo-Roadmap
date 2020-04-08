@@ -5,21 +5,22 @@ class TagBar extends Component {
   constructor() {
     super();
     this.state = {
-      data: [0, 1],
+      data: [],
     };
   }
+
+  tagNames = () => {
+    return this.props.tags.reduce((a, v) => {
+      a.push(v.name);
+      return a;
+    }, []);
+  };
 
   componentDidMount() {}
 
   componentDidUpdate() {}
 
   render() {
-    const { userQ, allQ, tags } = this.props,
-      tagName = tags.reduce((a, v) => {
-        a.push(v.name);
-        return a;
-      }, []);
-
     return (
       <div className="tagBarDiv">
         <HorizontalBar
@@ -36,7 +37,7 @@ class TagBar extends Component {
           }}
           id="tagBarId"
           data={{
-            labels: tagName,
+            labels: this.tagNames(),
             datasets: [
               {
                 backgroundColor: [

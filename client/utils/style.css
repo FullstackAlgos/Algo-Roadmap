@@ -191,6 +191,9 @@ p {
   position: fixed;
   height: 100vh;
   width: 25vw;
+  margin-bottom: 80px;
+  padding-bottom: 100px;
+  overflow-y: scroll;
 }
 
 .userInsideDiv {
@@ -198,7 +201,7 @@ p {
   flex-direction: column;
   align-items: center;
   padding: 15px;
-  overflow-y: scroll;
+  margin-bottom: 50px;
 }
 
 .questionAddBtn {
@@ -207,6 +210,7 @@ p {
   font-weight: bold;
   border-radius: 5px;
   color: black;
+  margin-bottom: 15px;
 }
 
 .userSignInLink {
@@ -634,8 +638,8 @@ p {
 /* ----------------------- CHARTS ----------------------- */
 .allQuestPieDiv {
   background-color: lightgray;
-  width: 55%;
-  height: 30%;
+  width: 85%;
+  height: 35%;
   margin: 20px 0;
   padding: 15px;
   border-radius: 5px;
@@ -643,7 +647,8 @@ p {
 
 .tagBarDiv {
   background-color: lightgray;
-  height: 350px;
+  width: 85%;
+  height: 450px;
   margin: 20px 0;
   padding: 15px;
   border-radius: 5px;
