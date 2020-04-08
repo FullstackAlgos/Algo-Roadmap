@@ -39,7 +39,7 @@ class AllQuestPie extends Component {
             title: {
               display: true,
               text: `Total Question Progress: ${percent}%`,
-              fontSize: 15,
+              fontSize: 17,
               fontColor: "black",
             },
             legend: { display: false },

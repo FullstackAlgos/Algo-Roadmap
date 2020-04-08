@@ -55,7 +55,7 @@ class TagBar extends Component {
         <HorizontalBar
           options={{
             title: {
-              display: true,
+              display: false,
               text: `Question Progress: %`,
               fontSize: 15,
               fontColor: "black",
