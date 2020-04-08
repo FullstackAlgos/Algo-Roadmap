@@ -198,6 +198,7 @@ p {
   flex-direction: column;
   align-items: center;
   padding: 15px;
+  overflow-y: scroll;
 }
 
 .questionAddBtn {
@@ -634,7 +635,15 @@ p {
 .allQuestPieDiv {
   background-color: lightgray;
   width: 55%;
-  height: 200px;
+  height: 30%;
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.tagBarDiv {
+  background-color: lightgray;
+  height: 350px;
   margin: 20px 0;
   padding: 15px;
   border-radius: 5px;

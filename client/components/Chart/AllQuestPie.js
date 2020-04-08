@@ -47,6 +47,7 @@ class AllQuestPie extends Component {
             responsive: true,
             maintainAspectRatio: false,
           }}
+          id="questPieId"
           data={{
             labels: ["Solved", "Remaining"],
             datasets: [
