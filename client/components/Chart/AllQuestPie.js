@@ -29,13 +29,16 @@ class AllQuestPie extends Component {
   }
 
   render() {
+    const { questLen, userLen } = this.props,
+      percent = Math.round((userLen / questLen) * 100);
+
     return (
       <div className="allQuestPieDiv">
         <Pie
           options={{
             title: {
               display: true,
-              text: "Question Progress",
+              text: `Question Progress: ${percent}%`,
               fontSize: 15,
               fontColor: "black",
             },
