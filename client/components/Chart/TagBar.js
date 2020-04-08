@@ -9,14 +9,25 @@ class TagBar extends Component {
     };
   }
 
-  tagNames = () => {
+  generateTagNames = () => {
     return this.props.tags.reduce((a, v) => {
       a.push(v.name);
       return a;
     }, []);
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    const { userQ, allQ, tags } = this.props,
+      barData = tags.reduce((a, v) => {
+        const userQuests = userQ.filter((x) => x.tagId === v.id).length,
+          allQuests = allQ.filter((x) => x.tagId === v.id).length,
+          percent = Math.floor((userQuests / allQuests) * 100) / 100;
+
+        a.push(percent);
+        return a;
+      }, []);
+    console.log(barData);
+  }
 
   componentDidUpdate() {}
 
@@ -37,7 +48,7 @@ class TagBar extends Component {
           }}
           id="tagBarId"
           data={{
-            labels: this.tagNames(),
+            labels: this.generateTagNames(),
             datasets: [
               {
                 backgroundColor: [
