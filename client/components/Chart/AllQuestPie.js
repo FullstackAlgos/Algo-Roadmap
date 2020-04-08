@@ -5,7 +5,7 @@ class AllQuestPie extends Component {
   constructor() {
     super();
     this.state = {
-      data: [0, 1]
+      data: [0, 1],
     };
   }
 
@@ -14,7 +14,7 @@ class AllQuestPie extends Component {
       adjQuestLen = questLen || 1;
 
     this.setState({
-      data: [userLen, adjQuestLen - userLen]
+      data: [userLen, adjQuestLen - userLen],
     });
   }
 
@@ -23,7 +23,7 @@ class AllQuestPie extends Component {
 
     if (questLen !== prevProps.questLen || userLen !== prevProps.userLen) {
       this.setState({
-        data: [userLen, questLen - userLen]
+        data: [userLen, questLen - userLen],
       });
     }
   }
@@ -37,11 +37,12 @@ class AllQuestPie extends Component {
               display: true,
               text: "Question Progress",
               fontSize: 15,
-              fontColor: "black"
+              fontColor: "black",
             },
             legend: { display: false },
             cutoutPercentage: 25,
-            responsive: true
+            responsive: true,
+            maintainAspectRatio: false,
           }}
           data={{
             labels: ["Solved", "Remaining"],
@@ -49,11 +50,11 @@ class AllQuestPie extends Component {
               {
                 backgroundColor: [
                   "rgba(0, 255, 0, 0.75)",
-                  "rgba(255, 0, 255, 0.75)"
+                  "rgba(255, 0, 255, 0.75)",
                 ],
-                data: this.state.data
-              }
-            ]
+                data: this.state.data,
+              },
+            ],
           }}
         />
       </div>

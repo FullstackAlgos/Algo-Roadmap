@@ -633,7 +633,8 @@ p {
 /* ----------------------- CHARTS ----------------------- */
 .allQuestPieDiv {
   background-color: lightgray;
-  width: 50%;
+  width: 55%;
+  height: 200px;
   margin: 20px 0;
   padding: 15px;
   border-radius: 5px;
