@@ -362,9 +362,10 @@ p {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-  border-radius: 3px;
   padding: 10px;
   padding-bottom: 20px;
+  border-radius: 3px;
+  border: 1px solid black;
 }
 
 .qFullDivtrue {
@@ -502,6 +503,7 @@ p {
   padding: 15px;
   width: 220px;
   min-height: 100vh;
+  border-right: 3px solid black;
 }
 
 .sideBarLink {
@@ -522,6 +524,7 @@ p {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 15px;
+  border: 1px solid black;
 }
 
 /* ----------------------- ADMIN QUESTION ----------------------- */
