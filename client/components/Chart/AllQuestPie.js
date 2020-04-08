@@ -53,8 +53,8 @@ class AllQuestPie extends Component {
             datasets: [
               {
                 backgroundColor: [
-                  "rgba(0, 255, 0, 0.75)",
-                  "rgba(255, 0, 255, 0.75)",
+                  "rgba(0, 152, 195, 0.9)",
+                  "rgba(175, 175, 175, 0.75)",
                 ],
                 data: this.state.data,
               },

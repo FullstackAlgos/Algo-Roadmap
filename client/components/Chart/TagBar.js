@@ -22,16 +22,12 @@ class TagBar extends Component {
     return tags.reduce((a, v) => {
       const userQuests = userQ.filter((x) => x.tagId === v.id).length,
         allQuests = allQ.filter((x) => x.tagId === v.id).length,
-        percent = Math.floor((userQuests / allQuests) * 100) / 100;
+        percent = Math.round((userQuests / allQuests) * 100);
+      // percent = Math.floor((userQuests / allQuests) * 100) / 100;
 
       a.push(percent);
       return a;
     }, []);
-
-    // return [
-    //   [5, 6],
-    //   [-3, -6],
-    // ];
   };
 
   componentDidMount() {
@@ -51,6 +47,9 @@ class TagBar extends Component {
   }
 
   render() {
+    const { tags } = this.props,
+      backColors = new Array(tags.length).fill("rgba(0, 152, 195, 0.9)");
+
     return (
       <div className="tagBarDiv">
         <HorizontalBar
@@ -65,7 +64,11 @@ class TagBar extends Component {
             responsive: true,
             maintainAspectRatio: false,
             scales: {
-              xAxes: [{ ticks: { max: 1 } }],
+              xAxes: [
+                {
+                  ticks: { max: 100, stepSize: 50, display: false },
+                },
+              ],
             },
           }}
           id="tagBarId"
@@ -73,10 +76,7 @@ class TagBar extends Component {
             labels: this.generateTagNames(),
             datasets: [
               {
-                backgroundColor: [
-                  "rgba(0, 255, 0, 0.75)",
-                  "rgba(255, 0, 255, 0.75)",
-                ],
+                backgroundColor: backColors,
                 data: this.state.data,
               },
             ],
