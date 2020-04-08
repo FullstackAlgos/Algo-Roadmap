@@ -650,7 +650,8 @@ p {
 
 /* ----------------------- CHARTS ----------------------- */
 .allQuestPieDiv {
-  background-color: lightgray;
+  background-color: rgba(235, 235, 235, 0.8);
+  border: 2px solid black;
   width: 85%;
   height: 35%;
   margin: 20px 0;
@@ -659,7 +660,8 @@ p {
 }
 
 .tagBarDiv {
-  background-color: lightgray;
+  background-color: rgba(235, 235, 235, 0.8);
+  border: 2px solid black;
   width: 85%;
   height: 450px;
   margin: 20px 0;
