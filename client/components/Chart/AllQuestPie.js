@@ -54,7 +54,7 @@ class AllQuestPie extends Component {
               {
                 backgroundColor: [
                   "rgba(0, 152, 195, 0.9)",
-                  "rgba(175, 175, 175, 0.75)",
+                  "rgba(165, 165, 165, 0.8)",
                 ],
                 data: this.state.data,
               },

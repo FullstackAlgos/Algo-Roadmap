@@ -19,7 +19,7 @@ class User extends Component {
     const { user, questions, userQuestions, formFlip, tags } = this.props;
 
     return (
-      <div className="userFullDiv">
+      <div className="userFullDiv mainDiv">
         <div className="userInsideDiv">
           {user.id ? (
             <>

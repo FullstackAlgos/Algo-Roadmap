@@ -66,9 +66,20 @@ class TagBar extends Component {
             scales: {
               xAxes: [
                 {
-                  ticks: { max: 100, stepSize: 50, display: false },
+                  ticks: {
+                    max: 100,
+                    stepSize: 50,
+                    display: false,
+                  },
                 },
               ],
+            },
+            tooltips: {
+              callbacks: {
+                label: function (item, data) {
+                  return data["datasets"][0]["data"][item["index"]] + "%";
+                },
+              },
             },
           }}
           id="tagBarId"

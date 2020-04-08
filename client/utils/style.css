@@ -55,6 +55,14 @@ p {
   width: 100vw;
 }
 
+.mainDiv {
+  background: radial-gradient(
+    circle,
+    rgba(255, 228, 196, 1) 60%,
+    rgba(150, 150, 150, 0.5) 100%
+  );
+}
+
 /* ----------------------- NAV BAR ----------------------- */
 .navBarDiv {
   background-color: rgba(75, 75, 75, 1);
@@ -93,10 +101,10 @@ p {
 
 /* ----------------------- AUTH FORM ----------------------- */
 .signInFullDiv {
+  background-color: beige;
   display: flex;
   justify-content: space-evenly;
   color: black;
-  background-color: beige;
   height: 100vh;
   width: 100vw;
 }
@@ -187,7 +195,7 @@ p {
 
 /* ----------------------- USER ----------------------- */
 .userFullDiv {
-  background-color: bisque;
+  /* background-color: bisque; */
   position: fixed;
   z-index: 2;
   height: 100vh;
@@ -240,6 +248,8 @@ p {
 }
 
 .roadMapHeader {
+  font-size: 18px;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
@@ -261,7 +271,7 @@ p {
 
 .roadmapQuestion {
   width: 250px;
-  height: 100px;
+  height: 90px;
   border-bottom-left-radius: 5% 50%;
   border-bottom-right-radius: 5% 50%;
   border-top-left-radius: 5% 50%;
@@ -288,7 +298,7 @@ p {
 
 /* ----------------------- QUESTION LIST ----------------------- */
 .probListFullDiv {
-  background-color: bisque;
+  /* background-color: bisque; */
   padding: 15px;
   padding-top: 195px;
 }
@@ -437,6 +447,7 @@ p {
   border-radius: 5px;
   padding: 5px 10px;
   margin-bottom: 20px;
+  border: 1px solid black;
 }
 
 .tagHeader {

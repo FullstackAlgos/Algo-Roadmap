@@ -61,7 +61,7 @@ class QuestionList extends Component {
       doneIds = this.doneQuests(userQuestions);
 
     return (
-      <div className="probListFullDiv">
+      <div className="probListFullDiv mainDiv">
         {tags.length
           ? tags.map((tag, idx) => {
               const curateQuestions = this.questionTag(questions, tag, false),
