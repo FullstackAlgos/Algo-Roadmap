@@ -7,7 +7,7 @@ class QuestionSurvey extends Component {
     super();
     this.state = {
       survey: false,
-      status: ""
+      status: "",
     };
   }
 
@@ -15,16 +15,18 @@ class QuestionSurvey extends Component {
     this.setState({ survey: true });
   };
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     this.setState({
-      [evt.target.name]: evt.target.value
+      [evt.target.name]: evt.target.value,
     });
   };
 
-  postLike = evt => {
+  postLike = (evt) => {
     evt.preventDefault();
     const { user, switchUserActive, newLike, likes } = this.props;
     let update = false;
+
+    if (this.state.status === "") return;
 
     for (const q of likes) {
       if (q.questionId === user.activeId) {
@@ -47,8 +49,9 @@ class QuestionSurvey extends Component {
           <h3 className="questSurveyHeader">{user.activeName}</h3>
 
           <p className="questSurveyText">
-            Click "Next" if you were able to complete the problem and can
-            provide feedback. Otherwise, please click "Later".
+            Click "<strong>Next</strong>" if you were able to complete the
+            problem and can provide feedback. Otherwise, please click "
+            <strong>Later</strong>".
           </p>
 
           {!this.state.survey ? (
@@ -72,7 +75,7 @@ class QuestionSurvey extends Component {
           ) : null}
 
           {this.state.survey ? (
-            <form className="questForm" onSubmit={this.postLike}>
+            <form className="questSurveyForm" onSubmit={this.postLike}>
               <div className="questSurveyRadioDiv">
                 <div className="questSurveyPair">
                   <label htmlFor="name" className="questSurveyLabels">
@@ -122,15 +125,15 @@ class QuestionSurvey extends Component {
   }
 }
 
-const mapState = state => {
+const mapState = (state) => {
   return { user: state.user, likes: state.likes };
 };
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
     switchUserActive: () => dispatch(switchUserActive()),
     newLike: (userId, qId, status, update) =>
-      dispatch(newLike(userId, qId, status, update))
+      dispatch(newLike(userId, qId, status, update)),
   };
 };
 
