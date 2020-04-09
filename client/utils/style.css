@@ -502,6 +502,7 @@ p {
   flex-direction: column;
   background-color: lightgray;
   padding: 15px;
+  padding-top: 35px;
   width: 220px;
   min-height: 100vh;
   border-right: 3px solid black;

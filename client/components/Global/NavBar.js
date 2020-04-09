@@ -1,61 +1,61 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { withRouter, NavLink } from "react-router-dom";
 import { logout } from "../../store";
 
-class NavBar extends Component {
-  render() {
-    const { user, logout } = this.props;
+const NavBar = ({ user, logout, location }) => {
+  const adminPath = location.pathname.split("/")[1] === "Admin";
 
-    return (
-      <div className="navBarDiv">
-        <div className="navBarLeftDiv">
-          <h4 className="navBarText">
-            {user.name ? `${user.name}'s ` : null}Algo Roadmap
-          </h4>
-        </div>
+  return (
+    <div className="navBarDiv">
+      <div className="navBarLeftDiv">
+        <h4 className="navBarText">
+          {user.name ? `${user.name}'s ` : null}Algo Roadmap
+        </h4>
+      </div>
 
-        <div className="navBarRightDiv">
+      <div className="navBarRightDiv">
+        <NavLink
+          to="/"
+          className="linkText navBarLink"
+          activeClassName="selectedNavLink"
+          exact
+        >
+          Home Page
+        </NavLink>
+
+        {user.id ? (
+          <>
+            {user.isAdmin ? (
+              <NavLink
+                to="/Admin/Questions"
+                className={`linkText navBarLink ${
+                  adminPath ? "selectedNavLink" : null
+                }`}
+                activeClassName="selectedNavLink"
+              >
+                Admin Panel
+              </NavLink>
+            ) : null}
+
+            <a href="#" onClick={logout} className="linkText navBarLink">
+              Logout
+            </a>
+          </>
+        ) : (
           <NavLink
-            to="/"
+            to="/SignIn"
             className="linkText navBarLink"
             activeClassName="selectedNavLink"
             exact
           >
-            Home Page
+            Sign In
           </NavLink>
-
-          {user.id ? (
-            <>
-              {user.isAdmin ? (
-                <NavLink
-                  to="/Admin/Questions"
-                  className="linkText navBarLink"
-                  activeClassName="selectedNavLink"
-                >
-                  Admin Panel
-                </NavLink>
-              ) : null}
-
-              <a href="#" onClick={logout} className="linkText navBarLink">
-                Logout
-              </a>
-            </>
-          ) : (
-            <NavLink
-              to="/SignIn"
-              className="linkText navBarLink"
-              activeClassName="selectedNavLink"
-              exact
-            >
-              Sign In
-            </NavLink>
-          )}
-        </div>
+        )}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 const mapState = (state) => {
   return {
@@ -69,4 +69,4 @@ const mapDispatch = (dispatch) => {
   };
 };
 
-export default connect(mapState, mapDispatch)(NavBar);
+export default withRouter(connect(mapState, mapDispatch)(NavBar));
