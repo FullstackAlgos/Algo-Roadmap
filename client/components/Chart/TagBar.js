@@ -53,12 +53,6 @@ class TagBar extends Component {
       <div className="tagBarDiv">
         <HorizontalBar
           options={{
-            title: {
-              display: false,
-              text: `Question Progress: %`,
-              fontSize: 15,
-              fontColor: "black",
-            },
             layout: {
               padding: {
                 left: 25,

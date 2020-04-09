@@ -217,6 +217,10 @@ p {
   margin-bottom: 50px;
 }
 
+.userHeader {
+  text-align: center;
+}
+
 .questionAddBtn {
   height: 30px;
   font-size: 16px;
@@ -482,6 +486,7 @@ p {
   margin-top: 25px;
   margin-bottom: 15px;
 }
+
 .questSurveyText2 {
   margin-bottom: 25px;
 }
@@ -683,12 +688,22 @@ p {
 /* ----------------------- CHARTS ----------------------- */
 .allQuestPieDiv {
   background-color: rgba(235, 235, 235, 0.8);
-  border: 2px solid black;
+  display: flex;
   width: 85%;
   height: 35%;
   margin: 20px 0;
   padding: 15px;
   border-radius: 5px;
+  border: 2px solid black;
+}
+
+.pieInsideDiv {
+  width: 55%;
+}
+
+.pieStatsDiv {
+  display: flex;
+  flex-direction: column;
 }
 
 .tagBarDiv {

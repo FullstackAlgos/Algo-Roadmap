@@ -48,7 +48,7 @@ class QuestionSurvey extends Component {
 
           <p className="questSurveyText1">
             Click "<strong>Next</strong>" if you were able to complete the
-            problem and can provide feedback.
+            problem and can submit feedback.
           </p>
           <p className="questSurveyText2">
             Otherwise, please click "<strong>Later</strong>", which will keep
