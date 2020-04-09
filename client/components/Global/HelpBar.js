@@ -64,7 +64,7 @@ const HelpBar = () => {
               under a month of graduation) and completed close to an aggregate
               of 1,000 algorithms, James and Jasen wanted to create and share a
               platform that consolidates and highlights the algorithms that made
-              them successful in this journey.
+              them successful in their journey.
             </p>
 
             <div className="helpFounderFullDiv">
