@@ -1,12 +1,13 @@
 const router = require("express").Router();
 const { User, Question } = require("../db/models");
+const { isAdmin, isLoggedIn } = require("./security");
 module.exports = router;
 
 router.get("/me", (req, res) => {
   res.json(req.user);
 });
 
-router.get("/all", async (req, res, next) => {
+router.get("/all", isAdmin, async (req, res, next) => {
   try {
     const allUser = await User.findAll({ include: { model: Question } });
     res.json(allUser);
@@ -20,7 +21,7 @@ router.post("/login", async (req, res, next) => {
     const { email, password } = req.body;
     // FINDING USER IN DB
     const user = await User.findOne({
-      where: { email: email }
+      where: { email: email },
     });
 
     // CHECKING USER EXISTENCE AND CRITERIA
@@ -32,7 +33,7 @@ router.post("/login", async (req, res, next) => {
       res.status(401).send("Wrong email and/or password");
     } else {
       // IF USER CHECKOUTS THEN SEND BACK TO FRONTEND
-      req.login(user, err => (err ? next(err) : res.json(user)));
+      req.login(user, (err) => (err ? next(err) : res.json(user)));
     }
   } catch (err) {
     next(err);
@@ -45,7 +46,7 @@ router.post("/signup", async (req, res, next) => {
     const { name, email, password } = req.body;
     const user = await User.create({ name, email, password });
 
-    req.login(user, err => (err ? next(err) : res.json(user)));
+    req.login(user, (err) => (err ? next(err) : res.json(user)));
   } catch (err) {
     if (err.name === "SequelizeUniqueConstraintError") {
       res.status(401).send("User already exists");
@@ -55,14 +56,14 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
-router.put("/active", async (req, res, next) => {
+router.put("/active", isLoggedIn, async (req, res, next) => {
   try {
     const { userId, activeId, activeName } = req.body;
 
     await User.update(
       {
         activeId,
-        activeName
+        activeName,
       },
       { where: { id: userId } }
     );
@@ -73,7 +74,7 @@ router.put("/active", async (req, res, next) => {
   }
 });
 
-router.put("/admin", async (req, res, next) => {
+router.put("/admin", isAdmin, async (req, res, next) => {
   try {
     const { userId, update } = req.body;
 
@@ -85,7 +86,7 @@ router.put("/admin", async (req, res, next) => {
   }
 });
 
-router.delete("/:userId", async (req, res, next) => {
+router.delete("/:userId", isAdmin, async (req, res, next) => {
   try {
     await User.destroy({ where: { id: req.params.userId } });
 
