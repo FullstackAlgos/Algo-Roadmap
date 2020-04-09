@@ -236,6 +236,7 @@ p {
   display: flex;
   flex-direction: column;
   padding: 15px;
+  padding-left: 30px;
   height: 160px;
   width: 100vw;
   border-bottom: 3px solid black;
@@ -293,6 +294,7 @@ p {
 /* ----------------------- QUESTION LIST ----------------------- */
 .probListFullDiv {
   padding: 15px;
+  padding-left: 30px;
   padding-top: 210px;
 }
 
