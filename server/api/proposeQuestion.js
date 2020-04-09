@@ -32,7 +32,7 @@ router.post("/", isLoggedIn, async (req, res, next) => {
   }
 });
 
-router.delete("/:questionId", async (req, res, next) => {
+router.delete("/:questionId", isAdmin, async (req, res, next) => {
   try {
     await ProposeQuestion.destroy({ where: { id: req.params.questionId } });
 
