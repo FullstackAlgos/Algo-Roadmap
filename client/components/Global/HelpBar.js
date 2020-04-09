@@ -22,9 +22,9 @@ const HelpBar = () => {
       <div id="helpBar">
         <div className="helpBarInsideDiv">
           <div className="helpHeadDiv">
-            <h3>Hey There! Welcome to Algo Roadmap!</h3>
+            <h3>Welcome to Algo Roadmap!</h3>
 
-            <a className="helpCloseBtn" onClick={close}>
+            <a className="helpCloseX" onClick={close}>
               &#10008;
             </a>
           </div>
@@ -38,7 +38,7 @@ const HelpBar = () => {
               know what to focus on? While these sites have amazing resources to
               help candidates prepare, it is tough to understand how to actually
               approach them and study. That's where{" "}
-              <strong>Algo Roadmap</strong> steps in.
+              <strong>Algo Roadmap (AR)</strong> steps in.
               <br /> <br />
               <strong>Algo Roadmap</strong> leverages LeetCode questions to
               derive a curated roadmap based on simple principles. It wants the
@@ -119,6 +119,31 @@ const HelpBar = () => {
                   />
                 </a>
               </div>
+
+              <div className="helpFounderDiv helpARDiv">
+                <h2 className="helpFounderText">AR</h2>
+                <a
+                  href="https://github.com/FullstackAlgos/AlgoRoadmap"
+                  target="_blank"
+                  className="helpLinks"
+                >
+                  <img
+                    className="helpImg"
+                    alt="github"
+                    src="/images/github.png"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <div className="helpCloseDiv">
+              <button
+                type="button"
+                className="helpCloseBtn gBtn"
+                onClick={close}
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>
