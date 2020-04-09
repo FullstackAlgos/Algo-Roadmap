@@ -315,6 +315,20 @@ const questionBulk = [
     tagId: 4,
   },
   {
+    name: "Flatten Multilevel Doubly Linked List",
+    description: "Given a doubly linked list that has an additional 'child' pointer that may point to another doubly linked list, return a flattened version of the list.",
+    link: "https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/",
+    tagId: 4,
+    difficulty: 4
+  },
+  {
+    name: "Odd Even Linked List",
+    description: "Given a singly linked list, move all the even 'indexed' nodes to the end and all of the 'odd' indexed nodes to the front of the linked list and return that new list",
+    link: "https://leetcode.com/problems/odd-even-linked-list/",
+    tagId: 4,
+    difficulty: 3
+  },
+  {
     name: "Merge Two Sorted Lists",
     description:
       "Given two sorted linked lists, merge them into one sorted list.",
@@ -333,7 +347,7 @@ const questionBulk = [
     name: "Copy List with Random Pointer",
     description:
       "A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.  Return a deep copy of the list.",
-    difficulty: 4,
+    difficulty: 3,
     link: "https://leetcode.com/problems/copy-list-with-random-pointer/",
     tagId: 4,
   },
@@ -344,6 +358,27 @@ const questionBulk = [
     difficulty: 5,
     link: "https://leetcode.com/problems/merge-k-sorted-lists/",
     tagId: 4,
+  },
+  {
+    name: "Remove Zero Sum Consecutive Nodes From Linked List",
+    description: "Given a linked list, delete consecutive nodes that sum up to 0 and return the resulting linked list",
+    difficulty: 4,
+    tagId: 4,
+    link: "https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/"
+  },
+  {
+    name: "Linked List Cycle",
+    description: "Given a linked list that may or may not contain a cycle, return whether or not the list contains a cycle.",
+    link: "https://leetcode.com/problems/linked-list-cycle/",
+    difficulty: 2,
+    tagId: 4
+  },
+  {
+    name: "Next Greater Node In Linked List",
+    description: "Given a linked list with nodes that have values of positive integers, return an array containing the value of the next greater node",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/next-greater-node-in-linked-list/",
+    tagId: 4
   },
   // ---------------------------- TREE (5) ----------------------------
   {
@@ -475,6 +510,13 @@ const questionBulk = [
     link: "https://leetcode.com/problems/friend-circles/",
     tagId: 6,
   },
+  {
+    name: "Longest Increasing Path In Matrix",
+    description: "Given a matrix of integers, return the length of the longest strictly increasing path in the matrix. Paths must not include the same element twice and can only include immediately adjacent (not diagonally adjacent) elements.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+    tagId: 6
+  },
   // ------------------------- STACKS (7) -------------------------
   {
     name: "Min Stack",
@@ -549,6 +591,27 @@ const questionBulk = [
     difficulty: 3,
     link: "https://leetcode.com/problems/pacific-atlantic-water-flow/",
     tagId: 8,
+  },
+  {
+    name: "01 Matrix",
+    description: "Given a matrix of 1s and 0s, find the distance of the nearest 0 for each cell and return the resulting matrix",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/01-matrix/",
+    tagId: 8
+  },
+  {
+    name: "Rotting Oranges",
+    description: "Given a matrix of 0s representing empty spaces, 1s representing fresh oranges, or 2s representing rotting oranges, return the number of days until no cells have fresh oranges. Each day, fresh oranges next to adjacent oranges become rotten.",
+    link: "https://leetcode.com/problems/rotting-oranges/",
+    tagId: 8,
+    difficulty: 3
+  },
+  {
+    name: "Open The Lock",
+    description: "Given a lock with 4 circular wheels with single digit numbers on the wheels (starting at position '0000'), a list of dead-end lock positions, and a target lock position, return the minimum number of wheel turns necessary to reach the target position.",
+    link: "https://leetcode.com/problems/open-the-lock/",
+    tagId: 8,
+    difficulty: 4
   },
   // ------------------ RECURSION / BACKTRACKING (9) ------------------
   {
@@ -698,7 +761,7 @@ const questionBulk = [
     tagId: 10,
   },
   {
-    name: "Cost Change",
+    name: "Coin Change",
     description:
       "You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.",
     difficulty: 3,
@@ -711,14 +774,6 @@ const questionBulk = [
       "A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below). The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below). Now consider if some obstacles are added to the grids. How many unique paths would there be?",
     difficulty: 4,
     link: "https://leetcode.com/problems/unique-paths-ii/",
-    tagId: 10,
-  },
-  {
-    name: "Max Length of Repeated Subarray",
-    description:
-      "Given two integer arrays A and B, return the maximum length of an subarray that appears in both arrays.",
-    difficulty: 4,
-    link: "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
     tagId: 10,
   },
   {
@@ -737,15 +792,6 @@ const questionBulk = [
     link: "https://leetcode.com/problems/edit-distance/",
     tagId: 10,
   },
-
-  {
-    name: "Maximal Rectangle",
-    description:
-      "Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.",
-    difficulty: 5,
-    link: "https://leetcode.com/problems/maximal-rectangle/",
-    tagId: 10,
-  },
   {
     name: "Regular Expression Matching",
     description:
@@ -761,6 +807,20 @@ const questionBulk = [
     difficulty: 5,
     link: "https://leetcode.com/problems/word-break-ii/",
     tagId: 10,
+  },
+  {
+    name: "Longest Increasing Subsequence",
+    description: "Given an array of integers, return the length of the longest increasing subsequence in the array. In a subsequence, each element in the subsequence should come strictly after the previous element in the subsequence.",
+    link: "https://leetcode.com/problems/longest-increasing-subsequence/",
+    difficulty: 3,
+    tagId: 10
+  },
+  {
+    name: "Matrix Block Sum",
+    description: "Given a matrix and an integer K, return a matrix where each cell in that matrix contains the value of the sum of surrounding elements in a square with size proportional to K",
+    link: "https://leetcode.com/problems/matrix-block-sum/",
+    difficulty: 3,
+    tagId: 10
   },
   // -------------------------- HEAPS (11) --------------------------
   {
@@ -779,6 +839,20 @@ const questionBulk = [
     link:
       "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/",
     tagId: 11,
+  },
+  {
+    name: "Top K Frequent Elements",
+    description: "Given a list of integers and an integer K, return the top K most frequent elements.",
+    difficulty: 3,
+    link: "https://leetcode.com/problems/top-k-frequent-elements/",
+    tagId: 11
+  },
+  {
+    name: "Find Median From Data Stream",
+    description: "Given a stream of data (you get the whole set of data with each successive call of the function you write), return the median of all the elements after each call",
+    difficulty: 5,
+    link: "https://leetcode.com/problems/find-median-from-data-stream/",
+    tagId: 11
   },
   // --------------------------- GRAPHS (12) ---------------------------
   {
@@ -813,6 +887,20 @@ const questionBulk = [
     difficulty: 4,
     link: "https://leetcode.com/problems/smallest-string-with-swaps/",
     tagId: 12,
+  },
+  {
+    name: "Evaluate Division",
+    description: "Given a list of equations with answers and a list of equations without answers, use the equations with answers to return an array of answers to the given equations without answers.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/evaluate-division/",
+    tagId: 12
+  },
+  {
+    name: "Course Schedule",
+    description: "Given a list of courses and prerequisites, return whether or not it is possible to take all the courses. You must take all of a course's prerequisites before you can take the course itself.",
+    difficulty: 4,
+    link: "https://leetcode.com/problems/course-schedule/",
+    tagId: 12
   },
   // ---------------------- BIT MANIPULATION (13) ----------------------
   {
