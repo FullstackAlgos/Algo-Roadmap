@@ -10,20 +10,20 @@ class TagBar extends Component {
   }
 
   generateTagNames = () => {
-    const { tags } = this.props;
-    tags.sort((a, b) => a.ranking - b.ranking);
+    const { tags } = this.props,
+      sorted = [...tags].sort((a, b) => a.ranking - b.ranking);
 
-    return tags.reduce((a, v) => {
+    return sorted.reduce((a, v) => {
       a.push(v.name);
       return a;
     }, []);
   };
 
   calcBarData = () => {
-    const { userQ, allQ, tags } = this.props;
-    tags.sort((a, b) => a.ranking - b.ranking);
+    const { userQ, allQ, tags } = this.props,
+      sorted = [...tags].sort((a, b) => a.ranking - b.ranking);
 
-    return tags.reduce((a, v) => {
+    return sorted.reduce((a, v) => {
       const userQuests = userQ.filter((x) => x.tagId === v.id).length,
         allQuests = allQ.filter((x) => x.tagId === v.id).length,
         percent = Math.round((userQuests / allQuests) * 100);
