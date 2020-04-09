@@ -33,7 +33,7 @@ const questionBulk = [
     tagId: 1,
   },
   {
-    name: "Find All Numbers Disappeared In Array",
+    name: "Find All Numbers Not In Array",
     description:
       "Given an array that has some elements from 1 to n (where n is the length of the array), find the elements from 1 to n that it is missing.",
     difficulty: 1,
@@ -141,7 +141,7 @@ const questionBulk = [
     tagId: 1,
   },
   {
-    name: "First and Last Position of Element In Sorted Array",
+    name: "First and Last Index of Element In Sorted Array",
     description:
       "Given a sorted array and a target, find the target’s first and last index in the array. If it’s not found return [-1,-1]",
     link:
