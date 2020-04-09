@@ -1091,7 +1091,7 @@ const tagBulk = [
     ranking: 8,
   },
   {
-    name: "Recursion / Backtracking",
+    name: "Backtracking",
     ranking: 9,
   },
   {
