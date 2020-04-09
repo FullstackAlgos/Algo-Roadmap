@@ -55,10 +55,7 @@ class SingleQuestion extends Component {
               </p>
 
               <p className="questionRate">
-                Difficulty:{" "}
-                <strong className={`difficulty${difficulty}`}>
-                  {difficultMap[difficulty]}
-                </strong>
+                Difficulty: <strong>{difficultMap[difficulty]}</strong>
               </p>
 
               <p className={`questionRate qRate${liked}`}>

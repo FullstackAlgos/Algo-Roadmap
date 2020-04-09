@@ -7,12 +7,15 @@ const RoadmapQuestion = ({ question, questionNum, switchUserActive }) => {
 
   return (
     <span className={`roadmapQuestion roadmapQuestion${questionNum}`}>
-      <h3 className="roadMapQuestTag">Topic: {tag.name}</h3>
+      <div className="roadMapQuestTag">
+        <h3 className="roadMapQuestHeader">{tag.name}</h3>
+        <span className={`diffMarker difficulty${difficulty}`}>&#9673;</span>
+      </div>
 
       <a
         href={link}
         target="_blank"
-        className={`roadmapQuestLink linkText difficulty${difficulty}`}
+        className="roadmapQuestLink linkText"
         onClick={() => switchUserActive(id, name)}
       >
         {name}

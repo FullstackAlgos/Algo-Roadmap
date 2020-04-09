@@ -304,17 +304,23 @@ p {
   border-top-left-radius: 5% 50%;
   border-top-right-radius: 5% 50%;
   border-style: solid;
-  padding: 10px;
+  padding: 0 10px 5px 10px;
   background: whitesmoke;
 }
 
 .roadmapQuestLink {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .roadMapQuestTag {
+  display: flex;
+  align-items: center;
   margin-bottom: 5px;
+}
+
+.roadMapQuestHeader {
+  margin-right: 10px;
 }
 
 .roadmapArrow {
@@ -456,7 +462,7 @@ p {
 }
 
 .qRatetrue {
-  color: green;
+  border: 1px dotted black;
 }
 
 .questionLink {
