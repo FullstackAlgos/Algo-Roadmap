@@ -44,66 +44,76 @@ class QuestionForm extends Component {
     return (
       <div className="questPopFullDiv">
         <form className="questForm" onSubmit={this.handleNewQuest}>
-          <label htmlFor="name" className="questLabels">
-            Question Name:
-          </label>
-          <input
-            type="text"
-            name="name"
-            value={this.state.name}
-            onChange={this.handleChange}
-            className="inputBox"
-          />
+          <div className="questFormSecDiv">
+            <label htmlFor="name" className="questLabels">
+              Question Name:
+            </label>
+            <textarea
+              type="text"
+              name="name"
+              value={this.state.name}
+              onChange={this.handleChange}
+              className="questInputBox"
+            />
+          </div>
 
-          <label htmlFor="description" className="questLabels">
-            Description:
-          </label>
-          <input
-            type="text"
-            name="description"
-            value={this.state.description}
-            onChange={this.handleChange}
-            className="inputBox"
-          />
+          <div className="questFormSecDiv">
+            <label htmlFor="description" className="questLabels">
+              Description:
+            </label>
+            <textarea
+              type="text"
+              name="description"
+              value={this.state.description}
+              onChange={this.handleChange}
+              className="questInputBox"
+            />
+          </div>
 
-          <label htmlFor="difficulty" className="questLabels">
-            Difficulty:
-          </label>
-          <select
-            name="difficulty"
-            value={this.state.difficulty}
-            onChange={this.handleChange}
-            className="questSelect"
-          >
-            {Object.keys(difficultMap).map((x) => (
-              <option key={x}>{x}</option>
-            ))}
-          </select>
+          <div className="questFormSecDiv">
+            <label htmlFor="difficulty" className="questLabels">
+              Difficulty:
+            </label>
+            <select
+              name="difficulty"
+              value={this.state.difficulty}
+              onChange={this.handleChange}
+              className="questSelect"
+            >
+              {Object.keys(difficultMap).map((x) => (
+                <option key={x}>{x}</option>
+              ))}
+            </select>
+          </div>
 
-          <label htmlFor="link" className="questLabels">
-            Link:
-          </label>
-          <input
-            type="text"
-            name="link"
-            value={this.state.link}
-            onChange={this.handleChange}
-            className="inputBox"
-          />
+          <div className="questFormSecDiv">
+            <label htmlFor="link" className="questLabels">
+              Link:
+            </label>
+            <input
+              type="text"
+              name="link"
+              value={this.state.link}
+              onChange={this.handleChange}
+              className="questInputBox"
+            />
+          </div>
 
-          <label htmlFor="tag" className="questLabels">
-            New Tag:
-          </label>
-          <select
-            name="tag"
-            value={this.state.tag}
-            onChange={this.handleChange}
-            className="questSelect"
-          >
-            {tags.length
-              ? tags.map((t, i) => <option key={i}>{t.name}</option>)
-              : null}
-          </select>
+          <div className="questFormSecDiv">
+            <label htmlFor="tag" className="questLabels">
+              New Tag:
+            </label>
+            <select
+              name="tag"
+              value={this.state.tag}
+              onChange={this.handleChange}
+              className="questSelect"
+            >
+              {tags.length
+                ? tags.map((t, i) => <option key={i}>{t.name}</option>)
+                : null}
+            </select>
+          </div>
 
           <div className="questBtnDiv">
             <button type="submit" className="questBtn gBtn">
