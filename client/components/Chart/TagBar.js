@@ -10,7 +10,10 @@ class TagBar extends Component {
   }
 
   generateTagNames = () => {
-    return this.props.tags.reduce((a, v) => {
+    const { tags } = this.props;
+    tags.sort((a, b) => a.ranking - b.ranking);
+
+    return tags.reduce((a, v) => {
       a.push(v.name);
       return a;
     }, []);
@@ -18,6 +21,7 @@ class TagBar extends Component {
 
   calcBarData = () => {
     const { userQ, allQ, tags } = this.props;
+    tags.sort((a, b) => a.ranking - b.ranking);
 
     return tags.reduce((a, v) => {
       const userQuests = userQ.filter((x) => x.tagId === v.id).length,
