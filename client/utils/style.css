@@ -618,6 +618,10 @@ p {
   font-weight: 700;
 }
 
+.adminQuestDesc {
+  margin-bottom: 5px;
+}
+
 .adminQuestForm {
   display: flex;
   flex-direction: column;

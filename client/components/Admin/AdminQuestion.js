@@ -9,7 +9,7 @@ class AdminQuestion extends Component {
       showEdit: false,
       name: "",
       description: "",
-      tag: ""
+      tag: "",
     };
   }
 
@@ -22,13 +22,13 @@ class AdminQuestion extends Component {
     deleteQuestion(q.id);
   };
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     this.setState({
-      [evt.target.name]: evt.target.value
+      [evt.target.name]: evt.target.value,
     });
   };
 
-  handleSubmit = evt => {
+  handleSubmit = (evt) => {
     evt.preventDefault();
     const { q, updateQuestion, tags } = this.props,
       { name, description, tag } = this.state,
@@ -39,7 +39,7 @@ class AdminQuestion extends Component {
       submitObj.description = description.length ? description : q.description;
       submitObj.tagId =
         tag.length && tag !== "--"
-          ? tags.filter(t => t.name === tag)[0].id
+          ? tags.filter((t) => t.name === tag)[0].id
           : q.tag.id;
 
       updateQuestion(submitObj);
@@ -75,6 +75,9 @@ class AdminQuestion extends Component {
           </button>
         </div>
 
+        <p className="adminQuestDesc">
+          <u>Difficulty</u>: {q.difficulty}
+        </p>
         <p className="adminQuestDesc">{q.description}</p>
 
         {this.state.showEdit ? (
@@ -135,16 +138,16 @@ class AdminQuestion extends Component {
   }
 }
 
-const mapState = state => {
+const mapState = (state) => {
   return {
-    tags: state.tags
+    tags: state.tags,
   };
 };
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
-    updateQuestion: qObj => dispatch(updateQuestion(qObj)),
-    deleteQuestion: qId => dispatch(deleteQuestion(qId))
+    updateQuestion: (qObj) => dispatch(updateQuestion(qObj)),
+    deleteQuestion: (qId) => dispatch(deleteQuestion(qId)),
   };
 };
 
