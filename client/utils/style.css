@@ -704,6 +704,16 @@ p {
 .pieStatsDiv {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+
+.pieStatHeader {
+  font-size: 17px;
+}
+
+.pieStatText {
+  margin-bottom: 10px;
 }
 
 .tagBarDiv {
