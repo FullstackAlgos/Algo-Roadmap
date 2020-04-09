@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { updateQuestion, deleteQuestion } from "../../store";
+import { difficultMap } from "../../utils/utilities";
 
 class AdminQuestion extends Component {
   constructor() {
@@ -76,7 +77,7 @@ class AdminQuestion extends Component {
         </div>
 
         <p className="adminQuestDesc">
-          <u>Difficulty</u>: {q.difficulty}
+          <u>Difficulty</u>: {q.difficulty} ({difficultMap[q.difficulty]})
         </p>
         <p className="adminQuestDesc">{q.description}</p>
 

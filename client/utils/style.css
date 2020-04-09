@@ -649,6 +649,7 @@ p {
 .adminQuestTextArea {
   border-radius: 3px;
   font-size: 15px;
+  width: 165px;
   height: 20px;
 }
 
