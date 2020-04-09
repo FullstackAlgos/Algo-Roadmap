@@ -23,7 +23,13 @@ class User extends Component {
         <div className="userInsideDiv">
           {user.id ? (
             <>
-              <h2 className="userHeader">Welcome, {user.name}!</h2>
+              <h2 className="userHeader">
+                Welcome,{" "}
+                <span style={{ color: "rgba(0, 152, 195,1)" }}>
+                  {user.name}
+                </span>
+                !
+              </h2>
 
               <AllQuestPie
                 userLen={userQuestions.length}
