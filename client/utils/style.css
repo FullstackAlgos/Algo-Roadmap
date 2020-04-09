@@ -307,6 +307,13 @@ p {
   padding-top: 210px;
 }
 
+.probListHeader {
+  font-size: 23px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 15px;
+}
+
 /* ----------------------- QUESTION FORM ----------------------- */
 .questPopFullDiv {
   background-color: rgba(225, 225, 225, 0.9);
