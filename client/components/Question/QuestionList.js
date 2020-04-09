@@ -58,14 +58,15 @@ class QuestionList extends Component {
 
   render() {
     const { questions, userQuestions, tags } = this.props,
+      sorted = [...tags].sort((a, b) => a.ranking - b.ranking),
       doneIds = this.doneQuests(userQuestions);
 
     return (
       <div className="probListFullDiv mainDiv">
         <h3 className="probListHeader">Full Curated Question List</h3>
 
-        {tags.length
-          ? tags.map((tag, idx) => {
+        {sorted.length
+          ? sorted.map((tag, idx) => {
               const curateQuestions = this.questionTag(questions, tag, false),
                 userTagQuestions = this.questionTag(userQuestions, tag, true);
 

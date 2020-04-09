@@ -1,14 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
 import { switchUserActive } from "../../store";
+import { difficultMap } from "../../utils/utilities";
 
 const RoadmapQuestion = ({ question, questionNum, switchUserActive }) => {
-  const { id, name, tag, link, difficulty } = question;
+  const { id, name, link, difficulty } = question;
 
   return (
     <span className={`roadmapQuestion roadmapQuestion${questionNum}`}>
       <div className="roadMapQuestTag">
-        <h3 className="roadMapQuestHeader">{tag.name}</h3>
+        <h3 className="roadMapQuestHeader">
+          Level: {difficultMap[difficulty]}
+        </h3>
         <span className={`diffMarker difficulty${difficulty}`}>&#9673;</span>
       </div>
 

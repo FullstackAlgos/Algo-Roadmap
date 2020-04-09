@@ -59,12 +59,13 @@ const HelpBar = () => {
               <strong>Algo Roadmap</strong> was founded by{" "}
               <span className="helpSpanName">James</span> and{" "}
               <span className="helpSpanName">Jasen</span>, both members of the
-              1911 FSA cohort at Fullstack Academy. Having successfully gone
+              1911 NY FSA cohort at Fullstack Academy. Having successfully gone
               through the post-bootcamp recruitment process (multiple offers
-              under a month of graduation) and completed close to an aggregate
+              under a month from graduation) and completed close to an aggregate
               of 1,000 algorithms, James and Jasen wanted to create and share a
               platform that consolidates and highlights the algorithms that made
-              them successful in their journey.
+              them successful in their journey, hoping to facilitate a similar
+              experience for AR users.
             </p>
 
             <div className="helpFounderFullDiv">
