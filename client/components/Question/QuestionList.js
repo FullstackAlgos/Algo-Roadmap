@@ -68,6 +68,9 @@ class QuestionList extends Component {
         {sorted.length
           ? sorted.map((tag, idx) => {
               const curateQuestions = this.questionTag(questions, tag, false),
+                allQuestLen = curateQuestions.filter(
+                  (x) => x.name !== "Currently Not Available"
+                ).length,
                 userTagQuestions = this.questionTag(userQuestions, tag, true);
 
               return (
@@ -78,7 +81,7 @@ class QuestionList extends Component {
                     onClick={this.setTagActive}
                   >
                     {idx + 1}. {tag.name}&nbsp;&nbsp;&nbsp;&nbsp;(
-                    {userTagQuestions} / {curateQuestions.length})
+                    {userTagQuestions} / {allQuestLen})
                   </h2>
 
                   {tag.name === this.state.activeT
