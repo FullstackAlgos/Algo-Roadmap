@@ -60,10 +60,8 @@ class Roadmap extends Component {
   };
 
   render() {
-    const orderedQs = this.formatQualifyingQs(
-        this.props.questions,
-        this.props.userQuestions
-      ),
+    const { questions, userQuestions } = this.props,
+      orderedQs = this.formatQualifyingQs(questions, userQuestions),
       topics = this.getTopics(orderedQs);
 
     return (

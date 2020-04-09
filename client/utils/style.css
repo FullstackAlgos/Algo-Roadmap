@@ -251,14 +251,13 @@ p {
 }
 
 .roadMapHeader {
-  font-size: 18px;
+  font-size: 23px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 .roadmapNextTopic {
   font-weight: bold;
-  font-size: 20px;
   color: rgba(0, 152, 195, 1);
 }
 
