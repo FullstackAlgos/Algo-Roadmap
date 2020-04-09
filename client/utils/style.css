@@ -253,7 +253,8 @@ p {
 .roadMapHeader {
   font-size: 23px;
   font-weight: 600;
-  margin-bottom: 10px;
+  text-decoration: underline;
+  margin-bottom: 15px;
 }
 
 .roadmapNextTopic {
@@ -710,6 +711,7 @@ p {
 
 .pieStatHeader {
   font-size: 17px;
+  text-decoration: underline;
 }
 
 .pieStatText {
