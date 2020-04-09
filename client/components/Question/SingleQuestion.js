@@ -34,13 +34,15 @@ class SingleQuestion extends Component {
       <div className={`questionFullDiv qFullDiv${!!link}`}>
         <div className="questNameDiv">
           <h3
-            className={`questionName qName${show} qNameHover${!!link} difficulty${difficulty}`}
+            className={`questionName qName${show} qNameHover${!!link}`}
             onClick={link ? setActive : null}
           >
             {name}
           </h3>
 
           {done ? <span className="questNameSymbol">&#10004;</span> : null}
+
+          <span className={`diffMarker difficulty${difficulty}`}>&#9673;</span>
         </div>
 
         {show ? (
@@ -74,7 +76,8 @@ class SingleQuestion extends Component {
               className="questionLink linkText"
               onClick={() => switchUserActive(id, name)}
             >
-              Explore the Question
+              &#x3e;&#x3e;&nbsp;&nbsp; Explore the Question
+              &nbsp;&nbsp;&#x3c;&#x3c;
             </a>
           </div>
         ) : null}
