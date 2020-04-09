@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Tag } = require("../db/models");
+const { isAdmin } = require("./security");
 module.exports = router;
 
 router.get("/", async (req, res, next) => {
@@ -11,7 +12,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.post("/", async (req, res, next) => {
+router.post("/", isAdmin, async (req, res, next) => {
   try {
     const { name, ranking } = req.body;
     const newTag = await Tag.create({ name, ranking });
@@ -21,13 +22,13 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.put("/", async (req, res, next) => {
+router.put("/", isAdmin, async (req, res, next) => {
   try {
     const { id, name, ranking } = req.body;
     await Tag.update(
       {
         name,
-        ranking
+        ranking,
       },
       { where: { id } }
     );
@@ -38,12 +39,12 @@ router.put("/", async (req, res, next) => {
   }
 });
 
-router.delete("/:tagName", async (req, res, next) => {
+router.delete("/:tagName", isAdmin, async (req, res, next) => {
   try {
     const tag = await Tag.findOne({
       where: {
-        name: req.params.tagName
-      }
+        name: req.params.tagName,
+      },
     });
 
     await tag.destroy();

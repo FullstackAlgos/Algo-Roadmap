@@ -35,7 +35,7 @@ const questionBulk = [
   {
     name: "Find All Numbers Disappeared In Array",
     description:
-      "Given an array that has some elements from 1 to n (where n is the length of the array), find the elements from 1 to n that it is missing. Ex. Given [1,2,2,4], return 3",
+      "Given an array that has some elements from 1 to n (where n is the length of the array), find the elements from 1 to n that it is missing.",
     difficulty: 1,
     link:
       "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/",
@@ -44,7 +44,7 @@ const questionBulk = [
   {
     name: "Peak Index In Mountain Array",
     description:
-      "Given a mountain array (i.e. an array that only increases on one side and only decreases on the other), find the peak index (index of the top of the mountain). See the problem for detailed info.",
+      "Given a mountain array (i.e. an array that only increases on one side and only decreases on the other), find the peak index (index of the top of the mountain).",
     difficulty: 1,
     link: "https://leetcode.com/problems/peak-index-in-a-mountain-array/",
     tagId: 1,

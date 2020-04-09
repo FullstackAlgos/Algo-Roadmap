@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Like } = require("../db/models");
+const { isLoggedIn } = require("./security");
 module.exports = router;
 
 router.get("/:userId", async (req, res, next) => {
@@ -11,7 +12,7 @@ router.get("/:userId", async (req, res, next) => {
   }
 });
 
-router.post("/", async (req, res, next) => {
+router.post("/", isLoggedIn, async (req, res, next) => {
   try {
     const { userId, qId: questionId, status } = req.body;
     await Like.create({ userId, questionId, status });
@@ -21,12 +22,12 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.put("/", async (req, res, next) => {
+router.put("/", isLoggedIn, async (req, res, next) => {
   try {
     const { userId, qId: questionId, status } = req.body;
     await Like.update(
       {
-        status
+        status,
       },
       { where: { userId, questionId } }
     );

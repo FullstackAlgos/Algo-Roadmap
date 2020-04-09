@@ -1,11 +1,12 @@
 const router = require("express").Router();
 const { ProposeQuestion, Tag, User } = require("../db/models");
+const { isAdmin, isLoggedIn } = require("./security");
 module.exports = router;
 
-router.get("/", async (req, res, next) => {
+router.get("/", isAdmin, async (req, res, next) => {
   try {
     const allPropQuests = await ProposeQuestion.findAll({
-      include: [{ model: Tag }, { model: User }]
+      include: [{ model: Tag }, { model: User }],
     });
     res.json(allPropQuests);
   } catch (err) {
@@ -13,7 +14,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.post("/", async (req, res, next) => {
+router.post("/", isLoggedIn, async (req, res, next) => {
   try {
     const { userId, name, description, difficulty, link, tagId } = req.body;
     await ProposeQuestion.create({
@@ -22,7 +23,7 @@ router.post("/", async (req, res, next) => {
       description,
       difficulty,
       link,
-      tagId
+      tagId,
     });
 
     res.sendStatus(201);
@@ -31,7 +32,7 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.delete("/:questionId", async (req, res, next) => {
+router.delete("/:questionId", isAdmin, async (req, res, next) => {
   try {
     await ProposeQuestion.destroy({ where: { id: req.params.questionId } });
 

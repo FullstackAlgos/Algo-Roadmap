@@ -62,6 +62,8 @@ class QuestionList extends Component {
 
     return (
       <div className="probListFullDiv mainDiv">
+        <h3 className="probListHeader">Full Curated Question List</h3>
+
         {tags.length
           ? tags.map((tag, idx) => {
               const curateQuestions = this.questionTag(questions, tag, false),
