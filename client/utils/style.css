@@ -277,8 +277,11 @@ p {
 .roadMapHeader {
   font-size: 23px;
   font-weight: 600;
-  text-decoration: underline;
   margin-bottom: 15px;
+}
+
+.roadmapNextFill {
+  text-decoration: underline;
 }
 
 .roadmapNextTopic {
