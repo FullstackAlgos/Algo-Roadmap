@@ -436,19 +436,19 @@ p {
 }
 
 .difficulty2 {
-  color: #789422;
+  color: #75970f;
 }
 
 .difficulty3 {
-  color: #948c22;
+  color: #99900f;
 }
 
 .difficulty4 {
-  color: #ff8300;
+  color: #ca6a04;
 }
 
 .difficulty5 {
-  color: #de0000;
+  color: #c70e0e;
 }
 
 /* ----------------------- TAG ----------------------- */
@@ -646,6 +646,7 @@ p {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 15px;
+  border: 1px solid black;
 }
 
 .adminTagRow {
