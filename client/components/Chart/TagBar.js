@@ -79,7 +79,9 @@ class TagBar extends Component {
             tooltips: {
               callbacks: {
                 label: function (item, data) {
-                  return data["datasets"][0]["data"][item["index"]] + "%";
+                  return (
+                    data["datasets"][0]["data"][item["index"]] + "% Completed"
+                  );
                 },
               },
             },
