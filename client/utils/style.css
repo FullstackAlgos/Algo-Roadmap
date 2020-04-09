@@ -309,6 +309,7 @@ p {
   border-style: solid;
   padding: 0 10px 5px 10px;
   background: whitesmoke;
+  box-shadow: 5px 5px 3px darkgray;
 }
 
 .roadmapQuestLink {
