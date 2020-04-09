@@ -69,14 +69,15 @@ class Roadmap extends Component {
         {topics.length === 0 ? (
           <span className="roadMapHeader">You're done with every topic!</span>
         ) : (
-          topics.map((t, i) => (
-            <span key={i} className="roadMapHeader">
-              <span className="roadmapNextFill">Current Topic of Focus:</span>
-              <span className="roadmapNextTopic">
-                &nbsp;{i === topics.length - 1 ? t : `${t}, `}
+          <span className="roadMapHeader">
+            <span className="roadmapNextFill">Current Topic of Focus:</span>
+
+            {topics.map((t, i) => (
+              <span key={i} className="roadmapNextTopic">
+                &nbsp;{i === topics.length - 1 ? t : `${t},`}
               </span>
-            </span>
-          ))
+            ))}
+          </span>
         )}
 
         <div className="roadMapFlowDiv">

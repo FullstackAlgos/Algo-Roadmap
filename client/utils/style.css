@@ -216,6 +216,7 @@ p {
   height: 25px;
   padding: 0;
   font-size: 15px;
+  border-radius: 3px;
 }
 
 .authErrorMessage {
@@ -300,7 +301,7 @@ p {
 }
 
 .roadmapQuestion {
-  width: 235px;
+  width: 250px;
   min-height: 90px;
   border-bottom-left-radius: 5% 50%;
   border-bottom-right-radius: 5% 50%;
@@ -309,6 +310,7 @@ p {
   border-style: solid;
   padding: 0 10px 5px 10px;
   background: whitesmoke;
+  box-shadow: 5px 5px 3px darkgray;
 }
 
 .roadmapQuestLink {
@@ -323,11 +325,11 @@ p {
 }
 
 .roadMapQuestHeader {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .roadmapArrow {
-  width: 75px;
+  width: 55px;
   height: 50px;
   margin: 0 10px;
 }
@@ -854,7 +856,7 @@ p {
   width: 35%;
   padding: 5px;
   border-radius: 5px;
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 5px 5px 3px darkgray;
 }
 
 .helpARDiv {

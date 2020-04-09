@@ -14,13 +14,13 @@ class AuthForm extends Component {
     if (user.id) history.push("/");
   }
 
-  handleSignIn = evt => {
+  handleSignIn = (evt) => {
     evt.preventDefault();
     const { name, email, password, userName } = evt.target,
       userObj = {
         formName: name,
         email: email.value,
-        password: password.value
+        password: password.value,
       };
 
     // SIGN UP FUNCTION NEEDS TO ALSO INCLUDE NAME
@@ -50,7 +50,7 @@ class AuthForm extends Component {
             {formName === "signup" ? (
               <div className="authInputDiv">
                 <label htmlFor="userName" className="authFormLabel">
-                  Name:
+                  First Name:
                 </label>
 
                 <input
@@ -86,28 +86,28 @@ class AuthForm extends Component {
   }
 }
 
-const mapLogin = state => {
+const mapLogin = (state) => {
   return {
     formName: "login",
     displayName: "Login",
     user: state.user,
-    error: state.user.error
+    error: state.user.error,
   };
 };
 
-const mapSignup = state => {
+const mapSignup = (state) => {
   return {
     formName: "signup",
     displayName: "Sign Up",
     user: state.user,
-    error: state.user.error
+    error: state.user.error,
   };
 };
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
-    auth: userObj => dispatch(auth(userObj)),
-    removeUser: () => dispatch(removeUser())
+    auth: (userObj) => dispatch(auth(userObj)),
+    removeUser: () => dispatch(removeUser()),
   };
 };
 
