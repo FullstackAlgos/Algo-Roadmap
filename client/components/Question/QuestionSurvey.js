@@ -7,7 +7,7 @@ class QuestionSurvey extends Component {
     super();
     this.state = {
       survey: false,
-      status: "",
+      status: "like",
     };
   }
 
@@ -25,8 +25,6 @@ class QuestionSurvey extends Component {
     evt.preventDefault();
     const { user, switchUserActive, newLike, likes } = this.props;
     let update = false;
-
-    if (this.state.status === "") return;
 
     for (const q of likes) {
       if (q.questionId === user.activeId) {
@@ -85,6 +83,7 @@ class QuestionSurvey extends Component {
                     type="radio"
                     name="status"
                     value="like"
+                    checked
                     onChange={this.handleChange}
                     className="surveyRadio"
                   />
