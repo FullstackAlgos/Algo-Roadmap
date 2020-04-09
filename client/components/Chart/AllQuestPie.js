@@ -75,6 +75,10 @@ class AllQuestPie extends Component {
           <span className="pieStatText">
             % Completed: <strong>{percent}%</strong>
           </span>
+
+          <span className="pieStatText">
+            # Remaining: <strong>{questLen - userLen}</strong>
+          </span>
         </div>
       </div>
     );
