@@ -10,7 +10,8 @@ class AdminQuestion extends Component {
       showEdit: false,
       name: "",
       description: "",
-      tag: "",
+      tag: "--",
+      difficulty: "--",
     };
   }
 
@@ -32,21 +33,26 @@ class AdminQuestion extends Component {
   handleSubmit = (evt) => {
     evt.preventDefault();
     const { q, updateQuestion, tags } = this.props,
-      { name, description, tag } = this.state,
+      { name, description, tag, difficulty } = this.state,
       submitObj = { id: q.id };
 
     if (name.length || description.length || tag.length) {
       submitObj.name = name.length ? name : q.name;
       submitObj.description = description.length ? description : q.description;
       submitObj.tagId =
-        tag.length && tag !== "--"
-          ? tags.filter((t) => t.name === tag)[0].id
-          : q.tag.id;
+        tag !== "--" ? tags.filter((t) => t.name === tag)[0].id : q.tag.id;
+      submitObj.difficulty = difficulty !== "--" ? difficulty : q.difficulty;
 
       updateQuestion(submitObj);
     }
 
-    this.setState({ showEdit: false, name: "", description: "", tag: "" });
+    this.setState({
+      showEdit: false,
+      name: "",
+      description: "",
+      tag: "--",
+      difficulty: "--",
+    });
   };
 
   render() {
@@ -126,6 +132,24 @@ class AdminQuestion extends Component {
                 {tags.length
                   ? tags.map((t, i) => <option key={i}>{t.name}</option>)
                   : null}
+              </select>
+            </div>
+
+            <div className="adminQuestFormDiv">
+              <label htmlFor="difficulty" className="adminQuestLabel">
+                New Difficulty:
+              </label>
+
+              <select
+                name="difficulty"
+                value={this.state.difficulty}
+                onChange={this.handleChange}
+                className="adminQuestSelect"
+              >
+                <option>--</option>
+                {Object.keys(difficultMap).map((t, i) => (
+                  <option key={i}>{t}</option>
+                ))}
               </select>
             </div>
 
