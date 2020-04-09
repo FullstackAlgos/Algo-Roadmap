@@ -83,7 +83,7 @@ p {
 }
 
 .navBarRightDiv {
-  margin-right: 25px;
+  margin-right: 35px;
 }
 
 .navBarText {
@@ -369,7 +369,7 @@ p {
 }
 
 .qFullDivtrue {
-  background-color: paleturquoise;
+  background-color: rgba(92, 192, 255, 0.5);
 }
 
 .qFullDivfalse {
