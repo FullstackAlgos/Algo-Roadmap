@@ -7,7 +7,7 @@ class QuestionSurvey extends Component {
     super();
     this.state = {
       survey: false,
-      status: ""
+      status: "like",
     };
   }
 
@@ -15,13 +15,13 @@ class QuestionSurvey extends Component {
     this.setState({ survey: true });
   };
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     this.setState({
-      [evt.target.name]: evt.target.value
+      [evt.target.name]: evt.target.value,
     });
   };
 
-  postLike = evt => {
+  postLike = (evt) => {
     evt.preventDefault();
     const { user, switchUserActive, newLike, likes } = this.props;
     let update = false;
@@ -46,9 +46,13 @@ class QuestionSurvey extends Component {
         <div className="questSurveyFullDiv">
           <h3 className="questSurveyHeader">{user.activeName}</h3>
 
-          <p className="questSurveyText">
-            Click "Next" if you were able to complete the problem and can
-            provide feedback. Otherwise, please click "Later".
+          <p className="questSurveyText1">
+            Click "<strong>Next</strong>" if you were able to complete the
+            problem and can submit feedback.
+          </p>
+          <p className="questSurveyText2">
+            Otherwise, please click "<strong>Later</strong>", which will keep
+            the problem uncompleted.
           </p>
 
           {!this.state.survey ? (
@@ -72,16 +76,17 @@ class QuestionSurvey extends Component {
           ) : null}
 
           {this.state.survey ? (
-            <form className="questForm" onSubmit={this.postLike}>
+            <form className="questSurveyForm" onSubmit={this.postLike}>
               <div className="questSurveyRadioDiv">
                 <div className="questSurveyPair">
                   <label htmlFor="name" className="questSurveyLabels">
-                    Like
+                    Liked
                   </label>
                   <input
                     type="radio"
                     name="status"
                     value="like"
+                    checked
                     onChange={this.handleChange}
                     className="surveyRadio"
                   />
@@ -89,7 +94,7 @@ class QuestionSurvey extends Component {
 
                 <div className="questSurveyPair">
                   <label htmlFor="name" className="questSurveyLabels">
-                    Dislike
+                    Disliked
                   </label>
                   <input
                     type="radio"
@@ -122,15 +127,15 @@ class QuestionSurvey extends Component {
   }
 }
 
-const mapState = state => {
+const mapState = (state) => {
   return { user: state.user, likes: state.likes };
 };
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
     switchUserActive: () => dispatch(switchUserActive()),
     newLike: (userId, qId, status, update) =>
-      dispatch(newLike(userId, qId, status, update))
+      dispatch(newLike(userId, qId, status, update)),
   };
 };
 

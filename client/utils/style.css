@@ -31,6 +31,10 @@ p {
   text-decoration: underline;
 }
 
+.gBtn {
+  border: 1px solid black;
+}
+
 .gBtn:hover {
   background-color: lightskyblue;
   border-style: solid;
@@ -213,6 +217,10 @@ p {
   margin-bottom: 50px;
 }
 
+.userHeader {
+  text-align: center;
+}
+
 .questionAddBtn {
   height: 30px;
   font-size: 16px;
@@ -243,14 +251,14 @@ p {
 }
 
 .roadMapHeader {
-  font-size: 18px;
+  font-size: 23px;
   font-weight: 600;
-  margin-bottom: 10px;
+  text-decoration: underline;
+  margin-bottom: 15px;
 }
 
 .roadmapNextTopic {
   font-weight: bold;
-  font-size: 20px;
   color: rgba(0, 152, 195, 1);
 }
 
@@ -314,32 +322,37 @@ p {
 .questForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 15px;
+  padding: 25px;
   background-color: gray;
   border-radius: 5px;
-  width: 300px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   margin-top: 50px;
   overflow: auto;
-  border: 2px solid black;
+  border: 5px solid black;
+}
+
+.questFormSecDiv {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
 }
 
 .questLabels {
   font-weight: bold;
+  width: 150px;
 }
 
 .questSelect {
   min-width: 50px;
+  height: 25px;
   font-size: 15px;
-  height: 22px;
-  margin-bottom: 15px;
 }
 
-.inputBox {
-  width: 200px;
-  min-height: 30px;
-  margin-bottom: 15px;
+.questInputBox {
+  width: 175px;
+  height: 25px;
+  font-size: 15px;
 }
 
 .questBtnDiv {
@@ -370,7 +383,7 @@ p {
 }
 
 .qFullDivtrue {
-  background-color: rgba(92, 192, 255, 0.5);
+  background-color: rgba(160, 228, 240, 0.5);
 }
 
 .qFullDivfalse {
@@ -423,19 +436,19 @@ p {
 }
 
 .difficulty2 {
-  color: #789422;
+  color: #75970f;
 }
 
 .difficulty3 {
-  color: #948c22;
+  color: #99900f;
 }
 
 .difficulty4 {
-  color: #ff8300;
+  color: #ca6a04;
 }
 
 .difficulty5 {
-  color: #de0000;
+  color: #c70e0e;
 }
 
 /* ----------------------- TAG ----------------------- */
@@ -460,17 +473,29 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
+  padding: 20px;
   background-color: gray;
   border-radius: 5px;
   width: 300px;
-  height: 330px;
-  margin-top: 30px;
-  border: 2px solid black;
+  height: 275px;
+  margin-top: 55px;
+  border: 5px solid black;
 }
 
-.questSurveyText {
-  margin: 15px 0;
+.questSurveyText1 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.questSurveyText2 {
+  margin-bottom: 25px;
+}
+
+.questSurveyForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .questSurveyRadioDiv {
@@ -621,6 +646,7 @@ p {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 15px;
+  border: 1px solid black;
 }
 
 .adminTagRow {
@@ -663,12 +689,33 @@ p {
 /* ----------------------- CHARTS ----------------------- */
 .allQuestPieDiv {
   background-color: rgba(235, 235, 235, 0.8);
-  border: 2px solid black;
+  display: flex;
   width: 85%;
   height: 35%;
   margin: 20px 0;
   padding: 15px;
   border-radius: 5px;
+  border: 2px solid black;
+}
+
+.pieInsideDiv {
+  width: 55%;
+}
+
+.pieStatsDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+
+.pieStatHeader {
+  font-size: 17px;
+  text-decoration: underline;
+}
+
+.pieStatText {
+  margin-bottom: 10px;
 }
 
 .tagBarDiv {

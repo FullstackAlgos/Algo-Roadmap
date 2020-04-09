@@ -10,16 +10,20 @@ class TagBar extends Component {
   }
 
   generateTagNames = () => {
-    return this.props.tags.reduce((a, v) => {
+    const { tags } = this.props,
+      sorted = [...tags].sort((a, b) => a.ranking - b.ranking);
+
+    return sorted.reduce((a, v) => {
       a.push(v.name);
       return a;
     }, []);
   };
 
   calcBarData = () => {
-    const { userQ, allQ, tags } = this.props;
+    const { userQ, allQ, tags } = this.props,
+      sorted = [...tags].sort((a, b) => a.ranking - b.ranking);
 
-    return tags.reduce((a, v) => {
+    return sorted.reduce((a, v) => {
       const userQuests = userQ.filter((x) => x.tagId === v.id).length,
         allQuests = allQ.filter((x) => x.tagId === v.id).length,
         percent = Math.round((userQuests / allQuests) * 100);
@@ -53,12 +57,6 @@ class TagBar extends Component {
       <div className="tagBarDiv">
         <HorizontalBar
           options={{
-            title: {
-              display: false,
-              text: `Question Progress: %`,
-              fontSize: 15,
-              fontColor: "black",
-            },
             layout: {
               padding: {
                 left: 25,
