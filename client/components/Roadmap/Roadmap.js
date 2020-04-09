@@ -1,6 +1,5 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
-import SingleQuestion from "../Question/SingleQuestion";
 import RoadmapArrow from "./RoadmapArrow";
 import RoadmapQuestion from "./RoadmapQuestion";
 import { switchUserActive } from "../../store";
@@ -38,8 +37,6 @@ class Roadmap extends Component {
     return [...topics];
   };
 
-  componentDidMount() {}
-
   componentDidUpdate() {
     const { questions, userQuestions } = this.props;
     if (
@@ -64,24 +61,25 @@ class Roadmap extends Component {
 
   render() {
     const orderedQs = this.formatQualifyingQs(
-      this.props.questions,
-      this.props.userQuestions
-    );
-
-    const topics = this.getTopics(orderedQs);
+        this.props.questions,
+        this.props.userQuestions
+      ),
+      topics = this.getTopics(orderedQs);
 
     return (
-      <div className="roadmapFullDiv">
-        <h3 className="roadMapHeader">
-          Your next topic:&nbsp;
-          {topics.length === 0 ? (
-            <span>None. You're done with every topic!</span>
-          ) : (
-            topics.map((t, i) => (
-              <span key={i}>{i === topics.length - 1 ? t : `${t}, `}</span>
-            ))
-          )}
-        </h3>
+      <div className="roadmapFullDiv mainDiv">
+        {topics.length === 0 ? (
+          <span className="roadMapHeader">You're done with every topic!</span>
+        ) : (
+          topics.map((t, i) => (
+            <span key={i} className="roadMapHeader">
+              Topic of Focus:{" "}
+              <span className="roadmapNextTopic">
+                {i === topics.length - 1 ? t : `${t}, `}
+              </span>
+            </span>
+          ))
+        )}
 
         <div className="roadMapFlowDiv">
           {orderedQs

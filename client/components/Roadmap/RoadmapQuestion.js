@@ -7,7 +7,7 @@ const RoadmapQuestion = ({ question, questionNum, switchUserActive }) => {
 
   return (
     <span className={`roadmapQuestion roadmapQuestion${questionNum}`}>
-      <h3 className="roadMapQuestTag">{tag.name}</h3>
+      <h3 className="roadMapQuestTag">Topic: {tag.name}</h3>
 
       <a
         href={link}

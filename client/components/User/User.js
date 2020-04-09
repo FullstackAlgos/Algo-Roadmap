@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getUserQuestThunk } from "../../store";
 import AllQuestPie from "../Chart/AllQuestPie";
+import TagBar from "../Chart/TagBar";
 
 class User extends Component {
   componentDidMount() {
@@ -15,19 +16,27 @@ class User extends Component {
   }
 
   render() {
-    const { user, questions, userQuestions, formFlip } = this.props;
+    const { user, questions, userQuestions, formFlip, tags } = this.props;
 
     return (
-      <div className="userFullDiv">
+      <div className="userFullDiv mainDiv">
         <div className="userInsideDiv">
           {user.id ? (
             <>
-              <h2 className="userHeader">Welcome, {user.name}!</h2>
+              <h2 className="userHeader">
+                Welcome,{" "}
+                <span style={{ color: "rgba(0, 152, 195,1)" }}>
+                  {user.name}
+                </span>
+                !
+              </h2>
 
               <AllQuestPie
                 userLen={userQuestions.length}
                 questLen={questions.length}
               />
+
+              <TagBar userQ={userQuestions} allQ={questions} tags={tags} />
 
               <button
                 type="button"
@@ -56,6 +65,7 @@ const mapState = (state) => {
     user: state.user,
     questions: state.questions,
     userQuestions: state.userQuestions,
+    tags: state.tags,
   };
 };
 

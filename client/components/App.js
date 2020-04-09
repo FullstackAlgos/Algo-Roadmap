@@ -10,7 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      showForm: false
+      showForm: false,
     };
   }
 
@@ -39,7 +39,7 @@ class App extends Component {
   }
 }
 
-const mapState = state => {
+const mapState = (state) => {
   return { user: state.user };
 };
 

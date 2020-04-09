@@ -5,7 +5,7 @@ class AllQuestPie extends Component {
   constructor() {
     super();
     this.state = {
-      data: [0, 1]
+      data: [0, 1],
     };
   }
 
@@ -14,7 +14,7 @@ class AllQuestPie extends Component {
       adjQuestLen = questLen || 1;
 
     this.setState({
-      data: [userLen, adjQuestLen - userLen]
+      data: [userLen, adjQuestLen - userLen],
     });
   }
 
@@ -23,37 +23,42 @@ class AllQuestPie extends Component {
 
     if (questLen !== prevProps.questLen || userLen !== prevProps.userLen) {
       this.setState({
-        data: [userLen, questLen - userLen]
+        data: [userLen, questLen - userLen],
       });
     }
   }
 
   render() {
+    const { questLen, userLen } = this.props,
+      percent = Math.round((userLen / questLen) * 100);
+
     return (
       <div className="allQuestPieDiv">
         <Pie
           options={{
             title: {
               display: true,
-              text: "Question Progress",
-              fontSize: 15,
-              fontColor: "black"
+              text: `Total Question Progress: ${percent}%`,
+              fontSize: 17,
+              fontColor: "black",
             },
             legend: { display: false },
             cutoutPercentage: 25,
-            responsive: true
+            responsive: true,
+            maintainAspectRatio: false,
           }}
+          id="questPieId"
           data={{
             labels: ["Solved", "Remaining"],
             datasets: [
               {
                 backgroundColor: [
-                  "rgba(0, 255, 0, 0.75)",
-                  "rgba(255, 0, 255, 0.75)"
+                  "rgba(0, 152, 195, 0.9)",
+                  "rgba(165, 165, 165, 0.8)",
                 ],
-                data: this.state.data
-              }
-            ]
+                data: this.state.data,
+              },
+            ],
           }}
         />
       </div>
