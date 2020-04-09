@@ -65,7 +65,7 @@ const questionBulk = [
     tagId: 1,
   },
   {
-    name: "First and Last Position of Element In Sorted Array",
+    name: "First and Last Index of Num In Sorted Array",
     description:
       "Given a sorted array and a target, find the target’s first and last index in the array. If it’s not found return [-1,-1]",
     link:
