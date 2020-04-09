@@ -71,7 +71,7 @@ class Roadmap extends Component {
         ) : (
           topics.map((t, i) => (
             <span key={i} className="roadMapHeader">
-              Topic of Focus:{" "}
+              Current Topic of Focus:{" "}
               <span className="roadmapNextTopic">
                 {i === topics.length - 1 ? t : `${t}, `}
               </span>
