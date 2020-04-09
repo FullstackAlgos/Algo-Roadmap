@@ -11,21 +11,21 @@ class QuestionForm extends Component {
       description: "",
       difficulty: "1",
       link: "",
-      tag: "Array"
+      tag: "Array",
     };
   }
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     this.setState({
-      [evt.target.name]: evt.target.value
+      [evt.target.name]: evt.target.value,
     });
   };
 
-  handleNewQuest = evt => {
+  handleNewQuest = (evt) => {
     evt.preventDefault();
     const { formFlip, proposeQuest, tags, user } = this.props,
       { name, description, difficulty, link, tag } = this.state,
-      tagId = tags.filter(t => t.name === tag)[0].id;
+      tagId = tags.filter((t) => t.name === tag)[0].id;
 
     proposeQuest({
       userId: user.id,
@@ -33,7 +33,7 @@ class QuestionForm extends Component {
       description,
       difficulty,
       link,
-      tagId
+      tagId,
     });
     formFlip();
   };
@@ -75,7 +75,7 @@ class QuestionForm extends Component {
             onChange={this.handleChange}
             className="questSelect"
           >
-            {Object.keys(difficultMap).map(x => (
+            {Object.keys(difficultMap).map((x) => (
               <option key={x}>{x}</option>
             ))}
           </select>
@@ -124,16 +124,16 @@ class QuestionForm extends Component {
   }
 }
 
-const mapState = state => {
+const mapState = (state) => {
   return {
     user: state.user,
-    tags: state.tags
+    tags: state.tags,
   };
 };
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
-    proposeQuest: questObj => dispatch(proposeQuest(questObj))
+    proposeQuest: (questObj) => dispatch(proposeQuest(questObj)),
   };
 };
 

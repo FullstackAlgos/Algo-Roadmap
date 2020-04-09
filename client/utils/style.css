@@ -322,7 +322,7 @@ p {
   height: 400px;
   margin-top: 50px;
   overflow: auto;
-  border: 2px solid black;
+  border: 5px solid black;
 }
 
 .questLabels {
