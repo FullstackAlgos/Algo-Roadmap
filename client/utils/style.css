@@ -393,7 +393,7 @@ p {
 .questNameDiv {
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .questionName {
@@ -405,21 +405,21 @@ p {
 }
 
 .questNameSymbol {
+  margin-right: 10px;
   font-size: 20px;
   color: green;
 }
 
 .questionDesc {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .questionRateDiv {
   display: flex;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .questionRate {
-  margin: 0px;
   margin-right: 35px;
 }
 
@@ -428,7 +428,12 @@ p {
 }
 
 .questionLink {
+  font-weight: 600;
   color: blue;
+}
+
+.diffMarker {
+  font-size: 20px;
 }
 
 .difficulty1 {
@@ -436,11 +441,11 @@ p {
 }
 
 .difficulty2 {
-  color: #75970f;
+  color: #82a810;
 }
 
 .difficulty3 {
-  color: #99900f;
+  color: #ccbf0f;
 }
 
 .difficulty4 {
@@ -448,7 +453,7 @@ p {
 }
 
 .difficulty5 {
-  color: #c70e0e;
+  color: #aa0303;
 }
 
 /* ----------------------- TAG ----------------------- */
@@ -559,7 +564,7 @@ p {
 .adminQuestRow1 {
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .adminQuestBtn {
