@@ -572,6 +572,7 @@ p {
   margin-left: 15px;
   border-radius: 5px;
   height: 25px;
+  min-width: 100px;
   color: black;
   font-size: 14px;
   font-weight: 700;

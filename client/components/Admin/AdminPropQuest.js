@@ -11,7 +11,7 @@ class AdminPropQuest extends Component {
       name: "",
       description: "",
       difficulty: "",
-      tag: ""
+      tag: "",
     };
   }
 
@@ -19,16 +19,16 @@ class AdminPropQuest extends Component {
     this.setState({ showEdit: !this.state.showEdit });
   };
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     this.setState({
-      [evt.target.name]: evt.target.value
+      [evt.target.name]: evt.target.value,
     });
   };
 
   addQuest = () => {
     const { q, deletePropQuest, convertPropQuest, tags } = this.props,
       { name, description, difficulty, tag } = this.state,
-      selectTag = tags.filter(t => t.name === tag)[0],
+      selectTag = tags.filter((t) => t.name === tag)[0],
       questObj = {};
 
     questObj.name = name.length ? name : q.name;
@@ -64,7 +64,7 @@ class AdminPropQuest extends Component {
             onClick={this.addQuest}
             className="adminQuestBtn gBtn"
           >
-            Add Question
+            Approve Question
           </button>
 
           <button
@@ -139,7 +139,7 @@ class AdminPropQuest extends Component {
                 className="adminQuestSelect"
               >
                 <option>--</option>
-                {Object.keys(difficultMap).map(x => (
+                {Object.keys(difficultMap).map((x) => (
                   <option key={x}>{x}</option>
                 ))}
               </select>
@@ -169,16 +169,16 @@ class AdminPropQuest extends Component {
   }
 }
 
-const mapState = state => {
+const mapState = (state) => {
   return {
-    tags: state.tags
+    tags: state.tags,
   };
 };
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
-    convertPropQuest: questObj => dispatch(convertPropQuest(questObj)),
-    deletePropQuest: qId => dispatch(deletePropQuest(qId))
+    convertPropQuest: (questObj) => dispatch(convertPropQuest(questObj)),
+    deletePropQuest: (qId) => dispatch(deletePropQuest(qId)),
   };
 };
 
