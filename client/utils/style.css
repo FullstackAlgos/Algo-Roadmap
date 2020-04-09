@@ -121,6 +121,7 @@ p {
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
+  border: 2px solid black;
 }
 
 .authFormHeader {
