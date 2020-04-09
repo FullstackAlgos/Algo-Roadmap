@@ -66,7 +66,7 @@ class AllQuestPie extends Component {
         </div>
 
         <div className="pieStatsDiv">
-          <h3 className="pieStatHeader pieStatText">Progress Summary </h3>
+          <h3 className="pieStatHeader pieStatText">Progress:</h3>
 
           <span className="pieStatText">
             # Completed: <strong>{userLen}</strong>
