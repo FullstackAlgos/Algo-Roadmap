@@ -316,6 +316,7 @@ export const updateQuestion = (questionObj) => async (dispatch) => {
         newQuestObj.description = questionObj.description;
         newQuestObj.tagId = questionObj.tagId;
         newQuestObj.tag = tags.filter((t) => t.id === questionObj.tagId)[0];
+        newQuestObj.difficulty = questionObj.difficulty;
 
         questions[i] = newQuestObj;
       }

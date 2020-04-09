@@ -618,6 +618,10 @@ p {
   font-weight: 700;
 }
 
+.adminQuestDesc {
+  margin-bottom: 5px;
+}
+
 .adminQuestForm {
   display: flex;
   flex-direction: column;
@@ -645,6 +649,7 @@ p {
 .adminQuestTextArea {
   border-radius: 3px;
   font-size: 15px;
+  width: 168px;
   height: 20px;
 }
 
@@ -652,7 +657,7 @@ p {
   display: flex;
   font-size: 15px;
   height: 22px;
-  min-width: 50px;
+  min-width: 55px;
 }
 
 .adminQuestFormBtn {

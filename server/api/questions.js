@@ -33,12 +33,13 @@ router.post("/", isAdmin, async (req, res, next) => {
 
 router.put("/", isAdmin, async (req, res, next) => {
   try {
-    const { id, name, description, tagId } = req.body;
+    const { id, name, description, tagId, difficulty } = req.body;
     await Question.update(
       {
         name,
         description,
         tagId,
+        difficulty,
       },
       { where: { id } }
     );

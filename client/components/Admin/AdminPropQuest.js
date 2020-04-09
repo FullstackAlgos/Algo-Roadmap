@@ -10,8 +10,8 @@ class AdminPropQuest extends Component {
       showEdit: false,
       name: "",
       description: "",
-      difficulty: "",
-      tag: "",
+      difficulty: "--",
+      tag: "--",
     };
   }
 
@@ -34,7 +34,7 @@ class AdminPropQuest extends Component {
     questObj.name = name.length ? name : q.name;
     questObj.description = description.length ? description : q.description;
     questObj.difficulty =
-      difficulty.length && difficultMap !== "--" ? difficulty : q.difficulty;
+      difficulty.length && difficulty !== "--" ? difficulty : q.difficulty;
     questObj.tagId = tag.length && tag !== "--" ? selectTag.id : q.tagId;
     questObj.tag = tag.length && tag !== "--" ? selectTag : q.tag;
     questObj.link = q.link;
@@ -93,7 +93,7 @@ class AdminPropQuest extends Component {
             <u>Proposed By</u>: {user.name}
           </p>
           <p className="adminPropQText">
-            <u>Difficulty</u>: {difficulty}
+            <u>Difficulty</u>: {difficulty} ({difficultMap[difficulty]})
           </p>
         </div>
 

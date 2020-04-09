@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { updateQuestion, deleteQuestion } from "../../store";
+import { difficultMap } from "../../utils/utilities";
 
 class AdminQuestion extends Component {
   constructor() {
@@ -9,7 +10,8 @@ class AdminQuestion extends Component {
       showEdit: false,
       name: "",
       description: "",
-      tag: ""
+      tag: "--",
+      difficulty: "--",
     };
   }
 
@@ -22,30 +24,35 @@ class AdminQuestion extends Component {
     deleteQuestion(q.id);
   };
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     this.setState({
-      [evt.target.name]: evt.target.value
+      [evt.target.name]: evt.target.value,
     });
   };
 
-  handleSubmit = evt => {
+  handleSubmit = (evt) => {
     evt.preventDefault();
     const { q, updateQuestion, tags } = this.props,
-      { name, description, tag } = this.state,
+      { name, description, tag, difficulty } = this.state,
       submitObj = { id: q.id };
 
     if (name.length || description.length || tag.length) {
       submitObj.name = name.length ? name : q.name;
       submitObj.description = description.length ? description : q.description;
       submitObj.tagId =
-        tag.length && tag !== "--"
-          ? tags.filter(t => t.name === tag)[0].id
-          : q.tag.id;
+        tag !== "--" ? tags.filter((t) => t.name === tag)[0].id : q.tag.id;
+      submitObj.difficulty = difficulty !== "--" ? difficulty : q.difficulty;
 
       updateQuestion(submitObj);
     }
 
-    this.setState({ showEdit: false, name: "", description: "", tag: "" });
+    this.setState({
+      showEdit: false,
+      name: "",
+      description: "",
+      tag: "--",
+      difficulty: "--",
+    });
   };
 
   render() {
@@ -75,6 +82,9 @@ class AdminQuestion extends Component {
           </button>
         </div>
 
+        <p className="adminQuestDesc">
+          <u>Difficulty</u>: {q.difficulty} ({difficultMap[q.difficulty]})
+        </p>
         <p className="adminQuestDesc">{q.description}</p>
 
         {this.state.showEdit ? (
@@ -125,6 +135,24 @@ class AdminQuestion extends Component {
               </select>
             </div>
 
+            <div className="adminQuestFormDiv">
+              <label htmlFor="difficulty" className="adminQuestLabel">
+                New Difficulty:
+              </label>
+
+              <select
+                name="difficulty"
+                value={this.state.difficulty}
+                onChange={this.handleChange}
+                className="adminQuestSelect"
+              >
+                <option>--</option>
+                {Object.keys(difficultMap).map((t, i) => (
+                  <option key={i}>{t}</option>
+                ))}
+              </select>
+            </div>
+
             <button type="submit" className="adminQuestFormBtn gBtn">
               Post New Info
             </button>
@@ -135,16 +163,16 @@ class AdminQuestion extends Component {
   }
 }
 
-const mapState = state => {
+const mapState = (state) => {
   return {
-    tags: state.tags
+    tags: state.tags,
   };
 };
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
-    updateQuestion: qObj => dispatch(updateQuestion(qObj)),
-    deleteQuestion: qId => dispatch(deleteQuestion(qId))
+    updateQuestion: (qObj) => dispatch(updateQuestion(qObj)),
+    deleteQuestion: (qId) => dispatch(deleteQuestion(qId)),
   };
 };
 
