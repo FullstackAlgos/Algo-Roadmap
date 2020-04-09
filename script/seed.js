@@ -17,36 +17,11 @@ const userBulk = [
 const questionBulk = [
   // ------------------------- ARRAY (1) ---------------------------
   {
-    name: "Find The Majority Element",
-    description:
-      "Given an array with n elements, find the element that appears n/2 times or more. It's guaranteed that there will be an element that appears n/2 times or more.",
-    difficulty: 1,
-    link: "https://leetcode.com/problems/majority-element/",
-    tagId: 1,
-  },
-  {
     name: "Single Number",
     description:
       "Given an array in which all elements appear twice except one (of them), return the one which appears only once.",
     difficulty: 1,
     link: "https://leetcode.com/problems/single-number/",
-    tagId: 1,
-  },
-  {
-    name: "Find All Numbers Disappeared In Array",
-    description:
-      "Given an array that has some elements from 1 to n (where n is the length of the array), find the elements from 1 to n that it is missing.",
-    difficulty: 1,
-    link:
-      "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/",
-    tagId: 1,
-  },
-  {
-    name: "Peak Index In Mountain Array",
-    description:
-      "Given a mountain array (i.e. an array that only increases on one side and only decreases on the other), find the peak index (index of the top of the mountain).",
-    difficulty: 1,
-    link: "https://leetcode.com/problems/peak-index-in-a-mountain-array/",
     tagId: 1,
   },
   {
@@ -66,39 +41,6 @@ const questionBulk = [
     tagId: 1,
   },
   {
-    name: "Minimum Absolute Difference",
-    description:
-      "Given an array of distinct integers, find and return all pairs of elements that have the minimum absolute difference.",
-    difficulty: 2,
-    link: "https://leetcode.com/problems/minimum-absolute-difference/",
-    tagId: 1,
-  },
-  {
-    name: "Toeplitz Matrix",
-    description:
-      "Traverse a 2D matrix diagonally. A look at the problem should make it clear.",
-    difficulty: 2,
-    link: "https://leetcode.com/problems/toeplitz-matrix/",
-    tagId: 1,
-  },
-  {
-    name: "Island Perimeter",
-    description:
-      "Find the ‘perimeter’ of ‘islands’ in a matrix. The problem description has a picture and a good explanation!",
-    difficulty: 2,
-    link: "https://leetcode.com/problems/island-perimeter/",
-    tagId: 1,
-  },
-  {
-    name: "Partition Array Into Three Equal Sum Parts",
-    description:
-      "Given an array, return whether or not its possible to partition it into three non-empty, equal-sum parts.",
-    difficulty: 2,
-    link:
-      "https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum/",
-    tagId: 1,
-  },
-  {
     name: "Find Pivot Index",
     description:
       "Given an array of integers, find an index at which all the sum of elements to the right of the index equals the sum of elements to the left of the index",
@@ -112,24 +54,6 @@ const questionBulk = [
       "Given an array of integers representing a number, return an array with the digits of that number plus 1.",
     difficulty: 2,
     link: "https://leetcode.com/problems/plus-one/",
-    tagId: 1,
-  },
-  {
-    name: "Count Negative Numbers In Sorted Matrix",
-    description:
-      "Given a matrix of integers with each row and column sorted in descending order, return the number of negative numbers in the matrix.",
-    difficulty: 2,
-    link:
-      "https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/",
-    tagId: 1,
-  },
-  {
-    name: "Count Numbers Smaller Than Current Number",
-    description:
-      "Given an array of numbers, return an array in which each element denotes the number of elements in the input array that are strictly smaller than the current element.",
-    difficulty: 2,
-    link:
-      "https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/",
     tagId: 1,
   },
   {
@@ -190,14 +114,6 @@ const questionBulk = [
     tagId: 1,
   },
   {
-    name: "Search a 2D Matrix",
-    description:
-      "Given a 2D matrix with sorted rows and sorted columns and a target number, return whether or not the matrix contains the target number.",
-    link: "https://leetcode.com/problems/search-a-2d-matrix-ii/",
-    difficulty: 4,
-    tagId: 1,
-  },
-  {
     name: "First Missing Positive",
     description:
       "Given an unsorted array of integers, find the first missing positive number in the array. 0 is NOT counted as a positive number.",
@@ -214,50 +130,10 @@ const questionBulk = [
     tagId: 1,
   },
   {
-    name: "Binary Subarrays With Sum",
-    description:
-      "Given a 2D matrix of 0s and 1s and a target number S, return the number of subarrays in the matrix that sum up to S.",
-    link: "https://leetcode.com/problems/binary-subarrays-with-sum/",
-    difficulty: 3,
-    tagId: 1,
-  },
-  {
-    name: "Subarray Sums Divisible By K",
-    description:
-      "Given an array of integers and target factor, return the number of subarrays divisible by the target factor",
-    link: "https://leetcode.com/problems/subarray-sums-divisible-by-k",
-    difficulty: 4,
-    tagId: 1,
-  },
-  {
-    name: "Product of Last K Numbers",
-    description:
-      "Write a data structure that supports adding elements to the end and return the product of the last K numbers.",
-    link: "https://leetcode.com/problems/product-of-the-last-k-numbers/",
-    difficulty: 4,
-    tagId: 1,
-  },
-  {
     name: "Move Zeroes",
     description: "Move all the zeroes in an array to the end of that array",
     link: "https://leetcode.com/problems/move-zeroes/",
     difficulty: 1,
-    tagId: 1,
-  },
-  {
-    name: "Sort Array By Parity",
-    description:
-      "Given an array of integers, move all the even elements to the start of the array and all the odd elements to the end of the array",
-    link: "https://leetcode.com/problems/sort-array-by-parity/",
-    difficulty: 2,
-    tagId: 1,
-  },
-  {
-    name: "Flipping An Image",
-    description:
-      "Given a 2D matrix with elements of 1 or 0, flip it horizontally, then turn all 1s to 0s and vice versa",
-    link: "https://leetcode.com/problems/flipping-an-image/",
-    difficulty: 2,
     tagId: 1,
   },
   {
@@ -266,21 +142,6 @@ const questionBulk = [
       "Given an integer n, generate the first n rows of a Pascal’s triangle",
     link: "https://leetcode.com/problems/pascals-triangle/",
     difficulty: 2,
-    tagId: 1,
-  },
-  {
-    name: "Rotate Image",
-    description: "Given a 2D matrix, rotate it by 90 degrees clockwise",
-    link: "https://leetcode.com/problems/rotate-image/",
-    difficulty: 3,
-    tagId: 1,
-  },
-  {
-    name: "Spiral Matrix II",
-    description:
-      "Given an integer, return a matrix containing elements from 1 to n^2 in a clockwise spiral.",
-    link: "https://leetcode.com/problems/spiral-matrix-ii/",
-    difficulty: 3,
     tagId: 1,
   },
   // --------------------------- STRING (2) ---------------------------
@@ -502,14 +363,6 @@ const questionBulk = [
     tagId: 5,
   },
   {
-    name: "Max Depth of Binary Tree",
-    description:
-      "Given a binary tree, find its maximum depth. The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.",
-    difficulty: 1,
-    link: "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
-    tagId: 5,
-  },
-  {
     name: "N-ary Tree Preorder Traversal",
     description:
       "Given an n-ary tree, return the preorder traversal of its nodes' values. Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value.",
@@ -518,35 +371,11 @@ const questionBulk = [
     tagId: 5,
   },
   {
-    name: "N-ary Tree Postorder Traversal",
-    description:
-      "Given an n-ary tree, return the postorder traversal of its nodes' values. Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value.",
-    difficulty: 1,
-    link: "https://leetcode.com/problems/n-ary-tree-postorder-traversal/",
-    tagId: 5,
-  },
-  {
-    name: "Search in Binary Search Tree",
-    description:
-      "Given the root node of a binary search tree (BST) and a value. You need to find the node in the BST that the node's value equals the given value. Return the subtree rooted with that node. If such node doesn't exist, you should return NULL.",
-    difficulty: 1,
-    link: "https://leetcode.com/problems/search-in-a-binary-search-tree/",
-    tagId: 5,
-  },
-  {
     name: "Univalued Binary Tree",
     description:
       "A binary tree is univalued if every node in the tree has the same value. Return true if and only if the given tree is univalued.",
     difficulty: 1,
     link: "https://leetcode.com/problems/univalued-binary-tree/",
-    tagId: 5,
-  },
-  {
-    name: "Sum of Root To Leaf Binary Numbers",
-    description:
-      "Given a binary tree, each node has value 0 or 1.  Each root-to-leaf path represents a binary number starting with the most significant bit. For all leaves in the tree, consider the numbers represented by the path from the root to that leaf. Return the sum of these numbers.",
-    difficulty: 1,
-    link: "https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/",
     tagId: 5,
   },
   {
@@ -563,22 +392,6 @@ const questionBulk = [
       "Consider all the leaves of a binary tree.  From left to right order, the values of those leaves form a leaf value sequence. Two binary trees are considered leaf-similar if their leaf value sequence is the same. Return true if and only if the two given trees with head nodes root1 and root2 are leaf-similar.",
     difficulty: 2,
     link: "https://leetcode.com/problems/leaf-similar-trees/",
-    tagId: 5,
-  },
-  {
-    name: "Increasing Order Search Tree",
-    description:
-      "Given a binary search tree, rearrange the tree in in-order so that the leftmost node in the tree is now the root of the tree, and every node has no left child and only 1 right child.",
-    difficulty: 2,
-    link: "https://leetcode.com/problems/increasing-order-search-tree/",
-    tagId: 5,
-  },
-  {
-    name: "Convert BST to Greater Tree",
-    description:
-      "Given a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus sum of all keys greater than the original key in BST.",
-    difficulty: 2,
-    link: "https://leetcode.com/problems/convert-bst-to-greater-tree/",
     tagId: 5,
   },
   {
@@ -619,15 +432,6 @@ const questionBulk = [
       "Given a binary tree root and an integer target, delete all the leaf nodes with value target.",
     difficulty: 3,
     link: "https://leetcode.com/problems/delete-leaves-with-a-given-value/",
-    tagId: 5,
-  },
-  {
-    name: "Sum of Nodes with Even-Valued Grandparent",
-    description:
-      "Given a binary tree, return the sum of values of nodes with even-valued grandparent.  (A grandparent of a node is the parent of its parent, if it exists.) If there are no nodes with an even-valued grandparent, return 0.",
-    difficulty: 3,
-    link:
-      "https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/",
     tagId: 5,
   },
   {
@@ -673,28 +477,11 @@ const questionBulk = [
   },
   // ------------------------- STACKS (7) -------------------------
   {
-    name: "Valid Parentheses",
+    name: "Min Stack",
     description:
-      "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.",
+      "Design a data structure structure which supports push, pop, top, and get minimum element operations.",
     difficulty: 1,
-    link: "https://leetcode.com/problems/valid-parentheses/",
-    tagId: 7,
-  },
-  {
-    name: "Remove Outermost Parentheses",
-    description:
-      "Return S after removing the outermost parentheses of every primitive string in the primitive decomposition of S.",
-    difficulty: 1,
-    link: "https://leetcode.com/problems/remove-outermost-parentheses/",
-    tagId: 7,
-  },
-  {
-    name: "Remove All Adjacent Duplicates In String",
-    description:
-      "Given a string S of lowercase letters, a duplicate removal consists of choosing two adjacent and equal letters, and removing them. We repeatedly make duplicate removals on S until we no longer can. Return the final string after all such duplicate removals have been made.  It is guaranteed the answer is unique.",
-    difficulty: 1,
-    link:
-      "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/",
+    link: "https://leetcode.com/problems/min-stack/",
     tagId: 7,
   },
   {
