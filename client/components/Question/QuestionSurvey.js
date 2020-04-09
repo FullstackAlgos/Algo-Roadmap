@@ -46,10 +46,13 @@ class QuestionSurvey extends Component {
         <div className="questSurveyFullDiv">
           <h3 className="questSurveyHeader">{user.activeName}</h3>
 
-          <p className="questSurveyText">
+          <p className="questSurveyText1">
             Click "<strong>Next</strong>" if you were able to complete the
-            problem and can provide feedback. Otherwise, please click "
-            <strong>Later</strong>".
+            problem and can provide feedback.
+          </p>
+          <p className="questSurveyText2">
+            Otherwise, please click "<strong>Later</strong>", which will keep
+            the problem uncompleted.
           </p>
 
           {!this.state.survey ? (
@@ -77,7 +80,7 @@ class QuestionSurvey extends Component {
               <div className="questSurveyRadioDiv">
                 <div className="questSurveyPair">
                   <label htmlFor="name" className="questSurveyLabels">
-                    Like
+                    Liked
                   </label>
                   <input
                     type="radio"
@@ -91,7 +94,7 @@ class QuestionSurvey extends Component {
 
                 <div className="questSurveyPair">
                   <label htmlFor="name" className="questSurveyLabels">
-                    Dislike
+                    Disliked
                   </label>
                   <input
                     type="radio"

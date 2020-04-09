@@ -478,8 +478,12 @@ p {
   border: 5px solid black;
 }
 
-.questSurveyText {
-  margin: 15px 0;
+.questSurveyText1 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+.questSurveyText2 {
+  margin-bottom: 25px;
 }
 
 .questSurveyForm {
