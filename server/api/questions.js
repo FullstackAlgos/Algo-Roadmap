@@ -1,11 +1,12 @@
 const router = require("express").Router();
 const { Question, Tag, Like } = require("../db/models");
+const { isAdmin } = require("./security");
 module.exports = router;
 
 router.get("/", async (req, res, next) => {
   try {
     const allQuestions = await Question.findAll({
-      include: [{ model: Tag }, { model: Like }]
+      include: [{ model: Tag }, { model: Like }],
     });
     res.json(allQuestions);
   } catch (err) {
@@ -13,16 +14,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get("/:questionId", async (req, res, next) => {
-  try {
-    const question = await Question.findByPk(req.params.questionId);
-    res.json(question);
-  } catch (err) {
-    next(err);
-  }
-});
-
-router.post("/", async (req, res, next) => {
+router.post("/", isAdmin, async (req, res, next) => {
   try {
     const { name, description, difficulty, link, tagId } = req.body;
     await Question.create({
@@ -30,7 +22,7 @@ router.post("/", async (req, res, next) => {
       description,
       difficulty,
       link,
-      tagId
+      tagId,
     });
 
     res.sendStatus(201);
@@ -39,14 +31,14 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.put("/", async (req, res, next) => {
+router.put("/", isAdmin, async (req, res, next) => {
   try {
     const { id, name, description, tagId } = req.body;
     await Question.update(
       {
         name,
         description,
-        tagId
+        tagId,
       },
       { where: { id } }
     );
@@ -56,7 +48,7 @@ router.put("/", async (req, res, next) => {
   }
 });
 
-router.delete("/:questionId", async (req, res, next) => {
+router.delete("/:questionId", isAdmin, async (req, res, next) => {
   try {
     await Question.destroy({ where: { id: req.params.questionId } });
 
