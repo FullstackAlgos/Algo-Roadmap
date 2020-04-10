@@ -33,7 +33,7 @@ const HelpBar = () => {
             <h4 className="helpTextHead">Overview</h4>
 
             <p className="helpTextPara">
-              Do the thousands of question on leetcode, codewars, and other
+              Do the thousands of question on LeetCode, CodeWars, and other
               coding practice sites seem daunting? Do you ever feel lost and not
               know what to focus on? While these sites have amazing resources to
               help candidates prepare, it is tough to understand how to actually
@@ -61,11 +61,11 @@ const HelpBar = () => {
               <span className="helpSpanName">Jasen</span>, both members of the
               1911 NY FSA cohort at Fullstack Academy. Having successfully gone
               through the post-bootcamp recruitment process (multiple offers
-              under a month from graduation) and completed close to an aggregate
-              of 1,000 algorithms, James and Jasen wanted to create and share a
-              platform that consolidates and highlights the algorithms that made
-              them successful in their journey, hoping to facilitate a similar
-              experience for AR users.
+              within a month from graduating) and completed close to an
+              aggregate of 1,000 algorithms, James and Jasen wanted to create
+              and share a platform that consolidates and highlights the
+              algorithms that made them successful in their journey, hoping to
+              facilitate a similar experience for AR users.
             </p>
 
             <div className="helpFounderFullDiv">
