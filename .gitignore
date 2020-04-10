@@ -7,4 +7,4 @@ public/bundle.js.map
 
 # Misc
 script/deploy
-script/seedData
+script/seedData.js
