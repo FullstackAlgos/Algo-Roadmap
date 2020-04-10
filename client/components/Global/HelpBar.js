@@ -33,7 +33,7 @@ const HelpBar = () => {
             <h4 className="helpTextHead">Overview</h4>
 
             <p className="helpTextPara">
-              Do the thousands of question on leetcode, codewars, and other
+              Do the thousands of question on LeetCode, CodeWars, and other
               coding practice sites seem daunting? Do you ever feel lost and not
               know what to focus on? While these sites have amazing resources to
               help candidates prepare, it is tough to understand how to actually
