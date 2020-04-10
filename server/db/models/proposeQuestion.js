@@ -19,15 +19,6 @@ const ProposeQuestion = db.define("proposeQuestion", {
     type: Sequelize.STRING,
     unique: true,
   },
-  ratedDifficulty: {
-    type: Sequelize.FLOAT,
-    min: 1.0,
-    max: 5.0,
-  },
-});
-
-ProposeQuestion.beforeCreate((question) => {
-  question.ratedDifficulty = question.difficulty;
 });
 
 module.exports = ProposeQuestion;
