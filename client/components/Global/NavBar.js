@@ -28,7 +28,7 @@ const NavBar = ({ user, logout, location }) => {
           <>
             {user.isAdmin ? (
               <NavLink
-                to="/Admin/Questions"
+                to="/Admin/Users"
                 className={`linkText navBarLink ${
                   adminPath ? "selectedNavLink" : null
                 }`}
