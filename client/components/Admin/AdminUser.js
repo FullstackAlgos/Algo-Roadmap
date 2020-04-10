@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { adminChange, deleteUser } from "../../store";
 
 class AdminUser extends Component {
-  changeAdmin = update => {
+  changeAdmin = (update) => {
     const { u, adminChange } = this.props;
     adminChange(u.id, update);
   };
@@ -19,7 +19,9 @@ class AdminUser extends Component {
     return (
       <div className="adminSingleDiv">
         <div className="adminUserRow">
-          <h3 className="adminQuestName">{u.name}</h3>
+          <h3 className="adminQuestName">
+            {u.name} ({u.email})
+          </h3>
 
           {u.isAdmin ? (
             <button
@@ -62,10 +64,10 @@ class AdminUser extends Component {
   }
 }
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
     adminChange: (userId, update) => dispatch(adminChange(userId, update)),
-    deleteUser: userId => dispatch(deleteUser(userId))
+    deleteUser: (userId) => dispatch(deleteUser(userId)),
   };
 };
 
