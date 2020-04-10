@@ -1,24 +1,24 @@
-export const userBulk = [
+const userBulk = [
   { email: "james@a.com", name: "James", isAdmin: true, password: "123" },
   { email: "jasen@a.com", name: "Jasen", isAdmin: true, password: "123" },
   { email: "peter@a.com", name: "Peter", password: "123" },
 ];
 
-export const likeBulk = [
+const likeBulk = [
   { status: "like", userId: 1, questionId: 1 },
   { status: "dislike", userId: 1, questionId: 2 },
   { status: "like", userId: 2, questionId: 3 },
   { status: "like", userId: 3, questionId: 4 },
 ];
 
-export const userQuestBulk = [
+const userQuestBulk = [
   { userId: 1, questionId: 1 },
   { userId: 1, questionId: 2 },
   { userId: 2, questionId: 3 },
   { userId: 3, questionId: 4 },
 ];
 
-export const propQuestBulk = [
+const propQuestBulk = [
   {
     name: "Spiral Matrix",
     description:
@@ -29,3 +29,5 @@ export const propQuestBulk = [
     userId: 1,
   },
 ];
+
+module.exports = { userBulk, likeBulk, userQuestBulk, propQuestBulk };
