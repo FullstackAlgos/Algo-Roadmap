@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addTag } from "../../store";
+import { addTag, getAllTags } from "../../store";
 import AdminTag from "./AdminTag";
 
 class AdminTagPanel extends Component {
@@ -11,6 +11,10 @@ class AdminTagPanel extends Component {
       name: "",
       ranking: "1",
     };
+  }
+
+  componentDidMount() {
+    this.props.getAllTags();
   }
 
   showAdd = () => {
@@ -119,6 +123,7 @@ const mapState = (state) => ({
 
 const mapDispatch = (dispatch) => ({
   addTag: (newTag) => dispatch(addTag(newTag)),
+  getAllTags: () => dispatch(getAllTags()),
 });
 
 export default connect(mapState, mapDispatch)(AdminTagPanel);

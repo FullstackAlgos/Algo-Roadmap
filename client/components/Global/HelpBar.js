@@ -65,7 +65,7 @@ const HelpBar = () => {
               aggregate of 1,000 algorithms, James and Jasen wanted to create
               and share a platform that consolidates and highlights the
               algorithms that made them successful in their journey, hoping to
-              facilitate a similar experience for AR users.
+              facilitate a similar experience for all AR users.
             </p>
 
             <div className="helpFounderFullDiv">

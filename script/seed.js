@@ -1,11 +1,5 @@
 const db = require("../server/db");
-const {
-  Question,
-  User,
-  Tag,
-  Like,
-  ProposeQuestion,
-} = require("../server/db/models");
+const { Question, User, Tag, Like } = require("../server/db/models");
 const { userBulk, likeBulk } = require("./seedData");
 
 const questionBulk = [
@@ -29,7 +23,7 @@ const questionBulk = [
   {
     name: "Max Consecutive 1s",
     description:
-      "Given an array of 1s and 0s, return the max length of consecutive 1s",
+      "Given an array of 1s and 0s, return the max length of consecutive 1s.",
     difficulty: 1,
     link: "https://leetcode.com/problems/max-consecutive-ones/",
     tagId: 1,
@@ -37,7 +31,7 @@ const questionBulk = [
   {
     name: "Find Pivot Index",
     description:
-      "Given an array of integers, find an index at which all the sum of elements to the right of the index equals the sum of elements to the left of the index",
+      "Given an array of integers, find an index at which all the sum of elements to the right of the index equals the sum of elements to the left of the index.",
     difficulty: 2,
     link: "https://leetcode.com/problems/find-pivot-index/",
     tagId: 1,
@@ -53,7 +47,7 @@ const questionBulk = [
   {
     name: "Search In Rotated Sorted Array",
     description:
-      "Given an array that’s been sorted in ascending order then rotated some amount and a target number, return the index of the target number in the array or -1 if the target is not present",
+      "Given an array that’s been sorted in ascending order then rotated some amount and a target number, return the index of the target number in the array or -1 if the target is not present.",
     difficulty: 3,
     link: "https://leetcode.com/problems/search-in-rotated-sorted-array/",
     tagId: 1,
@@ -61,7 +55,7 @@ const questionBulk = [
   {
     name: "First and Last Index of Num In Sorted Array",
     description:
-      "Given a sorted array and a target, find the target’s first and last index in the array. If it’s not found return [-1,-1]",
+      "Given a sorted array and a target, find the target’s first and last index in the array. If it’s not found return [-1,-1].",
     link:
       "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
     difficulty: 3,
@@ -70,7 +64,7 @@ const questionBulk = [
   {
     name: "Spiral Matrix",
     description:
-      "Given a 2D matrix, return an array that contains the elements of the matrix in a clockwise-outside-to-inside spiral order",
+      "Given a 2D matrix, return an array that contains the elements of the matrix in a clockwise-outside-to-inside spiral order.",
     link: "https://leetcode.com/problems/spiral-matrix/",
     difficulty: 3,
     tagId: 1,
@@ -102,7 +96,7 @@ const questionBulk = [
   {
     name: "Find the Duplicate Number",
     description:
-      "Given an array of numbers with elements of values 1 to n+1 (where n is the length of the array), return the duplicate element",
+      "Given an array of numbers with elements of values 1 to n+1 (where n is the length of the array), return the duplicate element.",
     link: "https://leetcode.com/problems/find-the-duplicate-number/",
     difficulty: 4,
     tagId: 1,
@@ -118,14 +112,14 @@ const questionBulk = [
   {
     name: "Subarray Sum Equals K",
     description:
-      "Given an array of integers and a target sum K, return the number of subarrays that equal K",
+      "Given an array of integers and a target sum K, return the number of subarrays that equal K.",
     link: "https://leetcode.com/problems/subarray-sum-equals-k/",
     difficulty: 3,
     tagId: 1,
   },
   {
     name: "Move Zeroes",
-    description: "Move all the zeroes in an array to the end of that array",
+    description: "Move all the zeroes in an array to the end of that array.",
     link: "https://leetcode.com/problems/move-zeroes/",
     difficulty: 1,
     tagId: 1,
@@ -133,7 +127,7 @@ const questionBulk = [
   {
     name: "Pascal's Triangle",
     description:
-      "Given an integer n, generate the first n rows of a Pascal’s triangle",
+      "Given an integer n, generate the first n rows of a Pascal’s triangle.",
     link: "https://leetcode.com/problems/pascals-triangle/",
     difficulty: 2,
     tagId: 1,
@@ -142,7 +136,7 @@ const questionBulk = [
   {
     name: "Student Attendance Record",
     description:
-      "Given a string of 'A's, 'P's, and 'L's representing a student's attendance record, return whether the doesn't contain more than one A, or two continuous Ls",
+      "Given a string of 'A's, 'P's, and 'L's representing a student's attendance record, return whether the doesn't contain more than one A, or two continuous Ls.",
     link: "https://leetcode.com/problems/student-attendance-record-i/",
     difficulty: 1,
     tagId: 2,
@@ -150,7 +144,7 @@ const questionBulk = [
   {
     name: "Reverse String",
     description:
-      "Given a character array representing a string, reverse the array in place",
+      "Given a character array representing a string, reverse the array in place.",
     link: "https://leetcode.com/problems/reverse-string/",
     difficulty: 1,
     tagId: 2,
@@ -158,14 +152,14 @@ const questionBulk = [
   {
     name: "Reverse Words In A String III",
     description:
-      "Given a sentence (words separated by single spaces), reverse the characters in each word while preserving the order of the words",
+      "Given a sentence (words separated by single spaces), reverse the characters in each word while preserving the order of the words.",
     link: "https://leetcode.com/problems/reverse-words-in-a-string-iii/",
     difficulty: 1,
     tagId: 2,
   },
   {
     name: "Reverse Only Letters",
-    description: "Given a string, reverse only the letters",
+    description: "Given a string, reverse only the letters.",
     link: "https://leetcode.com/problems/reverse-only-letters/",
     difficulty: 2,
     tagId: 2,
@@ -198,7 +192,7 @@ const questionBulk = [
   {
     name: "Longest Absolute File Path",
     description:
-      "Given a “file structure” in the form of a string, return the longest path length (in terms of # of characters) in the structure. ",
+      "Given a “file structure” in the form of a string, return the longest path length (in terms of # of characters) in the structure.",
     link: "https://leetcode.com/problems/longest-absolute-file-path/",
     difficulty: 4,
     tagId: 2,
@@ -239,7 +233,7 @@ const questionBulk = [
   {
     name: "Longest Palindrome",
     description:
-      "Given a string of letters, return the length of the longest palindrome that could be constructed with those letters",
+      "Given a string of letters, return the length of the longest palindrome that could be constructed with those letters.",
     link: "https://leetcode.com/problems/longest-palindrome/",
     difficulty: 1,
     tagId: 3,
@@ -247,7 +241,7 @@ const questionBulk = [
   {
     name: "Check if N and It's Double Exist",
     description:
-      "Given an array of integers, check if there is an element in the array that is double another element (i.e. 10 is double 5) ",
+      "Given an array of integers, check if there is an element in the array that is double another element (i.e. 10 is double 5).",
     link: "https://leetcode.com/problems/check-if-n-and-its-double-exist/",
     difficulty: 1,
     tagId: 3,
@@ -255,7 +249,7 @@ const questionBulk = [
   {
     name: "Isomorphic Strings",
     description:
-      "Given two strings, determine if two strings are isomorphic (characters in string A can be replaced to get string B)",
+      "Given two strings, determine if two strings are isomorphic (characters in string A can be replaced to get string B).",
     link: "https://leetcode.com/problems/isomorphic-strings/",
     difficulty: 2,
     tagId: 3,
@@ -279,7 +273,7 @@ const questionBulk = [
   {
     name: "Valid Sudoku",
     description:
-      "Given a 2D matrix representing a sudoku board, return whether or not it is a valid sudoku board",
+      "Given a 2D matrix representing a sudoku board, return whether or not it is a valid sudoku board.",
     link: "https://leetcode.com/problems/valid-sudoku/",
     difficulty: 3,
     tagId: 3,
@@ -294,7 +288,7 @@ const questionBulk = [
   },
   {
     name: "Prison Cells After N Days",
-    description: "Find the state of 8 prison cells after N days",
+    description: "Find the state of 8 prison cells after N days.",
     link: "https://leetcode.com/problems/prison-cells-after-n-days/",
     difficulty: 4,
     tagId: 3,
@@ -320,7 +314,7 @@ const questionBulk = [
   {
     name: "Odd Even Linked List",
     description:
-      "Given a singly linked list, move all the even 'indexed' nodes to the end and all of the 'odd' indexed nodes to the front of the linked list and return that new list",
+      "Given a singly linked list, move all the even 'indexed' nodes to the end and all of the 'odd' indexed nodes to the front of the linked list and return that new list.",
     link: "https://leetcode.com/problems/odd-even-linked-list/",
     tagId: 4,
     difficulty: 3,
@@ -357,9 +351,9 @@ const questionBulk = [
     tagId: 4,
   },
   {
-    name: "Remove Zero Sum Consecutive Nodes From Linked List",
+    name: "Remove 0 Sum Adj. Nodes From Linked List",
     description:
-      "Given a linked list, delete consecutive nodes that sum up to 0 and return the resulting linked list",
+      "Given a linked list, delete consecutive nodes that sum up to 0 and return the resulting linked list.",
     difficulty: 4,
     tagId: 4,
     link:
@@ -376,7 +370,7 @@ const questionBulk = [
   {
     name: "Next Greater Node In Linked List",
     description:
-      "Given a linked list with nodes that have values of positive integers, return an array containing the value of the next greater node",
+      "Given a linked list with nodes that have values of positive integers, return an array containing the value of the next greater node.",
     difficulty: 3,
     link: "https://leetcode.com/problems/next-greater-node-in-linked-list/",
     tagId: 4,
@@ -498,7 +492,7 @@ const questionBulk = [
   {
     name: "Max Area of Island",
     description:
-      "Given a non-empty 2D array grid of 0's and 1's, an island is a group of 1's (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water. Find the maximum area of an island in the given 2D array. (If there is no island, the maximum area is 0.)",
+      "Given a non-empty 2D array grid of 0's and 1's, an island is a group of 1's (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water. Find the maximum area of an island in the given 2D array.",
     difficulty: 3,
     link: "https://leetcode.com/problems/max-area-of-island/",
     tagId: 6,
@@ -506,7 +500,7 @@ const questionBulk = [
   {
     name: "Friend Circles",
     description:
-      "There are N students in a class. Some of them are friends, while some are not. Their friendship is transitive in nature. For example, if A is a direct friend of B, and B is a direct friend of C, then A is an indirect friend of C. And we defined a friend circle is a group of students who are direct or indirect friends. Given a N*N matrix M representing the friend relationship between students in the class. If M[i][j] = 1, then the ith and jth students are direct friends with each other, otherwise not. And you have to output the total number of friend circles among all the students.",
+      "There are N students in a class. Some of them are friends, while some are not. Their friendship is transitive in nature. Given a N*N matrix M representing the friend relationship between students in the class. And you have to output the total number of friend circles among all the students.",
     difficulty: 3,
     link: "https://leetcode.com/problems/friend-circles/",
     tagId: 6,
@@ -539,7 +533,7 @@ const questionBulk = [
   {
     name: "Asteroid Collision",
     description:
-      "We are given an array asteroids of integers representing asteroids in a row. For each asteroid, the absolute value represents its size, and the sign represents its direction (positive meaning right, negative meaning left). Each asteroid moves at the same speed. Find out the state of the asteroids after all collisions. If two asteroids meet, the smaller one will explode. If both are the same size, both will explode. Two asteroids moving in the same direction will never meet.",
+      "We are given an array asteroids of integers representing asteroids in a row. Find out the state of the asteroids after all collisions. If two asteroids meet, the smaller one will explode. If both are the same size, both will explode. Two asteroids moving in the same direction will never meet.",
     difficulty: 3,
     link: "https://leetcode.com/problems/asteroid-collision/",
     tagId: 7,
@@ -597,7 +591,7 @@ const questionBulk = [
   {
     name: "01 Matrix",
     description:
-      "Given a matrix of 1s and 0s, find the distance of the nearest 0 for each cell and return the resulting matrix",
+      "Given a matrix of 1s and 0s, find the distance of the nearest 0 for each cell and return the resulting matrix.",
     difficulty: 3,
     link: "https://leetcode.com/problems/01-matrix/",
     tagId: 8,
@@ -824,7 +818,7 @@ const questionBulk = [
   {
     name: "Matrix Block Sum",
     description:
-      "Given a matrix and an integer K, return a matrix where each cell in that matrix contains the value of the sum of surrounding elements in a square with size proportional to K",
+      "Given a matrix and an integer K, return a matrix where each cell in that matrix contains the value of the sum of surrounding elements in a square with size proportional to K.",
     link: "https://leetcode.com/problems/matrix-block-sum/",
     difficulty: 3,
     tagId: 10,
@@ -858,7 +852,7 @@ const questionBulk = [
   {
     name: "Find Median From Data Stream",
     description:
-      "Given a stream of data (you get the whole set of data with each successive call of the function you write), return the median of all the elements after each call",
+      "Given a stream of data (you get the whole set of data with each successive call of the function you write), return the median of all the elements after each call.",
     difficulty: 5,
     link: "https://leetcode.com/problems/find-median-from-data-stream/",
     tagId: 11,

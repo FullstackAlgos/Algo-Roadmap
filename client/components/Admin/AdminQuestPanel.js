@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import AdminQuestion from "./AdminQuestion";
+import { getAllQuestions } from "../../store";
 
 class AdminQuestPanel extends Component {
+  componentDidMount() {
+    this.props.getAllQuestions();
+  }
+
   render() {
     const { questions } = this.props,
       sorted = [...questions].sort((a, b) => a.id - b.id);
@@ -23,4 +28,8 @@ const mapState = (state) => ({
   questions: state.questions,
 });
 
-export default connect(mapState)(AdminQuestPanel);
+const mapDispatch = (dispatch) => ({
+  getAllQuestions: () => dispatch(getAllQuestions()),
+});
+
+export default connect(mapState, mapDispatch)(AdminQuestPanel);

@@ -19,7 +19,7 @@ class AdminLike extends Component {
         {status.map((stat, i) => (
           <div key={i} className="adminLikeStatDiv">
             <h4 className="adminLikeStatText">
-              {i + 1}. {stat.name || "n/a"}{" "}
+              {i + 1}. {stat.name || "*Former User*"}{" "}
               {stat.email ? `(${stat.email})` : null}
             </h4>
 

@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import AdminLike from "./AdminLike";
+import { getEveryLike } from "../../store";
 
 class AdminLikePanel extends Component {
+  componentDidMount() {
+    this.props.getEveryLike();
+  }
+
   likesToQuest = (likes) => {
     return likes.reduce((a, v) => {
       const qId = v.question.id,
@@ -37,4 +42,8 @@ class AdminLikePanel extends Component {
 
 const mapState = (state) => ({ allLikes: state.allLikes });
 
-export default connect(mapState)(AdminLikePanel);
+const mapDispatch = (dispatch) => ({
+  getEveryLike: () => dispatch(getEveryLike()),
+});
+
+export default connect(mapState, mapDispatch)(AdminLikePanel);
