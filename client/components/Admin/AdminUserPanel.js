@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import AdminUser from "./AdminUser";
+import { allUsers } from "../../store";
 
 class AdminUserPanel extends Component {
+  componentDidMount() {
+    this.props.allUsers();
+  }
+
   render() {
     const { users, user } = this.props;
     let count = 1;
@@ -37,4 +42,8 @@ const mapState = (state) => ({
   users: state.users,
 });
 
-export default connect(mapState)(AdminUserPanel);
+const mapDispatch = (dispatch) => ({
+  allUsers: () => dispatch(allUsers()),
+});
+
+export default connect(mapState, mapDispatch)(AdminUserPanel);

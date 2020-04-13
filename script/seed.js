@@ -351,7 +351,7 @@ const questionBulk = [
     tagId: 4,
   },
   {
-    name: "Remove Zero Sum Consecutive Nodes From Linked List",
+    name: "Remove 0 Sum Adj. Nodes From Linked List",
     description:
       "Given a linked list, delete consecutive nodes that sum up to 0 and return the resulting linked list.",
     difficulty: 4,

@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import AdminPropQuest from "./AdminPropQuest";
+import { getAllPropQuests } from "../../store";
 
 class AdminPropPanel extends Component {
+  componentDidMount() {
+    this.props.getAllPropQuests();
+  }
+
   render() {
     const { propose } = this.props;
 
@@ -22,4 +27,8 @@ const mapState = (state) => ({
   propose: state.proposeQuestions,
 });
 
-export default connect(mapState)(AdminPropPanel);
+const mapDispatch = (dispatch) => ({
+  getAllPropQuests: () => dispatch(getAllPropQuests()),
+});
+
+export default connect(mapState, mapDispatch)(AdminPropPanel);
