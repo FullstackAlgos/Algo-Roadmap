@@ -50,7 +50,7 @@ class AdminPropQuest extends Component {
 
   render() {
     const { q, tags } = this.props,
-      { name, tag, difficulty, description, user } = q;
+      { name, tag, difficulty, description, link, user } = q;
 
     return (
       <div className="adminSingleDiv">
@@ -83,6 +83,10 @@ class AdminPropQuest extends Component {
             Delete Question
           </button>
         </div>
+
+        <p className="adminPropQText">
+          <u>Link</u>: {link}
+        </p>
 
         <p className="adminPropQText">
           <u>Description</u>: {description}

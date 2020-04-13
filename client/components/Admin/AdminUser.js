@@ -81,28 +81,29 @@ class AdminUser extends Component {
               </h3>
 
               {showQuest
-                ? u.questions.map((q, i) => (
-                    <div key={i} className="adminUserQuestDiv">
-                      <h4 className="adminUserQuestText">
-                        {i + 1}. {q.name} (
-                        {tags.filter((t) => t.id === q.tagId)[0].name})
-                      </h4>
-                      <h4 className="adminUserQuestText">
-                        <u>Level</u>: {difficultMap[q.difficulty]}
-                      </h4>
-                      <h4 className="adminUserQuestText">
-                        <u>Action</u>:{" "}
-                        {u.likes
-                          .filter((q) => q.questionId === q.id)[0]
-                          .status.slice(0, 1)
-                          .toUpperCase() +
-                          u.likes
-                            .filter((q) => q.questionId === q.id)[0]
-                            .status.slice(1)}
-                        d
-                      </h4>
-                    </div>
-                  ))
+                ? u.likes.map((q, i) => {
+                    const { name, tagId, difficulty } = q.question;
+
+                    return (
+                      <div key={i} className="adminUserQuestDiv">
+                        <h4 className="adminUserQuestText">
+                          {i + 1}. {name} (
+                          {tags.filter((t) => t.id === tagId)[0].name})
+                        </h4>
+
+                        <h4 className="adminUserQuestText">
+                          <u>Level</u>: {difficultMap[difficulty]}
+                        </h4>
+
+                        <h4 className="adminUserQuestText">
+                          <u>Action</u>:{" "}
+                          {q.status.slice(0, 1).toUpperCase() +
+                            q.status.slice(1)}
+                          d
+                        </h4>
+                      </div>
+                    );
+                  })
                 : null}
             </div>
           </>

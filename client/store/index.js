@@ -209,11 +209,24 @@ export const deleteLike = (likeId, userId) => async (dispatch) => {
   try {
     await axios.delete(`/api/likes/delete/${likeId}`);
 
+    // UPDATE ALLLIKES STATE POST REMOVAL
     const allLikes = [...store.getState().allLikes].filter(
       (x) => x.id !== likeId
     );
     dispatch(getAllLikes(allLikes));
 
+    // UPDATE USER PROFILE FOR ALLUSERS WITH LIKE REMOVAL
+    const allUsers = [...store.getState().users];
+    allUsers.forEach((u, idx) => {
+      if (u.id === userId) {
+        const newUser = { ...u };
+        newUser.likes = newUser.likes.filter((x) => x.id !== likeId);
+        allUsers[idx] = newUser;
+      }
+    });
+    dispatch(getAllUsers(allUsers));
+
+    // UPDATE LIKE IF IMPACTED CURRENT USER
     const curUserId = { ...store.getState().user }.id;
     if (curUserId === userId) {
       const likes = [...store.getState().likes].filter((x) => x.id !== likeId);

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Question, Like } = require("../db/models");
+const { User, Like, Question } = require("../db/models");
 const { isAdmin, isLoggedIn } = require("./security");
 module.exports = router;
 
@@ -10,7 +10,7 @@ router.get("/me", (req, res) => {
 router.get("/all", isAdmin, async (req, res, next) => {
   try {
     const allUser = await User.findAll({
-      include: [{ model: Question }, { model: Like }],
+      include: [{ model: Like, include: [Question] }],
     });
     res.json(allUser);
   } catch (err) {

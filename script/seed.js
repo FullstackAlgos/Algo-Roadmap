@@ -6,12 +6,7 @@ const {
   Like,
   ProposeQuestion,
 } = require("../server/db/models");
-const {
-  userBulk,
-  likeBulk,
-  userQuestBulk,
-  propQuestBulk,
-} = require("./seedData");
+const { userBulk, likeBulk } = require("./seedData");
 
 const questionBulk = [
   // ------------------------- ARRAY (1) ---------------------------
@@ -1012,7 +1007,6 @@ async function seed() {
   if (userBulk && userBulk.length) {
     await User.bulkCreate(userBulk);
     await Like.bulkCreate(likeBulk);
-    await ProposeQuestion.bulkCreate(propQuestBulk);
   }
 
   console.log(`seeded successfully`);
