@@ -23,8 +23,6 @@ class AdminSidebar extends Component {
   }
 
   render() {
-    const { propose } = this.props;
-
     return (
       <div className="adminPanelSideBar">
         <NavLink
@@ -48,7 +46,7 @@ class AdminSidebar extends Component {
           className="linkText sideBarLink"
           activeClassName="selectedNavLink"
         >
-          Proposed Questions ({propose.length})
+          Proposed Questions ({this.props.propLen})
         </NavLink>
 
         <NavLink
@@ -64,7 +62,7 @@ class AdminSidebar extends Component {
 }
 
 const mapState = (state) => ({
-  propose: state.proposeQuestions,
+  propLen: state.proposeQuestions.length,
 });
 
 const mapDispatch = (dispatch) => ({
