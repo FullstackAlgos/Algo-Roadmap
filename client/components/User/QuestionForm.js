@@ -134,17 +134,13 @@ class QuestionForm extends Component {
   }
 }
 
-const mapState = (state) => {
-  return {
-    user: state.user,
-    tags: state.tags,
-  };
-};
+const mapState = (state) => ({
+  user: state.user,
+  tags: state.tags,
+});
 
-const mapDispatch = (dispatch) => {
-  return {
-    proposeQuest: (questObj) => dispatch(proposeQuest(questObj)),
-  };
-};
+const mapDispatch = (dispatch) => ({
+  proposeQuest: (questObj) => dispatch(proposeQuest(questObj)),
+});
 
 export default connect(mapState, mapDispatch)(QuestionForm);

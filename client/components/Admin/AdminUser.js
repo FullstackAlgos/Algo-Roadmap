@@ -64,11 +64,9 @@ class AdminUser extends Component {
   }
 }
 
-const mapDispatch = (dispatch) => {
-  return {
-    adminChange: (userId, update) => dispatch(adminChange(userId, update)),
-    deleteUser: (userId) => dispatch(deleteUser(userId)),
-  };
-};
+const mapDispatch = (dispatch) => ({
+  adminChange: (userId, update) => dispatch(adminChange(userId, update)),
+  deleteUser: (userId) => dispatch(deleteUser(userId)),
+});
 
 export default connect(null, mapDispatch)(AdminUser);

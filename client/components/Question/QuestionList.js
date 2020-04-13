@@ -106,21 +106,17 @@ class QuestionList extends Component {
   }
 }
 
-const mapState = (state) => {
-  return {
-    user: state.user,
-    questions: state.questions,
-    userQuestions: state.userQuestions,
-    tags: state.tags,
-  };
-};
+const mapState = (state) => ({
+  user: state.user,
+  questions: state.questions,
+  userQuestions: state.userQuestions,
+  tags: state.tags,
+});
 
-const mapDispatch = (dispatch) => {
-  return {
-    getAllQuestions: () => dispatch(getAllQuestions()),
-    getAllTags: () => dispatch(getAllTags()),
-    getUserLikes: (userId) => dispatch(getUserLikes(userId)),
-  };
-};
+const mapDispatch = (dispatch) => ({
+  getAllQuestions: () => dispatch(getAllQuestions()),
+  getAllTags: () => dispatch(getAllTags()),
+  getUserLikes: (userId) => dispatch(getUserLikes(userId)),
+});
 
 export default connect(mapState, mapDispatch)(QuestionList);

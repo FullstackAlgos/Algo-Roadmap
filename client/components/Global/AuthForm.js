@@ -86,30 +86,24 @@ class AuthForm extends Component {
   }
 }
 
-const mapLogin = (state) => {
-  return {
-    formName: "login",
-    displayName: "Login",
-    user: state.user,
-    error: state.user.error,
-  };
-};
+const mapLogin = (state) => ({
+  formName: "login",
+  displayName: "Login",
+  user: state.user,
+  error: state.user.error,
+});
 
-const mapSignup = (state) => {
-  return {
-    formName: "signup",
-    displayName: "Sign Up",
-    user: state.user,
-    error: state.user.error,
-  };
-};
+const mapSignup = (state) => ({
+  formName: "signup",
+  displayName: "Sign Up",
+  user: state.user,
+  error: state.user.error,
+});
 
-const mapDispatch = (dispatch) => {
-  return {
-    auth: (userObj) => dispatch(auth(userObj)),
-    removeUser: () => dispatch(removeUser()),
-  };
-};
+const mapDispatch = (dispatch) => ({
+  auth: (userObj) => dispatch(auth(userObj)),
+  removeUser: () => dispatch(removeUser()),
+});
 
 // ABLE TO CREATE BOTH LOGIN AND SIGNUP FUNCTION WITH SAME COMPONENT
 export const Login = withRouter(connect(mapLogin, mapDispatch)(AuthForm));

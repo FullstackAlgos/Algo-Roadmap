@@ -27,10 +27,8 @@ const RoadmapQuestion = ({ question, questionNum, switchUserActive }) => {
   );
 };
 
-const mapDispatch = (dispatch) => {
-  return {
-    switchUserActive: (qId, qName) => dispatch(switchUserActive(qId, qName)),
-  };
-};
+const mapDispatch = (dispatch) => ({
+  switchUserActive: (qId, qName) => dispatch(switchUserActive(qId, qName)),
+});
 
 export default connect(null, mapDispatch)(RoadmapQuestion);

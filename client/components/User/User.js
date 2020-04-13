@@ -60,19 +60,15 @@ class User extends Component {
   }
 }
 
-const mapState = (state) => {
-  return {
-    user: state.user,
-    questions: state.questions,
-    userQuestions: state.userQuestions,
-    tags: state.tags,
-  };
-};
+const mapState = (state) => ({
+  user: state.user,
+  questions: state.questions,
+  userQuestions: state.userQuestions,
+  tags: state.tags,
+});
 
-const mapDispatch = (dispatch) => {
-  return {
-    getUserQuestThunk: (userId) => dispatch(getUserQuestThunk(userId)),
-  };
-};
+const mapDispatch = (dispatch) => ({
+  getUserQuestThunk: (userId) => dispatch(getUserQuestThunk(userId)),
+});
 
 export default connect(mapState, mapDispatch)(User);

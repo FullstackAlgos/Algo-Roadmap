@@ -100,17 +100,13 @@ class Roadmap extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    questions: state.questions,
-    userQuestions: state.userQuestions,
-  };
-};
+const mapState = (state) => ({
+  questions: state.questions,
+  userQuestions: state.userQuestions,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    switchUserActive: () => dispatch(switchUserActive()),
-  };
-};
+const mapDispatch = (dispatch) => ({
+  switchUserActive: () => dispatch(switchUserActive()),
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Roadmap);
+export default connect(mapState, mapDispatch)(Roadmap);

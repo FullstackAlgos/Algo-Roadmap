@@ -57,16 +57,12 @@ const NavBar = ({ user, logout, location }) => {
   );
 };
 
-const mapState = (state) => {
-  return {
-    user: state.user,
-  };
-};
+const mapState = (state) => ({
+  user: state.user,
+});
 
-const mapDispatch = (dispatch) => {
-  return {
-    logout: () => dispatch(logout()),
-  };
-};
+const mapDispatch = (dispatch) => ({
+  logout: () => dispatch(logout()),
+});
 
 export default withRouter(connect(mapState, mapDispatch)(NavBar));

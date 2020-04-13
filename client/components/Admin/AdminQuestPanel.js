@@ -18,10 +18,8 @@ class AdminQuestPanel extends Component {
   }
 }
 
-const mapState = state => {
-  return {
-    questions: state.questions
-  };
-};
+const mapState = (state) => ({
+  questions: state.questions,
+});
 
 export default connect(mapState)(AdminQuestPanel);

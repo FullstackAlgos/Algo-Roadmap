@@ -24,7 +24,7 @@ class Routes extends Component {
         <Route
           exact
           path="/"
-          render={props => <HomePage {...props} formFlip={formFlip} />}
+          render={(props) => <HomePage {...props} formFlip={formFlip} />}
         />
 
         <Route
@@ -63,10 +63,8 @@ class Routes extends Component {
   }
 }
 
-const mapDispatch = dispatch => {
-  return {
-    me: () => dispatch(me())
-  };
-};
+const mapDispatch = (dispatch) => ({
+  me: () => dispatch(me()),
+});
 
 export default withRouter(connect(null, mapDispatch)(Routes));

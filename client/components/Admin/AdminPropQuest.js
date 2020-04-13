@@ -169,17 +169,13 @@ class AdminPropQuest extends Component {
   }
 }
 
-const mapState = (state) => {
-  return {
-    tags: state.tags,
-  };
-};
+const mapState = (state) => ({
+  tags: state.tags,
+});
 
-const mapDispatch = (dispatch) => {
-  return {
-    convertPropQuest: (questObj) => dispatch(convertPropQuest(questObj)),
-    deletePropQuest: (qId) => dispatch(deletePropQuest(qId)),
-  };
-};
+const mapDispatch = (dispatch) => ({
+  convertPropQuest: (questObj) => dispatch(convertPropQuest(questObj)),
+  deletePropQuest: (qId) => dispatch(deletePropQuest(qId)),
+});
 
 export default connect(mapState, mapDispatch)(AdminPropQuest);

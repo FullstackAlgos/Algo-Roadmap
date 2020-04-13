@@ -20,11 +20,9 @@ class AdminUserPanel extends Component {
   }
 }
 
-const mapState = state => {
-  return {
-    user: state.user,
-    users: state.users
-  };
-};
+const mapState = (state) => ({
+  user: state.user,
+  users: state.users,
+});
 
 export default connect(mapState)(AdminUserPanel);

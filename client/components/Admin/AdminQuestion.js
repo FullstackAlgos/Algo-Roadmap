@@ -163,17 +163,13 @@ class AdminQuestion extends Component {
   }
 }
 
-const mapState = (state) => {
-  return {
-    tags: state.tags,
-  };
-};
+const mapState = (state) => ({
+  tags: state.tags,
+});
 
-const mapDispatch = (dispatch) => {
-  return {
-    updateQuestion: (qObj) => dispatch(updateQuestion(qObj)),
-    deleteQuestion: (qId) => dispatch(deleteQuestion(qId)),
-  };
-};
+const mapDispatch = (dispatch) => ({
+  updateQuestion: (qObj) => dispatch(updateQuestion(qObj)),
+  deleteQuestion: (qId) => dispatch(deleteQuestion(qId)),
+});
 
 export default connect(mapState, mapDispatch)(AdminQuestion);
