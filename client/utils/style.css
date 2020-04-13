@@ -29,6 +29,7 @@ p {
 
 .linkText:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .gBtn {
@@ -40,6 +41,7 @@ p {
   border-style: solid;
   border-width: 2px;
   border-color: black;
+  cursor: pointer;
 }
 
 /* ----------------------- Z INDEX ----------------------- */
@@ -261,6 +263,7 @@ p {
 
 .userSignInLink:hover {
   color: blue;
+  cursor: pointer;
 }
 
 /* ----------------------- ROADMAP ----------------------- */
@@ -445,6 +448,7 @@ p {
 
 .qNameHovertrue:hover {
   color: blue;
+  cursor: pointer;
 }
 
 .questNameSymbol {
@@ -514,6 +518,7 @@ p {
 
 .tagHeader:hover {
   color: blue;
+  cursor: pointer;
 }
 
 /* ----------------------- QUESTION SURVEY ----------------------- */
@@ -698,6 +703,33 @@ p {
   margin-right: 25px;
 }
 
+.adminUserQuestFullDiv {
+  background-color: mediumaquamarine;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.adminUserQuestHeader {
+  margin-bottom: 10px;
+}
+
+.adminUserQuestHeader:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.adminUserQuestDiv {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.adminUserQuestText {
+  font-weight: 500;
+  margin-right: 30px;
+}
+
 /* ----------------------- ADMIN TAG ----------------------- */
 .adminTagAddDiv {
   background-color: lightpink;
@@ -828,6 +860,7 @@ p {
 
 .helpCloseX:hover {
   color: red;
+  cursor: pointer;
 }
 
 .helpTextHead {
