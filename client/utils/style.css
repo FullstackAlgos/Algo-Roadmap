@@ -577,7 +577,7 @@ p {
   background-color: lightgray;
   padding: 15px;
   padding-top: 35px;
-  width: 220px;
+  width: 235px;
   min-height: 100vh;
   border-right: 3px solid black;
 }
@@ -592,7 +592,7 @@ p {
   min-height: 100vh;
   width: 100vw;
   padding: 15px;
-  padding-left: 265px;
+  padding-left: 285px;
 }
 
 .adminSingleDiv {
