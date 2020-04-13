@@ -716,7 +716,7 @@ p {
   margin-bottom: 10px;
 }
 
-.adminUserQuestHeader:hover {
+.aUQH:hover {
   color: blue;
   cursor: pointer;
 }

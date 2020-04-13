@@ -76,35 +76,43 @@ class AdminUser extends Component {
             </div>
 
             <div className="adminUserQuestFullDiv">
-              <h3 className="adminUserQuestHeader" onClick={this.show}>
-                {showQuest ? "Hide" : "Show"} Question Detail
-              </h3>
+              {!u.likes.length ? (
+                <h3 className="adminUserQuestHeader">
+                  Currently No Completed Questions
+                </h3>
+              ) : (
+                <>
+                  <h3 className="adminUserQuestHeader aUQH" onClick={this.show}>
+                    {showQuest ? "Hide" : "Show"} Question Detail
+                  </h3>
 
-              {showQuest
-                ? u.likes.map((q, i) => {
-                    const { name, tagId, difficulty } = q.question;
+                  {showQuest
+                    ? u.likes.map((q, i) => {
+                        const { name, tagId, difficulty } = q.question;
 
-                    return (
-                      <div key={i} className="adminUserQuestDiv">
-                        <h4 className="adminUserQuestText">
-                          {i + 1}. {name} (
-                          {tags.filter((t) => t.id === tagId)[0].name})
-                        </h4>
+                        return (
+                          <div key={i} className="adminUserQuestDiv">
+                            <h4 className="adminUserQuestText">
+                              {i + 1}. {name} (
+                              {tags.filter((t) => t.id === tagId)[0].name})
+                            </h4>
 
-                        <h4 className="adminUserQuestText">
-                          <u>Level</u>: {difficultMap[difficulty]}
-                        </h4>
+                            <h4 className="adminUserQuestText">
+                              <u>Level</u>: {difficultMap[difficulty]}
+                            </h4>
 
-                        <h4 className="adminUserQuestText">
-                          <u>Action</u>:{" "}
-                          {q.status.slice(0, 1).toUpperCase() +
-                            q.status.slice(1)}
-                          d
-                        </h4>
-                      </div>
-                    );
-                  })
-                : null}
+                            <h4 className="adminUserQuestText">
+                              <u>Action</u>:{" "}
+                              {q.status.slice(0, 1).toUpperCase() +
+                                q.status.slice(1)}
+                              d
+                            </h4>
+                          </div>
+                        );
+                      })
+                    : null}
+                </>
+              )}
             </div>
           </>
         ) : (
