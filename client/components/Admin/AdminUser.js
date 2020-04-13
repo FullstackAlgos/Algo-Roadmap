@@ -71,7 +71,7 @@ class AdminUser extends Component {
               </p>
 
               <p className="adminUserText">
-                <u>Completed Questions</u>: {u.questions.length}
+                <u>Completed Questions</u>: {u.likes.length}
               </p>
             </div>
 

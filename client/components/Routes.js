@@ -10,6 +10,7 @@ import AdminPropPanel from "./Admin/AdminPropPanel";
 import AdminQuestPanel from "./Admin/AdminQuestPanel";
 import AdminTagPanel from "./Admin/AdminTagPanel";
 import AdminUserPanel from "./Admin/AdminUserPanel";
+import AdminLikePanel from "./Admin/AdminLikePanel";
 
 class Routes extends Component {
   componentDidMount() {
@@ -54,6 +55,7 @@ class Routes extends Component {
                 path={`${url}/Questions`}
                 component={AdminQuestPanel}
               />
+              <Route exact path={`${url}/Likes`} component={AdminLikePanel} />
               <Route exact path={`${url}/Tags`} component={AdminTagPanel} />
             </>
           )}

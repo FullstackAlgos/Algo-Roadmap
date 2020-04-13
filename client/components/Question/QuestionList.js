@@ -39,16 +39,16 @@ class QuestionList extends Component {
     else this.setState({ activeQ: activeName });
   };
 
-  doneQuests = (userQuestions) => {
-    return userQuestions.reduce((a, b) => {
-      a[b.id] = true;
+  doneQuests = (userQ) => {
+    return userQ.reduce((a, b) => {
+      a[b.question.id] = true;
       return a;
     }, {});
   };
 
   questionTag = (questions, tag, completed) => {
     if (completed) {
-      const output = questions.filter((x) => x.tagId === tag.id);
+      const output = questions.filter((x) => x.question.tagId === tag.id);
       return output.length;
     } else {
       const output = questions.filter((x) => x.tag.id === tag.id);
@@ -57,9 +57,9 @@ class QuestionList extends Component {
   };
 
   render() {
-    const { questions, userQuestions, tags } = this.props,
+    const { questions, likes, tags } = this.props,
       sorted = [...tags].sort((a, b) => a.ranking - b.ranking),
-      doneIds = this.doneQuests(userQuestions);
+      doneIds = this.doneQuests(likes);
 
     return (
       <div className="probListFullDiv mainDiv">
@@ -71,7 +71,7 @@ class QuestionList extends Component {
                 allQuestLen = curateQuestions.filter(
                   (x) => x.name !== "Currently Not Available"
                 ).length,
-                userTagQuestions = this.questionTag(userQuestions, tag, true);
+                userTagQuestions = this.questionTag(likes, tag, true);
 
               return (
                 <div key={idx} className="tagFullDiv">
@@ -109,7 +109,7 @@ class QuestionList extends Component {
 const mapState = (state) => ({
   user: state.user,
   questions: state.questions,
-  userQuestions: state.userQuestions,
+  likes: state.likes,
   tags: state.tags,
 });
 

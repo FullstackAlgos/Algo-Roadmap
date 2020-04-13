@@ -777,6 +777,30 @@ p {
   margin-bottom: 5px;
 }
 
+/* ----------------------- ADMIN LIKE ----------------------- */
+.adminLikeHeader {
+  margin-bottom: 10px;
+}
+
+.adminLikeStatDiv {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.adminLikeStatText {
+  font-weight: 500;
+  margin-right: 20px;
+}
+
+.adminLikeStatBtn {
+  height: 22px;
+  width: 75;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
 /* ----------------------- CHARTS ----------------------- */
 .allQuestPieDiv {
   background-color: rgba(235, 235, 235, 0.8);

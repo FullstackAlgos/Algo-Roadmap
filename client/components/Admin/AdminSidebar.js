@@ -6,6 +6,7 @@ import {
   getAllTags,
   getAllPropQuests,
   allUsers,
+  getEveryLike,
 } from "../../store";
 
 class AdminSidebar extends Component {
@@ -15,11 +16,13 @@ class AdminSidebar extends Component {
       getAllTags,
       getAllPropQuests,
       allUsers,
+      getEveryLike,
     } = this.props;
     allUsers();
     getAllQuestions();
     getAllPropQuests();
     getAllTags();
+    getEveryLike();
   }
 
   render() {
@@ -78,6 +81,7 @@ const mapDispatch = (dispatch) => ({
   getAllQuestions: () => dispatch(getAllQuestions()),
   getAllPropQuests: () => dispatch(getAllPropQuests()),
   getAllTags: () => dispatch(getAllTags()),
+  getEveryLike: () => dispatch(getEveryLike()),
 });
 
 export default connect(mapState, mapDispatch)(AdminSidebar);

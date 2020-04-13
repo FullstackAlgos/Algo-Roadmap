@@ -14,6 +14,8 @@ Question.belongsToMany(User, { through: UserQuestion });
 
 User.hasMany(Like);
 Question.hasMany(Like);
+Like.belongsTo(User);
+Like.belongsTo(Question);
 
 module.exports = {
   Question,
@@ -21,5 +23,5 @@ module.exports = {
   User,
   UserQuestion,
   Like,
-  ProposeQuestion
+  ProposeQuestion,
 };

@@ -15,10 +15,9 @@ class Roadmap extends Component {
 
   formatQualifyingQs = (questions, userQs) => {
     const doneQs = new Set();
-    userQs.forEach((q) => doneQs.add(q.id));
+    userQs.forEach((q) => doneQs.add(q.question.id));
 
     const output = questions.filter((q) => !doneQs.has(q.id));
-
     output.sort((a, b) => {
       if (a.tag.ranking === b.tag.ranking) {
         return a.difficulty - b.difficulty;
@@ -38,13 +37,9 @@ class Roadmap extends Component {
   };
 
   componentDidUpdate() {
-    const { questions, userQuestions } = this.props;
-    if (
-      this.state.activeQ === "--" &&
-      questions.length &&
-      userQuestions.length
-    ) {
-      const input = this.formatQualifyingQs(questions, userQuestions);
+    const { questions, likes } = this.props;
+    if (this.state.activeQ === "--" && questions.length && likes.length) {
+      const input = this.formatQualifyingQs(questions, likes);
       this.setState({
         activeQ: input[0].name,
       });
@@ -60,8 +55,8 @@ class Roadmap extends Component {
   };
 
   render() {
-    const { questions, userQuestions } = this.props,
-      orderedQs = this.formatQualifyingQs(questions, userQuestions),
+    const { questions, likes } = this.props,
+      orderedQs = this.formatQualifyingQs(questions, likes),
       topics = this.getTopics(orderedQs);
 
     return (
@@ -102,7 +97,7 @@ class Roadmap extends Component {
 
 const mapState = (state) => ({
   questions: state.questions,
-  userQuestions: state.userQuestions,
+  likes: state.likes,
 });
 
 const mapDispatch = (dispatch) => ({
