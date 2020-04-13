@@ -5,7 +5,7 @@ import {
   getAllQuestions,
   getAllTags,
   getAllPropQuests,
-  allUsers
+  allUsers,
 } from "../../store";
 
 class AdminSidebar extends Component {
@@ -14,7 +14,7 @@ class AdminSidebar extends Component {
       getAllQuestions,
       getAllTags,
       getAllPropQuests,
-      allUsers
+      allUsers,
     } = this.props;
     allUsers();
     getAllQuestions();
@@ -23,6 +23,8 @@ class AdminSidebar extends Component {
   }
 
   render() {
+    const { propose } = this.props;
+
     return (
       <div className="adminPanelSideBar">
         <NavLink
@@ -46,7 +48,7 @@ class AdminSidebar extends Component {
           className="linkText sideBarLink"
           activeClassName="selectedNavLink"
         >
-          Proposed Questions
+          Proposed Questions ({propose.length})
         </NavLink>
 
         <NavLink
@@ -61,13 +63,15 @@ class AdminSidebar extends Component {
   }
 }
 
-const mapDispatch = dispatch => {
-  return {
-    allUsers: () => dispatch(allUsers()),
-    getAllQuestions: () => dispatch(getAllQuestions()),
-    getAllPropQuests: () => dispatch(getAllPropQuests()),
-    getAllTags: () => dispatch(getAllTags())
-  };
-};
+const mapState = (state) => ({
+  propose: state.proposeQuestions,
+});
 
-export default connect(null, mapDispatch)(AdminSidebar);
+const mapDispatch = (dispatch) => ({
+  allUsers: () => dispatch(allUsers()),
+  getAllQuestions: () => dispatch(getAllQuestions()),
+  getAllPropQuests: () => dispatch(getAllPropQuests()),
+  getAllTags: () => dispatch(getAllTags()),
+});
+
+export default connect(mapState, mapDispatch)(AdminSidebar);
