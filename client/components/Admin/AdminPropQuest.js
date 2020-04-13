@@ -90,7 +90,7 @@ class AdminPropQuest extends Component {
 
         <div className="adminPropQRow">
           <p className="adminPropQText">
-            <u>Proposed By</u>: {user.name}
+            <u>Proposed By</u>: {user.name} ({user.email})
           </p>
           <p className="adminPropQText">
             <u>Difficulty</u>: {difficulty} ({difficultMap[difficulty]})

@@ -50,6 +50,14 @@ class AdminSidebar extends Component {
         </NavLink>
 
         <NavLink
+          to="/Admin/Likes"
+          className="linkText sideBarLink"
+          activeClassName="selectedNavLink"
+        >
+          Likes
+        </NavLink>
+
+        <NavLink
           to="/Admin/Tags"
           className="linkText sideBarLink"
           activeClassName="selectedNavLink"

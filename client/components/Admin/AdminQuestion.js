@@ -62,7 +62,7 @@ class AdminQuestion extends Component {
       <div className="adminSingleDiv">
         <div className="adminQuestRow1">
           <h3 className="adminQuestName">
-            {q.name}&nbsp;&nbsp;&nbsp;({q.tag.name})
+            {q.id}. {q.name}&nbsp;&nbsp;&nbsp;({q.tag.name})
           </h3>
 
           <button

@@ -26,9 +26,8 @@ class AdminUser extends Component {
   };
 
   render() {
-    const { u, self, tags } = this.props,
+    const { u, self, tags, idx } = this.props,
       { showQuest } = this.state;
-    console.log(u);
 
     return (
       <div className={`adminSingleDiv adminSingle${self}`}>
@@ -36,7 +35,7 @@ class AdminUser extends Component {
           <>
             <div className="adminUserRow">
               <h3 className="adminQuestName">
-                {u.name} ({u.email})
+                {idx}. {u.name} ({u.email})
               </h3>
 
               {u.isAdmin ? (

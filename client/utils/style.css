@@ -604,6 +604,7 @@ p {
   background-color: lightgray;
   border-radius: 5px;
   padding: 10px;
+  padding-right: 20px;
   margin-bottom: 15px;
   border: 1px solid black;
 }
@@ -704,8 +705,8 @@ p {
 }
 
 .adminUserQuestFullDiv {
-  background-color: mediumaquamarine;
-  margin-top: 10px;
+  background-color: rgb(166, 224, 205);
+  margin-top: 15px;
   padding: 10px;
   border: 1px solid black;
   border-radius: 5px;

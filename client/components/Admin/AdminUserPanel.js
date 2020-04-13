@@ -5,6 +5,7 @@ import AdminUser from "./AdminUser";
 class AdminUserPanel extends Component {
   render() {
     const { users, user } = this.props;
+    let count = 1;
 
     return (
       <div className="adminContentDiv">
@@ -14,11 +15,14 @@ class AdminUserPanel extends Component {
               <AdminUser
                 u={users.filter((x) => x.id === user.id)[0]}
                 self={true}
+                idx={1}
               />
 
               {users.map((u, i) => {
-                if (u.id !== user.id)
-                  return <AdminUser key={i} u={u} self={false} />;
+                if (u.id !== user.id) {
+                  count++;
+                  return <AdminUser key={i} u={u} self={false} idx={count} />;
+                }
               })}
             </>
           ) : null}
