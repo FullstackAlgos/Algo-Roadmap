@@ -14,10 +14,11 @@ class AdminUser extends Component {
   };
 
   render() {
-    const { u } = this.props;
+    const { u, self } = this.props;
+    console.log(u);
 
     return (
-      <div className="adminSingleDiv">
+      <div className={`adminSingleDiv adminSingle${self}`}>
         <div className="adminUserRow">
           <h3 className="adminQuestName">
             {u.name} ({u.email})

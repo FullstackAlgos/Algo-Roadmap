@@ -9,11 +9,19 @@ class AdminUserPanel extends Component {
     return (
       <div className="adminContentDiv">
         <div className="adminPropPanelDiv">
-          {users.length
-            ? users.map((u, i) => {
-                if (u.id !== user.id) return <AdminUser key={i} u={u} />;
-              })
-            : null}
+          {users.length ? (
+            <>
+              <AdminUser
+                u={users.filter((x) => x.id === user.id)[0]}
+                self={true}
+              />
+
+              {users.map((u, i) => {
+                if (u.id !== user.id)
+                  return <AdminUser key={i} u={u} self={false} />;
+              })}
+            </>
+          ) : null}
         </div>
       </div>
     );

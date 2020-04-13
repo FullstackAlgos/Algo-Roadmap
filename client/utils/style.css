@@ -603,6 +603,10 @@ p {
   border: 1px solid black;
 }
 
+.adminSingletrue {
+  background-color: rgb(160, 217, 252);
+}
+
 /* ----------------------- ADMIN QUESTION ----------------------- */
 .adminQuestRow1 {
   display: flex;
