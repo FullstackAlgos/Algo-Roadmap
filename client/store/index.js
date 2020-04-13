@@ -13,6 +13,7 @@ const initialState = {
   userQuestions: [],
   tags: [],
   likes: [],
+  allLikes: [],
   proposeQuestions: [],
 };
 
@@ -25,6 +26,7 @@ const ADD_QUESTION = "ADD_QUESTION";
 const GET_USER_QUESTIONS = "GET_USER_QUESTIONS";
 const GET_TAGS = "GET_TAGS";
 const GET_LIKES = "GET_LIKES";
+const GET_ALL_LIKES = "GET_ALL_LIKES";
 const ADD_LIKES = "ADD_LIKES";
 const GET_PROP_QUESTS = "GET_PROP_QUESTS";
 const ADD_PROP_QUEST = "ADD_PROP_QUEST";
@@ -35,6 +37,7 @@ export const getAllUsers = (users) => ({ type: GET_ALL_USERS, users });
 export const removeUser = () => ({ type: REMOVE_USER });
 export const getTags = (tags) => ({ type: GET_TAGS, tags });
 export const getLikes = (likes) => ({ type: GET_LIKES, likes });
+export const getAllLikes = (allLikes) => ({ type: GET_ALL_LIKES, allLikes });
 export const addLike = (like) => ({ type: ADD_LIKES, like });
 export const getQuestions = (questions) => ({
   type: GET_QUESTIONS,
@@ -375,6 +378,8 @@ const reducer = (state = initialState, action) => {
     // ------- LIKES -------
     case GET_LIKES:
       return { ...state, likes: action.likes };
+    case GET_ALL_LIKES:
+      return { ...state, allLikes: action.allLikes };
     case ADD_LIKES:
       return { ...state, likes: [...state.likes, action.like] };
     // ------- PROPOSE QUESTIONS -------
