@@ -1,22 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getUserQuestThunk } from "../../store";
 import AllQuestPie from "../Chart/AllQuestPie";
 import TagBar from "../Chart/TagBar";
 
 class User extends Component {
-  componentDidMount() {
-    const { getUserQuestThunk, user } = this.props;
-    if (user && user.id) getUserQuestThunk(user.id);
-  }
-
-  componentDidUpdate(prevProps) {
-    const { getUserQuestThunk, user } = this.props;
-    if (user.id && user.id !== prevProps.user.id) getUserQuestThunk(user.id);
-  }
+  addQuest = () => {
+    this.props.formFlip();
+    window.scrollTo(0, 0);
+  };
 
   render() {
-    const { user, questions, userQuestions, formFlip, tags } = this.props;
+    const { user, questions, likes, tags } = this.props;
 
     return (
       <div className="userFullDiv mainDiv">
@@ -31,17 +25,14 @@ class User extends Component {
                 !
               </h2>
 
-              <AllQuestPie
-                userLen={userQuestions.length}
-                questLen={questions.length}
-              />
+              <AllQuestPie userLen={likes.length} questLen={questions.length} />
 
-              <TagBar userQ={userQuestions} allQ={questions} tags={tags} />
+              <TagBar userQ={likes} allQ={questions} tags={tags} />
 
               <button
                 type="button"
                 className="questionAddBtn gBtn"
-                onClick={formFlip}
+                onClick={this.addQuest}
               >
                 Suggest New Question
               </button>
@@ -60,19 +51,11 @@ class User extends Component {
   }
 }
 
-const mapState = (state) => {
-  return {
-    user: state.user,
-    questions: state.questions,
-    userQuestions: state.userQuestions,
-    tags: state.tags,
-  };
-};
+const mapState = (state) => ({
+  user: state.user,
+  questions: state.questions,
+  likes: state.likes,
+  tags: state.tags,
+});
 
-const mapDispatch = (dispatch) => {
-  return {
-    getUserQuestThunk: (userId) => dispatch(getUserQuestThunk(userId)),
-  };
-};
-
-export default connect(mapState, mapDispatch)(User);
+export default connect(mapState)(User);

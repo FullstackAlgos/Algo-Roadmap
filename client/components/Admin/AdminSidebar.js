@@ -5,7 +5,8 @@ import {
   getAllQuestions,
   getAllTags,
   getAllPropQuests,
-  allUsers
+  allUsers,
+  getEveryLike,
 } from "../../store";
 
 class AdminSidebar extends Component {
@@ -14,12 +15,14 @@ class AdminSidebar extends Component {
       getAllQuestions,
       getAllTags,
       getAllPropQuests,
-      allUsers
+      allUsers,
+      getEveryLike,
     } = this.props;
     allUsers();
     getAllQuestions();
     getAllPropQuests();
     getAllTags();
+    getEveryLike();
   }
 
   render() {
@@ -46,7 +49,15 @@ class AdminSidebar extends Component {
           className="linkText sideBarLink"
           activeClassName="selectedNavLink"
         >
-          Proposed Questions
+          Proposed Questions ({this.props.propLen})
+        </NavLink>
+
+        <NavLink
+          to="/Admin/Likes"
+          className="linkText sideBarLink"
+          activeClassName="selectedNavLink"
+        >
+          Likes
         </NavLink>
 
         <NavLink
@@ -61,13 +72,16 @@ class AdminSidebar extends Component {
   }
 }
 
-const mapDispatch = dispatch => {
-  return {
-    allUsers: () => dispatch(allUsers()),
-    getAllQuestions: () => dispatch(getAllQuestions()),
-    getAllPropQuests: () => dispatch(getAllPropQuests()),
-    getAllTags: () => dispatch(getAllTags())
-  };
-};
+const mapState = (state) => ({
+  propLen: state.proposeQuestions.length,
+});
 
-export default connect(null, mapDispatch)(AdminSidebar);
+const mapDispatch = (dispatch) => ({
+  allUsers: () => dispatch(allUsers()),
+  getAllQuestions: () => dispatch(getAllQuestions()),
+  getAllPropQuests: () => dispatch(getAllPropQuests()),
+  getAllTags: () => dispatch(getAllTags()),
+  getEveryLike: () => dispatch(getEveryLike()),
+});
+
+export default connect(mapState, mapDispatch)(AdminSidebar);

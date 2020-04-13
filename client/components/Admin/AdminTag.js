@@ -111,10 +111,8 @@ class AdminTag extends Component {
   }
 }
 
-const mapDispatch = (dispatch) => {
-  return {
-    changeTag: (tagName) => dispatch(changeTag(tagName)),
-  };
-};
+const mapDispatch = (dispatch) => ({
+  changeTag: (tagName) => dispatch(changeTag(tagName)),
+});
 
 export default connect(null, mapDispatch)(AdminTag);

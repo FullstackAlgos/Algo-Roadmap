@@ -39,8 +39,6 @@ class App extends Component {
   }
 }
 
-const mapState = (state) => {
-  return { user: state.user };
-};
+const mapState = (state) => ({ user: state.user });
 
 export default connect(mapState)(App);

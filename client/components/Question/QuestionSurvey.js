@@ -127,16 +127,12 @@ class QuestionSurvey extends Component {
   }
 }
 
-const mapState = (state) => {
-  return { user: state.user, likes: state.likes };
-};
+const mapState = (state) => ({ user: state.user, likes: state.likes });
 
-const mapDispatch = (dispatch) => {
-  return {
-    switchUserActive: () => dispatch(switchUserActive()),
-    newLike: (userId, qId, status, update) =>
-      dispatch(newLike(userId, qId, status, update)),
-  };
-};
+const mapDispatch = (dispatch) => ({
+  switchUserActive: () => dispatch(switchUserActive()),
+  newLike: (userId, qId, status, update) =>
+    dispatch(newLike(userId, qId, status, update)),
+});
 
 export default connect(mapState, mapDispatch)(QuestionSurvey);

@@ -18,10 +18,8 @@ class AdminPropPanel extends Component {
   }
 }
 
-const mapState = state => {
-  return {
-    propose: state.proposeQuestions
-  };
-};
+const mapState = (state) => ({
+  propose: state.proposeQuestions,
+});
 
 export default connect(mapState)(AdminPropPanel);

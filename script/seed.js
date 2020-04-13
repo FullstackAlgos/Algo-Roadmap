@@ -3,16 +3,10 @@ const {
   Question,
   User,
   Tag,
-  UserQuestion,
   Like,
   ProposeQuestion,
 } = require("../server/db/models");
-const {
-  userBulk,
-  likeBulk,
-  userQuestBulk,
-  propQuestBulk,
-} = require("./seedData");
+const { userBulk, likeBulk } = require("./seedData");
 
 const questionBulk = [
   // ------------------------- ARRAY (1) ---------------------------
@@ -316,17 +310,20 @@ const questionBulk = [
   },
   {
     name: "Flatten Multilevel Doubly Linked List",
-    description: "Given a doubly linked list that has an additional 'child' pointer that may point to another doubly linked list, return a flattened version of the list.",
-    link: "https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/",
+    description:
+      "Given a doubly linked list that has an additional 'child' pointer that may point to another doubly linked list, return a flattened version of the list.",
+    link:
+      "https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/",
     tagId: 4,
-    difficulty: 4
+    difficulty: 4,
   },
   {
     name: "Odd Even Linked List",
-    description: "Given a singly linked list, move all the even 'indexed' nodes to the end and all of the 'odd' indexed nodes to the front of the linked list and return that new list",
+    description:
+      "Given a singly linked list, move all the even 'indexed' nodes to the end and all of the 'odd' indexed nodes to the front of the linked list and return that new list",
     link: "https://leetcode.com/problems/odd-even-linked-list/",
     tagId: 4,
-    difficulty: 3
+    difficulty: 3,
   },
   {
     name: "Merge Two Sorted Lists",
@@ -361,24 +358,28 @@ const questionBulk = [
   },
   {
     name: "Remove Zero Sum Consecutive Nodes From Linked List",
-    description: "Given a linked list, delete consecutive nodes that sum up to 0 and return the resulting linked list",
+    description:
+      "Given a linked list, delete consecutive nodes that sum up to 0 and return the resulting linked list",
     difficulty: 4,
     tagId: 4,
-    link: "https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/"
+    link:
+      "https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/",
   },
   {
     name: "Linked List Cycle",
-    description: "Given a linked list that may or may not contain a cycle, return whether or not the list contains a cycle.",
+    description:
+      "Given a linked list that may or may not contain a cycle, return whether or not the list contains a cycle.",
     link: "https://leetcode.com/problems/linked-list-cycle/",
     difficulty: 2,
-    tagId: 4
+    tagId: 4,
   },
   {
     name: "Next Greater Node In Linked List",
-    description: "Given a linked list with nodes that have values of positive integers, return an array containing the value of the next greater node",
+    description:
+      "Given a linked list with nodes that have values of positive integers, return an array containing the value of the next greater node",
     difficulty: 3,
     link: "https://leetcode.com/problems/next-greater-node-in-linked-list/",
-    tagId: 4
+    tagId: 4,
   },
   // ---------------------------- TREE (5) ----------------------------
   {
@@ -512,10 +513,11 @@ const questionBulk = [
   },
   {
     name: "Longest Increasing Path In Matrix",
-    description: "Given a matrix of integers, return the length of the longest strictly increasing path in the matrix. Paths must not include the same element twice and can only include immediately adjacent (not diagonally adjacent) elements.",
+    description:
+      "Given a matrix of integers, return the length of the longest strictly increasing path in the matrix. Paths must not include the same element twice and can only include immediately adjacent (not diagonally adjacent) elements.",
     difficulty: 4,
     link: "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
-    tagId: 6
+    tagId: 6,
   },
   // ------------------------- STACKS (7) -------------------------
   {
@@ -594,24 +596,27 @@ const questionBulk = [
   },
   {
     name: "01 Matrix",
-    description: "Given a matrix of 1s and 0s, find the distance of the nearest 0 for each cell and return the resulting matrix",
+    description:
+      "Given a matrix of 1s and 0s, find the distance of the nearest 0 for each cell and return the resulting matrix",
     difficulty: 3,
     link: "https://leetcode.com/problems/01-matrix/",
-    tagId: 8
+    tagId: 8,
   },
   {
     name: "Rotting Oranges",
-    description: "Given a matrix of 0s representing empty spaces, 1s representing fresh oranges, or 2s representing rotting oranges, return the number of days until no cells have fresh oranges. Each day, fresh oranges next to adjacent oranges become rotten.",
+    description:
+      "Given a matrix of 0s representing empty spaces, 1s representing fresh oranges, or 2s representing rotting oranges, return the number of days until no cells have fresh oranges. Each day, fresh oranges next to adjacent oranges become rotten.",
     link: "https://leetcode.com/problems/rotting-oranges/",
     tagId: 8,
-    difficulty: 3
+    difficulty: 3,
   },
   {
     name: "Open The Lock",
-    description: "Given a lock with 4 circular wheels with single digit numbers on the wheels (starting at position '0000'), a list of dead-end lock positions, and a target lock position, return the minimum number of wheel turns necessary to reach the target position.",
+    description:
+      "Given a lock with 4 circular wheels with single digit numbers on the wheels (starting at position '0000'), a list of dead-end lock positions, and a target lock position, return the minimum number of wheel turns necessary to reach the target position.",
     link: "https://leetcode.com/problems/open-the-lock/",
     tagId: 8,
-    difficulty: 4
+    difficulty: 4,
   },
   // ------------------ RECURSION / BACKTRACKING (9) ------------------
   {
@@ -810,17 +815,19 @@ const questionBulk = [
   },
   {
     name: "Longest Increasing Subsequence",
-    description: "Given an array of integers, return the length of the longest increasing subsequence in the array. In a subsequence, each element in the subsequence should come strictly after the previous element in the subsequence.",
+    description:
+      "Given an array of integers, return the length of the longest increasing subsequence in the array. In a subsequence, each element in the subsequence should come strictly after the previous element in the subsequence.",
     link: "https://leetcode.com/problems/longest-increasing-subsequence/",
     difficulty: 3,
-    tagId: 10
+    tagId: 10,
   },
   {
     name: "Matrix Block Sum",
-    description: "Given a matrix and an integer K, return a matrix where each cell in that matrix contains the value of the sum of surrounding elements in a square with size proportional to K",
+    description:
+      "Given a matrix and an integer K, return a matrix where each cell in that matrix contains the value of the sum of surrounding elements in a square with size proportional to K",
     link: "https://leetcode.com/problems/matrix-block-sum/",
     difficulty: 3,
-    tagId: 10
+    tagId: 10,
   },
   // -------------------------- HEAPS (11) --------------------------
   {
@@ -842,17 +849,19 @@ const questionBulk = [
   },
   {
     name: "Top K Frequent Elements",
-    description: "Given a list of integers and an integer K, return the top K most frequent elements.",
+    description:
+      "Given a list of integers and an integer K, return the top K most frequent elements.",
     difficulty: 3,
     link: "https://leetcode.com/problems/top-k-frequent-elements/",
-    tagId: 11
+    tagId: 11,
   },
   {
     name: "Find Median From Data Stream",
-    description: "Given a stream of data (you get the whole set of data with each successive call of the function you write), return the median of all the elements after each call",
+    description:
+      "Given a stream of data (you get the whole set of data with each successive call of the function you write), return the median of all the elements after each call",
     difficulty: 5,
     link: "https://leetcode.com/problems/find-median-from-data-stream/",
-    tagId: 11
+    tagId: 11,
   },
   // --------------------------- GRAPHS (12) ---------------------------
   {
@@ -890,17 +899,19 @@ const questionBulk = [
   },
   {
     name: "Evaluate Division",
-    description: "Given a list of equations with answers and a list of equations without answers, use the equations with answers to return an array of answers to the given equations without answers.",
+    description:
+      "Given a list of equations with answers and a list of equations without answers, use the equations with answers to return an array of answers to the given equations without answers.",
     difficulty: 4,
     link: "https://leetcode.com/problems/evaluate-division/",
-    tagId: 12
+    tagId: 12,
   },
   {
     name: "Course Schedule",
-    description: "Given a list of courses and prerequisites, return whether or not it is possible to take all the courses. You must take all of a course's prerequisites before you can take the course itself.",
+    description:
+      "Given a list of courses and prerequisites, return whether or not it is possible to take all the courses. You must take all of a course's prerequisites before you can take the course itself.",
     difficulty: 4,
     link: "https://leetcode.com/problems/course-schedule/",
-    tagId: 12
+    tagId: 12,
   },
   // ---------------------- BIT MANIPULATION (13) ----------------------
   {
@@ -995,9 +1006,7 @@ async function seed() {
 
   if (userBulk && userBulk.length) {
     await User.bulkCreate(userBulk);
-    await UserQuestion.bulkCreate(userQuestBulk);
     await Like.bulkCreate(likeBulk);
-    await ProposeQuestion.bulkCreate(propQuestBulk);
   }
 
   console.log(`seeded successfully`);

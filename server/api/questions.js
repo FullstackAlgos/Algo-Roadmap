@@ -43,7 +43,11 @@ router.put("/", isAdmin, async (req, res, next) => {
       },
       { where: { id } }
     );
-    res.sendStatus(205);
+
+    const allQuestions = await Question.findAll({
+      include: [{ model: Tag }, { model: Like }],
+    });
+    res.status(205).json(allQuestions);
   } catch (err) {
     next(err);
   }

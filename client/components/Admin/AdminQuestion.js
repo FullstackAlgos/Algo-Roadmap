@@ -62,7 +62,7 @@ class AdminQuestion extends Component {
       <div className="adminSingleDiv">
         <div className="adminQuestRow1">
           <h3 className="adminQuestName">
-            {q.name}&nbsp;&nbsp;&nbsp;({q.tag.name})
+            {q.id}. {q.name}&nbsp;&nbsp;&nbsp;({q.tag.name})
           </h3>
 
           <button
@@ -163,17 +163,13 @@ class AdminQuestion extends Component {
   }
 }
 
-const mapState = (state) => {
-  return {
-    tags: state.tags,
-  };
-};
+const mapState = (state) => ({
+  tags: state.tags,
+});
 
-const mapDispatch = (dispatch) => {
-  return {
-    updateQuestion: (qObj) => dispatch(updateQuestion(qObj)),
-    deleteQuestion: (qId) => dispatch(deleteQuestion(qId)),
-  };
-};
+const mapDispatch = (dispatch) => ({
+  updateQuestion: (qObj) => dispatch(updateQuestion(qObj)),
+  deleteQuestion: (qId) => dispatch(deleteQuestion(qId)),
+});
 
 export default connect(mapState, mapDispatch)(AdminQuestion);

@@ -112,17 +112,13 @@ class AdminTagPanel extends Component {
   }
 }
 
-const mapState = (state) => {
-  return {
-    questions: state.questions,
-    tags: state.tags,
-  };
-};
+const mapState = (state) => ({
+  questions: state.questions,
+  tags: state.tags,
+});
 
-const mapDispatch = (dispatch) => {
-  return {
-    addTag: (newTag) => dispatch(addTag(newTag)),
-  };
-};
+const mapDispatch = (dispatch) => ({
+  addTag: (newTag) => dispatch(addTag(newTag)),
+});
 
 export default connect(mapState, mapDispatch)(AdminTagPanel);

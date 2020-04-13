@@ -29,6 +29,7 @@ p {
 
 .linkText:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .gBtn {
@@ -40,6 +41,7 @@ p {
   border-style: solid;
   border-width: 2px;
   border-color: black;
+  cursor: pointer;
 }
 
 /* ----------------------- Z INDEX ----------------------- */
@@ -261,6 +263,7 @@ p {
 
 .userSignInLink:hover {
   color: blue;
+  cursor: pointer;
 }
 
 /* ----------------------- ROADMAP ----------------------- */
@@ -445,6 +448,7 @@ p {
 
 .qNameHovertrue:hover {
   color: blue;
+  cursor: pointer;
 }
 
 .questNameSymbol {
@@ -514,6 +518,7 @@ p {
 
 .tagHeader:hover {
   color: blue;
+  cursor: pointer;
 }
 
 /* ----------------------- QUESTION SURVEY ----------------------- */
@@ -577,7 +582,7 @@ p {
   background-color: lightgray;
   padding: 15px;
   padding-top: 35px;
-  width: 220px;
+  width: 235px;
   min-height: 100vh;
   border-right: 3px solid black;
 }
@@ -592,15 +597,20 @@ p {
   min-height: 100vh;
   width: 100vw;
   padding: 15px;
-  padding-left: 265px;
+  padding-left: 285px;
 }
 
 .adminSingleDiv {
   background-color: lightgray;
   border-radius: 5px;
   padding: 10px;
+  padding-right: 20px;
   margin-bottom: 15px;
   border: 1px solid black;
+}
+
+.adminSingletrue {
+  background-color: rgb(160, 217, 252);
 }
 
 /* ----------------------- ADMIN QUESTION ----------------------- */
@@ -694,6 +704,33 @@ p {
   margin-right: 25px;
 }
 
+.adminUserQuestFullDiv {
+  background-color: rgb(166, 224, 205);
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.adminUserQuestHeader {
+  margin-bottom: 10px;
+}
+
+.adminUserQuestHeader:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.adminUserQuestDiv {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.adminUserQuestText {
+  font-weight: 500;
+  margin-right: 30px;
+}
+
 /* ----------------------- ADMIN TAG ----------------------- */
 .adminTagAddDiv {
   background-color: lightpink;
@@ -738,6 +775,30 @@ p {
 
 .adminTagQuest {
   margin-bottom: 5px;
+}
+
+/* ----------------------- ADMIN LIKE ----------------------- */
+.adminLikeHeader {
+  margin-bottom: 10px;
+}
+
+.adminLikeStatDiv {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.adminLikeStatText {
+  font-weight: 500;
+  margin-right: 20px;
+}
+
+.adminLikeStatBtn {
+  height: 22px;
+  width: 75;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 /* ----------------------- CHARTS ----------------------- */
@@ -824,6 +885,7 @@ p {
 
 .helpCloseX:hover {
   color: red;
+  cursor: pointer;
 }
 
 .helpTextHead {

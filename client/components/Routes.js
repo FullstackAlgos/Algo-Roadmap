@@ -10,6 +10,7 @@ import AdminPropPanel from "./Admin/AdminPropPanel";
 import AdminQuestPanel from "./Admin/AdminQuestPanel";
 import AdminTagPanel from "./Admin/AdminTagPanel";
 import AdminUserPanel from "./Admin/AdminUserPanel";
+import AdminLikePanel from "./Admin/AdminLikePanel";
 
 class Routes extends Component {
   componentDidMount() {
@@ -24,7 +25,7 @@ class Routes extends Component {
         <Route
           exact
           path="/"
-          render={props => <HomePage {...props} formFlip={formFlip} />}
+          render={(props) => <HomePage {...props} formFlip={formFlip} />}
         />
 
         <Route
@@ -54,6 +55,7 @@ class Routes extends Component {
                 path={`${url}/Questions`}
                 component={AdminQuestPanel}
               />
+              <Route exact path={`${url}/Likes`} component={AdminLikePanel} />
               <Route exact path={`${url}/Tags`} component={AdminTagPanel} />
             </>
           )}
@@ -63,10 +65,8 @@ class Routes extends Component {
   }
 }
 
-const mapDispatch = dispatch => {
-  return {
-    me: () => dispatch(me())
-  };
-};
+const mapDispatch = (dispatch) => ({
+  me: () => dispatch(me()),
+});
 
 export default withRouter(connect(null, mapDispatch)(Routes));

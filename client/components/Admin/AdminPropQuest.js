@@ -50,7 +50,7 @@ class AdminPropQuest extends Component {
 
   render() {
     const { q, tags } = this.props,
-      { name, tag, difficulty, description, user } = q;
+      { name, tag, difficulty, description, link, user } = q;
 
     return (
       <div className="adminSingleDiv">
@@ -85,12 +85,16 @@ class AdminPropQuest extends Component {
         </div>
 
         <p className="adminPropQText">
+          <u>Link</u>: {link}
+        </p>
+
+        <p className="adminPropQText">
           <u>Description</u>: {description}
         </p>
 
         <div className="adminPropQRow">
           <p className="adminPropQText">
-            <u>Proposed By</u>: {user.name}
+            <u>Proposed By</u>: {user.name} ({user.email})
           </p>
           <p className="adminPropQText">
             <u>Difficulty</u>: {difficulty} ({difficultMap[difficulty]})
@@ -169,17 +173,13 @@ class AdminPropQuest extends Component {
   }
 }
 
-const mapState = (state) => {
-  return {
-    tags: state.tags,
-  };
-};
+const mapState = (state) => ({
+  tags: state.tags,
+});
 
-const mapDispatch = (dispatch) => {
-  return {
-    convertPropQuest: (questObj) => dispatch(convertPropQuest(questObj)),
-    deletePropQuest: (qId) => dispatch(deletePropQuest(qId)),
-  };
-};
+const mapDispatch = (dispatch) => ({
+  convertPropQuest: (questObj) => dispatch(convertPropQuest(questObj)),
+  deletePropQuest: (qId) => dispatch(deletePropQuest(qId)),
+});
 
 export default connect(mapState, mapDispatch)(AdminPropQuest);

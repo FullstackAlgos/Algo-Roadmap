@@ -24,7 +24,7 @@ class TagBar extends Component {
       sorted = [...tags].sort((a, b) => a.ranking - b.ranking);
 
     return sorted.reduce((a, v) => {
-      const userQuests = userQ.filter((x) => x.tagId === v.id).length,
+      const userQuests = userQ.filter((x) => x.question.tagId === v.id).length,
         allQuests = allQ.filter((x) => x.tagId === v.id).length,
         percent = Math.round((userQuests / allQuests) * 100);
 

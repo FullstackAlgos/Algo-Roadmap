@@ -10,9 +10,9 @@ const initialState = {
   user: {},
   users: [],
   questions: [],
-  userQuestions: [],
   tags: [],
   likes: [],
+  allLikes: [],
   proposeQuestions: [],
 };
 
@@ -22,10 +22,9 @@ const GET_ALL_USERS = "GET_ALL_USERS";
 const REMOVE_USER = "REMOVE_USER";
 const GET_QUESTIONS = "GET_QUESTIONS";
 const ADD_QUESTION = "ADD_QUESTION";
-const GET_USER_QUESTIONS = "GET_USER_QUESTIONS";
 const GET_TAGS = "GET_TAGS";
 const GET_LIKES = "GET_LIKES";
-const ADD_LIKES = "ADD_LIKES";
+const GET_ALL_LIKES = "GET_ALL_LIKES";
 const GET_PROP_QUESTS = "GET_PROP_QUESTS";
 const ADD_PROP_QUEST = "ADD_PROP_QUEST";
 
@@ -35,7 +34,7 @@ export const getAllUsers = (users) => ({ type: GET_ALL_USERS, users });
 export const removeUser = () => ({ type: REMOVE_USER });
 export const getTags = (tags) => ({ type: GET_TAGS, tags });
 export const getLikes = (likes) => ({ type: GET_LIKES, likes });
-export const addLike = (like) => ({ type: ADD_LIKES, like });
+export const getAllLikes = (allLikes) => ({ type: GET_ALL_LIKES, allLikes });
 export const getQuestions = (questions) => ({
   type: GET_QUESTIONS,
   questions,
@@ -43,10 +42,6 @@ export const getQuestions = (questions) => ({
 export const addQuestion = (question) => ({
   type: ADD_QUESTION,
   question,
-});
-export const getUserQuests = (userQuestions) => ({
-  type: GET_USER_QUESTIONS,
-  userQuestions,
 });
 export const getPropQuests = (propQuestions) => ({
   type: GET_PROP_QUESTS,
@@ -159,17 +154,6 @@ export const proposeQuest = (questObj) => async (dispatch) => {
   }
 };
 
-export const getUserQuestThunk = (userId) => async (dispatch) => {
-  try {
-    const { data: userQuestions } = await axios.get(
-      `/api/userQuestions/${userId}`
-    );
-    dispatch(getUserQuests(userQuestions));
-  } catch (error) {
-    console.log("Redux Error -", error);
-  }
-};
-
 export const getAllTags = () => async (dispatch) => {
   try {
     const { data: tags } = await axios.get("/api/tags");
@@ -205,8 +189,49 @@ export const addTag = (newTag) => async (dispatch) => {
 
 export const getUserLikes = (userId) => async (dispatch) => {
   try {
-    const { data: likes } = await axios.get(`/api/likes/${userId}`);
+    const { data: likes } = await axios.get(`/api/likes/user/${userId}`);
     dispatch(getLikes(likes));
+  } catch (error) {
+    console.log("Redux Error -", error);
+  }
+};
+
+export const getEveryLike = () => async (dispatch) => {
+  try {
+    const { data: likes } = await axios.get("/api/likes/all");
+    dispatch(getAllLikes(likes || []));
+  } catch (error) {
+    console.log("Redux Error -", error);
+  }
+};
+
+export const deleteLike = (likeId, userId) => async (dispatch) => {
+  try {
+    await axios.delete(`/api/likes/delete/${likeId}`);
+
+    // UPDATE ALLLIKES STATE POST REMOVAL
+    const allLikes = [...store.getState().allLikes].filter(
+      (x) => x.id !== likeId
+    );
+    dispatch(getAllLikes(allLikes));
+
+    // UPDATE USER PROFILE FOR ALLUSERS WITH LIKE REMOVAL
+    const allUsers = [...store.getState().users];
+    allUsers.forEach((u, idx) => {
+      if (u.id === userId) {
+        const newUser = { ...u };
+        newUser.likes = newUser.likes.filter((x) => x.id !== likeId);
+        allUsers[idx] = newUser;
+      }
+    });
+    dispatch(getAllUsers(allUsers));
+
+    // UPDATE LIKE IF IMPACTED CURRENT USER
+    const curUserId = { ...store.getState().user }.id;
+    if (curUserId === userId) {
+      const likes = [...store.getState().likes].filter((x) => x.id !== likeId);
+      dispatch(getLikes(likes));
+    }
   } catch (error) {
     console.log("Redux Error -", error);
   }
@@ -235,29 +260,32 @@ export const switchUserActive = (qId, qName) => async (dispatch) => {
 export const newLike = (userId, qId, status, update) => async (dispatch) => {
   try {
     // UPDATING LIKES
-    const likes = [...store.getState().likes];
-
     if (update) {
-      await axios.put("/api/likes", { userId, qId, status });
-      for (let i = 0; i < likes.length; i++) {
-        if (likes[i].questionId === qId) {
-          likes[i].status = status;
-          break;
-        }
-      }
-      dispatch(getLikes(likes));
+      const { data: newLikes } = await axios.put("/api/likes", {
+        userId,
+        qId,
+        status,
+      });
+
+      dispatch(getLikes(newLikes));
     } else {
-      await axios.post("/api/likes", { userId, qId, status });
-      dispatch(addLike({ userId, questionId: qId, status }));
+      const { data: newLikes } = await axios.post("/api/likes", {
+        userId,
+        qId,
+        status,
+      });
+
+      dispatch(getLikes(newLikes));
     }
 
-    // UPDATING QUESTIONS
+    // UPDATING QUESTIONS TO INCLUDE LIKES
     const questions = [...store.getState().questions];
 
     for (let i = 0; i < questions.length; i++) {
       if (questions[i].id === qId) {
         const qLikes = questions[i].likes;
         let add = true;
+
         for (let j = 0; j < qLikes.length; j++) {
           if (userId === qLikes[j].userId) {
             qLikes[j].status = status;
@@ -265,23 +293,13 @@ export const newLike = (userId, qId, status, update) => async (dispatch) => {
             break;
           }
         }
+
         if (add) qLikes.push({ status, userId, questionId: qId });
         break;
       }
     }
 
     dispatch(getQuestions(questions));
-
-    // UPDATING USER QUESTIONS
-    const userQuestions = [...store.getState().userQuestions],
-      updateUserQ = !userQuestions.filter((q) => q.id === qId).length;
-
-    if (updateUserQ) {
-      await axios.post("/api/userQuestions", { userId, questionId: qId });
-
-      userQuestions.push({ ...questions.filter((q) => q.id === qId)[0] });
-      dispatch(getUserQuests(userQuestions));
-    }
   } catch (error) {
     console.error("Redux Error -", error);
   }
@@ -303,24 +321,7 @@ export const deleteQuestion = (questionId) => async (dispatch) => {
 
 export const updateQuestion = (questionObj) => async (dispatch) => {
   try {
-    await axios.put("/api/questions", questionObj);
-
-    const questions = [...store.getState().questions],
-      tags = [...store.getState().tags];
-
-    questions.forEach((q, i) => {
-      if (q.id === questionObj.id) {
-        const newQuestObj = { ...q };
-
-        newQuestObj.name = questionObj.name;
-        newQuestObj.description = questionObj.description;
-        newQuestObj.tagId = questionObj.tagId;
-        newQuestObj.tag = tags.filter((t) => t.id === questionObj.tagId)[0];
-        newQuestObj.difficulty = questionObj.difficulty;
-
-        questions[i] = newQuestObj;
-      }
-    });
+    const { data: questions } = await axios.put("/api/questions", questionObj);
 
     dispatch(getQuestions(questions));
   } catch (error) {
@@ -367,16 +368,14 @@ const reducer = (state = initialState, action) => {
       return { ...state, questions: action.questions };
     case ADD_QUESTION:
       return { ...state, questions: [...state.questions, action.question] };
-    case GET_USER_QUESTIONS:
-      return { ...state, userQuestions: action.userQuestions };
     // ------- TAGS -------
     case GET_TAGS:
       return { ...state, tags: action.tags };
     // ------- LIKES -------
     case GET_LIKES:
       return { ...state, likes: action.likes };
-    case ADD_LIKES:
-      return { ...state, likes: [...state.likes, action.like] };
+    case GET_ALL_LIKES:
+      return { ...state, allLikes: action.allLikes };
     // ------- PROPOSE QUESTIONS -------
     case GET_PROP_QUESTS:
       return { ...state, proposeQuestions: action.propQuestions };

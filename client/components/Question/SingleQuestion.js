@@ -83,14 +83,10 @@ class SingleQuestion extends Component {
   }
 }
 
-const mapState = (state) => {
-  return { user: state.user };
-};
+const mapState = (state) => ({ user: state.user });
 
-const mapDispatch = (dispatch) => {
-  return {
-    switchUserActive: (qId, qName) => dispatch(switchUserActive(qId, qName)),
-  };
-};
+const mapDispatch = (dispatch) => ({
+  switchUserActive: (qId, qName) => dispatch(switchUserActive(qId, qName)),
+});
 
 export default connect(mapState, mapDispatch)(SingleQuestion);
