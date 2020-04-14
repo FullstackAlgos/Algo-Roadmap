@@ -10,6 +10,8 @@ const db = require("./db");
 const sessionStore = new SequelizeStore({ db });
 const PORT = process.env.PORT || 3000;
 const app = express();
+const hour = 60 * 60 * 1000;
+const day = hour * 24;
 
 module.exports = app;
 
@@ -43,7 +45,8 @@ const createApp = () => {
       secret: process.env.SESSION_SECRET || "my best friend is Cody",
       store: sessionStore,
       resave: false,
-      saveUninitialized: false
+      saveUninitialized: false,
+      cookie: { maxAge: day * 15 },
     })
   );
   app.use(passport.initialize());
