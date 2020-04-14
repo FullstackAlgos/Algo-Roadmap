@@ -25,8 +25,7 @@ class AdminUserPanel extends Component {
 
               {users.map((u, i) => {
                 if (u.id !== user.id) {
-                  count++;
-                  return <AdminUser key={i} u={u} self={false} idx={count} />;
+                  return <AdminUser key={i} u={u} self={false} idx={++count} />;
                 }
               })}
             </>
