@@ -20,12 +20,12 @@ class AdminUserPanel extends Component {
               <AdminUser
                 u={users.filter((x) => x.id === user.id)[0]}
                 self={true}
-                idx={1}
+                idx={count++}
               />
 
               {users.map((u, i) => {
                 if (u.id !== user.id) {
-                  return <AdminUser key={i} u={u} self={false} idx={++count} />;
+                  return <AdminUser key={i} u={u} self={false} idx={count++} />;
                 }
               })}
             </>
