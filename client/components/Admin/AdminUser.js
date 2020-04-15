@@ -26,9 +26,13 @@ class AdminUser extends Component {
   };
 
   lastDate = (likes) => {
-    const date = new Date(
-      [...likes].sort((a, b) => b.updatedAt - a.updatedAt)[0].updatedAt
-    );
+    let max = -Infinity;
+
+    for (const l of likes) {
+      max = math.max(max, l.updatedAt);
+    }
+
+    const date = new Date(max);
 
     return date.toLocaleString();
   };
