@@ -728,7 +728,19 @@ p {
 
 .adminUserQuestText {
   font-weight: 500;
-  margin-right: 30px;
+  margin-right: 20px;
+}
+
+.aUQT1 {
+  width: 435px;
+}
+
+.aUQT2 {
+  width: 185px;
+}
+
+.aUQT3 {
+  width: 120px;
 }
 
 /* ----------------------- ADMIN TAG ----------------------- */
