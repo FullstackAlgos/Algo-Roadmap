@@ -1,6 +1,5 @@
 const db = require("../server/db");
 const { Question, User, Tag, Like } = require("../server/db/models");
-const { userBulk, likeBulk } = require("./seedData");
 
 const questionBulk = [
   // ------------------------- ARRAY (1) ---------------------------
@@ -998,9 +997,13 @@ async function seed() {
   await Tag.bulkCreate(tagBulk);
   await Question.bulkCreate(questionBulk);
 
-  if (userBulk && userBulk.length) {
-    await User.bulkCreate(userBulk);
-    await Like.bulkCreate(likeBulk);
+  if (process.env.NODE_ENV === "development") {
+    const { userBulk, likeBulk } = require("./seedData");
+
+    if (userBulk && userBulk.length) {
+      await User.bulkCreate(userBulk);
+      await Like.bulkCreate(likeBulk);
+    }
   }
 
   console.log(`seeded successfully`);

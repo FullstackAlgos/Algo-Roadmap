@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { deleteLike } from "../..//store";
+import { difficultMap } from "../../utils/utilities";
 
 class AdminLike extends Component {
   deleteLike = (likeId, userId) => {
@@ -8,13 +9,33 @@ class AdminLike extends Component {
   };
 
   render() {
-    const { question, status } = this.props;
+    const { question, status, tags } = this.props,
+      { name, tagId, difficulty, description: desc } = question,
+      descLen = 150;
 
     return (
       <div className="adminSingleDiv">
         <h3 className="adminLikeHeader">
-          {question.name}&nbsp;&nbsp;&nbsp;(Total: {status.length})
+          {name}&nbsp;&nbsp;&nbsp;(Total: {status.length})
         </h3>
+
+        <div className="adminLikeStatDiv">
+          <h4 className="adminLikeStatText">
+            <u>Tag</u>:{" "}
+            {tags.length
+              ? tags.filter((t) => t.id === tagId)[0].name
+              : "Loading!"}
+          </h4>
+
+          <h4 className="adminLikeStatText">
+            <u>Level</u>: {difficultMap[difficulty]}
+          </h4>
+
+          <h4 className="adminLikeStatText">
+            <u>Description</u>:{" "}
+            {desc.length > descLen ? desc.slice(0, descLen) + "..." : desc}
+          </h4>
+        </div>
 
         {status.map((stat, i) => (
           <div key={i} className="adminLikeStatDiv">
@@ -42,8 +63,10 @@ class AdminLike extends Component {
   }
 }
 
+const mapState = (state) => ({ tags: state.tags });
+
 const mapDispatch = (dispatch) => ({
   deleteLike: (likeId, userId) => dispatch(deleteLike(likeId, userId)),
 });
 
-export default connect(null, mapDispatch)(AdminLike);
+export default connect(mapState, mapDispatch)(AdminLike);
