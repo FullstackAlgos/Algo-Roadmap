@@ -25,6 +25,14 @@ class AdminUser extends Component {
     this.setState({ showQuest: !this.state.showQuest });
   };
 
+  lastDate = (likes) => {
+    const date = new Date(
+      [...likes].sort((a, b) => b.updatedAt - a.updatedAt)[0].updatedAt
+    );
+
+    return date.toLocaleString();
+  };
+
   render() {
     const { u, self, tags, idx } = this.props,
       { showQuest } = this.state;
@@ -73,6 +81,11 @@ class AdminUser extends Component {
               <p className="adminUserText">
                 <u>Completed Questions</u>: {u.likes.length}
               </p>
+
+              <p className="adminUserText">
+                <u>Last Update</u>:{" "}
+                {u.likes.length ? this.lastDate(u.likes) : "None"}
+              </p>
             </div>
 
             <div className="adminUserQuestFullDiv">
@@ -87,29 +100,36 @@ class AdminUser extends Component {
                   </h3>
 
                   {showQuest
-                    ? u.likes.map((q, i) => {
-                        const { name, tagId, difficulty } = q.question;
+                    ? [...u.likes]
+                        .sort((a, b) => a.updatedAt - b.updatedAt)
+                        .map((q, i) => {
+                          const { name, tagId, difficulty } = q.question;
 
-                        return (
-                          <div key={i} className="adminUserQuestDiv">
-                            <h4 className="adminUserQuestText">
-                              {i + 1}. {name} (
-                              {tags.filter((t) => t.id === tagId)[0].name})
-                            </h4>
+                          return (
+                            <div key={i} className="adminUserQuestDiv">
+                              <h4 className="adminUserQuestText">
+                                {i + 1}. {name} (
+                                {tags.filter((t) => t.id === tagId)[0].name})
+                              </h4>
 
-                            <h4 className="adminUserQuestText">
-                              <u>Level</u>: {difficultMap[difficulty]}
-                            </h4>
+                              <h4 className="adminUserQuestText">
+                                <u>Level</u>: {difficultMap[difficulty]}
+                              </h4>
 
-                            <h4 className="adminUserQuestText">
-                              <u>Action</u>:{" "}
-                              {q.status.slice(0, 1).toUpperCase() +
-                                q.status.slice(1)}
-                              d
-                            </h4>
-                          </div>
-                        );
-                      })
+                              <h4 className="adminUserQuestText">
+                                <u>Action</u>:{" "}
+                                {q.status.slice(0, 1).toUpperCase() +
+                                  q.status.slice(1)}
+                                d
+                              </h4>
+
+                              <h4 className="adminUserQuestText">
+                                <u>Update</u>:{" "}
+                                {new Date(q.updatedAt).toLocaleString()}
+                              </h4>
+                            </div>
+                          );
+                        })
                     : null}
                 </>
               )}

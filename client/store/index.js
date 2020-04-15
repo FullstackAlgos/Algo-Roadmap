@@ -289,6 +289,7 @@ export const newLike = (userId, qId, status, update) => async (dispatch) => {
         for (let j = 0; j < qLikes.length; j++) {
           if (userId === qLikes[j].userId) {
             qLikes[j].status = status;
+            qLikes[j].updatedAt = Date.now();
             add = false;
             break;
           }
