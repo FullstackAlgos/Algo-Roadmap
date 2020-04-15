@@ -107,23 +107,23 @@ class AdminUser extends Component {
 
                           return (
                             <div key={i} className="adminUserQuestDiv">
-                              <h4 className="adminUserQuestText">
+                              <h4 className="adminUserQuestText aUQT1">
                                 {i + 1}. {name} (
                                 {tags.filter((t) => t.id === tagId)[0].name})
                               </h4>
 
-                              <h4 className="adminUserQuestText">
+                              <h4 className="adminUserQuestText aUQT2">
                                 <u>Level</u>: {difficultMap[difficulty]}
                               </h4>
 
-                              <h4 className="adminUserQuestText">
+                              <h4 className="adminUserQuestText aUQT3">
                                 <u>Action</u>:{" "}
                                 {q.status.slice(0, 1).toUpperCase() +
                                   q.status.slice(1)}
                                 d
                               </h4>
 
-                              <h4 className="adminUserQuestText">
+                              <h4 className="adminUserQuestText aUQT4">
                                 <u>Update</u>:{" "}
                                 {new Date(q.updatedAt).toLocaleString()}
                               </h4>
