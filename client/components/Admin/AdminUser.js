@@ -29,12 +29,17 @@ class AdminUser extends Component {
     let max = -Infinity;
 
     for (const l of likes) {
-      max = math.max(max, l.updatedAt);
+      max = Math.max(max, new Date(l.updatedAt));
     }
 
-    const date = new Date(max);
+    return this.dateFormat(max);
+  };
 
-    return date.toLocaleString();
+  dateFormat = (date) => {
+    const dateOpt = new Date(date).toLocaleString(),
+      formatDate = dateOpt.slice(0, -6) + dateOpt.slice(-3);
+
+    return formatDate;
   };
 
   render() {
@@ -128,8 +133,7 @@ class AdminUser extends Component {
                               </h4>
 
                               <h4 className="adminUserQuestText aUQT4">
-                                <u>Update</u>:{" "}
-                                {new Date(q.updatedAt).toLocaleString()}
+                                <u>Update</u>: {this.dateFormat(q.updatedAt)}
                               </h4>
                             </div>
                           );
