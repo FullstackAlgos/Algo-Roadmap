@@ -18,7 +18,9 @@ class AdminUser extends Component {
       const { u, adminChange } = this.props;
       adminChange(u.id, !u.isAdmin);
     }
+
     this.setState({ showAdmin: !this.state.showAdmin });
+    window.scrollTo(0, 0);
   };
 
   removeUser = (update) => {
@@ -26,7 +28,9 @@ class AdminUser extends Component {
       const { u, deleteUser } = this.props;
       deleteUser(u.id);
     }
+
     this.setState({ showDelete: !this.state.showDelete });
+    window.scrollTo(0, 0);
   };
 
   changeJSX = (name, deleteUser, admin) => (
