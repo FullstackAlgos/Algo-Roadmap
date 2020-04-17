@@ -10,8 +10,8 @@ class AdminLike extends Component {
 
   render() {
     const { question, status, tags } = this.props,
-      { name, tagId, difficulty, description: desc } = question,
-      descLen = 150;
+      { id, name, tagId, difficulty, description: desc } = question,
+      descLen = 75;
 
     return (
       <div className="adminSingleDiv">
@@ -20,6 +20,10 @@ class AdminLike extends Component {
         </h3>
 
         <div className="adminLikeStatDiv">
+          <h4 className="adminLikeStatText">
+            <u>ID</u>: {id}
+          </h4>
+
           <h4 className="adminLikeStatText">
             <u>Tag</u>:{" "}
             {tags.length
