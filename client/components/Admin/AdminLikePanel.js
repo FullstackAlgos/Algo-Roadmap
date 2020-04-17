@@ -24,12 +24,21 @@ class AdminLikePanel extends Component {
 
   render() {
     const { allLikes } = this.props,
-      questLike = this.likesToQuest(allLikes);
+      questLike = this.likesToQuest(allLikes),
+      questValues = [...Object.values(questLike)].sort(
+        (a, b) => b.statuses.length - a.statuses.length
+      );
 
     return (
       <div className="adminContentDiv">
+        <div className="adminSingleDiv aSLD">
+          <h3>
+            <u>Total Activity</u>: {allLikes.length}
+          </h3>
+        </div>
+
         {allLikes.length
-          ? Object.values(questLike).map((like, i) => (
+          ? questValues.map((like, i) => (
               <AdminLike
                 key={i}
                 question={like.question}
