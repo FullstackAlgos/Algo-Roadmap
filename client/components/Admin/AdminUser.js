@@ -8,18 +8,65 @@ class AdminUser extends Component {
     super();
     this.state = {
       showQuest: false,
+      showDelete: false,
+      showAdmin: false,
     };
   }
 
   changeAdmin = (update) => {
-    const { u, adminChange } = this.props;
-    adminChange(u.id, update);
+    if (update) {
+      const { u, adminChange } = this.props;
+      adminChange(u.id, !u.isAdmin);
+    }
+    this.setState({ showAdmin: !this.state.showAdmin });
   };
 
-  removeUser = () => {
-    const { u, deleteUser } = this.props;
-    deleteUser(u.id);
+  removeUser = (update) => {
+    if (update) {
+      const { u, deleteUser } = this.props;
+      deleteUser(u.id);
+    }
+    this.setState({ showDelete: !this.state.showDelete });
   };
+
+  changeJSX = (name, deleteUser, admin) => (
+    <div className="questPopFullDiv">
+      <div className="questSurveyFullDiv">
+        <h3 className="adminUserPopUpText">
+          Are you sure you want to{" "}
+          {deleteUser ? <u>DELETE</u> : <u>{admin ? "REMOVE" : "GRANT"}</u>}{" "}
+          {!deleteUser ? "admin rights for " : null}
+          <u>{name.toUpperCase()}</u>?
+        </h3>
+
+        <div className="questBtnDiv">
+          <button
+            type="button"
+            className="questBtn gBtn"
+            onClick={
+              deleteUser
+                ? () => this.removeUser(true)
+                : () => this.changeAdmin(true)
+            }
+          >
+            Yes
+          </button>
+
+          <button
+            type="button"
+            className="questBtn gBtn"
+            onClick={
+              deleteUser
+                ? () => this.removeUser(false)
+                : () => this.changeAdmin(false)
+            }
+          >
+            No
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 
   show = () => {
     this.setState({ showQuest: !this.state.showQuest });
@@ -44,38 +91,31 @@ class AdminUser extends Component {
 
   render() {
     const { u, self, tags, idx } = this.props,
-      { showQuest } = this.state;
+      { showQuest, showDelete, showAdmin } = this.state;
 
     return (
       <div className={`adminSingleDiv adminSingle${self}`}>
         {u ? (
           <>
+            {showDelete ? this.changeJSX(u.name, true) : null}
+            {showAdmin ? this.changeJSX(u.name, false, u.isAdmin) : null}
+
             <div className="adminUserRow">
               <h3 className="adminQuestName">
                 {idx}. {u.name} ({u.email})
               </h3>
 
-              {u.isAdmin ? (
-                <button
-                  type="button"
-                  onClick={() => this.changeAdmin(false)}
-                  className="adminQuestBtn gBtn"
-                >
-                  Remove Admin
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => this.changeAdmin(true)}
-                  className="adminQuestBtn gBtn"
-                >
-                  Grant Admin
-                </button>
-              )}
+              <button
+                type="button"
+                onClick={() => this.changeAdmin(false)}
+                className={`adminQuestBtn gBtn aQB${u.isAdmin}`}
+              >
+                {u.isAdmin ? "Remove" : "Grant"} Admin
+              </button>
 
               <button
                 type="button"
-                onClick={this.removeUser}
+                onClick={() => this.removeUser(false)}
                 className="adminQuestBtn gBtn"
               >
                 Remove User
