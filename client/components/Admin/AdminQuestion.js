@@ -8,6 +8,7 @@ class AdminQuestion extends Component {
     super();
     this.state = {
       showEdit: false,
+      showDelete: false,
       name: "",
       description: "",
       tag: "--",
@@ -15,13 +16,46 @@ class AdminQuestion extends Component {
     };
   }
 
-  showEdit = () => {
-    this.setState({ showEdit: !this.state.showEdit });
+  deleteQuest = (update) => {
+    if (update) {
+      const { q, deleteQuestion } = this.props;
+      deleteQuestion(q.id);
+    }
+
+    this.setState({ showDelete: !this.state.showDelete });
+    window.scrollTo(0, 0);
   };
 
-  deleteQuest = () => {
-    const { q, deleteQuestion } = this.props;
-    deleteQuestion(q.id);
+  changeJSX = (name) => (
+    <div className="questPopFullDiv">
+      <div className="questSurveyFullDiv">
+        <h3 className="adminUserPopUpText">
+          Are you sure you want to delete <u>{name}</u>?
+        </h3>
+
+        <div className="questBtnDiv">
+          <button
+            type="button"
+            className="questBtn gBtn"
+            onClick={() => this.deleteQuest(true)}
+          >
+            Yes
+          </button>
+
+          <button
+            type="button"
+            className="questBtn gBtn"
+            onClick={() => this.deleteQuest(false)}
+          >
+            No
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  showEditFlip = () => {
+    this.setState({ showEdit: !this.state.showEdit });
   };
 
   handleChange = (evt) => {
@@ -56,10 +90,13 @@ class AdminQuestion extends Component {
   };
 
   render() {
-    const { q, tags } = this.props;
+    const { q, tags } = this.props,
+      { showEdit, showDelete } = this.state;
 
     return (
       <div className="adminSingleDiv">
+        {showDelete ? this.changeJSX(q.name) : null}
+
         <div className="adminQuestRow1">
           <h3 className="adminQuestName">
             {q.id}. {q.name}&nbsp;&nbsp;&nbsp;({q.tag.name})
@@ -67,15 +104,15 @@ class AdminQuestion extends Component {
 
           <button
             type="button"
-            onClick={this.showEdit}
+            onClick={this.showEditFlip}
             className="adminQuestBtn gBtn"
           >
-            {this.state.showEdit ? "Stop Editting" : "Edit Question"}
+            {showEdit ? "Stop Editting" : "Edit Question"}
           </button>
 
           <button
             type="button"
-            onClick={this.deleteQuest}
+            onClick={() => this.deleteQuest(false)}
             className="adminQuestBtn gBtn"
           >
             Delete Question
@@ -87,7 +124,7 @@ class AdminQuestion extends Component {
         </p>
         <p className="adminQuestDesc">{q.description}</p>
 
-        {this.state.showEdit ? (
+        {showEdit ? (
           <form className="adminQuestForm" onSubmit={this.handleSubmit}>
             <div className="adminQuestFormDiv">
               <label htmlFor="name" className="adminQuestLabel">

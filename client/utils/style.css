@@ -630,6 +630,14 @@ p {
   font-weight: 700;
 }
 
+.aQBtrue {
+  color: red;
+}
+
+.adminUserPopUpText {
+  text-align: center;
+}
+
 .adminQuestDesc {
   margin-bottom: 5px;
 }
