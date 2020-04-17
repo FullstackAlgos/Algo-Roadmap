@@ -4,8 +4,66 @@ import { deleteLike } from "../..//store";
 import { difficultMap } from "../../utils/utilities";
 
 class AdminLike extends Component {
-  deleteLike = (likeId, userId) => {
-    this.props.deleteLike(likeId, userId);
+  constructor() {
+    super();
+    this.state = {
+      showDelete: { status: false, name: "", likeId: "", userId: "" },
+    };
+  }
+
+  deleteLike = (update, likeId = "", userId = "", name = "") => {
+    if (update) {
+      this.props.deleteLike(likeId, userId);
+      this.setState({
+        showDelete: {
+          status: !this.state.showDelete.status,
+          name: "",
+          likeId: "",
+          userId: "",
+        },
+      });
+    } else {
+      this.setState({
+        showDelete: {
+          status: !this.state.showDelete.status,
+          name,
+          likeId,
+          userId,
+        },
+      });
+    }
+    window.scrollTo(0, 0);
+  };
+
+  changeJSX = () => {
+    const { name, likeId, userId } = this.state.showDelete;
+    return (
+      <div className="questPopFullDiv">
+        <div className="questSurveyFullDiv">
+          <h3 className="adminUserPopUpText">
+            Are you sure you want to delete <u>{name}</u>'s like?
+          </h3>
+
+          <div className="questBtnDiv">
+            <button
+              type="button"
+              className="questBtn gBtn"
+              onClick={() => this.deleteLike(true, likeId, userId)}
+            >
+              Yes
+            </button>
+
+            <button
+              type="button"
+              className="questBtn gBtn"
+              onClick={() => this.deleteLike(false)}
+            >
+              No
+            </button>
+          </div>
+        </div>
+      </div>
+    );
   };
 
   render() {
@@ -15,6 +73,8 @@ class AdminLike extends Component {
 
     return (
       <div className="adminSingleDiv">
+        {this.state.showDelete.status ? this.changeJSX() : null}
+
         <h3 className="adminLikeHeader">
           {name}&nbsp;&nbsp;&nbsp;(Total: {status.length})
         </h3>
@@ -56,7 +116,14 @@ class AdminLike extends Component {
             <button
               type="button"
               className="adminLikeStatBtn gBtn"
-              onClick={() => this.deleteLike(stat.likeId, stat.id)}
+              onClick={() =>
+                this.deleteLike(
+                  false,
+                  stat.likeId,
+                  stat.id,
+                  stat.name || "*Former User*"
+                )
+              }
             >
               Delete
             </button>
