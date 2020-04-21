@@ -10,12 +10,10 @@ class AdminUserPanel extends Component {
 
   sortUsers = (users) => {
     const updateUser = users.reduce((a, v) => {
-      let max = -Infinity;
-
-      v.likes.forEach((l) => (max = Math.max(max, new Date(l.updatedAt))));
-
-      const newUser = { ...v };
-      newUser.last = max;
+      const newUser = { ...v, last: -Infinity };
+      newUser.likes.forEach(
+        (l) => (newUser.last = Math.max(newUser.last, new Date(l.updatedAt)))
+      );
 
       a.push(newUser);
       return a;
