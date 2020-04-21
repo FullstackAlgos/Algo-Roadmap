@@ -8,6 +8,22 @@ class AdminUserPanel extends Component {
     this.props.allUsers();
   }
 
+  sortUsers = (users) => {
+    const updateUser = users.reduce((a, v) => {
+      let max = -Infinity;
+
+      v.likes.forEach((l) => (max = Math.max(max, new Date(l.updatedAt))));
+
+      const newUser = { ...v };
+      newUser.last = max;
+
+      a.push(newUser);
+      return a;
+    }, []);
+
+    return updateUser.sort((a, b) => b.last - a.last);
+  };
+
   render() {
     const { users, user } = this.props;
     let count = 1;
@@ -23,7 +39,7 @@ class AdminUserPanel extends Component {
                 idx={count++}
               />
 
-              {users.map((u, i) => {
+              {this.sortUsers(users).map((u, i) => {
                 if (u.id !== user.id) {
                   return <AdminUser key={i} u={u} self={false} idx={count++} />;
                 }
