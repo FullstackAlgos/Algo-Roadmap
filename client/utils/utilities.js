@@ -57,9 +57,9 @@ export const SMTPEmail = {
       From: fromEmail,
       Subject: `Algo Roadmap Feedback from ${name}`,
       Body: body,
-    });
-    // .then(() =>
-    //   alert("Analysis sent! Please double check your spam folder.")
-    // );
+    }).then(
+      () => console.log("! Email Success !")
+      // alert("Analysis sent! Please double check your spam folder.")
+    );
   },
 };

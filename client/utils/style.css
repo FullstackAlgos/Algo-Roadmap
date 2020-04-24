@@ -1012,3 +1012,7 @@ p {
 .emailMsg {
   margin-bottom: 10px;
 }
+
+.emailError {
+  color: red;
+}

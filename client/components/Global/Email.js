@@ -12,8 +12,6 @@ class Email extends Component {
     };
   }
 
-  componentDidUpdate() {}
-
   handleChange = (evt) => {
     this.setState({ [evt.target.name]: evt.target.value });
     this.setState({ msg: "" });
@@ -33,7 +31,6 @@ class Email extends Component {
       return;
     }
 
-    console.log("email -", name, body, email);
     SMTPEmail.sendEmail(email, name, body);
 
     this.setState({
@@ -78,7 +75,7 @@ class Email extends Component {
             />
           </div>
 
-          {invalidEmail ? <p className="emailMsg">{msg}</p> : null}
+          {invalidEmail ? <p className="emailMsg emailError">{msg}</p> : null}
 
           <textarea
             className="emailBodyIpt"
