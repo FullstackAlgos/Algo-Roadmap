@@ -54,12 +54,9 @@ export const SMTPEmail = {
     Email.send({
       SecureToken: process.env.email,
       To: "jjss886@gmail.com",
-      From: fromEmail,
+      From: "jjss886@gmail.com",
       Subject: `Algo Roadmap Feedback from ${name}`,
-      Body: body,
-    }).then(
-      () => console.log("! Email Success !")
-      // alert("Analysis sent! Please double check your spam folder.")
-    );
+      Body: `From: ${fromEmail}  Message: ${body}`,
+    }).then(() => console.log("! Email Success !"));
   },
 };

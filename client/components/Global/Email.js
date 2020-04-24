@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { SMTPEmail } from "../../utils/utilities";
 
+const invalidMsg = "Please input valid email!",
+  successMsg = "Thanks for the message! We'll try to get back shortly!";
+
 class Email extends Component {
   constructor() {
     super();
@@ -27,7 +30,7 @@ class Email extends Component {
     const { name, email, body } = this.state;
 
     if (!this.validateEmail(email)) {
-      this.setState({ msg: "Please input valid email!" });
+      this.setState({ msg: invalidMsg });
       return;
     }
 
@@ -37,14 +40,14 @@ class Email extends Component {
       name: "",
       body: "",
       email: "",
-      msg: "Message successfully sent!",
+      msg: successMsg,
     });
   };
 
   render() {
     const { msg } = this.state,
-      invalidEmail = msg === "Please input valid email!",
-      successMsg = msg === "Message successfully sent!";
+      invalidEmail = msg === invalidMsg,
+      successEmail = msg === successMsg;
 
     return (
       <div className="emailFullDiv">
@@ -96,7 +99,7 @@ class Email extends Component {
             Send
           </button>
 
-          {successMsg ? <p className="emailMsg">{msg}</p> : null}
+          {successEmail ? <p className="emailMsg">{msg}</p> : null}
         </div>
       </div>
     );

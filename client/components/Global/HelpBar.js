@@ -140,9 +140,9 @@ const HelpBar = () => {
 
             <h4 className="helpTextHead">Contact Us</h4>
 
-            <p className="helpTextPara">
-              Feel free to send us some feedback, bugs, or even things you liked
-              about <strong>Algo Roadmap</strong>!
+            <p className="helpTextEmail">
+              Feel free to send us feedback, bugs you found, or even things you
+              liked about <strong>Algo Roadmap</strong>!
             </p>
 
             <Email />
