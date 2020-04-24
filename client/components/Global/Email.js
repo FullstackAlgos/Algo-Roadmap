@@ -16,6 +16,7 @@ class Email extends Component {
 
   handleChange = (evt) => {
     this.setState({ [evt.target.name]: evt.target.value });
+    this.setState({ msg: "" });
   };
 
   validateEmail = (email) => {
@@ -44,7 +45,9 @@ class Email extends Component {
   };
 
   render() {
-    const { msg } = this.state;
+    const { msg } = this.state,
+      invalidEmail = msg === "Please input valid email!",
+      successMsg = msg === "Message successfully sent!";
 
     return (
       <div className="emailFullDiv">
@@ -70,10 +73,12 @@ class Email extends Component {
               required
               placeholder="Name"
               onFocus={(e) => (e.target.placeholder = "")}
-              onBlur={(e) => (e.target.placeholder = "Email")}
+              onBlur={(e) => (e.target.placeholder = "Name")}
               onChange={this.handleChange}
             />
           </div>
+
+          {invalidEmail ? <p className="emailMsg">{msg}</p> : null}
 
           <textarea
             className="emailBodyIpt"
@@ -94,7 +99,7 @@ class Email extends Component {
             Send
           </button>
 
-          {msg.length ? <p className="emailMsg">{msg}</p> : null}
+          {successMsg ? <p className="emailMsg">{msg}</p> : null}
         </div>
       </div>
     );

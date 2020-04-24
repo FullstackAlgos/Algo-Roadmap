@@ -1006,4 +1006,9 @@ p {
   font-size: 15px;
   font-weight: bold;
   border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.emailMsg {
+  margin-bottom: 10px;
 }
