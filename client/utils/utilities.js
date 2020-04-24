@@ -57,6 +57,6 @@ export const SMTPEmail = {
       From: "jjss886@gmail.com",
       Subject: `Algo Roadmap Feedback from ${name}`,
       Body: `From: ${fromEmail}  Message: ${body}`,
-    }).then(() => console.log("! Email Success !", process.env.email));
+    }).then(() => console.log("! Email Success !"));
   },
 };
