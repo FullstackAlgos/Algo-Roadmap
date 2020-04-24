@@ -1,4 +1,4 @@
-if (process.env.NODE_ENV !== "production") require("../../secrets.js");
+require("../../secrets.js");
 
 export const difficultMap = {
   1: "Easy",
