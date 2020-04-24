@@ -8,3 +8,4 @@ public/bundle.js.map
 # Misc
 script/deploy
 script/seedData.js
+secrets.js
