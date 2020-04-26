@@ -52,9 +52,9 @@ export const SMTPEmail = {
     };
 
     Email.send({
-      SecureToken: process.env.email,
-      To: "jjss886@gmail.com",
-      From: "jjss886@gmail.com",
+      SecureToken: process.env.SMTP,
+      To: process.env.email,
+      From: process.env.email,
       Subject: `Algo Roadmap Feedback from ${name}`,
       Body: `From: ${fromEmail}  Message: ${body}`,
     }).then(() => console.log("! Email Success !"));
