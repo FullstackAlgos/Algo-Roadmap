@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { SMTPEmail } from "../../utils/utilities";
 
 const invalidMsg = "Please input valid email!",
+  blankName = "Please input your name!",
+  blankBody = "Please input a message!",
   successMsg = "Thanks for the message! We'll try to get back shortly!";
 
 class Email extends Component {
@@ -29,24 +31,26 @@ class Email extends Component {
     evt.preventDefault();
     const { name, email, body } = this.state;
 
-    if (!this.validateEmail(email)) {
-      this.setState({ msg: invalidMsg });
-      return;
+    if (!this.validateEmail(email)) this.setState({ msg: invalidMsg });
+    else if (!name.length) this.setState({ msg: blankName });
+    else if (!body.length) this.setState({ msg: blankBody });
+    else {
+      SMTPEmail.sendEmail(email, name, body);
+
+      this.setState({
+        name: "",
+        body: "",
+        email: "",
+        msg: successMsg,
+      });
     }
-
-    SMTPEmail.sendEmail(email, name, body);
-
-    this.setState({
-      name: "",
-      body: "",
-      email: "",
-      msg: successMsg,
-    });
   };
 
   render() {
     const { msg } = this.state,
       invalidEmail = msg === invalidMsg,
+      missingName = msg === blankName,
+      missingBody = msg === blankBody,
       successEmail = msg === successMsg;
 
     return (
@@ -79,6 +83,7 @@ class Email extends Component {
           </div>
 
           {invalidEmail ? <p className="emailMsg emailError">{msg}</p> : null}
+          {missingName ? <p className="emailMsg emailError">{msg}</p> : null}
 
           <textarea
             className="emailBodyIpt"
@@ -99,6 +104,7 @@ class Email extends Component {
             Send
           </button>
 
+          {missingBody ? <p className="emailMsg emailError">{msg}</p> : null}
           {successEmail ? <p className="emailMsg">{msg}</p> : null}
         </div>
       </div>
