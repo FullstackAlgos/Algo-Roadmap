@@ -6,6 +6,5 @@ public/bundle.js
 public/bundle.js.map
 
 # Misc
-script/deploy
-script/seedData.js
+script
 secrets.js
