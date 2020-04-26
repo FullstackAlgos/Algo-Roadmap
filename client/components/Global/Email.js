@@ -96,6 +96,8 @@ class Email extends Component {
             onChange={this.handleChange}
           />
 
+          {missingBody ? <p className="emailMsg emailError">{msg}</p> : null}
+
           <button
             type="button"
             className="emailSubmitBtn gBtn"
@@ -104,7 +106,6 @@ class Email extends Component {
             Send
           </button>
 
-          {missingBody ? <p className="emailMsg emailError">{msg}</p> : null}
           {successEmail ? <p className="emailMsg">{msg}</p> : null}
         </div>
       </div>
