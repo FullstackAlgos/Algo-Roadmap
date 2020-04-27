@@ -136,6 +136,10 @@ class AdminUser extends Component {
               </p>
 
               <p className="adminUserText">
+                <u>Joined</u>: {this.dateFormat(u.createdAt)}
+              </p>
+
+              <p className="adminUserText">
                 <u>Last Update</u>:{" "}
                 {u.likes.length ? this.lastDate(u.likes) : "None"}
               </p>

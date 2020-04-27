@@ -642,6 +642,10 @@ p {
   margin-bottom: 5px;
 }
 
+.adminQuestDesc1 {
+  margin-right: 25px;
+}
+
 .adminQuestForm {
   display: flex;
   flex-direction: column;
