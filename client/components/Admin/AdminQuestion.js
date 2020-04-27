@@ -119,9 +119,16 @@ class AdminQuestion extends Component {
           </button>
         </div>
 
-        <p className="adminQuestDesc">
-          <u>Difficulty</u>: {q.difficulty} ({difficultMap[q.difficulty]})
-        </p>
+        <div className="adminQuestRow1">
+          <p className="adminQuestDesc1">
+            <u>Difficulty</u>: {q.difficulty} ({difficultMap[q.difficulty]})
+          </p>
+
+          <p className="adminQuestDesc1">
+            <u>Activity</u>: {q.likes.length}
+          </p>
+        </div>
+
         <p className="adminQuestDesc">{q.description}</p>
 
         {showEdit ? (
