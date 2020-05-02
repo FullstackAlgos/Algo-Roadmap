@@ -694,6 +694,20 @@ p {
   margin-top: 10px;
 }
 
+.adminUserListText {
+  margin-left: 15px;
+  margin-right: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.adminUserSelect {
+  height: 25px;
+  width: 115px;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
 /* ----------------------- ADMIN PROPOSE QUESTION ----------------------- */
 .adminPropQRow {
   display: flex;

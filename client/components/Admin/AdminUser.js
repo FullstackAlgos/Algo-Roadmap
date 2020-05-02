@@ -94,7 +94,7 @@ class AdminUser extends Component {
   };
 
   render() {
-    const { u, self, tags, idx } = this.props,
+    const { u, self, tags, idx, options, resetMode } = this.props,
       { showQuest, showDelete, showAdmin } = this.state;
 
     return (
@@ -124,6 +124,21 @@ class AdminUser extends Component {
               >
                 Remove User
               </button>
+
+              {self ? (
+                <>
+                  <p className="adminUserListText">Sort List: </p>
+
+                  <select
+                    className="adminUserSelect"
+                    onChange={(evt) => resetMode(evt.target.value)}
+                  >
+                    {options.map((x, i) => (
+                      <option key={i}>{x}</option>
+                    ))}
+                  </select>
+                </>
+              ) : null}
             </div>
 
             <div className="adminUserRow">
