@@ -173,7 +173,10 @@ class AdminUser extends Component {
 
                   {showQuest
                     ? [...u.likes]
-                        .sort((a, b) => a.updatedAt - b.updatedAt)
+                        .sort(
+                          (a, b) =>
+                            Date.parse(a.updatedAt) - Date.parse(b.updatedAt)
+                        )
                         .map((q, i) => {
                           const { name, tagId, difficulty } = q.question;
 
