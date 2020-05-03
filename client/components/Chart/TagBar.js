@@ -23,18 +23,28 @@ class TagBar extends Component {
     const { userQ, allQ, tags } = this.props,
       sorted = [...tags].sort((a, b) => a.ranking - b.ranking);
 
-    return sorted.reduce((a, v) => {
+    const data = [],
+      color = [];
+
+    sorted.forEach((v) => {
       const userQuests = userQ.filter((x) => x.question.tagId === v.id).length,
         allQuests = allQ.filter((x) => x.tagId === v.id).length,
-        percent = Math.round((userQuests / allQuests) * 100);
+        percent = Math.round((userQuests / allQuests) * 100) || 0;
 
-      a.push(percent);
-      return a;
-    }, []);
+      data.push(percent);
+
+      const blue = "rgba(0, 152, 195, 0.9)",
+        green = "rgba(69, 170, 10, 0.9)";
+
+      if (percent >= 99.1) color.push(green);
+      else color.push(blue);
+    });
+
+    return { data, color };
   };
 
   componentDidMount() {
-    this.setState({ data: this.calcBarData() });
+    this.setState({ data: this.calcBarData().data });
   }
 
   componentDidUpdate(prevProps) {
@@ -45,14 +55,11 @@ class TagBar extends Component {
       allQ.length !== prevProps.allQ.length ||
       tags.length !== prevProps.tags.length
     ) {
-      this.setState({ data: this.calcBarData() });
+      this.setState({ data: this.calcBarData().data });
     }
   }
 
   render() {
-    const { tags } = this.props,
-      backColors = new Array(tags.length).fill("rgba(0, 152, 195, 0.9)");
-
     return (
       <div className="tagBarDiv">
         <HorizontalBar
@@ -91,7 +98,7 @@ class TagBar extends Component {
             labels: this.generateTagNames(),
             datasets: [
               {
-                backgroundColor: backColors,
+                backgroundColor: this.calcBarData().color,
                 data: this.state.data,
               },
             ],

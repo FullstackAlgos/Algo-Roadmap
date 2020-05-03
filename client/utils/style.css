@@ -717,6 +717,7 @@ p {
 .adminPropQText {
   margin-top: 10px;
   margin-right: 25px;
+  background-color: rgb(69, 170, 10);
 }
 
 /* ----------------------- ADMIN USER ----------------------- */
