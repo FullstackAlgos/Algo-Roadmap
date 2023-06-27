@@ -65,7 +65,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-utils": "^2.1.0",
     "history": "^4.10.1",
-    "webpack": "^5.75.0",
+    "webpack": "^5.76.0",
     "webpack-cli": "^3.3.12"
   }
 }
